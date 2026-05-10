@@ -20,24 +20,154 @@ const C = {
 
 // ─── STAGE CONFIG ───────────────────────────────────────────────────────────────
 const STAGES = [
-  {id:0,name:"The Honeymoon",     color:"#2D7DD2",bg:"#E8F2FC",tension:1},
-  {id:1,name:"Finding Their Footing",color:"#3A7D44",bg:"#E8F5EB",tension:3},
-  {id:2,name:"Showing Their Colors",color:"#C67F12",bg:"#FDF0DC",tension:5},
-  {id:3,name:"The Hard Stretch",  color:"#B93232",bg:"#FDEAEA",tension:8},
-  {id:4,name:"The Turning Point", color:"#2E8B57",bg:"#E0F4E8",tension:6},
-  {id:5,name:"Finding Their Groove",color:"#1A7A4A",bg:"#D6F7DD",tension:4},
-  {id:6,name:"Living Well Here",  color:"#5C7A1A",bg:"#EBF7D6",tension:2},
-  {id:7,name:"Stuck In Place",    color:"#9A2A2A",bg:"#FDECEA",tension:9},
-  {id:8,name:"The Illusion Trap", color:"#6B0000",bg:"#F5D5D5",tension:10},
-  {id:9,name:"Ready To Fly",      color:"#0D5C2E",bg:"#C8F0D8",tension:1},
+  {
+    id:0, name:"The Honeymoon", color:"#2D7DD2", bg:"#E8F2FC", tension:1,
+    geometry:"Circle", symbol:"⚫",
+    sapPrinciple:"Pure potential — no history yet written in this environment. The cleared field. Everything is possible because nothing has been established.",
+    inversion:"Neutral — no polarity tension yet. The slate is genuinely blank.",
+    staffReality:"The resident is compliant, cooperative, and often unusually easy to work with. They follow house routines, accept staff direction, and may seem like the 'perfect' resident. Do not be fooled by the ease.",
+    internalReality:"The resident is reading the room — quietly assessing who is safe, what the rules really are, and whether this place is different from the last one. The calm is real, but it is the calm of observation, not of comfort.",
+    actionPrompt:"Build the relationship now — this window closes. Be consistent, predictable, and honest. The patterns you set here become the foundation the resident trusts or tests later.",
+    trapWarning:"Assuming the Honeymoon is the baseline. Staff who expect this level of cooperation throughout the placement are set up for a hard fall when Stage 3 arrives.",
+    controlPoint:false,
+    velocity:"Slow — the resident is still absorbing. Don't rush the relationship-building phase.",
+    familyDesc:"Your loved one is settling in. Things may feel unusually smooth right now — that's normal and temporary. The staff are using this time to build trust.",
+    clinicalParallel:"Initial placement adaptation period. Low behavioral frequency. Baseline establishment phase.",
+  },
+  {
+    id:1, name:"Finding Their Footing", color:"#3A7D44", bg:"#E8F5EB", tension:3,
+    geometry:"Point becoming Line", symbol:"✨",
+    sapPrinciple:"First real emergence — direction begins to form out of the initial stillness. Unstable on the outside, but a clear internal sense of self is starting to activate.",
+    inversion:"Physically unstable / Consciously stable. The resident's behavior may start showing variation — but they know exactly who they are. The testing is intentional, not random.",
+    staffReality:"Small boundary tests appear. The resident finds out what the real rules are — not the posted rules, the actual rules. Who backs down? Who means what they say? They are gathering data, not being defiant.",
+    internalReality:"A growing sense of: 'I think I can actually be myself here.' First real personality emerges — humor, preferences, quirks, small refusals. This is healthy.",
+    actionPrompt:"Hold your boundaries warmly and consistently. When the resident tests, the correct response is calm follow-through — not punishment, not ignoring. They need to know the structure is real.",
+    trapWarning:"Treating early testing as a behavior problem to eliminate rather than a trust-building communication to respond to.",
+    controlPoint:false,
+    velocity:"Building — the momentum from The Honeymoon is starting to move. Expect gradual increase in behavioral complexity.",
+    familyDesc:"Your loved one is starting to show more of their real personality. Some of this may look like pushing boundaries — it means they're starting to feel safe enough to be themselves.",
+    clinicalParallel:"Post-honeymoon behavioral emergence. Antecedent assessment window. Functional behavior hypothesis formation.",
+  },
+  {
+    id:2, name:"Showing Their Colors", color:"#C67F12", bg:"#FDF0DC", tension:5,
+    geometry:"Axis / Two Poles", symbol:"☯",
+    sapPrinciple:"Duality fully surfaces — the resident shows the full range of who they are. Stable on the outside, churning on the inside. The tension between their two sides becomes visible.",
+    inversion:"Physically stable / Consciously unstable. The resident has settled into the home's physical routines but is internally sorting out identity, belonging, and safety.",
+    staffReality:"You see both sides now — the cooperative, engaged side AND the resistant, challenging side. Neither is fake. Both are real. Staff who only accept the 'good' side will face escalating conflict as the resident fights to be fully seen.",
+    internalReality:"Am I accepted as a whole person here — not just when I'm easy? The resident is testing whether staff can handle the full truth of who they are.",
+    actionPrompt:"Accept the whole person. When the difficult side emerges, respond to it the same way you respond to the pleasant side — with steadiness. Consistency across both states builds deep trust.",
+    trapWarning:"Trying to 'fix' the difficult side while only rewarding the compliant side. This communicates that the resident is only acceptable when they perform.",
+    controlPoint:false,
+    velocity:"Accelerating — the two-sidedness creates natural momentum toward the first real crisis.",
+    familyDesc:"You may be hearing about more challenging moments alongside the good ones. This is a healthy sign — it means your loved one is comfortable enough to show all of who they are.",
+    clinicalParallel:"Full behavioral repertoire emergence. Target behavior identification. Antecedent-behavior-consequence pattern mapping begins.",
+  },
+  {
+    id:3, name:"The Hard Stretch", color:"#B93232", bg:"#FDEAEA", tension:8,
+    geometry:"Triangle — first true structure under pressure", symbol:"🔺",
+    sapPrinciple:"First major threshold. The most important and most misread stage in the entire cycle. High chaos on the outside — high clarity on the inside. This is where the resident expresses what they could not express before. The triangle: the structure is being stress-tested to find out if it will hold.",
+    inversion:"Physically unstable / Consciously stable. Behavior is at its most challenging — but the resident often has the clearest sense of what they need. The escalation IS the communication.",
+    staffReality:"Incidents increase. Sleep disruption, refusals, aggression, property destruction, or shutdown behaviors peak. Staff feel the relationship is deteriorating. It is not — it is being tested at depth. This is also a SAP control point (3-6-9): the decisions made here determine the entire trajectory.",
+    internalReality:"'Will this place hold me when I'm at my worst?' The resident is not trying to destroy the placement. They are trying to find out if the placement will survive the real version of them.",
+    actionPrompt:"Do not abandon the relationship at The Hard Stretch. Update the BA plan. Request additional support. Document with precision. What you do at Stage 3 becomes the resident's lived evidence of whether they are worth staying for.",
+    trapWarning:"Recommending placement change, restrictive procedures, or medication increases as the first response to Stage 3. This stage ends placements that should not end. Most residents who cycle through multiple group homes are being discharged at Stage 3 rather than supported through it.",
+    controlPoint:true,
+    velocity:"Fast and unpredictable — momentum can accelerate crisis OR breakthrough. Immediate BA involvement is critical. This is where the cycle either advances or resets.",
+    familyDesc:"This is the hardest part of the journey, and it is normal. Your loved one is testing whether this home will stay committed to them. The staff need your support and patience right now too.",
+    clinicalParallel:"Crisis escalation phase. Behavioral incident peak. FBA (Functional Behavior Assessment) revision point. Placement stability risk window.",
+  },
+  {
+    id:4, name:"The Turning Point", color:"#2E8B57", bg:"#E0F4E8", tension:6,
+    geometry:"Square — four corners, stable foundation", symbol:"⬛",
+    sapPrinciple:"Consolidation after the crisis. The structure held. The resident now begins to build on that proof. Stable on the outside as real routines form — but the inner work of learning to trust is the most active it has ever been.",
+    inversion:"Physically stable / Consciously unstable. Incidents decrease. Routines solidify. Staff breathe again. But internally the resident is doing the deepest emotional processing of the entire cycle.",
+    staffReality:"Things get noticeably calmer. The specific strategies that worked during The Hard Stretch are now producing consistent results. Staff-resident rapport deepens. The relationship is becoming real. This is when BA plans should be actively refined — while you have the data and the cooperation.",
+    internalReality:"'They stayed. They actually stayed.' The resident is processing what it means that the staff and the home held firm. This often surfaces as quiet vulnerability — unexpected openness, conversations that haven't happened before.",
+    actionPrompt:"Don't coast. The stability is real but not automatic. Reinforce what worked. Deepen the relationship. Update the IB plan. Begin thinking about next-level goals. The foundation is being laid here.",
+    trapWarning:"Treating the calmer behavior as 'case closed' and reducing staff attention and plan updates. Stage 4 stability is actively maintained, not passive.",
+    controlPoint:false,
+    velocity:"Steady and building — the square is the most durable geometry. Progress here is slower but more permanent than any earlier stage.",
+    familyDesc:"The hard part has eased. Your loved one is settling into real rhythms now — this is genuine progress being built on real trust, not just compliance.",
+    clinicalParallel:"Post-crisis stabilization. Behavioral frequency decline. Behavior plan refinement window. IB goal reassessment opportunity.",
+  },
+  {
+    id:5, name:"Finding Their Groove · Hidden Duality", color:"#1A7A4A", bg:"#D6F7DD", tension:4,
+    geometry:"Pentagram — five points, the hidden star within the circle", symbol:"⭐",
+    sapPrinciple:"The bilateral threshold. The only stage in the cycle where the door opens equally in both directions — forward toward flourishing OR backward toward earlier stages. The resident appears settled, even thriving. But underneath is a hidden crossroads: they are making a fundamental internal decision about whether this life is truly theirs. Hidden Duality: what you see on the surface is not the whole picture. Three possible outcomes: advance, retreat, or freeze.",
+    inversion:"Physically unstable / Consciously stable — but the instability is internal and invisible. The resident knows exactly where they stand. Staff often do not.",
+    staffReality:"The resident seems to be doing really well. Schedules are working. Goals are being met. Community participation is increasing. Staff and families often relax here — which is the most dangerous response to this stage. The groove is real. The hidden duality underneath it is also real.",
+    internalReality:"'Is this actually my life? Do I want it to be? Can I trust that it will last?' The resident is experiencing both the pull forward toward genuine belonging AND the pull backward toward familiar patterns — even familiar pain. The inner debate is active even when the outer behavior is calm.",
+    actionPrompt:"Do not assume the work is done. Deepen goals. Have honest conversations with the resident about their future. Involve them in planning. This is the most important window for self-determination — what the resident decides here shapes everything that follows. Watch for sudden small regressions — they are signals from the hidden duality, not random setbacks.",
+    trapWarning:"Declaring the resident 'stable' and reducing support at Stage 5. This is the most common cause of Stage 7 regression. The groove can only sustain itself if the underlying decision resolves forward.",
+    controlPoint:false,
+    velocity:"Peak tension — the pentagram holds five points in perfect tension. Everything feels balanced. Everything is at a crossroads. Do not reduce monitoring or support.",
+    familyDesc:"Your loved one is doing well — and this is the moment to dream bigger together with them. Ask them what they want their life to look like. Their answer matters more right now than at any other time.",
+    clinicalParallel:"Behavioral stabilization. Self-determination planning window. LRE (Least Restrictive Environment) assessment opportunity. Transition planning initiation.",
+  },
+  {
+    id:6, name:"Living Well Here", color:"#5C7A1A", bg:"#EBF7D6", tension:2,
+    geometry:"Hexagon — honeycomb, peak efficiency in nature", symbol:"🔶",
+    sapPrinciple:"The peak of harmony within this cycle. The resident has crossed the threshold and is genuinely thriving. The hexagon: nature's most efficient structure — maximum function, minimum waste. But hexagons are also fragile at the edges. This is a SAP control point (3-6-9): the maintenance decisions made here determine whether the peak sustains or collapses.",
+    inversion:"Physically stable / Consciously unstable — the inner work of maintaining this peak is real and constant. The resident may feel the fragility themselves even while appearing to flourish.",
+    staffReality:"The resident is meaningfully engaged — in activities, in the community, in relationships. Goals are being achieved. This looks like success because it is success. But this is also the stage where complacency is most dangerous. The trap is declaring victory and reducing the investment that produced the flourishing.",
+    internalReality:"Real joy, real belonging — and underneath it, a quiet awareness that this peak cannot be taken for granted. The resident may begin to think about what comes next, even if they cannot articulate it.",
+    actionPrompt:"Celebrate genuinely. Document the progress. AND: begin the conversation about next-level goals. Step-down planning, community integration, greater independence. Living Well Here should be preparation for Ready To Fly — not the permanent destination.",
+    trapWarning:"Institutionalizing the resident at their peak — making the group home permanent because everyone (staff, family, system) is comfortable with Stage 6. This is the beginning of Stage 8's False Heaven. The peak is meant to be a launching pad, not a landing pad.",
+    controlPoint:true,
+    velocity:"High flow, low friction — but structurally vulnerable to disruption. Staffing changes, medication adjustments, or family upheaval can destabilize Stage 6 faster than any other stage.",
+    familyDesc:"Your loved one is genuinely thriving. Use this time to start talking about bigger goals — more independence, more community involvement. This is the best time to plan the next step forward.",
+    clinicalParallel:"Peak adaptive functioning. Quality of life metrics at maximum. IB reclassification review. Transition planning acceleration.",
+  },
+  {
+    id:7, name:"Stuck In Place", color:"#9A2A2A", bg:"#FDECEA", tension:9,
+    geometry:"Heptagon — seven sides, natural cycles of transformation", symbol:"🌀",
+    sapPrinciple:"Crisis of stagnation or regression. The peak has cracked. The lens of Stage 7 examines everything — every assumption, every plan, every relationship is stress-tested. But this is not failure. The heptagon appears in nature at every major transformation point. What looks like 'stuck' is often the pressure required to break through to the next level.",
+    inversion:"Physically unstable / Consciously stable — behavioral incidents return, regression is visible, but the resident often has razor-sharp clarity about what is wrong. The crisis IS the message.",
+    staffReality:"Something has broken down. Incidents returning. Progress plateauing or reversing. Staff are frustrated. Plans feel ineffective. The temptation is to increase restrictions, change medications, or consider placement change. This is usually the wrong response. Stage 7 is a SAP 'dark night' — it requires deeper engagement, not retreat.",
+    internalReality:"'Nothing is working. Nothing will ever work.' The resident is experiencing what feels like permanent suffering — but it is not permanent. The intensity of Stage 7 is the friction of transformation, not evidence that the resident cannot progress.",
+    actionPrompt:"Call an emergency team meeting. Review the entire plan from scratch with fresh eyes. Bring in the BA, the physician, and the family. Ask the resident directly: 'What do you need right now that you're not getting?' The answer is usually clear if you ask.",
+    trapWarning:"Interpreting Stage 7 as proof that the resident has 'hit their ceiling' and reducing expectations permanently. This is the doorway into Stage 8's False Hell — the institutionalized belief that suffering is inevitable.",
+    controlPoint:false,
+    velocity:"Intense and separative — things that were working come apart. This creates the space for something better. The velocity here can accelerate quickly toward Stage 8 if not addressed.",
+    familyDesc:"Your loved one is going through a hard stretch again. This doesn't mean the progress was lost — it means the next layer of growth is being worked on. Your consistency and patience are more important now than ever.",
+    clinicalParallel:"Behavioral regression. Crisis intervention activation. FBA revision. Placement stability review. Restrictive procedure evaluation.",
+  },
+  {
+    id:8, name:"The Illusion Trap", color:"#6B0000", bg:"#F5D5D5", tension:10,
+    geometry:"Infinity loop / Möbius strip", symbol:"∞",
+    sapPrinciple:"The primary trap in the entire SAP framework. Maximum density. The resident (or the system around them) has become locked in a false permanent state. Two forms: False Heaven — everything seems fine but nothing is actually moving forward; and False Hell — everyone has accepted that suffering is permanent and progress is impossible. Both are illusions. Both require active intervention to break. TrapScore amplifier: 1.45× — everything that keeps the resident here is being amplified by the system itself.",
+    inversion:"Physically stable / Consciously seeking release — but the conscious seeking is suppressed. The system has stopped listening. The resident's signals for change are being interpreted as symptoms to manage rather than communications to respond to.",
+    staffReality:"FALSE HEAVEN: The resident has been in this home for years. Behavior is manageable. No one has reviewed the IB plan in months. The BA checks in quarterly. Staff know the routines. Everyone is comfortable — except the resident, who has stopped growing. FALSE HELL: The resident has a long history of incidents. Staff say 'that's just how they are.' Families have stopped expecting progress. The plan has not changed in over a year. The resident's potential is being actively suppressed by the system's belief that there is no potential.",
+    internalReality:"In False Heaven: a quiet, unspoken despair — the sense that this is all there will ever be. In False Hell: the same despair, but louder, expressed through behavior because no other channel is available.",
+    actionPrompt:"MANDATORY: If a resident has been at Stage 8 for more than 90 days without an IB review or BA plan update — escalate immediately. Request a full team meeting. Review every assumption about this resident's ceiling. The Illusion Trap requires someone from outside the daily routine to break the pattern. This is what the BA, the family portal, and the manager dashboard exist to catch.",
+    trapWarning:"This IS the trap. Every feature of this platform — the Fidelity Tracker, the EVV engine, the Stage Heatmap, the iConnect sync — exists partly to prevent residents from disappearing into Stage 8 undetected.",
+    controlPoint:false,
+    velocity:"Stalled — maximum drag. The Möbius strip loops back on itself. Without active external intervention, Stage 8 residents do not naturally tumble forward. They require a deliberate disruption to the pattern.",
+    familyDesc:"Your loved one may seem stable right now, but stable is not the same as thriving. If you haven't heard about new goals, new activities, or progress in a while — ask. You have the right to request an IB review at any time.",
+    clinicalParallel:"Behavioral plateau with systemic reinforcement of status quo. IB review overdue. Restrictive procedure normalization. Institutional learned helplessness. Stagnation requiring crisis-of-compassion intervention.",
+  },
+  {
+    id:9, name:"Ready To Fly", color:"#0D5C2E", bg:"#C8F0D8", tension:1,
+    geometry:"Circle returning — the nonagon completing the arc", symbol:"🕊",
+    sapPrinciple:"Completion and transmission. The resident has done the real work of the cycle. The circle closes — not as an ending but as a launching point. Physically unstable (the current placement no longer fits) / Consciously at peace (the resident knows who they are and what they're ready for). The unique SAP feature of Stage 9: it accepts its own inversion without resistance. The readiness to move forward is also the readiness to let go. This is a SAP control point (3-6-9): the transmission made here becomes the legacy.",
+    inversion:"Physically unstable (the structure of the current placement is no longer the right fit) / Consciously stable and accepting. Stage 9 is the only stage where this inversion is welcomed rather than resisted.",
+    staffReality:"The resident has become a stabilizing presence in the home — other residents follow their lead, staff relationships are deep and mutual, the person is genuinely contributing. AND: they are outgrowing the setting. The most important and hardest work of Stage 9 is recognizing when to actively support the transition rather than holding on.",
+    internalReality:"Readiness — genuine, earned, sometimes bittersweet. The resident knows they are ready for more. They may express it directly or through growing restlessness. Either way, the message is: 'I've learned what this place had to teach me. I'm ready for the next chapter.'",
+    actionPrompt:"Begin active transition planning immediately. Involve the resident fully — every decision, every timeline. Connect them with the next setting before they leave this one. Their story, their progress, their wisdom belongs to them. Document it in a way that travels with them. Do not let Stage 9 residents sit in the same placement for years because the system is not ready for them to move.",
+    trapWarning:"The Stage 9 trap is the system's attachment — staff who don't want to lose a 'good resident,' families afraid of the unknown, administrators who haven't filed the paperwork. Every month a Stage 9 resident spends waiting for the system to catch up is a month of potential they are not living.",
+    controlPoint:true,
+    velocity:"Completing and dissolving — the nonagon releases. If the transition is actively supported, this velocity carries the resident into their next cycle with momentum. If it is blocked, Stage 9 regresses toward Stage 8's False Heaven — 'high-functioning' residents quietly warehoused at their ceiling.",
+    familyDesc:"Your loved one is ready for the next chapter. This is what all the hard work was for. It's okay to feel emotional about the change — and it's the right time to celebrate how far they've come and to support the next step forward.",
+    clinicalParallel:"Full adaptive functioning. LRE transition readiness. Supported living / independent living assessment. Step-down planning. Discharge coordination. Transition IEP/ISP revision.",
+  },
 ];
 
 // ─── DATA ───────────────────────────────────────────────────────────────────────
 const STAFF_DB = {
-  "S001":{ id:"S001", name:"Maria Thompson",  role:"DSP",      pin:"1234", homes:["Home A","Home B","Home C"] },
-  "S002":{ id:"S002", name:"Carlos Rivera",   role:"DSP",      pin:"5678", homes:["Home A","Home B","Home C"] },
-  "S003":{ id:"S003", name:"Janet Williams",  role:"Lead DSP", pin:"9012", homes:["Home A","Home B","Home C"] },
-  "S004":{ id:"S004", name:"Deja Mosley",     role:"DSP",      pin:"3456", homes:["Home A","Home B","Home C"] },
+  "S001":{ id:"S001", name:"Maria Thompson",  role:"DSP",      pin:"1234", homes:["Home A","Home B","Home C"], hourlyRate:16.50 },
+  "S002":{ id:"S002", name:"Carlos Rivera",   role:"DSP",      pin:"5678", homes:["Home A","Home B","Home C"], hourlyRate:16.50 },
+  "S003":{ id:"S003", name:"Janet Williams",  role:"Lead DSP", pin:"9012", homes:["Home A","Home B","Home C"], hourlyRate:19.25 },
+  "S004":{ id:"S004", name:"Deja Mosley",     role:"DSP",      pin:"3456", homes:["Home A","Home B","Home C"], hourlyRate:16.50 },
 };
 
 const PAY_PERIOD = {
@@ -127,6 +257,10 @@ const RESIDENTS_DB = {
         { id:"M003", name:"Lorazepam 0.5mg",  route:"Oral", times:["As needed – anxiety"], ndc:"00603-3213-21", instructions:"PRN only. Document behavior before and after. Max 1 per day. CONTROLLED.", controlled:true, isPRN:true },
       ],
       notes:"HONEYMOON ENDED. Known for elopement history. Always announce yourself before entering room.",
+      pcm:["Verbal redirection — calm, flat tone, no questions","Personal space / step back at least 6 feet","Offer preferred fidget item (top drawer, desk)","Supportive coaching: name the feeling out loud ('I can see this is hard')"],
+      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Any hold involving neck, head, or hair","⛔ Blocking doorways as behavioral consequence","⛔ Removing AAC picture board as consequence","⛔ Shouting, threatening, or commanding voice"],
+      bakerAct:{ statute:"FL Statute 394.463", history:true, historyNote:"Marcus has 2 prior voluntary Baker Act evaluations (Jan 2023, Aug 2024). Both resolved with med adjustment — no involuntary holds on record.", threshold:"Consider Baker Act consult if: refuses all food/water 24+ hrs AND expresses active hopelessness AND shows paradoxical sudden calm after sustained distress period.", nonVerbalNote:null },
+      behaviorPlan:{ clinicalDesc:"Antecedent modification + DRA (Differential Reinforcement of Alternative Behavior). Target behavior: SIB (hand-biting, frequency ≥3/hr). Primary antecedent: auditory overstimulation ≥65dB + concurrent demand task. Reinforcement schedule: FR3 — preferred break after every 3rd task completion. Extinction protocol in effect.", plainDesc:"Before loud activities or hard tasks, warn Marcus 2 minutes ahead. Offer his headphones immediately — don't wait for him to ask. Reward every 3rd task with a short break (his choice). If he starts to bite his hand, calmly offer the blue chew toy in the top desk drawer as a replacement. Never take the chew toy away as punishment." },
     },
     {
       id:"R003", name:"Lydia Mercado", dob:"2001-07-22", age:24,
@@ -155,6 +289,10 @@ const RESIDENTS_DB = {
         { id:"M005", name:"Melatonin 5mg",  route:"Oral", times:["8:00 PM"], ndc:"OTC", instructions:"30 minutes before target bedtime.", controlled:false },
       ],
       notes:"NEW RESIDENT – Day 12. Currently in Honeymoon Stage. Prior history: property destruction during manic episodes. DO NOT lower guard.",
+      pcm:["Give advance notice before transitions ('In 5 minutes we are…')","Offer choices to maintain sense of control","Calm explanation when 'no' is necessary — always give a reason","Redirect to preferred activity before escalation peaks"],
+      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Taking away personal items as punishment","⛔ Isolating resident without supervisor authorization","⛔ Raised voice or sarcastic tone"],
+      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history on file. New resident — baseline still being established.", threshold:"Monitor for: property destruction escalating to self-directed behavior, statements of self-harm intent, refusal of all medication for 2+ days. Consult BA before any Baker Act consideration given Honeymoon Stage status.", nonVerbalNote:null },
+      behaviorPlan:{ clinicalDesc:"Antecedent-based intervention with NCR (Non-Contingent Reinforcement). Target behavior: property destruction (throwing items). EO: restricted access to preferred items. Establishing operations: transition resistance. FCT component in development — BA assessment pending.", plainDesc:"Lydia is still getting settled (Day 12). The most important thing right now is to give her advance notice before ANY change — even small ones. When you have to say no, always explain why in simple words ('We can't do that right now because…'). Give her something she likes to do before situations that usually upset her — don't wait for the meltdown." },
     },
     {
       id:"R005", name:"Angela Fontaine", dob:"1994-11-03", age:31,
@@ -184,6 +322,10 @@ const RESIDENTS_DB = {
         { id:"M007", name:"Quetiapine 50mg",   route:"Oral", times:["8:00 PM"], ndc:"00310-0272-10", instructions:"Bedtime only. May cause morning grogginess.", controlled:false },
       ],
       notes:"Angela has made excellent progress over 67 days. Mood stable. BA should initiate IB review.",
+      pcm:["Low-stimulation environment during mood monitoring window (6 AM–10 AM)","Reflective listening — repeat her words back, do not argue with her perception","Physical activity redirect during early mania indicators (pacing, rapid speech)","Offer weighted blanket for anxiety escalation"],
+      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Arguing with delusional content — do not challenge, redirect","⛔ Withholding mood stabilizer under any circumstances","⛔ Social isolation as behavioral intervention"],
+      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No involuntary Baker Act history. Prior hospitalization 2022 was voluntary, pre-diagnosis.", threshold:"Mania checklist — Baker Act consult if 3+ present: no sleep 48+ hrs, grandiose statements about leaving or special mission, refusal of all mood stabilizers, property destruction, expressed intent to harm self or others, inability to follow 2-step instructions.", nonVerbalNote:null },
+      behaviorPlan:{ clinicalDesc:"Proactive mood monitoring via circadian rhythm tracking. Behavioral indicators of prodromal mania: increased speech rate (>1.5× baseline), decreased sleep self-report, inflated self-esteem statements. Intervention: environmental modification + TEAMS protocol for mood escalation. Lithium compliance is primary behavioral target.", plainDesc:"Angela's mood follows patterns — watch for her 'early warning signs' each morning: if she's talking faster than usual, seems overly energetic before 9 AM, or starts making big plans, flag it in the comm log right away and text the BA. She is doing really well at Stage 5. Give her meaningful tasks — she thrives on purpose." },
     },
   ],
   "Home B":[
@@ -216,6 +358,10 @@ const RESIDENTS_DB = {
         { id:"M008", name:"Escitalopram 10mg", route:"Oral", times:["8:00 AM"], ndc:"00456-2010-01", instructions:"Take with or without food. Consistent timing.", controlled:false },
       ],
       notes:"SUCCESS STORY. Stage 9 for 42 days. Step-down to assisted living being pursued. Give him responsibilities.",
+      pcm:["Collaborative problem-solving — involve him in decisions","Acknowledge autonomy: ask, don't tell, when possible","Natural consequences approach — BA-approved"],
+      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Any intervention that undermines his demonstrated independence","⛔ Treating him as a lower-stage resident — he has earned Stage 9 status"],
+      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history. Stage 9 — no current clinical concerns.", threshold:"Not currently applicable. If regression to Stage 7+ persists 7+ days, consult BA for reassessment.", nonVerbalNote:null },
+      behaviorPlan:{ clinicalDesc:"Maintenance protocol — no active behavioral intervention required. Goals: LRE transition planning, ADL independence skill generalization, supported decision-making practice.", plainDesc:"Jonah is ready to fly. Your job with him is more like a life coach than a caregiver. Involve him in house decisions where possible, let him mentor newer residents, and document any steps he takes toward independence — they all count toward his assisted living transition plan." },
     },
     {
       id:"R006", name:"Ramon Velasquez", dob:"1999-02-07", age:27,
@@ -252,6 +398,10 @@ const RESIDENTS_DB = {
         { id:"M011", name:"Melatonin 3mg",        route:"Oral", times:["8:30 PM"], ndc:"OTC", instructions:"30 min before bedtime.", controlled:false },
       ],
       notes:"Ramon is in The Hard Stretch. Recent incident INC-007. AAC device must be accessible at all times.",
+      pcm:["ALWAYS approach from the front — never from behind","Allow AAC device response time — minimum 15 seconds before prompting","Low-stimulation redirection: dim lights, reduce noise before approach","No physical prompt without verbal announcement first"],
+      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Removing AAC device for any reason during a behavioral episode","⛔ Rapid approach or sudden touch","⛔ More than 2 staff members in room during de-escalation (increases arousal)"],
+      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history. Non-verbal — standard assessment criteria do not apply directly.", threshold:null, nonVerbalNote:"⚠ CRITICAL: Ramon cannot self-report distress verbally. Baker Act threshold assessment must use BEHAVIORAL indicators ONLY: sustained SIB (head-banging, hand-biting >5 min), complete food/fluid refusal 24+ hrs, loss of seizure medication compliance. DO NOT use verbal consent criteria — consult BA and physician immediately for any crisis assessment." },
+      behaviorPlan:{ clinicalDesc:"FCT (Functional Communication Training) via AAC device. Primary function of challenging behavior: escape from demand + sensory aversion (auditory). Behavior: aggression (hitting, biting) — function: escape. Replacement behavior: AAC 'break' card. DRO schedule active. Seizure medication compliance is concurrent behavioral target.", plainDesc:"Ramon communicates through his AAC device — it is never optional. If he hits the 'break' button, the task stops immediately. No exceptions. Loud noise is his #1 trigger — when you walk in and the TV or music is too loud, turn it down before you do anything else. Approach slowly, announce yourself by name, and give him time to respond." },
     },
   ],
 };
@@ -306,6 +456,32 @@ const EVV_DATA = [
   {date:"5/5",billed:16,verified:16},{date:"5/6",billed:8,verified:8},
   {date:"5/7",billed:24,verified:24},{date:"5/8",billed:24,verified:21},
   {date:"5/9",billed:8,verified:8},
+];
+
+const OPEN_SHIFTS = [
+  { id:"OS1", home:"Home B", date:"2026-05-10", shift:"3:00 PM – 11:00 PM", hours:8, urgency:"critical", reason:"No coverage — callout" },
+  { id:"OS2", home:"Home C", date:"2026-05-11", shift:"7:00 AM – 3:00 PM",  hours:8, urgency:"warning",  reason:"Scheduled staff requested PTO" },
+  { id:"OS3", home:"Home A", date:"2026-05-12", shift:"11:00 PM – 7:00 AM", hours:8, urgency:"warning",  reason:"Holiday weekend — extra coverage" },
+  { id:"OS4", home:"Home B", date:"2026-05-13", shift:"7:00 AM – 3:00 PM",  hours:8, urgency:"info",     reason:"Optional overtime available" },
+];
+
+const ICONNECT_SYNC = [
+  { label:"Incident Reports",          icon:"🚨", count:"9 records",    status:"ready",    readyCount:7, pendingCount:2 },
+  { label:"MAR (Medication Admin)",    icon:"💊", count:"312 entries",  status:"ready",    readyCount:312,pendingCount:0 },
+  { label:"Communication Logs",        icon:"📝", count:"84 entries",   status:"ready",    readyCount:84, pendingCount:0 },
+  { label:"EVV / Shift Records",       icon:"📍", count:"47 records",   status:"ready",    readyCount:47, pendingCount:0 },
+  { label:"Behavioral Data",           icon:"🧠", count:"28 BA notes",  status:"warning",  readyCount:21, pendingCount:7 },
+  { label:"IB Reclassification Data",  icon:"📋", count:"5 residents",  status:"warning",  readyCount:3,  pendingCount:2 },
+];
+
+const MED_SUPPLY_RADAR = [
+  { subject:"Risperidone", Marcus:12, Angela:0, Jonah:0, Lydia:0, Ramon:0, full:30 },
+  { subject:"Sertraline",  Marcus:22, Angela:0, Jonah:0, Lydia:0, Ramon:0, full:30 },
+  { subject:"Lorazepam",   Marcus:3,  Angela:0, Jonah:0, Lydia:0, Ramon:0, full:30 },
+  { subject:"Buspirone",   Marcus:0,  Angela:0, Jonah:0, Lydia:20,Ramon:0, full:30 },
+  { subject:"Quetiapine",  Marcus:0,  Angela:6, Jonah:0, Lydia:0, Ramon:0, full:30 },
+  { subject:"Valproic",    Marcus:0,  Angela:0, Jonah:0, Lydia:0, Ramon:8, full:30 },
+  { subject:"Aripiprazole",Marcus:0,  Angela:0, Jonah:14,Lydia:0, Ramon:9, full:30 },
 ];
 
 const FAMILY_DB = {
@@ -392,6 +568,7 @@ function Btn({children, onClick, v="default", small, full, style:sx={}}) {
     orange: { bg:C.orange, col:C.white, bdr:C.orange },
     ghost:  { bg:"transparent", col:C.navy, bdr:C.navy3 },
     teal:   { bg:C.teal, col:C.white, bdr:C.teal },
+    purple: { bg:C.purple, col:C.white, bdr:C.purple },
   };
   const s = vs[v] || vs.default;
   return (
@@ -774,18 +951,9 @@ function FamilyPortal({member, onLogout}) {
   if (!resident) return <div>Resident not found.</div>;
   const stage = STAGES[resident.stage];
 
-  const FRIENDLY_STAGES = [
-    "Settling in — still getting comfortable in the home.",
-    "Finding their footing — exploring their new environment.",
-    "Opening up — their personality is starting to show.",
-    "Working through challenges — staff support is active.",
-    "Turning the corner — real progress is visible.",
-    "Finding their groove — consistency and growth.",
-    "Thriving — living well and engaged in the community.",
-    "Needs attention — a plan review has been recommended.",
-    "Complex phase — intensive support is in place.",
-    "Ready to fly — thriving and preparing for greater independence.",
-  ];
+  // Pull family descriptions directly from the canonical SAP STAGES array — one source of truth
+  const familyDesc = STAGES[resident.stage].familyDesc;
+  const stageName  = STAGES[resident.stage].name;
 
   const recentLogs = [
     { date:"May 9", cat:"General",   text:"Had a great morning. Helped prepare breakfast and was in good spirits. Participated in the group walk after lunch." },
@@ -815,8 +983,11 @@ function FamilyPortal({member, onLogout}) {
           <div style={{ fontSize:72, lineHeight:1, background:stage.bg, borderRadius:16, padding:"8px 14px", border:`2px solid ${stage.color}44` }}>{resident.photo}</div>
           <div>
             <div style={{ fontSize:26, fontWeight:800, color:C.white, fontFamily:"Georgia,serif", marginBottom:6 }}>{resident.name}</div>
-            <div style={{ fontSize:14, color:stage.color, fontWeight:700, marginBottom:8, background:`${stage.color}22`, display:"inline-block", padding:"4px 12px", borderRadius:20 }}>
-              {FRIENDLY_STAGES[resident.stage]}
+            <div style={{ fontSize:13, fontWeight:800, color:stage.color, marginBottom:4, background:`${stage.color}22`, display:"inline-block", padding:"4px 12px", borderRadius:20 }}>
+              {stage.symbol} {stageName}
+            </div>
+            <div style={{ fontSize:13, color:"rgba(255,255,255,.8)", marginBottom:8, maxWidth:500 }}>
+              {familyDesc}
             </div>
             <div style={{ display:"flex", gap:12, flexWrap:"wrap" }}>
               <span style={{ fontSize:13, color:"#8fb3d4" }}>📍 {resident.home}</span>
@@ -1243,6 +1414,193 @@ function ClockIn({onClockIn, onAdmin, onFamily, onDemo}) {
   );
 }
 
+// ─── BEHAVIOR PLAN VIEWER (Staff ↔ Clinical toggle) ────────────────────────────
+function BehaviorPlanViewer({resident}) {
+  const [view, setView] = useState("staff");
+  const plan = resident.behaviorPlan;
+  if (!plan) return null;
+  const stage = STAGES[resident.stage];
+  const stageCtx = resident.stage>=7?"small triggers may cause bigger reactions than expected. Use the calm-down steps below and notify the BA of any escalation.":resident.stage<=1?"you are still establishing trust. Consistency is more important than correction right now.":resident.stage===9?"they have earned significant autonomy. Your role is support, not correction.":"stay consistent with the plan below. Progress is happening even when it's hard to see.";
+  return (
+    <Card style={{ border:`2px solid ${stage.color}33` }}>
+      <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, display:"flex", justifyContent:"space-between", alignItems:"center", borderRadius:"12px 12px 0 0" }}>
+        <div>
+          <div style={{ fontSize:13, fontWeight:800, color:C.white }}>📋 Behavior Support Plan</div>
+          <div style={{ fontSize:11, color:"#8fb3d4", marginTop:2 }}>BA: {resident.ba}</div>
+        </div>
+        <div style={{ display:"flex", gap:2, background:"rgba(255,255,255,.1)", borderRadius:10, padding:3 }}>
+          {[["staff","👤 Staff View"],["clinical","🧠 Clinical View"]].map(([id,label])=>(
+            <div key={id} onClick={()=>setView(id)} style={{ padding:"5px 12px", borderRadius:8, cursor:"pointer", fontSize:11, fontWeight:700, transition:"all .15s", background:view===id?C.white:"transparent", color:view===id?C.navy:"rgba(255,255,255,.6)" }}>{label}</div>
+          ))}
+        </div>
+      </div>
+      <div style={{ padding:16 }}>
+        <div style={{ padding:"10px 14px", background:stage.bg, borderRadius:9, marginBottom:14, borderLeft:`4px solid ${stage.color}` }}>
+          <span style={{ fontSize:12, fontWeight:700, color:stage.color }}>Because {resident.name.split(" ")[0]} is in <em>{stage.name}</em>: {stageCtx}</span>
+        </div>
+        {view==="staff" ? (
+          <div>
+            <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:8 }}>What to do — plain language</div>
+            <div style={{ fontSize:14, color:C.text, lineHeight:1.9, padding:"14px 16px", background:C.gray0, borderRadius:10, borderLeft:`4px solid ${C.gold}` }}>{plan.plainDesc}</div>
+            <div style={{ marginTop:10, padding:"8px 12px", background:C.teallt, borderRadius:8, fontSize:12, color:C.teal, fontWeight:600 }}>
+              💡 Test Hint: Your BA calls this plan "FCT" or "DRA" on the APD certification exam. In real life, it just means what the plain-language description above says.
+            </div>
+          </div>
+        ) : (
+          <div>
+            <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:8 }}>Clinical Description — BA / Supervisor View</div>
+            <div style={{ fontSize:13, color:C.text2, lineHeight:1.8, padding:"14px 16px", background:"#0D1F3508", borderRadius:10, borderLeft:`4px solid ${C.navy}`, fontFamily:"monospace" }}>{plan.clinicalDesc}</div>
+            <div style={{ marginTop:10, padding:"8px 12px", background:C.goldlt, borderRadius:8, fontSize:12, color:C.gold, fontWeight:600 }}>⚠ This view is for BA/supervisor reference. Staff should use the "Staff View" tab during their shift.</div>
+          </div>
+        )}
+      </div>
+    </Card>
+  );
+}
+
+// ─── BA PORTAL ─────────────────────────────────────────────────────────────────
+function BAPortal({onLogout}) {
+  const [tab, setTab]         = useState("caseload");
+  const allResidents          = Object.values(RESIDENTS_DB).flat();
+  const [planView, setPlanView]   = useState({});
+  const [accessScore, setAccessScore] = useState({});
+  const [scoring, setScoring] = useState({});
+
+  const scorePlan = async (r) => {
+    setScoring(p=>({...p,[r.id]:true}));
+    const txt = await callClaude(
+      [{role:"user",content:`Review this behavior plan for a Florida APD group home resident:\n\n"${r.behaviorPlan?.clinicalDesc}"\n\nScore it on:\n1. Plain-language accessibility (0-100): Can a DSP with a high school diploma understand it?\n2. APD compliance (0-100): Does it reference Chapter 65G interventions appropriately?\n3. Missing elements (list up to 3 short items).\n4. Staff translation: Write 2 plain-language sentences for daily care staff.\n\nReturn ONLY valid JSON: { "accessibility": number, "compliance": number, "missing": ["item"], "translation": "text" }`}],
+      "You are a Florida APD behavior analyst supervisor. Return only valid JSON with no markdown."
+    );
+    try { const c=txt.replace(/```json|```/g,"").trim(); setAccessScore(p=>({...p,[r.id]:JSON.parse(c)})); }
+    catch { setAccessScore(p=>({...p,[r.id]:{accessibility:0,compliance:0,missing:["Parse error"],translation:"Score unavailable."}})); }
+    setScoring(p=>({...p,[r.id]:false}));
+  };
+
+  const TABS=[{id:"caseload",icon:"👥",label:"Caseload & Stages"},{id:"plans",icon:"📋",label:"Plan Scorer"},{id:"effectiveness",icon:"📊",label:"Effectiveness"}];
+
+  return (
+    <div style={{ fontFamily:"'DM Sans',system-ui,sans-serif", background:C.gray0, minHeight:"100vh" }}>
+      <div style={{ background:`linear-gradient(135deg,${C.purple} 0%,#2D0F5A 100%)`, padding:"0 24px", height:56, display:"flex", alignItems:"center", justifyContent:"space-between", position:"sticky", top:0, zIndex:100 }}>
+        <div style={{ display:"flex", alignItems:"center", gap:14 }}>
+          <div style={{ width:36,height:36,background:C.gold,borderRadius:10,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:900,fontSize:18,color:C.navy,fontFamily:"Georgia,serif" }}>L</div>
+          <div>
+            <div style={{ fontWeight:800, fontSize:14, color:C.white, fontFamily:"Georgia,serif" }}>LUMINARK — BA PORTAL</div>
+            <div style={{ fontSize:11, color:"rgba(255,255,255,.6)" }}>Behavior Analyst · All Houses · SAP Clinical Intelligence</div>
+          </div>
+        </div>
+        <Btn v="ghost" small onClick={onLogout} style={{color:"rgba(255,255,255,.6)",borderColor:"rgba(255,255,255,.3)"}}>Log Out</Btn>
+      </div>
+      <div style={{ background:C.white, borderBottom:`1px solid ${C.gray1}`, display:"flex", padding:"0 24px" }}>
+        {TABS.map(t=>(
+          <div key={t.id} onClick={()=>setTab(t.id)} style={{ padding:"12px 16px", cursor:"pointer", fontSize:13, fontWeight:tab===t.id?700:500, color:tab===t.id?C.purple:C.text3, borderBottom:tab===t.id?`3px solid ${C.purple}`:"3px solid transparent", display:"flex", gap:6, alignItems:"center" }}>
+            <span>{t.icon}</span><span>{t.label}</span>
+          </div>
+        ))}
+      </div>
+      <div style={{ padding:24, maxWidth:1100, margin:"0 auto" }}>
+        {tab==="caseload" && (
+          <div style={{ display:"grid", gap:14 }}>
+            <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>Active Caseload — SAP Stage Overview</div>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(260px,1fr))", gap:14 }}>
+              {allResidents.map(r=>{ const st=STAGES[r.stage]; return (
+                <Card key={r.id} style={{ border:`2px solid ${st.color}33` }}>
+                  <div style={{ padding:"14px 16px", background:st.bg }}>
+                    <div style={{ display:"flex", gap:12, alignItems:"center" }}>
+                      <span style={{fontSize:36}}>{r.photo}</span>
+                      <div><div style={{ fontSize:15, fontWeight:800, color:C.text }}>{r.name}</div><Tag label={`S${r.stage}: ${st.name}`} color={st.color} bg={`${st.color}22`} small/></div>
+                    </div>
+                  </div>
+                  <div style={{ padding:14 }}>
+                    <div style={{ fontSize:12, color:C.text3, marginBottom:4 }}><strong>Home:</strong> {r.home} &nbsp;·&nbsp; <strong>IB:</strong> {r.ibStatus}</div>
+                    <div style={{ height:5, background:C.gray1, borderRadius:3, marginTop:8 }}><div style={{ height:5, borderRadius:3, background:st.color, width:`${st.tension*10}%` }}/></div>
+                    <div style={{ fontSize:11, fontWeight:700, color:st.color, marginTop:4 }}>Tension Index: {st.tension}/10</div>
+                    {r.stage>=7&&<div style={{ marginTop:8, padding:"6px 10px", background:C.redlt, color:C.red, borderRadius:8, fontSize:11, fontWeight:700 }}>⚠ High-tension — enhanced monitoring</div>}
+                  </div>
+                </Card>
+              );})}
+            </div>
+          </div>
+        )}
+        {tab==="plans" && (
+          <div style={{ display:"grid", gap:18 }}>
+            <div>
+              <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif", marginBottom:6 }}>Plan Accessibility Scorer</div>
+              <div style={{ padding:"10px 16px", background:C.purplelt, borderRadius:10, fontSize:13, color:C.purple, fontWeight:600 }}>✦ AI scores each plan for staff readability and APD Chapter 65G compliance, then generates a plain-language staff translation.</div>
+            </div>
+            {allResidents.filter(r=>r.behaviorPlan).map(r=>{
+              const score=accessScore[r.id]; const st=STAGES[r.stage];
+              return (
+                <Card key={r.id}>
+                  <div style={{ padding:"14px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, display:"flex", justifyContent:"space-between", alignItems:"center", borderRadius:"12px 12px 0 0" }}>
+                    <div style={{ display:"flex", gap:10, alignItems:"center" }}>
+                      <span style={{fontSize:28}}>{r.photo}</span>
+                      <div><div style={{ fontSize:14, fontWeight:800, color:C.white }}>{r.name}</div><div style={{ fontSize:11, color:"#8fb3d4" }}>S{r.stage}: {st.name} · {r.home}</div></div>
+                    </div>
+                    {!score&&<Btn v="gold" small onClick={()=>scorePlan(r)}>{scoring[r.id]?"Scoring...":"✦ Score Plan"}</Btn>}
+                  </div>
+                  <div style={{ padding:16 }}>
+                    <div style={{ display:"flex", gap:4, background:C.gray0, borderRadius:10, padding:4, marginBottom:12 }}>
+                      {[["staff","👤 Staff"],["clinical","🧠 Clinical"]].map(([id,label])=>(
+                        <div key={id} onClick={()=>setPlanView(p=>({...p,[r.id]:id}))} style={{ flex:1, padding:"7px 0", borderRadius:8, textAlign:"center", cursor:"pointer", fontSize:12, fontWeight:700, background:(planView[r.id]||"staff")===id?C.navy:C.gray0, color:(planView[r.id]||"staff")===id?C.white:C.text3 }}>{label}</div>
+                      ))}
+                    </div>
+                    <div style={{ fontSize:13, color:C.text, lineHeight:1.8, padding:"12px 14px", background:C.gray0, borderRadius:9, marginBottom:score?12:0 }}>
+                      {(planView[r.id]||"staff")==="staff"?r.behaviorPlan.plainDesc:r.behaviorPlan.clinicalDesc}
+                    </div>
+                    {score&&(
+                      <div style={{ display:"grid", gap:10 }}>
+                        <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
+                          {[["Accessibility",score.accessibility,"👤"],[" APD Compliance",score.compliance,"⚖"]].map(([lbl,val,icon])=>{ const col=val>=85?C.green:val>=70?C.gold:C.red; return (
+                            <div key={lbl} style={{ padding:14, background:C.gray0, borderRadius:10, textAlign:"center" }}>
+                              <div style={{fontSize:20}}>{icon}</div>
+                              <div style={{ fontSize:28, fontWeight:800, color:col, fontFamily:"Georgia,serif" }}>{val}</div>
+                              <div style={{ fontSize:11, color:C.text3, fontWeight:700 }}>{lbl}</div>
+                              <div style={{ height:5, background:C.gray2, borderRadius:3, marginTop:6 }}><div style={{ height:5, borderRadius:3, background:col, width:`${val}%` }}/></div>
+                            </div>
+                          );})}
+                        </div>
+                        {score.missing?.length>0&&<div style={{ padding:"12px 14px", background:C.orangelt, borderRadius:9 }}><div style={{ fontSize:12, fontWeight:800, color:C.orange, marginBottom:6 }}>Missing Elements</div>{score.missing.map((m,i)=><div key={i} style={{fontSize:12,color:C.orange}}>• {m}</div>)}</div>}
+                        {score.translation&&<div style={{ padding:"12px 14px", background:C.greenlt, borderRadius:9, borderLeft:`4px solid ${C.green}` }}><div style={{ fontSize:11, fontWeight:800, color:C.green, textTransform:"uppercase", letterSpacing:.4, marginBottom:6 }}>✦ AI Staff Translation</div><div style={{ fontSize:13, color:C.text, lineHeight:1.8 }}>{score.translation}</div></div>}
+                      </div>
+                    )}
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        )}
+        {tab==="effectiveness" && (
+          <div style={{ display:"grid", gap:14 }}>
+            <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>BA Effectiveness Scorecard</div>
+            <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:14 }}>
+              {[["Plans Active","5",C.purple,"All residents covered"],["Reviews Overdue","2",C.red,">90 days without update"],["Incidents This Wk","3",C.orange,"Down from 7 last week"],["Stage Progressions","1",C.green,"Jonah: S8→S9 (42 days)"]].map(([lbl,val,col,sub])=>(
+                <Card key={lbl}><div style={{ padding:20 }}><div style={{ fontSize:11, fontWeight:700, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>{lbl}</div><div style={{ fontSize:32, fontWeight:800, color:col, fontFamily:"Georgia,serif" }}>{val}</div><div style={{ fontSize:12, color:C.text3, marginTop:4 }}>{sub}</div></div></Card>
+              ))}
+            </div>
+            <Card>
+              <CardHdr title="BEI by Stage — Behavioral Episode Incidents"/>
+              <div style={{ padding:"14px 20px" }}>
+                <ResponsiveContainer width="100%" height={200}>
+                  <BarChart data={[{stage:"S0 Honeymoon",beis:0},{stage:"S3 Hard Stretch",beis:3},{stage:"S5 Groove",beis:1},{stage:"S7 Stuck",beis:4},{stage:"S8 Illusion",beis:2}]}>
+                    <CartesianGrid strokeDasharray="3 3" stroke={C.gray1}/>
+                    <XAxis dataKey="stage" tick={{fontSize:10}}/>
+                    <YAxis tick={{fontSize:11}}/>
+                    <Tooltip/>
+                    <Bar dataKey="beis" name="Incidents" radius={[4,4,0,0]}>
+                      {[0,3,1,4,2].map((v,i)=><Cell key={i} fill={v>=4?C.red:v>=2?C.orange:C.purple}/>)}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ─── FACE SHEET (enhanced) ─────────────────────────────────────────────────────
 function FaceSheet({resident}) {
   const s = STAGES[resident.stage];
@@ -1279,7 +1637,65 @@ function FaceSheet({resident}) {
         )}
       </div>
 
-      {/* SEIZURE ACTION PLAN MODAL */}
+      {/* SAP STAGE INTELLIGENCE CARD */}
+      <Card style={{ border:`2px solid ${s.color}44` }}>
+        <div style={{ padding:"14px 18px", background:`linear-gradient(135deg,${s.color}18 0%,${s.bg} 100%)`, borderRadius:"12px 12px 0 0", borderBottom:`2px solid ${s.color}33` }}>
+          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", flexWrap:"wrap", gap:10 }}>
+            <div>
+              <div style={{ fontSize:11, fontWeight:700, color:s.color, textTransform:"uppercase", letterSpacing:.8, marginBottom:4 }}>
+                LUMINARK Stage {resident.stage} · {s.geometry} {s.symbol} {s.controlPoint?"· ⭐ SAP Control Point":""}
+              </div>
+              <div style={{ fontSize:18, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>{s.name}</div>
+            </div>
+            <div style={{ display:"flex", gap:6, flexWrap:"wrap" }}>
+              <Tag label={`Tension ${s.tension}/10`} color={s.tension>=8?C.white:C.text} bg={s.tension>=8?C.red:s.tension>=5?C.orange:C.greenlt} small/>
+              <Tag label={s.inversion.split(" — ")[0]} color={C.navy} bg={C.gray1} small/>
+              {s.controlPoint && <Tag label="⭐ 3-6-9 Control Point" color={C.white} bg={C.gold} small/>}
+            </div>
+          </div>
+        </div>
+        <div style={{ padding:16, display:"grid", gap:12 }}>
+          {/* SAP Principle */}
+          <div style={{ padding:"12px 14px", background:s.bg, borderRadius:10, borderLeft:`4px solid ${s.color}` }}>
+            <div style={{ fontSize:10, fontWeight:800, color:s.color, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>What This Stage Means</div>
+            <div style={{ fontSize:13, color:C.text, lineHeight:1.8 }}>{s.sapPrinciple}</div>
+          </div>
+          {/* Staff Reality vs Internal Reality */}
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
+            <div style={{ padding:"12px 14px", background:C.gray0, borderRadius:10 }}>
+              <div style={{ fontSize:10, fontWeight:800, color:C.navy, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>👤 What Staff See</div>
+              <div style={{ fontSize:12, color:C.text, lineHeight:1.7 }}>{s.staffReality}</div>
+            </div>
+            <div style={{ padding:"12px 14px", background:`${s.color}08`, borderRadius:10, border:`1px solid ${s.color}22` }}>
+              <div style={{ fontSize:10, fontWeight:800, color:s.color, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>💭 What the Resident Experiences</div>
+              <div style={{ fontSize:12, color:C.text, lineHeight:1.7 }}>{s.internalReality}</div>
+            </div>
+          </div>
+          {/* Action Prompt */}
+          <div style={{ padding:"12px 14px", background:C.goldlt, borderRadius:10, borderLeft:`4px solid ${C.gold}` }}>
+            <div style={{ fontSize:10, fontWeight:800, color:C.gold, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>✦ What To Do Right Now</div>
+            <div style={{ fontSize:13, color:C.text, lineHeight:1.8 }}>{s.actionPrompt}</div>
+          </div>
+          {/* Trap Warning */}
+          <div style={{ padding:"12px 14px", background:C.redlt, borderRadius:10, borderLeft:`4px solid ${C.redmed}` }}>
+            <div style={{ fontSize:10, fontWeight:800, color:C.red, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>⚠ The Stage {resident.stage} Trap — Watch For This</div>
+            <div style={{ fontSize:12, color:C.text, lineHeight:1.7 }}>{s.trapWarning}</div>
+          </div>
+          {/* Velocity + Clinical (last) */}
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10 }}>
+            <div style={{ padding:"10px 12px", background:C.teallt, borderRadius:9 }}>
+              <div style={{ fontSize:10, fontWeight:800, color:C.teal, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>⚡ Momentum</div>
+              <div style={{ fontSize:12, color:C.text, lineHeight:1.6 }}>{s.velocity}</div>
+            </div>
+            <div style={{ padding:"10px 12px", background:C.gray0, borderRadius:9 }}>
+              <div style={{ fontSize:10, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>📋 Clinical Term (for documentation)</div>
+              <div style={{ fontSize:11, color:C.text2, lineHeight:1.6, fontStyle:"italic" }}>{s.clinicalParallel}</div>
+            </div>
+          </div>
+        </div>
+      </Card>
+
+
       {showSeizure && resident.seizurePlan && (
         <Card style={{ border:`3px solid ${C.red}` }}>
           <div style={{ padding:"14px 18px", background:C.red, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
@@ -1359,6 +1775,80 @@ function FaceSheet({resident}) {
           <p style={{ fontSize:14, color:C.text, lineHeight:1.8, margin:0, background:C.gray0, padding:"14px 16px", borderRadius:10, borderLeft:`4px solid ${C.gold}` }}>{resident.notes}</p>
         </div>
       </Card>
+
+      {/* ── BEHAVIOR PLAN — Staff/Clinical toggle ── */}
+      {resident.behaviorPlan && <BehaviorPlanViewer resident={resident}/>}
+
+      {/* ── PCM APPROVED TECHNIQUES ── */}
+      {resident.pcm && (
+        <Card style={{ border:`2px solid ${C.greenmed}33` }}>
+          <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.green} 0%,#1A7A2E 100%)`, borderRadius:"12px 12px 0 0" }}>
+            <div style={{ fontSize:13, fontWeight:800, color:C.white }}>✅ Approved PCM Techniques</div>
+            <div style={{ fontSize:11, color:"rgba(255,255,255,.7)", marginTop:2 }}>Only these interventions are authorized for {resident.name.split(" ")[0]} — Florida APD Chapter 65G-8</div>
+          </div>
+          <div style={{ padding:16, display:"grid", gap:8 }}>
+            {resident.pcm.map((item,i)=>(
+              <div key={i} style={{ padding:"10px 14px", background:C.greenlt, borderRadius:9, fontSize:13, color:C.green, fontWeight:600, display:"flex", gap:10, alignItems:"flex-start" }}>
+                <span style={{fontSize:16,flexShrink:0}}>✓</span>{item}
+              </div>
+            ))}
+          </div>
+        </Card>
+      )}
+
+      {/* ── PROHIBITED PROCEDURES ── */}
+      {resident.prohibited && (
+        <Card style={{ border:`2px solid ${C.red}` }}>
+          <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.red} 0%,${C.redmed} 100%)`, borderRadius:"12px 12px 0 0" }}>
+            <div style={{ fontSize:13, fontWeight:800, color:C.white }}>🚫 PROHIBITED PROCEDURES</div>
+            <div style={{ fontSize:11, color:"rgba(255,255,255,.75)", marginTop:2 }}>Using any prohibited procedure is a civil rights violation and a mandatory APD reportable incident — FL Ch. 65G-8.005</div>
+          </div>
+          <div style={{ padding:16, display:"grid", gap:8 }}>
+            {resident.prohibited.map((item,i)=>(
+              <div key={i} style={{ padding:"10px 14px", background:C.redlt, borderRadius:9, fontSize:13, color:C.red, fontWeight:700, display:"flex", gap:10, alignItems:"flex-start" }}>
+                <span style={{fontSize:16,flexShrink:0}}>⛔</span>{item.replace("⛔ ","")}
+              </div>
+            ))}
+            <div style={{ padding:"10px 14px", background:"#1A1814", borderRadius:9, fontSize:12, color:"#FFB3B3", fontWeight:600, fontStyle:"italic" }}>
+              If an owner, supervisor, or any person instructs you to use a prohibited procedure — you have the legal right and duty to refuse. Report immediately to APD at 1-866-APD-CARES.
+            </div>
+          </div>
+        </Card>
+      )}
+
+      {/* ── BAKER ACT GUIDANCE ── */}
+      {resident.bakerAct && (
+        <Card style={{ border:`2px solid ${C.purple}44` }}>
+          <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.purple} 0%,#2D0F5A 100%)`, borderRadius:"12px 12px 0 0" }}>
+            <div style={{ fontSize:13, fontWeight:800, color:C.white }}>⚖ Baker Act Decision Guidance — {resident.bakerAct.statute}</div>
+            <div style={{ fontSize:11, color:"rgba(255,255,255,.7)", marginTop:2 }}>Use the AI Procedure Guide for the full interactive checklist — this card is a quick reference only</div>
+          </div>
+          <div style={{ padding:16, display:"grid", gap:10 }}>
+            {resident.bakerAct.history && (
+              <div style={{ padding:"10px 14px", background:C.goldlt, borderRadius:9, fontSize:12, color:C.text, fontWeight:600, borderLeft:`4px solid ${C.gold}` }}>
+                📋 History: {resident.bakerAct.historyNote}
+              </div>
+            )}
+            {!resident.bakerAct.history && (
+              <div style={{ padding:"10px 14px", background:C.greenlt, borderRadius:9, fontSize:12, color:C.green, fontWeight:600 }}>
+                ✓ No Baker Act history on file
+              </div>
+            )}
+            {resident.bakerAct.threshold && (
+              <div style={{ padding:"12px 14px", background:C.purplelt, borderRadius:9, fontSize:12, color:C.purple, fontWeight:600 }}>
+                <div style={{ fontWeight:800, marginBottom:6 }}>Threshold for consult:</div>
+                {resident.bakerAct.threshold}
+              </div>
+            )}
+            {resident.bakerAct.nonVerbalNote && (
+              <div style={{ padding:"12px 14px", background:"#1A0030", borderRadius:9, fontSize:12, color:"#FFB3FF", fontWeight:700 }}>
+                {resident.bakerAct.nonVerbalNote}
+              </div>
+            )}
+            <Btn v="purple" small onClick={()=>{}}>⚖ Open Full Baker Act Checklist in AI Guide</Btn>
+          </div>
+        </Card>
+      )}
     </div>
   );
 }
