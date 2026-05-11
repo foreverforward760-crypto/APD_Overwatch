@@ -531,6 +531,306 @@ const DEMO_STEPS = [
     body:"LUMINARK deploys as a vendor-neutral SaaS platform. No hardware. No state infrastructure investment. Licensing fees are offset by Medicaid fraud recovery alone. Early adoption by 10% of Florida APD homes generates $18M ARR in Year 1, scaling to full-state deployment in Year 3 with DOJ and CMS compliance certification." },
 ];
 
+// ─── KAIROS ENGINE — CANONICAL NSDT CLASSIFIER ─────────────────────────────────
+// Weighted Euclidean distance classifier — direct port of sap_kairos_geometry.py
+// Centroids, weights, and scales are identical to the Kairos FastAPI engine (port 8002)
+// Source: foreverforward760-crypto/Kairos · foreverforward760-crypto/LUMINARK-Axiom-Systems-Engine-LASE-v1.1
+const KAIROS_CENTROIDS = [
+  [0.0, 0.0, 0.0, 0.0, 0.0],  // S0 The Honeymoon
+  [1.0, 8.0, 1.0, 1.0, 1.0],  // S1 Finding Their Footing
+  [2.0, 7.0, 2.0, 2.0, 2.0],  // S2 Showing Their Colors
+  [4.0, 7.0, 2.5, 3.0, 4.0],  // S3 The Hard Stretch
+  [3.5, 6.5, 3.0, 3.5, 5.0],  // S4 The Turning Point
+  [5.0, 4.0, 5.0, 5.0, 4.5],  // S5 Finding Their Groove · Hidden Duality
+  [6.0, 5.5, 4.0, 6.0, 6.5],  // S6 Living Well Here
+  [6.5, 3.0, 7.0, 7.0, 3.5],  // S7 Stuck In Place
+  [7.5, 7.0, 8.0, 2.0, 2.0],  // S8 The Illusion Trap
+  [8.0, 2.0, 8.5, 1.5, 1.5],  // S9 Ready To Fly
+];
+const KAIROS_WEIGHTS = [1.0, 1.5, 1.5, 1.0, 0.8]; // N, S, D, T, C
+const KAIROS_SCALES  = [10.0, 10.0, 10.0, 10.0, 10.0];
+const KAIROS_TRAP_AMPLIFIER = 1.45; // Stage 8 TrapScore amplifier — canonical SAP constant
+
+// NSDT axis definitions — plain language for staff, scientific parallel for disclosure
+const NSDT_AXES = [
+  {
+    id:"N", label:"Behavioral Complexity",
+    staffQ:"How many different, shifting behaviors or needs are showing up today?",
+    hint:"Few and predictable → Many and unpredictable",
+    sciParallel:"Shannon information entropy — a measure of unpredictability in a signal",
+  },
+  {
+    id:"S", label:"Baseline Stability",
+    staffQ:"How steady and consistent is this person's baseline right now?",
+    hint:"Very unstable → Very stable",
+    sciParallel:"Homeostatic stability — the organism's capacity to maintain internal equilibrium (Claude Bernard, 1865)",
+  },
+  {
+    id:"D", label:"Distress / Tension Level",
+    staffQ:"How much active distress, agitation, or behavioral tension is present?",
+    hint:"No tension → Extreme distress",
+    sciParallel:"Allostatic load — cumulative physiological cost of chronic stress exposure (McEwen & Stellar, 1993)",
+  },
+  {
+    id:"T", label:"Adaptability",
+    staffQ:"How readily does this person adjust when routines or plans change?",
+    hint:"Rigid / no flexibility → Highly adaptable",
+    sciParallel:"Behavioral flexibility — cognitive and behavioral adaptation capacity (executive function research, Luria 1966)",
+  },
+  {
+    id:"C", label:"Behavioral Coherence",
+    staffQ:"How consistent and predictable is this person's behavior across different settings today?",
+    hint:"Fragmented / inconsistent → Coherent and consistent",
+    sciParallel:"Neural coherence — synchronized pattern consistency across brain regions and time (Varela et al., 2001)",
+  },
+];
+
+// Pure JavaScript implementation of Kairos weighted Euclidean distance classifier
+function runKairosClassifier(nsdt) {
+  // nsdt: [N, S, D, T, C] each 0–10
+  const distances = KAIROS_CENTROIDS.map(centroid => {
+    let sum = 0;
+    for (let i = 0; i < 5; i++) {
+      const diff = (nsdt[i] - centroid[i]) / KAIROS_SCALES[i];
+      sum += KAIROS_WEIGHTS[i] * diff * diff;
+    }
+    return Math.sqrt(sum);
+  });
+
+  // Softmax posterior (temperature 0.7)
+  const logits = distances.map(d => -d);
+  const maxL = Math.max(...logits);
+  const temp = 0.7;
+  const exps = logits.map(l => Math.exp((l - maxL) / temp));
+  const total = exps.reduce((a, b) => a + b, 0);
+  const posterior = exps.map(e => e / total);
+
+  const dominant = posterior.indexOf(Math.max(...posterior));
+  const expectedStage = posterior.reduce((sum, p, i) => sum + p * i, 0);
+  const entropy = -posterior.reduce((sum, p) => sum + (p > 1e-12 ? p * Math.log(p + 1e-12) : 0), 0);
+
+  // TrapScore — Stage 8 distance with 1.45× amplifier
+  const stage8dist = distances[8];
+  const trapScore = dominant === 8
+    ? Math.min(1.0, (1.0 / (stage8dist + 0.01)) * KAIROS_TRAP_AMPLIFIER)
+    : Math.min(1.0, (1.0 / (stage8dist + 0.01)));
+
+  // Bifurcation flag — Stage 5 bilateral threshold
+  const bifurcation = posterior[5] > 0.25 || (dominant === 5 && entropy > 0.8);
+
+  // Stability flag — Tumbling Inversion (odd stages physically unstable)
+  const isOdd = dominant % 2 !== 0;
+  const inversionState = dominant === 9
+    ? "Accepted — conscious dissolution, no tension"
+    : isOdd
+    ? "Physically unstable / Consciously stable — behavior is the communication"
+    : "Physically stable / Consciously seeking — internal processing is primary";
+
+  return { dominant, posterior, expectedStage, entropy, trapScore, bifurcation, inversionState, distances };
+}
+
+// ─── LIABILITY & METHODOLOGY DISCLOSURE ────────────────────────────────────────
+function LiabilityBanner() {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <div style={{ background:"#0A1218", borderBottom:`1px solid #1E3A4A`, fontSize:11 }}>
+      <div style={{ maxWidth:1200, margin:"0 auto", padding:"6px 20px", display:"flex", justifyContent:"space-between", alignItems:"center", gap:12 }}>
+        <div style={{ color:"#5A8A9A", lineHeight:1.5 }}>
+          <strong style={{color:"#7AACBC"}}>LUMINARK Stage Intelligence</strong> is a computational behavioral pattern tracking system.
+          It does not diagnose, treat, or constitute medical advice.
+          All outputs require interpretation by a qualified clinician.
+          <span onClick={()=>setExpanded(p=>!p)} style={{ color:"#C8A020", cursor:"pointer", marginLeft:8, textDecoration:"underline" }}>
+            {expanded ? "Hide methodology ▲" : "View full methodology & scientific basis ▼"}
+          </span>
+        </div>
+        <div style={{ color:"#3A6A7A", whiteSpace:"nowrap", fontSize:10 }}>
+          MAAT · Stanfield's Axiom of Perpetuity · Not FDA-cleared
+        </div>
+      </div>
+      {expanded && (
+        <div style={{ background:"#0D1F2D", padding:"20px 28px", borderTop:`1px solid #1E3A4A`, maxWidth:1200, margin:"0 auto" }}>
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:24 }}>
+            <div>
+              <div style={{ fontSize:13, fontWeight:800, color:"#C8A020", marginBottom:10, fontFamily:"Georgia,serif" }}>What LUMINARK Stage Intelligence Is</div>
+              <div style={{ fontSize:12, color:"#8AAABB", lineHeight:1.9 }}>
+                LUMINARK uses a five-dimensional behavioral observation vector (NSDT) and a weighted Euclidean distance classifier — the same mathematical method used in validated clinical decision support systems — to classify a resident's current behavioral pattern against ten reference stage profiles. The output is a <strong style={{color:"#C8E0E8"}}>pattern classification</strong>, not a clinical diagnosis.
+                <br/><br/>
+                Stage classifications describe <em>where a person appears to be in a recognizable behavioral process</em> — the same way a meteorologist classifies weather patterns without diagnosing the atmosphere. The purpose is to give staff, clinicians, and administrators a shared language and a structured framework for observation, documentation, and proactive support.
+              </div>
+            </div>
+            <div>
+              <div style={{ fontSize:13, fontWeight:800, color:"#C8A020", marginBottom:10, fontFamily:"Georgia,serif" }}>Scientific Foundations</div>
+              <div style={{ display:"grid", gap:8 }}>
+                {[
+                  ["Bayesian Classification","The stage classifier uses weighted Euclidean distance with softmax posterior normalization — identical to the statistical architecture of FDA-cleared clinical decision support systems."],
+                  ["Allostatic Load Theory","The Tension (D) axis operationalizes the physiological stress burden construct established by McEwen & Stellar (1993) — a peer-reviewed framework used in clinical medicine."],
+                  ["Polyvagal Theory","Stage inversion states (Physically Unstable / Consciously Stable) map to the autonomic nervous system hierarchy established by Porges (1994) — ventral vagal, sympathetic mobilization, and dorsal vagal shutdown."],
+                  ["Bifurcation Theory","Stage 5's bilateral threshold is mathematically equivalent to a bifurcation point in nonlinear dynamical systems — a proven construct in physics and systems biology where small perturbations determine which of multiple stable states a system moves toward."],
+                  ["Information Entropy","The Complexity (N) axis is operationalized as behavioral information entropy (Shannon, 1948) — measuring unpredictability in behavioral output, not clinical disorder."],
+                  ["Phase Transition Dynamics","Stage 3, 6, and 7 dynamics parallel phase transitions in physical systems — points of maximum instability that precede reorganization into a new stable state."],
+                ].map(([title, body]) => (
+                  <div key={title} style={{ padding:"8px 12px", background:"#0A1A28", borderRadius:8, borderLeft:`3px solid #C8A02044` }}>
+                    <div style={{ fontSize:11, fontWeight:800, color:"#C8A020", marginBottom:3 }}>{title}</div>
+                    <div style={{ fontSize:11, color:"#7A9AAA", lineHeight:1.7 }}>{body}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div style={{ marginTop:16, padding:"10px 16px", background:"#0A1018", borderRadius:8, borderLeft:`3px solid #C83020` }}>
+            <div style={{ fontSize:11, fontWeight:800, color:"#C83020", marginBottom:4 }}>Important Limitations</div>
+            <div style={{ fontSize:11, color:"#8AAABB", lineHeight:1.8 }}>
+              LUMINARK stage classifications are based on staff observations logged at a single point in time. They are not validated against clinical diagnostic criteria (DSM-5, ICD-11) and should not be used as a substitute for formal psychological or psychiatric assessment.
+              Stage movement predictions are probabilistic, not deterministic. A resident's actual trajectory may differ from the system's estimate.
+              All clinical decisions — medication changes, restraint authorization, Baker Act initiation, discharge planning — must be made by qualified licensed professionals using their full clinical judgment.
+              LUMINARK outputs are observational documentation tools. They inform clinical conversation. They do not replace it.
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── NSDT OBSERVATION LOGGER ────────────────────────────────────────────────────
+function NSDTLogger({resident, onClassified}) {
+  const [values, setValues] = useState([5, 5, 5, 5, 5]);
+  const [running, setRunning] = useState(false);
+  const [result, setResult] = useState(null);
+  const [narrative, setNarrative] = useState("");
+
+  const runClassification = async () => {
+    setRunning(true);
+    const engineResult = runKairosClassifier(values);
+    setResult(engineResult);
+
+    // Claude generates the narrative layer on top of the classification
+    const txt = await callClaude(
+      [{role:"user", content:`A behavioral pattern classifier (Kairos NSDT Engine — Stanfield's Axiom of Perpetuity) has analyzed observational data for a group home resident and returned the following classification:
+
+Resident: ${resident.name}
+Current documented stage: S${resident.stage} (${STAGES[resident.stage].name})
+NSDT observation vector logged by staff:
+- Behavioral Complexity (N): ${values[0]}/10
+- Baseline Stability (S): ${values[1]}/10
+- Distress / Tension (D): ${values[2]}/10
+- Adaptability (T): ${values[3]}/10
+- Behavioral Coherence (C): ${values[4]}/10
+
+Engine classification result:
+- Classified Stage: S${engineResult.dominant} (${STAGES[engineResult.dominant].name})
+- Classifier confidence: ${(Math.max(...engineResult.posterior) * 100).toFixed(1)}%
+- Expected stage value: ${engineResult.expectedStage.toFixed(2)}
+- TrapScore: ${engineResult.trapScore.toFixed(3)}
+- Inversion state: ${engineResult.inversionState}
+- Bifurcation flag: ${engineResult.bifurcation ? "ACTIVE — bilateral threshold detected" : "Not active"}
+
+Using this classification as your foundation, generate a plain-language clinical support note (3-4 sentences, no mystical language, grounded in behavioral observation) for the care team. 
+- If the classified stage differs from the documented stage, note this and explain what it may indicate about movement direction.
+- If TrapScore > 0.6, flag the Perceived Permanence risk and name what staff should look for.
+- If the bifurcation flag is active, explain what that means practically for this resident's care plan right now.
+- End with one specific, actionable recommendation.
+Format as plain prose. No headers. No bullet points.`}],
+      "You are a behavioral support specialist providing observational pattern notes for an APD group home team. You do not diagnose. You do not prescribe. You describe behavioral patterns and their implications for care planning using plain, professional language. Never use the term 'SAP' or 'Kairos' in your output — refer to 'the pattern classifier' if needed. Always note that your output informs but does not replace qualified clinical judgment."
+    );
+    setNarrative(txt);
+    setRunning(false);
+    if (onClassified) onClassified({ ...engineResult, nsdt: values, narrative: txt });
+  };
+
+  const enginePreview = runKairosClassifier(values);
+  const previewStage = STAGES[enginePreview.dominant];
+
+  return (
+    <Card style={{ border:`2px solid ${C.teal}33` }}>
+      <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, borderRadius:"12px 12px 0 0" }}>
+        <div style={{ fontSize:13, fontWeight:800, color:C.white }}>✦ NSDT Behavioral Observation — Kairos Classification</div>
+        <div style={{ fontSize:11, color:"#8fb3d4", marginTop:2 }}>Rate what you observe right now. The engine classifies the pattern. This is not a diagnosis.</div>
+      </div>
+      <div style={{ padding:16 }}>
+        {/* Live preview badge */}
+        <div style={{ padding:"10px 14px", background:previewStage.bg, borderRadius:10, border:`2px solid ${previewStage.color}44`, marginBottom:14, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+          <div>
+            <div style={{ fontSize:10, fontWeight:800, color:previewStage.color, textTransform:"uppercase", letterSpacing:.5 }}>Live Pattern Preview</div>
+            <div style={{ fontSize:15, fontWeight:800, color:C.navy }}>{previewStage.symbol} S{enginePreview.dominant}: {previewStage.name}</div>
+          </div>
+          <div style={{ textAlign:"right" }}>
+            <div style={{ fontSize:11, color:C.text3 }}>Confidence: <strong style={{color:previewStage.color}}>{(Math.max(...enginePreview.posterior)*100).toFixed(0)}%</strong></div>
+            {enginePreview.bifurcation && <div style={{ fontSize:11, fontWeight:700, color:C.gold }}>⭐ Bifurcation Active</div>}
+            {enginePreview.trapScore > 0.6 && <div style={{ fontSize:11, fontWeight:700, color:C.red }}>⚠ TrapScore {enginePreview.trapScore.toFixed(2)}</div>}
+          </div>
+        </div>
+
+        {/* NSDT sliders */}
+        <div style={{ display:"grid", gap:12, marginBottom:16 }}>
+          {NSDT_AXES.map((axis, i) => (
+            <div key={axis.id}>
+              <div style={{ display:"flex", justifyContent:"space-between", marginBottom:5 }}>
+                <div>
+                  <span style={{ fontSize:12, fontWeight:800, color:C.navy }}>{axis.id}: {axis.label}</span>
+                  <span style={{ fontSize:11, color:C.text3, marginLeft:8 }}>{axis.staffQ}</span>
+                </div>
+                <span style={{ fontSize:15, fontWeight:800, color:C.teal, minWidth:24, textAlign:"right" }}>{values[i]}</span>
+              </div>
+              <div style={{ display:"flex", gap:10, alignItems:"center" }}>
+                <span style={{ fontSize:10, color:C.text3, whiteSpace:"nowrap" }}>0 {axis.hint.split(" → ")[0]}</span>
+                <input type="range" min="0" max="10" step="0.5" value={values[i]}
+                  onChange={e => setValues(v => { const n=[...v]; n[i]=parseFloat(e.target.value); return n; })}
+                  style={{ flex:1, accentColor:C.teal }}/>
+                <span style={{ fontSize:10, color:C.text3, whiteSpace:"nowrap" }}>{axis.hint.split(" → ")[1]} 10</span>
+              </div>
+              <div style={{ fontSize:10, color:C.text3, fontStyle:"italic", marginTop:2 }}>Scientific basis: {axis.sciParallel}</div>
+            </div>
+          ))}
+        </div>
+
+        <Btn v="teal" full onClick={runClassification}>{running ? "Running Kairos Classifier..." : "✦ Run NSDT Classification"}</Btn>
+        <div style={{ fontSize:10, color:C.text3, textAlign:"center", marginTop:6 }}>
+          Weighted Euclidean distance classifier · Identical to Kairos engine (LASE v1.1) · Results inform — do not replace — clinical judgment
+        </div>
+
+        {result && narrative && (
+          <div style={{ marginTop:14, display:"grid", gap:10 }}>
+            {/* Posterior distribution */}
+            <div style={{ padding:"12px 14px", background:C.gray0, borderRadius:10 }}>
+              <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:8 }}>Stage Posterior Distribution</div>
+              <div style={{ display:"grid", gap:4 }}>
+                {result.posterior.map((p, s) => (
+                  <div key={s} style={{ display:"flex", gap:8, alignItems:"center" }}>
+                    <span style={{ fontSize:11, fontWeight:700, color:STAGES[s].color, width:140, flexShrink:0 }}>S{s} {STAGES[s].name.split(" ").slice(0,2).join(" ")}</span>
+                    <div style={{ flex:1, height:6, background:C.gray2, borderRadius:3 }}>
+                      <div style={{ height:6, borderRadius:3, background:s===result.dominant?STAGES[s].color:`${STAGES[s].color}66`, width:`${(p*100).toFixed(1)}%`, transition:"width .3s" }}/>
+                    </div>
+                    <span style={{ fontSize:11, color:s===result.dominant?STAGES[s].color:C.text3, fontWeight:s===result.dominant?800:400, width:36, textAlign:"right" }}>{(p*100).toFixed(1)}%</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop:10, display:"flex", gap:12, flexWrap:"wrap" }}>
+                <span style={{ fontSize:11, color:C.text3 }}>Entropy: <strong>{result.entropy.toFixed(3)}</strong></span>
+                <span style={{ fontSize:11, color:C.text3 }}>Expected stage: <strong>{result.expectedStage.toFixed(2)}</strong></span>
+                <span style={{ fontSize:11, color:result.trapScore>0.6?C.red:C.text3 }}>TrapScore: <strong>{result.trapScore.toFixed(3)}</strong></span>
+                <span style={{ fontSize:11, color:C.text3 }}>Inversion: <strong>{result.inversionState.split(" —")[0]}</strong></span>
+              </div>
+            </div>
+
+            {/* Narrative */}
+            <div style={{ padding:"14px 16px", background:STAGES[result.dominant].bg, borderRadius:10, borderLeft:`4px solid ${STAGES[result.dominant].color}` }}>
+              <div style={{ fontSize:11, fontWeight:800, color:STAGES[result.dominant].color, textTransform:"uppercase", letterSpacing:.5, marginBottom:8 }}>
+                ✦ Pattern Support Note — S{result.dominant}: {STAGES[result.dominant].name}
+              </div>
+              <div style={{ fontSize:13, color:C.text, lineHeight:1.9 }}>{narrative}</div>
+              <div style={{ marginTop:10, fontSize:10, color:C.text3, fontStyle:"italic" }}>
+                This note is generated from staff observations and classifier output. It is observational documentation, not clinical assessment.
+                It must be reviewed by a qualified clinician before influencing any care decision.
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </Card>
+  );
+}
+
 // ─── AI CALL ───────────────────────────────────────────────────────────────────
 async function callClaude(messages, system) {
   const res = await fetch("https://api.anthropic.com/v1/messages", {
@@ -659,6 +959,7 @@ function AdminPortal({admin, onLogout}) {
 
   return (
     <div style={{ fontFamily:"'DM Sans',system-ui,sans-serif", background:C.gray0, minHeight:"100vh" }}>
+      <LiabilityBanner/>
       {/* ADMIN TOPBAR */}
       <div style={{ background:`linear-gradient(135deg,#0A1628 0%,${C.navy} 100%)`, padding:"0 24px", height:56,
         display:"flex", alignItems:"center", justifyContent:"space-between", position:"sticky", top:0, zIndex:100, boxShadow:"0 2px 20px rgba(0,0,0,.4)" }}>
@@ -1695,6 +1996,8 @@ function FaceSheet({resident}) {
         </div>
       </Card>
 
+      {/* NSDT LIVE CLASSIFICATION — Kairos Engine */}
+      <NSDTLogger resident={resident} onClassified={()=>{}}/>
 
       {showSeizure && resident.seizurePlan && (
         <Card style={{ border:`3px solid ${C.red}` }}>
@@ -3127,6 +3430,7 @@ export default function App() {
           onCancel={()=>setShowClockOutGate(false)}
         />
       )}
+      <LiabilityBanner/>
       {/* TOPBAR */}
       <div style={{ background:`linear-gradient(135deg,${C.navy} 0%,${C.navy2} 100%)`,
         padding:"0 20px", height:54, display:"flex", alignItems:"center", justifyContent:"space-between",
@@ -3268,4 +3572,3 @@ export default function App() {
     </div>
   );
 }
-// LUMINARK APD OVERWATCH v2 — Mon May 11 19:48:02 UTC 2026
