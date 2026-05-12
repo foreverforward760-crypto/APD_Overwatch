@@ -950,11 +950,12 @@ function AdminPortal({admin, onLogout}) {
 
   const criticalAlerts = ORG_ALERTS.filter(a=>a.severity==="critical");
   const TABS = [
-    {id:"overview", icon:"🏠", label:"Org Overview"},
-    {id:"fidelity", icon:"⏱", label:"Staff Fidelity"},
-    {id:"evv",      icon:"📍", label:"EVV / Billing"},
-    {id:"alerts",   icon:"🚨", label:`Alerts ${ORG_ALERTS.length}`},
-    {id:"export",   icon:"📤", label:"iConnect Export"},
+    {id:"overview",    icon:"🏠", label:"Org Overview"},
+    {id:"fidelity",    icon:"⏱", label:"Staff Fidelity"},
+    {id:"evv",         icon:"📍", label:"EVV / Billing"},
+    {id:"alerts",      icon:"🚨", label:`Alerts ${ORG_ALERTS.length}`},
+    {id:"scheduling",  icon:"📅", label:"Open Shifts"},
+    {id:"export",      icon:"📤", label:"iConnect Export"},
   ];
 
   return (
@@ -1211,12 +1212,65 @@ function AdminPortal({admin, onLogout}) {
         )}
 
         {/* iCONNECT EXPORT */}
-        {tab==="export" && (
-          <div style={{ display:"grid", gap:14, maxWidth:640 }}>
-            <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>iConnect Export — Florida APD State System Sync</div>
-            <div style={{ padding:"14px 18px", background:C.teallt, borderRadius:10, borderLeft:`4px solid ${C.teal}`, fontSize:13, color:C.text }}>
-              LUMINARK is positioned as an API-First layer over iConnect. All verified data — shift records, med administrations, incident reports, EVV logs — exports in iConnect-compliant XML format, eliminating double-entry and the clerical errors that cause deficiency citations.
+        {/* OPEN SHIFTS */}
+        {tab==="scheduling" && (
+          <div style={{ display:"grid", gap:14 }}>
+            <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>Open Shifts & Overtime Board</div>
+            <div style={{ padding:"10px 16px", background:C.teallt, borderRadius:10, fontSize:13, color:C.text, borderLeft:`4px solid ${C.teal}` }}>
+              Staff can claim any open shift at any house. Each claim automatically creates an EVV record and applies the appropriate overtime flag. Double-billing is blocked at the system level.
             </div>
+            <div style={{ display:"grid", gap:10 }}>
+              {OPEN_SHIFTS.map(os=>{
+                const urgencyCol = os.urgency==="critical"?C.red:os.urgency==="warning"?C.orange:C.teal;
+                const urgencyBg  = os.urgency==="critical"?C.redlt:os.urgency==="warning"?C.orangelt:C.teallt;
+                return (
+                  <Card key={os.id} style={{ border:`2px solid ${urgencyCol}33` }}>
+                    <div style={{ padding:16, display:"flex", gap:14, alignItems:"center" }}>
+                      <div style={{ width:48,height:48,borderRadius:12,background:urgencyBg,display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0 }}>
+                        {os.urgency==="critical"?"🚨":os.urgency==="warning"?"⚠":"📋"}
+                      </div>
+                      <div style={{flex:1}}>
+                        <div style={{ display:"flex", gap:8, alignItems:"center", marginBottom:4 }}>
+                          <Tag label={os.urgency.toUpperCase()} color={C.white} bg={urgencyCol} small/>
+                          <Tag label={os.home} color={C.navy} bg={C.gray1} small/>
+                          <span style={{ fontSize:12, color:C.text3 }}>{os.date} · {os.shift} · {os.hours}h</span>
+                        </div>
+                        <div style={{ fontSize:13, color:C.text, fontWeight:600 }}>{os.reason}</div>
+                      </div>
+                      <Btn v={os.urgency==="critical"?"red":"orange"}>Claim Shift</Btn>
+                    </div>
+                  </Card>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* iCONNECT EXPORT */}
+        {tab==="export" && (
+          <div style={{ display:"grid", gap:14, maxWidth:700 }}>
+            <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>iConnect Export — Florida APD State System Sync</div>
+            <div style={{ padding:"14px 18px", background:C.teallt, borderRadius:10, borderLeft:`4px solid ${C.teal}`, fontSize:13, color:C.text, lineHeight:1.7 }}>
+              LUMINARK is positioned as an API-first layer over iConnect. All verified data — shift records, med administrations, incident reports, EVV logs, and behavioral data — exports in <strong>iConnect-compliant XML format</strong> per APD specifications (Generations interface protocol). This eliminates double-entry and the clerical errors that trigger QA alert remediations.
+            </div>
+            <Card>
+              <CardHdr title="Medication Supply — Days Remaining by Resident" sub="Under 7 days = critical refill · Red bars require immediate action"/>
+              <div style={{ padding:16, overflowX:"auto" }}>
+                <ResponsiveContainer width="100%" height={240}>
+                  <BarChart data={MED_SUPPLY_RADAR} layout="vertical" margin={{left:110}}>
+                    <CartesianGrid strokeDasharray="3 3" stroke={C.gray1}/>
+                    <XAxis type="number" tick={{fontSize:10}}/>
+                    <YAxis type="category" dataKey="subject" tick={{fontSize:11,fontWeight:700}}/>
+                    <Tooltip/>
+                    <Legend/>
+                    {["Marcus","Angela","Jonah","Lydia","Ramon"].map((name,i)=>{
+                      const cols=[C.navy,C.orange,C.green,C.teal,C.purple];
+                      return <Bar key={name} dataKey={name} name={name} fill={cols[i]} radius={[0,4,4,0]}/>;
+                    })}
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
             {[
               { label:"Shift Records & EVV",      count:"47 records", status:"Ready", icon:"📍" },
               { label:"Medication Administration Logs", count:"312 entries", status:"Ready", icon:"💊" },
@@ -1302,7 +1356,7 @@ function FamilyPortal({member, onLogout}) {
       <div style={{ maxWidth:800, margin:"0 auto", padding:24 }}>
         {/* TABS */}
         <div style={{ display:"flex", gap:4, background:C.white, borderRadius:14, padding:6, marginBottom:18, boxShadow:"0 2px 8px rgba(0,0,0,.06)" }}>
-          {[["today","📅","Today's Update"],["wallet","💰","Personal Funds"],["contact","📞","Contact Home"]].map(([id,icon,label])=>(
+          {[["today","📅","Today's Update"],["stage","🧭","Their Stage"],["plan","📋","Care Plan"],["wallet","💰","Personal Funds"],["contact","📞","Contact Home"]].map(([id,icon,label])=>(
             <div key={id} onClick={()=>setTab(id)}
               style={{ flex:1, padding:"10px 14px", borderRadius:10, textAlign:"center", cursor:"pointer",
                 background:tab===id?C.navy:"transparent", color:tab===id?C.white:C.text3, fontSize:13, fontWeight:tab===id?700:500,
@@ -1344,6 +1398,55 @@ function FamilyPortal({member, onLogout}) {
               </div>
             </Card>
           </div>
+        )}
+
+        {tab==="stage" && (
+          <Card>
+            <CardHdr title={`Understanding ${resident.name.split(" ")[0]}'s Current Stage`} sub={`${stage.symbol} ${stage.name}`}/>
+            <div style={{ padding:18, display:"grid", gap:12 }}>
+              <div style={{ padding:"14px 16px", background:stage.bg, borderRadius:10, border:`2px solid ${stage.color}44` }}>
+                <div style={{ fontSize:16, fontWeight:800, color:stage.color, marginBottom:6, fontFamily:"Georgia,serif" }}>{stage.symbol} {stage.name}</div>
+                <div style={{ fontSize:13, color:C.text, lineHeight:1.8 }}>{stage.familyDesc}</div>
+              </div>
+              <div style={{ padding:"12px 14px", background:C.gray0, borderRadius:10 }}>
+                <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>What the Staff Are Focusing On Right Now</div>
+                <div style={{ fontSize:13, color:C.text, lineHeight:1.7 }}>{stage.actionPrompt}</div>
+              </div>
+              {stage.trapWarning && (
+                <div style={{ padding:"12px 14px", background:C.orangelt, borderRadius:10, borderLeft:`4px solid ${C.orange}` }}>
+                  <div style={{ fontSize:11, fontWeight:800, color:C.orange, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>⚠ What to Watch For — Ask About This</div>
+                  <div style={{ fontSize:13, color:C.text, lineHeight:1.7 }}>{stage.trapWarning}</div>
+                </div>
+              )}
+              <div style={{ padding:"10px 14px", background:C.goldlt, borderRadius:9, fontSize:11, color:C.text, borderLeft:`3px solid ${C.gold}` }}>
+                <strong>As a family member, you can always request an IB review</strong> if you feel your loved one's plan needs updating. You don't need a specific reason — your concern is enough.
+              </div>
+            </div>
+          </Card>
+        )}
+
+        {tab==="plan" && (
+          <Card>
+            <CardHdr title="Care Plan — Family Summary" sub={`Plain-language version · BA: ${resident.ba}`}/>
+            <div style={{ padding:18 }}>
+              {resident.behaviorPlan ? (
+                <>
+                  <div style={{ padding:"14px 16px", background:C.greenlt, borderRadius:10, borderLeft:`4px solid ${C.green}`, fontSize:13, color:C.text, lineHeight:1.9, marginBottom:12 }}>
+                    {resident.behaviorPlan.plainDesc}
+                  </div>
+                  <div style={{ fontSize:11, color:C.text3, fontStyle:"italic" }}>
+                    This is a plain-language summary of the clinical behavior support plan. For the full clinical plan, contact {resident.ba} directly.
+                    You have the right to receive a copy of the full plan at any time.
+                  </div>
+                </>
+              ) : (
+                <div style={{ padding:24, textAlign:"center", color:C.text3 }}>
+                  <div style={{fontSize:28,marginBottom:8}}>📋</div>
+                  <div style={{fontSize:13}}>No behavior plan on file yet. Contact {resident.ba} to request one.</div>
+                </div>
+              )}
+            </div>
+          </Card>
         )}
 
         {tab==="wallet" && (
@@ -3222,6 +3325,122 @@ function ProcedureGuide({resident, staff}) {
   );
 }
 
+// ─── CRISIS REFERENCE — PCM / Baker Act / Prohibited ───────────────────────────
+function CrisisReference({resident}) {
+  const [activeTab, setActiveTab] = useState("pcm");
+  const stage = STAGES[resident.stage];
+  const ba = resident.bakerAct;
+
+  return (
+    <div style={{ display:"grid", gap:14 }}>
+      <ResidentBar resident={resident}/>
+
+      {/* Quick action bar */}
+      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:10 }}>
+        {[
+          ["🚨","Start Incident","Open incident log now"],
+          ["📞","Call Supervisor", HOMES[resident.home]?.supervisor?.split(" ")[0]||"On-call supervisor"],
+          ["🏥","911 — Medical","Seizure >3min · Not breathing"],
+        ].map(([icon,label,sub])=>(
+          <div key={label} style={{ padding:14, background:C.white, borderRadius:12, border:`2px solid ${C.red}33`, textAlign:"center", cursor:"pointer", boxShadow:"0 2px 8px rgba(0,0,0,.06)" }}>
+            <div style={{fontSize:26}}>{icon}</div>
+            <div style={{fontSize:12,fontWeight:800,color:C.red,marginTop:6}}>{label}</div>
+            <div style={{fontSize:10,color:C.text3,marginTop:2}}>{sub}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Tab switcher */}
+      <div style={{ display:"flex", gap:4, background:C.white, borderRadius:12, padding:4, boxShadow:"0 2px 8px rgba(0,0,0,.06)" }}>
+        {[["pcm","🤝 PCM De-escalation"],["baker","⚖ Baker Act"],["prohibited","⛔ Prohibited"]].map(([id,label])=>(
+          <div key={id} onClick={()=>setActiveTab(id)}
+            style={{ flex:1, padding:"10px 14px", borderRadius:9, textAlign:"center", cursor:"pointer", fontSize:12, fontWeight:700,
+              background:activeTab===id?C.navy:"transparent", color:activeTab===id?C.white:C.text3, transition:"all .15s" }}>
+            {label}
+          </div>
+        ))}
+      </div>
+
+      {/* PCM TAB */}
+      {activeTab==="pcm" && (
+        <Card>
+          <CardHdr title="🤝 PCM De-escalation — Follow In Order" sub={`Do not skip steps. Current stage: ${stage.symbol} ${stage.name}`}/>
+          <div style={{ padding:16, display:"grid", gap:8 }}>
+            {(resident.pcm||[]).map((step,i)=>(
+              <div key={i} style={{ padding:"12px 16px", background:C.gray0, borderRadius:10, display:"flex", gap:12, alignItems:"flex-start",
+                borderLeft:`4px solid ${i===0?C.green:i===(resident.pcm.length-1)?C.orange:C.navy}` }}>
+                <div style={{ width:28,height:28,borderRadius:"50%",background:C.navy,color:C.white,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:800,flexShrink:0 }}>{i+1}</div>
+                <div style={{ fontSize:13, color:C.text, lineHeight:1.7, flex:1 }}>{step}</div>
+              </div>
+            ))}
+            <div style={{ padding:"10px 14px", background:C.goldlt, borderRadius:9, fontSize:12, color:C.text, borderLeft:`3px solid ${C.gold}` }}>
+              <strong>Current Stage Guidance:</strong> {stage.actionPrompt}
+            </div>
+          </div>
+        </Card>
+      )}
+
+      {/* BAKER ACT TAB */}
+      {activeTab==="baker" && (
+        <Card>
+          <CardHdr title="⚖ Baker Act — Florida Statute 394.463" sub={ba?.statute||"FL Statute 394.463"}/>
+          <div style={{ padding:16, display:"grid", gap:12 }}>
+            {ba?.history
+              ? <div style={{ padding:"12px 14px", background:C.orangelt, borderRadius:10, border:`2px solid ${C.orange}44` }}>
+                  <div style={{ fontSize:11, fontWeight:800, color:C.orange, marginBottom:4 }}>📋 History</div>
+                  <div style={{ fontSize:13, color:C.text }}>{ba.historyNote}</div>
+                </div>
+              : <div style={{ padding:"12px 14px", background:C.greenlt, borderRadius:10 }}>
+                  <div style={{ fontSize:12, color:C.green, fontWeight:600 }}>✓ No Baker Act history on file</div>
+                </div>
+            }
+            {ba?.threshold && (
+              <div style={{ padding:"14px 16px", background:C.redlt, borderRadius:10, border:`2px solid ${C.red}44` }}>
+                <div style={{ fontSize:11, fontWeight:800, color:C.red, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>⚠ Threshold for Baker Act Consideration</div>
+                <div style={{ fontSize:13, color:C.text, lineHeight:1.8 }}>{ba.threshold}</div>
+              </div>
+            )}
+            {ba?.nonVerbalNote && (
+              <div style={{ padding:"14px 16px", background:C.purplelt, borderRadius:10, border:`2px solid ${C.purple}44` }}>
+                <div style={{ fontSize:11, fontWeight:800, color:C.purple, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>⚠ NON-VERBAL RESIDENT — Special Assessment Rules</div>
+                <div style={{ fontSize:13, color:C.text, lineHeight:1.8, fontWeight:600 }}>{ba.nonVerbalNote}</div>
+              </div>
+            )}
+            <div style={{ padding:"12px 14px", background:C.gray0, borderRadius:10 }}>
+              <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:8 }}>Required Notifications — Before or During Baker Act</div>
+              {["Supervisor — immediately upon considering Baker Act","BA — before initiating, unless immediate emergency","Guardian / family — as soon as safe to do so","Physician — if any medical concerns are present"].map((note,i)=>(
+                <div key={i} style={{ fontSize:12, color:C.text, marginBottom:4 }}>• {note}</div>
+              ))}
+            </div>
+          </div>
+        </Card>
+      )}
+
+      {/* PROHIBITED TAB */}
+      {activeTab==="prohibited" && (
+        <Card style={{ border:`2px solid ${C.red}44` }}>
+          <div style={{ padding:"12px 18px", background:C.red, borderRadius:"12px 12px 0 0" }}>
+            <div style={{ fontSize:14, fontWeight:800, color:C.white }}>⛔ PROHIBITED INTERVENTIONS — Civil Rights & APD Reportable</div>
+            <div style={{ fontSize:11, color:"rgba(255,255,255,.75)", marginTop:2 }}>Any prohibited intervention must be reported to APD within 1 hour — 65G-2.010</div>
+          </div>
+          <div style={{ padding:16, display:"grid", gap:8 }}>
+            {(resident.prohibited||[]).map((item,i)=>(
+              <div key={i} style={{ padding:"12px 16px", background:C.redlt, borderRadius:10, display:"flex", gap:10, alignItems:"flex-start", border:`1px solid ${C.red}22` }}>
+                <span style={{fontSize:18,flexShrink:0}}>⛔</span>
+                <div style={{ fontSize:13, color:C.red, fontWeight:700, lineHeight:1.6 }}>{item.replace("⛔ ","")}</div>
+              </div>
+            ))}
+            <div style={{ padding:"10px 14px", background:"#1A1814", borderRadius:9, fontSize:12, color:"#FFB3B3", fontWeight:600, lineHeight:1.7 }}>
+              If an owner, supervisor, or any person instructs you to use a prohibited procedure — you have the legal right and professional duty to refuse.
+              Report immediately: APD Abuse Hotline 1-800-962-2873 (anonymous, 24/7) or APD 1-866-APD-CARES.
+            </div>
+          </div>
+        </Card>
+      )}
+    </div>
+  );
+}
+
 // ─── CLOCK-OUT GATE MODAL ───────────────────────────────────────────────────────
 function ClockOutGate({session, residents, onConfirm, onCancel}) {
   const [step, setStep] = useState("controlled"); // controlled → handover → pin → done
@@ -3351,23 +3570,18 @@ function ClockOutGate({session, residents, onConfirm, onCancel}) {
   );
 }
 
-// ─── MAIN APP ───────────────────────────────────────────────────────────────────
-export default function App() {
-  const [session, setSession]           = useState(null);
-  const [adminSession, setAdminSession] = useState(null);
-  const [familyMember, setFamilyMember] = useState(null);
-  const [demoMode, setDemoMode]         = useState(false);
-  const [page, setPage]                 = useState("roster");
+// ─── STAFF PORTAL ───────────────────────────────────────────────────────────────
+function StaffPortal({session, onLogout, onShowClockOut}) {
+  const [page, setPage]                         = useState("roster");
   const [selectedResident, setSelectedResident] = useState(null);
-  const [lastActivity, setLastActivity] = useState(Date.now());
-  const [locked, setLocked]             = useState(false);
-  const [showClockOutGate, setShowClockOutGate] = useState(false);
+  const [locked, setLocked]                     = useState(false);
+  const [lastActivity, setLastActivity]         = useState(Date.now());
+  const residents = RESIDENTS_DB[session.home] || [];
 
   useEffect(() => {
-    if (!session) return;
     const interval = setInterval(() => { if (Date.now() - lastActivity > 15 * 60 * 1000) setLocked(true); }, 30000);
     return () => clearInterval(interval);
-  }, [session, lastActivity]);
+  }, [lastActivity]);
 
   const touch = useCallback(() => setLastActivity(Date.now()), []);
   useEffect(() => {
@@ -3377,76 +3591,56 @@ export default function App() {
     return () => { window.removeEventListener("mousemove",touch); window.removeEventListener("keydown",touch); window.removeEventListener("touchstart",touch); };
   }, [touch]);
 
-  // ── Portal routing ──────────────────────────────────────────────────────────
-  if (demoMode)    return <DemoMode onExit={()=>setDemoMode(false)}/>;
-  if (adminSession) return <AdminPortal admin={adminSession} onLogout={()=>setAdminSession(null)}/>;
-  if (familyMember) return <FamilyPortal member={familyMember} onLogout={()=>setFamilyMember(null)}/>;
-
-  if (!session) return (
-    <ClockIn
-      onClockIn={setSession}
-      onAdmin={setAdminSession}
-      onFamily={setFamilyMember}
-      onDemo={()=>setDemoMode(true)}
-    />
-  );
-
-  if (locked) return (
-    <div style={{ minHeight:"100vh", background:C.navy, display:"flex", alignItems:"center", justifyContent:"center" }}>
-      <div style={{ textAlign:"center", color:C.white }}>
-        <div style={{ fontSize:64, marginBottom:16 }}>🔒</div>
-        <div style={{ fontSize:22, fontWeight:800, fontFamily:"Georgia,serif", marginBottom:8 }}>Session Locked</div>
-        <div style={{ fontSize:14, color:"#8fb3d4", marginBottom:24 }}>15-minute inactivity. Client data protected.</div>
-        <Btn v="gold" onClick={()=>setLocked(false)}>Unlock — {session.staff.name}</Btn>
-      </div>
-    </div>
-  );
-
-  const residents = RESIDENTS_DB[session.home] || [];
-  const goToResident = (r, target) => { setSelectedResident(r); setPage(target || "facesheet"); };
+  const goToResident = (r, target) => { setSelectedResident(r); setPage(target||"facesheet"); };
 
   const NAV = [
     {id:"roster",    icon:"👥", label:"Residents"},
     {id:"facesheet", icon:"📋", label:"Face Sheet"},
-    {id:"meds",      icon:"💊", label:"Meds", badge:residents.length},
+    {id:"meds",      icon:"💊", label:"Meds"},
+    {id:"behavior",  icon:"🧠", label:"Behavior Plan"},
+    {id:"pcm",       icon:"🤝", label:"PCM / Crisis"},
+    {id:"nsdt",      icon:"✦",  label:"NSDT Observe"},
     {id:"commlog",   icon:"📝", label:"Comm Log"},
     {id:"incident",  icon:"🚨", label:"Incident"},
-    {id:"procedure", icon:"✦",  label:"AI Guide"},
+    {id:"procedure", icon:"📖", label:"AI Guide"},
     {id:"analytics", icon:"📊", label:"Analytics"},
     {id:"handover",  icon:"🔄", label:"Handover"},
     {id:"wallet",    icon:"💰", label:"Wallet"},
     {id:"schedule",  icon:"📅", label:"Schedule"},
   ];
 
-  const RESIDENT_PAGES = ["facesheet","meds","incident","wallet"];
+  const RESIDENT_PAGES = ["facesheet","meds","behavior","pcm","nsdt","incident","wallet"];
+
+  if (locked) return (
+    <div style={{ minHeight:"100vh", background:C.navy, display:"flex", alignItems:"center", justifyContent:"center" }}>
+      <div style={{ textAlign:"center", color:C.white }}>
+        <div style={{ fontSize:64, marginBottom:16 }}>🔒</div>
+        <div style={{ fontSize:22, fontWeight:800, fontFamily:"Georgia,serif", marginBottom:8 }}>Session Locked</div>
+        <div style={{ fontSize:14, color:"#8fb3d4", marginBottom:24 }}>15-minute inactivity — client data protected.</div>
+        <Btn v="gold" onClick={()=>{ setLocked(false); setLastActivity(Date.now()); }}>Unlock — {session.staff.name}</Btn>
+      </div>
+    </div>
+  );
 
   return (
     <div style={{ fontFamily:"'DM Sans',system-ui,sans-serif", background:C.gray0, minHeight:"100vh", color:C.text }}>
-      {showClockOutGate && (
-        <ClockOutGate
-          session={session}
-          residents={residents}
-          onConfirm={(incomingStaff)=>{ setShowClockOutGate(false); setSession(null); }}
-          onCancel={()=>setShowClockOutGate(false)}
-        />
-      )}
       <LiabilityBanner/>
       {/* TOPBAR */}
       <div style={{ background:`linear-gradient(135deg,${C.navy} 0%,${C.navy2} 100%)`,
         padding:"0 20px", height:54, display:"flex", alignItems:"center", justifyContent:"space-between",
         position:"sticky", top:0, zIndex:100, boxShadow:"0 2px 20px rgba(0,0,0,.35)" }}>
         <div style={{ display:"flex", alignItems:"center", gap:12 }}>
-          <div style={{ width:34, height:34, background:C.gold, borderRadius:9, display:"flex", alignItems:"center", justifyContent:"center", fontWeight:900, fontSize:16, color:C.navy, fontFamily:"Georgia,serif" }}>L</div>
+          <div style={{ width:34,height:34,background:C.gold,borderRadius:9,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:900,fontSize:16,color:C.navy,fontFamily:"Georgia,serif" }}>L</div>
           <div>
             <div style={{ fontWeight:800, fontSize:14, color:C.white, fontFamily:"Georgia,serif" }}>LUMINARK APD OVERWATCH</div>
-            <div style={{ fontSize:11, color:"#7aA4C4" }}>Staff Portal · {session.home} · {session.staff.name} {session.isOvertime?"· ⚡ OT Shift":""}</div>
+            <div style={{ fontSize:11, color:"#7aA4C4" }}>Staff Portal · {session.home} · {session.staff.name}{session.isOvertime?" · ⚡ OT Shift":""}</div>
           </div>
         </div>
         <div style={{ display:"flex", gap:8, alignItems:"center" }}>
           <div style={{ padding:"4px 12px", background:"rgba(255,255,255,.1)", borderRadius:20, fontSize:11, color:"#8fb3d4" }}>
             🕐 {new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})} · Shift Active
           </div>
-          <Btn v="ghost" small onClick={()=>setShowClockOutGate(true)} style={{color:"#8fb3d4",borderColor:"#8fb3d4"}}>🔐 Clock Out</Btn>
+          <Btn v="ghost" small onClick={onShowClockOut} style={{color:"#8fb3d4",borderColor:"#8fb3d4"}}>🔐 Clock Out</Btn>
         </div>
       </div>
 
@@ -3464,14 +3658,12 @@ export default function App() {
                   fontSize:13, fontWeight:page===item.id?700:400 }}>
                 <span style={{fontSize:14}}>{item.icon}</span>
                 <span style={{flex:1}}>{item.label}</span>
-                {item.badge > 0 && <span style={{ background:C.redmed, color:C.white, fontSize:10, fontWeight:800, padding:"2px 6px", borderRadius:10 }}>{item.badge}</span>}
               </div>
             ))}
           </div>
-
-          {/* Resident Quick List */}
+          {/* Resident quick list */}
           <div style={{ borderTop:`1px solid ${C.navy3}`, padding:"10px 0" }}>
-            <div style={{ padding:"0 14px 6px", fontSize:10, fontWeight:700, color:"#3a6080", textTransform:"uppercase", letterSpacing:.8 }}>On Shift</div>
+            <div style={{ padding:"0 14px 6px", fontSize:10, fontWeight:700, color:"#3a6080", textTransform:"uppercase", letterSpacing:.8 }}>On Shift — {session.home}</div>
             {residents.map(r=>{
               const s = STAGES[r.stage];
               return (
@@ -3481,8 +3673,8 @@ export default function App() {
                     borderLeft:selectedResident?.id===r.id?`3px solid ${C.gold}`:"3px solid transparent" }}>
                   <span style={{fontSize:18}}>{r.photo}</span>
                   <div style={{flex:1,overflow:"hidden"}}>
-                    <div style={{ fontSize:11, fontWeight:700, color:selectedResident?.id===r.id?C.gold:C.white, whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis" }}>{r.name}</div>
-                    <div style={{ fontSize:10, color:s.color, fontWeight:600 }}>S{s.id} · {s.name}</div>
+                    <div style={{ fontSize:11,fontWeight:700,color:selectedResident?.id===r.id?C.gold:C.white,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis" }}>{r.name}</div>
+                    <div style={{ fontSize:10,color:s.color,fontWeight:600 }}>{s.symbol} {s.name}</div>
                   </div>
                 </div>
               );
@@ -3492,8 +3684,7 @@ export default function App() {
 
         {/* MAIN CONTENT */}
         <div style={{ overflowY:"auto", padding:20 }}>
-          {/* Resident selector for resident-specific pages */}
-          {RESIDENT_PAGES.includes(page) && (
+          {RESIDENT_PAGES.includes(page) && residents.length > 1 && (
             <div style={{ display:"flex", gap:8, marginBottom:16, flexWrap:"wrap" }}>
               {residents.map(r=>(
                 <div key={r.id} onClick={()=>setSelectedResident(r)}
@@ -3502,8 +3693,8 @@ export default function App() {
                     border:`2px solid ${selectedResident?.id===r.id?C.gold:C.gray2}`, transition:"all .15s" }}>
                   <span style={{fontSize:18}}>{r.photo}</span>
                   <div>
-                    <div style={{ fontSize:12, fontWeight:700, color:selectedResident?.id===r.id?C.white:C.text }}>{r.name}</div>
-                    <div style={{ fontSize:10, color:selectedResident?.id===r.id?"#8fb3d4":C.text3 }}>S{r.stage} · {r.home}</div>
+                    <div style={{ fontSize:12,fontWeight:700,color:selectedResident?.id===r.id?C.white:C.text }}>{r.name}</div>
+                    <div style={{ fontSize:10,color:selectedResident?.id===r.id?"#8fb3d4":C.text3 }}>{STAGES[r.stage].symbol} {r.home}</div>
                   </div>
                 </div>
               ))}
@@ -3514,8 +3705,8 @@ export default function App() {
           {page==="roster" && (
             <div>
               <div style={{ marginBottom:18 }}>
-                <div style={{ fontSize:18, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif", marginBottom:4 }}>Resident Roster — {session.home}</div>
-                <div style={{ fontSize:13, color:C.text3 }}>Showing residents at your current home only. Access is active for this shift only.</div>
+                <div style={{ fontSize:18,fontWeight:800,color:C.navy,fontFamily:"Georgia,serif",marginBottom:4 }}>Resident Roster — {session.home}</div>
+                <div style={{ fontSize:13,color:C.text3 }}>Showing residents at your current home. Access restricted to active shift only.</div>
               </div>
               <div style={{ display:"grid", gap:10 }}>
                 {residents.map(r=>{
@@ -3524,24 +3715,25 @@ export default function App() {
                   return (
                     <Card key={r.id}>
                       <div style={{ padding:16, display:"flex", gap:14, alignItems:"center" }}>
-                        <div style={{ fontSize:48, lineHeight:1, background:s.bg, borderRadius:12, padding:"6px 10px", border:`2px solid ${s.color}33`, cursor:"pointer" }}
+                        <div style={{ fontSize:48,lineHeight:1,background:s.bg,borderRadius:12,padding:"6px 10px",border:`2px solid ${s.color}33`,cursor:"pointer" }}
                           onClick={()=>goToResident(r,"facesheet")}>{r.photo}</div>
                         <div style={{flex:1}}>
-                          <div style={{ fontSize:17, fontWeight:800, color:C.text, marginBottom:4, fontFamily:"Georgia,serif" }}>{r.name}</div>
-                          <div style={{ display:"flex", gap:8, flexWrap:"wrap" }}>
-                            <Tag label={`S${s.id}: ${s.name}`} color={s.color} bg={s.bg} small/>
+                          <div style={{ fontSize:17,fontWeight:800,color:C.text,marginBottom:4,fontFamily:"Georgia,serif" }}>{r.name}</div>
+                          <div style={{ display:"flex",gap:8,flexWrap:"wrap" }}>
+                            <Tag label={`${s.symbol} ${s.name}`} color={s.color} bg={s.bg} small/>
                             <Tag label={`Age ${r.age}`} color={C.text2} bg={C.gray0} small/>
                             <Tag label={r.dietaryTexture} color={C.teal} bg={C.teallt} small/>
                             {r.seizureHistory && <Tag label="⚡ Seizure Hx" color={C.white} bg={C.red} small/>}
                             {lowMedAlerts>0 && <Tag label={`⚠ ${lowMedAlerts} Med Low`} color={C.white} bg={C.orange} small/>}
-                            {r.allergies.map(a=><Tag key={a} label={`⚠ ${a}`} color={C.white} bg={C.redmed} small/>)}
+                            {r.allergies.slice(0,2).map(a=><Tag key={a} label={`⚠ ${a}`} color={C.white} bg={C.redmed} small/>)}
+                            {s.tension>=8 && <Tag label={`Tension ${s.tension}/10`} color={C.white} bg={C.red} small/>}
                           </div>
                         </div>
-                        <div style={{ display:"flex", gap:8, flexWrap:"wrap", justifyContent:"flex-end" }}>
+                        <div style={{ display:"flex",gap:8,flexWrap:"wrap",justifyContent:"flex-end" }}>
                           <Btn v="primary" small onClick={()=>goToResident(r,"facesheet")}>Face Sheet</Btn>
-                          <Btn v="gold" small onClick={()=>goToResident(r,"meds")}>💊 Meds</Btn>
-                          <Btn v="teal" small onClick={()=>goToResident(r,"wallet")}>💰 Wallet</Btn>
-                          <Btn v="red" small onClick={()=>goToResident(r,"incident")}>🚨 Incident</Btn>
+                          <Btn v="gold"    small onClick={()=>goToResident(r,"meds")}>💊 Meds</Btn>
+                          <Btn v="teal"    small onClick={()=>goToResident(r,"behavior")}>🧠 Plan</Btn>
+                          <Btn v="red"     small onClick={()=>goToResident(r,"pcm")}>🤝 Crisis</Btn>
                         </div>
                       </div>
                     </Card>
@@ -3552,14 +3744,17 @@ export default function App() {
           )}
 
           {page==="facesheet" && selectedResident && <FaceSheet resident={selectedResident}/>}
-          {page==="meds" && selectedResident && <MedAdmin resident={selectedResident}/>}
-          {page==="incident" && selectedResident && <IncidentLog resident={selectedResident} staff={session.staff}/>}
+          {page==="meds"      && selectedResident && <MedAdmin resident={selectedResident}/>}
+          {page==="behavior"  && selectedResident && <BehaviorPlanViewer resident={selectedResident}/>}
+          {page==="pcm"       && selectedResident && <CrisisReference resident={selectedResident}/>}
+          {page==="nsdt"      && selectedResident && <NSDTLogger resident={selectedResident} onClassified={()=>{}}/>}
+          {page==="incident"  && selectedResident && <IncidentLog resident={selectedResident} staff={session.staff}/>}
+          {page==="wallet"    && selectedResident && <ResidentWallet resident={selectedResident}/>}
           {page==="procedure" && <ProcedureGuide resident={selectedResident} staff={session.staff}/>}
-          {page==="commlog" && <CommunicationLog session={session}/>}
+          {page==="commlog"   && <CommunicationLog session={session}/>}
           {page==="analytics" && <AnalyticsDashboard session={session}/>}
-          {page==="handover" && <ShiftHandover session={session} residents={residents}/>}
-          {page==="wallet" && selectedResident && <ResidentWallet resident={selectedResident}/>}
-          {page==="schedule" && <ScheduleView staff={session.staff} session={session}/>}
+          {page==="handover"  && <ShiftHandover session={session} residents={residents}/>}
+          {page==="schedule"  && <ScheduleView staff={session.staff} session={session}/>}
 
           {RESIDENT_PAGES.includes(page) && !selectedResident && (
             <div style={{ textAlign:"center", padding:48, color:C.text3 }}>
@@ -3570,5 +3765,47 @@ export default function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+// ─── MAIN APP ───────────────────────────────────────────────────────────────────
+export default function App() {
+  const [session, setSession]           = useState(null);
+  const [adminSession, setAdminSession] = useState(null);
+  const [familyMember, setFamilyMember] = useState(null);
+  const [demoMode, setDemoMode]         = useState(false);
+  const [showClockOutGate, setShowClockOutGate] = useState(false);
+
+  if (demoMode)     return <DemoMode onExit={()=>setDemoMode(false)}/>;
+  if (adminSession) return <AdminPortal admin={adminSession} onLogout={()=>setAdminSession(null)}/>;
+  if (familyMember) return <FamilyPortal member={familyMember} onLogout={()=>setFamilyMember(null)}/>;
+
+  if (!session) return (
+    <ClockIn
+      onClockIn={setSession}
+      onAdmin={setAdminSession}
+      onFamily={setFamilyMember}
+      onDemo={()=>setDemoMode(true)}
+    />
+  );
+
+  const residents = RESIDENTS_DB[session.home] || [];
+
+  return (
+    <>
+      {showClockOutGate && (
+        <ClockOutGate
+          session={session}
+          residents={residents}
+          onConfirm={()=>{ setShowClockOutGate(false); setSession(null); }}
+          onCancel={()=>setShowClockOutGate(false)}
+        />
+      )}
+      <StaffPortal
+        session={session}
+        onLogout={()=>setSession(null)}
+        onShowClockOut={()=>setShowClockOutGate(true)}
+      />
+    </>
   );
 }
