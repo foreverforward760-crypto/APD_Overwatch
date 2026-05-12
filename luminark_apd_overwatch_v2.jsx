@@ -2044,7 +2044,54 @@ function BAPortal({onLogout}) {
                 <Card key={lbl}><div style={{ padding:20 }}><div style={{ fontSize:11, fontWeight:700, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>{lbl}</div><div style={{ fontSize:32, fontWeight:800, color:col, fontFamily:"Georgia,serif" }}>{val}</div><div style={{ fontSize:12, color:C.text3, marginTop:4 }}>{sub}</div></div></Card>
               ))}
             </div>
+
+            {/* BEI Radar — multidimensional BA comparison */}
             <Card>
+              <CardHdr title="BEI Radar — All Behavior Analysts" sub="Visual comparison across 4 dimensions · Low scores + stagnation = fraud pattern"/>
+              <div style={{ padding:"14px 20px", display:"grid", gridTemplateColumns:"1fr 1fr", gap:0, alignItems:"center" }}>
+                <ResponsiveContainer width="100%" height={260}>
+                  <RadarChart data={[
+                    { dim:"Client Progress",      "Sarah P.":78, "Dr. James R.":28, "Tanya W.":24 },
+                    { dim:"Plan Revision",         "Sarah P.":92, "Dr. James R.":31, "Tanya W.":18 },
+                    { dim:"Plan Accessibility",    "Sarah P.":73, "Dr. James R.":41, "Tanya W.":58 },
+                    { dim:"Overall BEI",           "Sarah P.":81, "Dr. James R.":42, "Tanya W.":38 },
+                  ]}>
+                    <PolarGrid stroke={C.gray2}/>
+                    <PolarAngleAxis dataKey="dim" tick={{fontSize:10, fill:C.text3}}/>
+                    <Radar name="Sarah P., BCBA"  dataKey="Sarah P."      stroke={C.green}  fill={C.green}  fillOpacity={0.15}/>
+                    <Radar name="Dr. James R."    dataKey="Dr. James R."  stroke={C.red}    fill={C.red}    fillOpacity={0.15}/>
+                    <Radar name="Tanya W., BCaBA" dataKey="Tanya W."      stroke={C.orange} fill={C.orange} fillOpacity={0.15}/>
+                    <Legend/>
+                    <Tooltip/>
+                  </RadarChart>
+                </ResponsiveContainer>
+                <div style={{ padding:"0 14px", display:"grid", gap:10 }}>
+                  {BEI_DATA.map(ba=>{
+                    const col = ba.bei>=70?C.green:ba.bei>=50?C.gold:C.red;
+                    const bg  = ba.bei>=70?C.greenlt:ba.bei>=50?C.goldlt:C.redlt;
+                    return (
+                      <div key={ba.ba} style={{ padding:"10px 14px", background:bg, borderRadius:10, border:`2px solid ${col}33` }}>
+                        <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:4 }}>
+                          <div style={{ fontSize:12, fontWeight:800, color:col }}>{ba.ba}</div>
+                          <div style={{ fontSize:16, fontWeight:800, color:col }}>{ba.bei}</div>
+                        </div>
+                        <div style={{ height:5, background:"rgba(0,0,0,.08)", borderRadius:3 }}>
+                          <div style={{ height:5, borderRadius:3, background:col, width:`${ba.bei}%` }}/>
+                        </div>
+                        {ba.flag==="fraud" && (
+                          <div style={{ fontSize:11, color:col, fontWeight:700, marginTop:5 }}>
+                            ⚠ {ba.stagnation>0?`${ba.stagnation} stagnation flag${ba.stagnation>1?"s":""}  detected`:"Data integrity anomaly"}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                  <div style={{ padding:"8px 12px", background:C.gray0, borderRadius:9, fontSize:11, color:C.text3 }}>
+                    BEI &lt; 50 with stagnation flags → automatic APD review notification
+                  </div>
+                </div>
+              </div>
+            </Card>
               <CardHdr title="BEI by Stage — Behavioral Episode Incidents"/>
               <div style={{ padding:"14px 20px" }}>
                 <ResponsiveContainer width="100%" height={200}>
