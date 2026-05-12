@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import {
   LineChart, Line, BarChart, Bar, PieChart, Pie, Cell,
-  AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
-  Legend, ResponsiveContainer
+  AreaChart, Area, RadarChart, Radar, PolarGrid, PolarAngleAxis,
+  XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from "recharts";
 
 // ─── DESIGN TOKENS ─────────────────────────────────────────────────────────────
@@ -260,7 +260,16 @@ const RESIDENTS_DB = {
       pcm:["Verbal redirection — calm, flat tone, no questions","Personal space / step back at least 6 feet","Offer preferred fidget item (top drawer, desk)","Supportive coaching: name the feeling out loud ('I can see this is hard')"],
       prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Any hold involving neck, head, or hair","⛔ Blocking doorways as behavioral consequence","⛔ Removing AAC picture board as consequence","⛔ Shouting, threatening, or commanding voice"],
       bakerAct:{ statute:"FL Statute 394.463", history:true, historyNote:"Marcus has 2 prior voluntary Baker Act evaluations (Jan 2023, Aug 2024). Both resolved with med adjustment — no involuntary holds on record.", threshold:"Consider Baker Act consult if: refuses all food/water 24+ hrs AND expresses active hopelessness AND shows paradoxical sudden calm after sustained distress period.", nonVerbalNote:null },
-      behaviorPlan:{ clinicalDesc:"Antecedent modification + DRA (Differential Reinforcement of Alternative Behavior). Target behavior: SIB (hand-biting, frequency ≥3/hr). Primary antecedent: auditory overstimulation ≥65dB + concurrent demand task. Reinforcement schedule: FR3 — preferred break after every 3rd task completion. Extinction protocol in effect.", plainDesc:"Before loud activities or hard tasks, warn Marcus 2 minutes ahead. Offer his headphones immediately — don't wait for him to ask. Reward every 3rd task with a short break (his choice). If he starts to bite his hand, calmly offer the blue chew toy in the top desk drawer as a replacement. Never take the chew toy away as punishment." },
+      behaviorPlan:{ 
+        clinicalDesc:"Target behaviors: Physical Aggression (hitting, kicking, throwing objects — function: escape/demand avoidance + sensory overload) and Elopement (leaving without authorization — function: escape/sensory overload). Intervention: DRA protocol, preferred item NCR schedule VR-5 during high-risk antecedent periods, planned ignoring for lower-intensity iterations, active redirection for escalating topographies. FCT targeting picture-exchange outdoor access request. Environmental: all exterior doors double-lock protocol. Measurement: event recording per occurrence with topography, duration, intensity 1–5, antecedent coded.", 
+        plainDesc:"What to do when Marcus starts to escalate: (1) BEFORE it happens — watch for early signs: rocking faster, humming loudly, covering ears. These mean he is getting overwhelmed. (2) During low-level escalation: offer headphones immediately. Move toward him slowly. Say calmly: 'Marcus, headphones?' Give him space. (3) If already escalating: create distance. Remove other residents. Stay calm and quiet. No instructions. Wait. (4) After: log exactly what you saw before (trigger), exactly what he did, exactly what you did. Write the specific actions — not 'was aggressive.' (5) Do NOT raise your voice, physically block him, or remove preferred items as consequence. ELOPEMENT: all exterior doors stay double-locked. Take Marcus outside 3x daily for 15 min — this reduces the urge to escape. Teach him to use his 'outside' picture card.",
+        certificationHints:[
+          {term:"DRA (Differential Reinforcement of Alternative Behavior)", plain:"Rewarding a replacement behavior instead — teaching Marcus to tap the table instead of hitting, and rewarding the tap"},
+          {term:"Non-contingent reinforcement (NCR)", plain:"Giving preferred items on a schedule regardless of behavior — this reduces the motivation to act out to get them"},
+          {term:"Escape-motivated behavior", plain:"The behavior happens because it gets Marcus out of something he does not want to do"},
+          {term:"Inter-response time (IRT)", plain:"The amount of calm time between behaviors — we are measuring how long the good stretches are getting"},
+        ],
+      },
     },
     {
       id:"R003", name:"Lydia Mercado", dob:"2001-07-22", age:24,
@@ -401,7 +410,17 @@ const RESIDENTS_DB = {
       pcm:["ALWAYS approach from the front — never from behind","Allow AAC device response time — minimum 15 seconds before prompting","Low-stimulation redirection: dim lights, reduce noise before approach","No physical prompt without verbal announcement first"],
       prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Removing AAC device for any reason during a behavioral episode","⛔ Rapid approach or sudden touch","⛔ More than 2 staff members in room during de-escalation (increases arousal)"],
       bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history. Non-verbal — standard assessment criteria do not apply directly.", threshold:null, nonVerbalNote:"⚠ CRITICAL: Ramon cannot self-report distress verbally. Baker Act threshold assessment must use BEHAVIORAL indicators ONLY: sustained SIB (head-banging, hand-biting >5 min), complete food/fluid refusal 24+ hrs, loss of seizure medication compliance. DO NOT use verbal consent criteria — consult BA and physician immediately for any crisis assessment." },
-      behaviorPlan:{ clinicalDesc:"FCT (Functional Communication Training) via AAC device. Primary function of challenging behavior: escape from demand + sensory aversion (auditory). Behavior: aggression (hitting, biting) — function: escape. Replacement behavior: AAC 'break' card. DRO schedule active. Seizure medication compliance is concurrent behavioral target.", plainDesc:"Ramon communicates through his AAC device — it is never optional. If he hits the 'break' button, the task stops immediately. No exceptions. Loud noise is his #1 trigger — when you walk in and the TV or music is too loud, turn it down before you do anything else. Approach slowly, announce yourself by name, and give him time to respond." },
+      behaviorPlan:{ 
+        clinicalDesc:"Target behaviors: SIB (head-banging, hand-biting, face-hitting — function: automatic reinforcement/sensory + escape/avoidance during demand contexts; seizure-related SIB distinguished by post-ictal observation protocol) and Physical Aggression (hitting, biting staff — function: escape). Intervention: sensory integration protocol with scheduled proprioceptive input (weighted vest 20 min 3x daily). Environmental modification: padded surfaces in high-risk zones. FCT via AAC device targeting 'I need a break' and 'This is too much.' RIRD only if AAC unavailable. DRO schedule active. Measurement: duration recording with intensity 1–3, antecedent coded, seizure cross-referenced.",
+        plainDesc:"How to support Ramon during self-injury: (1) FIRST — reduce the overwhelming thing immediately. Lower TV/music. Move to quieter space. Give more physical space. (2) Offer his AAC device — point to it and say 'Ramon, break?' Give him the chance to communicate. (3) If SIB continues: calmly guide away from hard surfaces using minimal physical contact. The padded area in his room is available. (4) Do NOT raise your voice, add demands, or try to hold him still — restraint escalates the behavior. (5) SEIZURE AWARENESS: if the SIB looks different — rhythmic, unresponsive to voice, eyes different — follow the seizure protocol immediately. (6) After: document how long it lasted, what you think triggered it, and how it resolved. Any visible injury requires immediate medical documentation and supervisor notification before end of shift.",
+        certificationHints:[
+          {term:"SIB (Self-Injurious Behavior)", plain:"When a person hurts themselves — head-banging, biting, hitting"},
+          {term:"Automatic reinforcement", plain:"The behavior feels good or soothing to the person doing it — the reward comes from inside, not from staff response"},
+          {term:"FCT (Functional Communication Training)", plain:"Teaching a safe replacement way to say what the behavior was saying — like using a picture card to say 'I need a break'"},
+          {term:"RIRD (Response Interruption and Redirection)", plain:"Gently interrupting the behavior and immediately offering something else to do"},
+          {term:"Post-ictal state", plain:"The period after a seizure when a person is often confused, sleepy, or behaving differently than normal"},
+        ],
+      },
     },
   ],
 };
@@ -830,6 +849,27 @@ Format as plain prose. No headers. No bullet points.`}],
     </Card>
   );
 }
+
+const BEI_DATA = [
+  { ba:"Sarah P., BCBA",  clients:3, bei:81, progress:78, revision:92, accessibility:73, stagnation:0,  flag:"good" },
+  { ba:"Dr. James R.",    clients:3, bei:42, progress:28, revision:31, accessibility:41, stagnation:2,  flag:"fraud" },
+  { ba:"Tanya W., BCaBA", clients:2, bei:38, progress:24, revision:18, accessibility:58, stagnation:1,  flag:"fraud" },
+];
+
+const ABA_JARGON = [
+  ["Antecedent",              "What happened right before (the trigger)",                               "e.g. TV turned up loud before Marcus started yelling"],
+  ["Behavior",                "What the resident actually did — describe exactly",                       "e.g. Yelled for 3 min, threw a cup — not 'was aggressive'"],
+  ["Consequence",             "What happened right after",                                               "e.g. Staff turned off TV; Marcus stopped within 1 minute"],
+  ["Positive Reinforcement",  "Giving something good to make a behavior happen more",                   "e.g. Tablet time after Marcus uses words instead of yelling"],
+  ["Negative Reinforcement",  "Removing something unpleasant to encourage a behavior",                  "e.g. Allowing break from loud activity when requested calmly"],
+  ["Extinction",              "Stopping giving attention to make a behavior fade",                       "e.g. Don't respond to yelling for snacks — only follow plan"],
+  ["Eloping / Elopement",     "Running away / leaving without permission",                               "e.g. 'Marcus left the home without telling anyone'"],
+  ["FBA",                     "Finding out WHY the behavior is happening",                               "e.g. Is Marcus hitting to escape, get attention, or pain?"],
+  ["DRA",                     "Rewarding a replacement behavior instead",                                "e.g. Reward table-tapping instead of yelling"],
+  ["Generalization",          "Using the skill in different places",                                     "e.g. Marcus asks for juice at home AND at the restaurant"],
+  ["LRE",                     "The most independent living situation possible",                          "e.g. Step-down from IB to standard group home"],
+  ["PCM",                     "Approved physical/behavioral crisis techniques",                          "e.g. Only the specific techniques listed on the resident's plan"],
+];
 
 // ─── AI CALL ───────────────────────────────────────────────────────────────────
 async function callClaude(messages, system) {
@@ -1631,7 +1671,7 @@ function DemoMode({onExit}) {
 }
 
 // ─── CLOCK IN ──────────────────────────────────────────────────────────────────
-function ClockIn({onClockIn, onAdmin, onFamily, onDemo}) {
+function ClockIn({onClockIn, onAdmin, onFamily, onBA, onDemo}) {
   const [portal, setPortal] = useState(null); // null | "staff" | "admin" | "family"
   const [staffId, setStaffId] = useState("S001");
   const [pin, setPin]         = useState("");
@@ -1670,10 +1710,11 @@ function ClockIn({onClockIn, onAdmin, onFamily, onDemo}) {
   const staff = STAFF_DB[staffId];
 
   const PORTALS = [
-    { id:"staff",  icon:"🏥", label:"Staff Portal",    sub:"DSP / Lead DSP clock-in",     color:C.navy  },
-    { id:"admin",  icon:"🎯", label:"Manager Portal",  sub:"Program Manager / Director",  color:C.teal  },
-    { id:"family", icon:"👨‍👩‍👧", label:"Family Portal",  sub:"Guardian / family member",     color:C.green },
-    { id:"demo",   icon:"📊", label:"Investor Demo",   sub:"Platform walkthrough & pitch", color:C.gold  },
+    { id:"staff",  icon:"🏥", label:"Staff Portal",          sub:"DSP / Lead DSP clock-in",            color:C.navy   },
+    { id:"admin",  icon:"🎯", label:"Manager Portal",         sub:"Program Manager / Director",         color:C.teal   },
+    { id:"ba",     icon:"🧠", label:"Behavior Analyst Portal", sub:"BCBA / BCaBA plan management",       color:C.purple },
+    { id:"family", icon:"👨‍👩‍👧", label:"Family Portal",         sub:"Guardian / family member",            color:C.green  },
+    { id:"demo",   icon:"📊", label:"Investor Demo",          sub:"Platform walkthrough & pitch",       color:C.gold   },
   ];
 
   return (
@@ -1691,7 +1732,7 @@ function ClockIn({onClockIn, onAdmin, onFamily, onDemo}) {
         {!portal && (
           <div style={{ display:"grid", gap:10 }}>
             {PORTALS.map(p=>(
-              <div key={p.id} onClick={()=>{ setPortal(p.id); clearError(); if(p.id==="demo") onDemo(); }}
+              <div key={p.id} onClick={()=>{ setPortal(p.id); clearError(); if(p.id==="demo") onDemo(); if(p.id==="ba") onBA(); }}
                 style={{ padding:"18px 22px", background:"rgba(255,255,255,.07)", borderRadius:14, cursor:"pointer",
                   border:`2px solid ${portal===p.id?p.color:"rgba(255,255,255,.1)"}`,
                   display:"flex", gap:16, alignItems:"center", transition:"all .15s",
@@ -1845,15 +1886,36 @@ function BehaviorPlanViewer({resident}) {
         {view==="staff" ? (
           <div>
             <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:8 }}>What to do — plain language</div>
-            <div style={{ fontSize:14, color:C.text, lineHeight:1.9, padding:"14px 16px", background:C.gray0, borderRadius:10, borderLeft:`4px solid ${C.gold}` }}>{plan.plainDesc}</div>
-            <div style={{ marginTop:10, padding:"8px 12px", background:C.teallt, borderRadius:8, fontSize:12, color:C.teal, fontWeight:600 }}>
-              💡 Test Hint: Your BA calls this plan "FCT" or "DRA" on the APD certification exam. In real life, it just means what the plain-language description above says.
-            </div>
+            <div style={{ fontSize:14, color:C.text, lineHeight:1.9, padding:"14px 16px", background:C.gray0, borderRadius:10, borderLeft:`4px solid ${C.gold}`, whiteSpace:"pre-line" }}>{plan.plainDesc}</div>
+            {plan.certificationHints?.length > 0 && (
+              <div style={{ marginTop:12 }}>
+                <div style={{ fontSize:11, fontWeight:800, color:C.teal, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>💡 APD Exam Prep — What These Terms Mean in Real Life</div>
+                <div style={{ display:"grid", gap:6 }}>
+                  {plan.certificationHints.map((h,i)=>(
+                    <div key={i} style={{ padding:"9px 12px", background:C.teallt, borderRadius:8, display:"flex", gap:12, alignItems:"flex-start" }}>
+                      <div style={{ minWidth:4, width:4, borderRadius:2, background:C.teal, alignSelf:"stretch", flexShrink:0 }}/>
+                      <div>
+                        <div style={{ fontSize:11, fontWeight:800, color:C.teal, marginBottom:2 }}>{h.term}</div>
+                        <div style={{ fontSize:12, color:C.text }}>{h.plain}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ marginTop:8, fontSize:11, color:C.text3, fontStyle:"italic" }}>
+                  Switch to Clinical View to see these terms in the full plan — useful for certification exam study.
+                </div>
+              </div>
+            )}
+            {!plan.certificationHints?.length && (
+              <div style={{ marginTop:10, padding:"8px 12px", background:C.teallt, borderRadius:8, fontSize:12, color:C.teal, fontWeight:600 }}>
+                💡 Test Hint: Your BA calls this plan "FCT" or "DRA" on the APD certification exam. In real life, it just means what the plain-language description above says.
+              </div>
+            )}
           </div>
         ) : (
           <div>
             <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:8 }}>Clinical Description — BA / Supervisor View</div>
-            <div style={{ fontSize:13, color:C.text2, lineHeight:1.8, padding:"14px 16px", background:"#0D1F3508", borderRadius:10, borderLeft:`4px solid ${C.navy}`, fontFamily:"monospace" }}>{plan.clinicalDesc}</div>
+            <div style={{ fontSize:13, color:C.text2, lineHeight:1.8, padding:"14px 16px", background:"#0D1F3508", borderRadius:10, borderLeft:`4px solid ${C.navy}`, fontFamily:"monospace", whiteSpace:"pre-line" }}>{plan.clinicalDesc}</div>
             <div style={{ marginTop:10, padding:"8px 12px", background:C.goldlt, borderRadius:8, fontSize:12, color:C.gold, fontWeight:600 }}>⚠ This view is for BA/supervisor reference. Staff should use the "Staff View" tab during their shift.</div>
           </div>
         )}
@@ -1881,7 +1943,7 @@ function BAPortal({onLogout}) {
     setScoring(p=>({...p,[r.id]:false}));
   };
 
-  const TABS=[{id:"caseload",icon:"👥",label:"Caseload & Stages"},{id:"plans",icon:"📋",label:"Plan Scorer"},{id:"effectiveness",icon:"📊",label:"Effectiveness"}];
+  const TABS=[{id:"caseload",icon:"👥",label:"Caseload & Stages"},{id:"plans",icon:"📋",label:"Plan Scorer"},{id:"effectiveness",icon:"📊",label:"Effectiveness"},{id:"jargon",icon:"🗣",label:"Jargon Translator"}];
 
   return (
     <div style={{ fontFamily:"'DM Sans',system-ui,sans-serif", background:C.gray0, minHeight:"100vh" }}>
@@ -1996,6 +2058,80 @@ function BAPortal({onLogout}) {
                     </Bar>
                   </BarChart>
                 </ResponsiveContainer>
+              </div>
+            </Card>
+
+            {/* BEI Scorecard — BA fraud detection */}
+            <div style={{ fontSize:15, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>BA Behavioral Effectiveness Index (BEI) — Fraud Detection</div>
+            <div style={{ padding:"10px 16px", background:C.redlt, borderRadius:10, fontSize:13, color:C.red, fontWeight:600, borderLeft:`4px solid ${C.red}` }}>
+              ⚠ BEI scores below 50 combined with stagnation flags trigger automatic APD notification review. "Uniform data entries" is a Sentinel indicator for pencil-whipping.
+            </div>
+            {BEI_DATA.map(ba=>{
+              const accColor = s=>s>=70?C.green:s>=50?C.gold:C.red;
+              const accBg    = s=>s>=70?C.greenlt:s>=50?C.goldlt:C.redlt;
+              return (
+                <Card key={ba.ba} style={{ border:ba.flag==="fraud"?`2px solid ${C.redmed}`:undefined }}>
+                  <div style={{ padding:"13px 18px", borderBottom:`1px solid ${C.gray1}`, display:"flex", justifyContent:"space-between", alignItems:"center", background:ba.flag==="fraud"?C.redlt:C.white, borderRadius:"12px 12px 0 0" }}>
+                    <div>
+                      <div style={{ fontWeight:700, fontSize:14, color:ba.flag==="fraud"?C.red:C.navy }}>{ba.ba}</div>
+                      <div style={{ fontSize:11, color:C.text3 }}>{ba.clients} clients · LUMINARK BEI</div>
+                    </div>
+                    <div style={{ display:"flex", gap:8, alignItems:"center" }}>
+                      {ba.stagnation>0 && <Tag label={`${ba.stagnation} Stagnation Flag${ba.stagnation>1?"s":""}`} color={C.white} bg={C.redmed} small/>}
+                      <div style={{ padding:"6px 14px", background:accBg(ba.bei), borderRadius:20, fontSize:13, fontWeight:800, color:accColor(ba.bei) }}>BEI: {ba.bei}/100</div>
+                    </div>
+                  </div>
+                  <div style={{ padding:14, display:"grid", gridTemplateColumns:"1fr 1fr 1fr 1fr", gap:10 }}>
+                    {[["Client Progress",ba.progress],["Plan Revision Rate",ba.revision],["Plan Accessibility",ba.accessibility],["Overall BEI",ba.bei]].map(([l,v])=>(
+                      <div key={l}>
+                        <div style={{ display:"flex", justifyContent:"space-between", marginBottom:4 }}>
+                          <span style={{ fontSize:11, color:C.text3 }}>{l}</span>
+                          <span style={{ fontSize:11, fontWeight:700, color:accColor(v) }}>{v}%</span>
+                        </div>
+                        <div style={{ height:6, background:C.gray1, borderRadius:3, overflow:"hidden" }}>
+                          <div style={{ height:"100%", width:`${v}%`, background:accColor(v), borderRadius:3 }}/>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  {ba.flag==="fraud" && (
+                    <div style={{ padding:"10px 16px", background:C.redlt, borderTop:`1px solid ${C.gray1}` }}>
+                      <div style={{ fontSize:12, color:C.red, fontWeight:700 }}>
+                        {ba.stagnation>0
+                          ? `⚠ ${ba.stagnation} resident(s) in Stage 7+ for 90+ days with no plan revision — Persistent Non-Resolution Pattern detected. APD notification may be required.`
+                          : "⚠ Data integrity anomaly detected — uniform data entries flagged by Sentinel. Review required before next APD submission."}
+                      </div>
+                    </div>
+                  )}
+                </Card>
+              );
+            })}
+          </div>
+        )}
+
+        {/* JARGON TRANSLATOR TAB */}
+        {tab==="jargon" && (
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:14 }}>
+            <Card>
+              <CardHdr title="ABA → Plain Language Quick Reference" sub="12 most common clinical terms — what they really mean"/>
+              <div style={{ padding:14, display:"grid", gap:7 }}>
+                {ABA_JARGON.map(([aba, plain, example]) => (
+                  <div key={aba} style={{ padding:"10px 12px", background:C.gray0, borderRadius:9 }}>
+                    <div style={{ display:"flex", gap:8, alignItems:"flex-start" }}>
+                      <div style={{ fontSize:11, fontWeight:800, color:C.red, minWidth:140, flexShrink:0 }}>{aba}</div>
+                      <div>
+                        <div style={{ fontSize:12, fontWeight:600, color:C.navy }}>{plain}</div>
+                        <div style={{ fontSize:11, color:C.text3, fontStyle:"italic", marginTop:2 }}>{example}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </Card>
+            <Card>
+              <CardHdr title="✦ AI Jargon Translator" sub="Paste clinical text — get plain English back"/>
+              <div style={{ padding:14 }}>
+                <AIPlanTranslator/>
               </div>
             </Card>
           </div>
@@ -3108,30 +3244,118 @@ function ScheduleView({staff, session}) {
   );
 }
 
-// ─── INCIDENT LOG ───────────────────────────────────────────────────────────────
+// ─── SENTINEL LANGUAGE ANALYSIS ─────────────────────────────────────────────────
+function SentinelAnalysis({text, onAccept, onRevise}) {
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [ran, setRan] = useState("");
+
+  const analyze = async (t) => {
+    if (!t || t.length < 30 || t === ran) return;
+    setLoading(true); setRan(t);
+    const response = await callClaude([{role:"user", content:
+      `Analyze this incident report draft for INCONGRUENT SENTIMENT — language that minimizes or obscures the actual severity of what is described. Look for:
+- Words that downplay violence: "minor touch," "small incident," "slight contact," "bumped"
+- Passive voice that removes agency: "was contacted" instead of "was struck"
+- Vague intensity terms: "expressed frustration" for a physical assault
+- Missing required elements: no trigger, no consequence, no injury assessment
+- Euphemisms for serious events
+
+INCIDENT DRAFT:
+"${t}"
+
+Respond in JSON only, no markdown:
+{ "severity": "clean" | "warning" | "flag", "score": 0-100, "findings": ["finding 1"], "requiredRevisions": ["revision 1"], "approvedLanguage": "reason if appropriate", "flagReason": "one sentence if flagged" }`}],
+    "You are a Medicaid fraud prevention AI for Florida APD. Analyze incident report language for minimization or missing required elements. Return only valid JSON.");
+    try {
+      const clean = response.replace(/```json|```/g,"").trim();
+      setResult(JSON.parse(clean));
+    } catch {
+      setResult({ severity:"warning", score:50, findings:["Could not parse analysis — review manually"], requiredRevisions:[], approvedLanguage:"", flagReason:"" });
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => { if (text && text.length > 30) analyze(text); }, [text]);
+
+  if (!text || text.length < 30) return null;
+  if (loading) return (
+    <div style={{ padding:"10px 14px", background:C.gray0, borderRadius:9, fontSize:12, color:C.text3, display:"flex", gap:8, alignItems:"center", marginTop:8 }}>
+      <span>⏳</span> Sentinel analyzing language...
+    </div>
+  );
+  if (!result) return null;
+
+  const cfg = {
+    clean:   { bg:C.greenlt, col:C.green,  label:"✓ Language Approved" },
+    warning: { bg:C.goldlt,  col:C.gold,   label:"⚠ Review Suggested" },
+    flag:    { bg:C.redlt,   col:C.red,    label:"🚨 Sentinel Flag — Revision Required" },
+  }[result.severity] || { bg:C.goldlt, col:C.gold, label:"⚠ Review Suggested" };
+
+  return (
+    <div style={{ padding:"14px 16px", background:cfg.bg, borderRadius:10, border:`2px solid ${cfg.col}33`, marginTop:10 }}>
+      <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:result.findings?.length?10:0 }}>
+        <div style={{ fontWeight:800, fontSize:13, color:cfg.col }}>✦ Sentinel: {cfg.label}</div>
+        <div style={{ fontSize:11, color:cfg.col, fontWeight:700 }}>Score: {result.score}/100</div>
+      </div>
+      {result.findings?.length > 0 && (
+        <div style={{ display:"grid", gap:4, marginBottom:8 }}>
+          {result.findings.map((f,i) => (
+            <div key={i} style={{ fontSize:12, color:C.text, padding:"5px 10px", background:"rgba(255,255,255,.6)", borderRadius:6 }}>• {f}</div>
+          ))}
+        </div>
+      )}
+      {result.flagReason && <div style={{ fontSize:12, color:cfg.col, fontWeight:600, marginBottom:8 }}>{result.flagReason}</div>}
+      {result.requiredRevisions?.length > 0 && (
+        <div style={{ marginBottom:8 }}>
+          <div style={{ fontSize:11, fontWeight:700, color:cfg.col, textTransform:"uppercase", letterSpacing:.4, marginBottom:4 }}>Required Revisions:</div>
+          {result.requiredRevisions.map((r,i) => <div key={i} style={{ fontSize:12, color:C.text }}>{i+1}. {r}</div>)}
+        </div>
+      )}
+      {result.severity !== "clean" && (
+        <div style={{ display:"flex", gap:8, marginTop:10 }}>
+          <Btn v="gold" small onClick={onRevise}>Revise Before Submitting</Btn>
+          {result.severity === "warning" && <Btn v="ghost" small onClick={onAccept}>Accept As Written</Btn>}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── INCIDENT LOG WITH SENTINEL ─────────────────────────────────────────────────
 function IncidentLog({resident, staff}) {
   const [form, setForm] = useState({trigger:"", behavior:"", response:"", plan:"", injuries:"none", notifications:""});
   const [submitted, setSubmitted] = useState(false);
   const [suggesting, setSuggesting] = useState(false);
   const [aiPlan, setAiPlan] = useState("");
-  const f = k => v => setForm(p=>({...p,[k]:v}));
+  const [sentinelCleared, setSentinelCleared] = useState(false);
+  const [sentinelSeverity, setSentinelSeverity] = useState(null);
+  const f = k => v => { setForm(p=>({...p,[k]:v})); setSentinelCleared(false); };
+
+  const fullText = [form.trigger, form.behavior, form.response, aiPlan||form.plan].filter(Boolean).join(" ");
 
   const suggestPlan = async () => {
     if (!form.trigger||!form.behavior||!form.response) return;
     setSuggesting(true);
     const txt = await callClaude([{role:"user",content:`Resident: ${resident.name} (Stage: S${resident.stage} ${STAGES[resident.stage].name})\nTrigger: ${form.trigger}\nBehavior: ${form.behavior}\nResponse: ${form.response}\n\nSuggest a plain-language "Plan Going Forward" (2-3 sentences). Include what the BA should be told and what staff should do differently next time. Reference relevant Florida APD rules if applicable.`}],
-      "You are a plain-language behavioral support assistant for Florida APD group home staff. Write brief, practical, jargon-free guidance under 100 words. Reference relevant Florida Chapter 65G regulations when applicable.");
-    setAiPlan(txt);
-    setSuggesting(false);
+      "You are a plain-language behavioral support assistant for Florida APD group home staff. Write brief, practical, jargon-free guidance under 100 words.");
+    setAiPlan(txt); setSuggesting(false);
   };
+
+  const canSubmit = form.trigger && form.behavior && form.response && (sentinelSeverity !== "flag" || sentinelCleared);
 
   if (submitted) return (
     <Card>
       <div style={{ padding:48, textAlign:"center" }}>
         <div style={{ fontSize:52, marginBottom:14 }}>✓</div>
         <div style={{ fontSize:22, fontWeight:800, color:C.green, fontFamily:"Georgia,serif" }}>Incident Logged & Locked</div>
-        <p style={{ color:C.text2, fontSize:14, maxWidth:380, margin:"0 auto 20px" }}>This report is timestamped, immutable, and visible to the assigned BA and APD. Supervisor must be notified within 24 hours per APD Rule 65G-2.009.</p>
-        <Btn v="primary" onClick={()=>{setSubmitted(false);setForm({trigger:"",behavior:"",response:"",plan:"",injuries:"none",notifications:""});setAiPlan("");}}>Log Another Incident</Btn>
+        <p style={{ color:C.text2, fontSize:14, maxWidth:380, margin:"0 auto 20px" }}>
+          This report is timestamped, immutable, and visible to the assigned BA and APD.<br/>
+          Supervisor must be notified within 24 hours per APD Rule 65G-2.009.
+        </p>
+        <Btn v="primary" onClick={()=>{setSubmitted(false);setForm({trigger:"",behavior:"",response:"",plan:"",injuries:"none",notifications:""});setAiPlan("");setSentinelCleared(false);setSentinelSeverity(null);}}>
+          Log Another Incident
+        </Btn>
       </div>
     </Card>
   );
@@ -3143,25 +3367,38 @@ function IncidentLog({resident, staff}) {
         <Card>
           <CardHdr title="Incident Report — Plain Language" dark/>
           <div style={{ padding:18 }}>
-            <Textarea label="What happened right before? (The trigger)" value={form.trigger} onChange={f("trigger")} rows={2} placeholder="e.g. TV was loud, another resident took their seat..."/>
-            <Textarea label="What did the resident do? (Exact description)" value={form.behavior} onChange={f("behavior")} rows={2} placeholder="e.g. Yelled for 4 minutes. Threw a plastic cup. No physical contact."/>
-            <Textarea label="How did staff respond?" value={form.response} onChange={f("response")} rows={2} placeholder="e.g. Reduced TV volume. Offered headphones. Behavior stopped in 6 minutes."/>
-            <div style={{ marginBottom:12 }}>
+            <Textarea label="What happened right before? (The trigger)" value={form.trigger} onChange={f("trigger")} rows={2}
+              placeholder="e.g. TV was loud, another resident took their seat, shift change, mealtime delayed..."/>
+            <Textarea label="What did the resident do? (Exact description — no vague terms)" value={form.behavior} onChange={f("behavior")} rows={2}
+              placeholder="e.g. Yelled for 4 minutes. Threw a plastic cup toward the wall. Did not make physical contact with anyone."/>
+            <Textarea label="How did staff respond?" value={form.response} onChange={f("response")} rows={2}
+              placeholder="e.g. Reduced TV volume. Offered headphones. Behavior de-escalated within 6 minutes."/>
+
+            {fullText.length > 40 && (
+              <SentinelAnalysis
+                text={fullText}
+                onAccept={()=>{ setSentinelCleared(true); setSentinelSeverity("warning"); }}
+                onRevise={()=>{ setForm(p=>({...p,behavior:"",trigger:""})); setSentinelSeverity(null); }}
+              />
+            )}
+
+            <div style={{ marginBottom:12, marginTop:12 }}>
               <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:5 }}>
                 <label style={{ fontSize:11, fontWeight:700, color:C.text3, textTransform:"uppercase", letterSpacing:.5 }}>Plan Going Forward</label>
                 <Btn v="gold" small onClick={suggestPlan}>{suggesting?"Thinking...":"✦ AI Suggest"}</Btn>
               </div>
-              <textarea value={aiPlan||form.plan} onChange={e=>{setAiPlan("");f("plan")(e.target.value);}} rows={3}
+              <textarea value={aiPlan||form.plan} onChange={e=>{setAiPlan(""); f("plan")(e.target.value);}} rows={3}
                 placeholder="What should staff do differently? What does the BA need to know?"
                 style={{ width:"100%", padding:"9px 12px", borderRadius:8, border:`1px solid ${C.gray2}`, fontSize:13, fontFamily:"inherit", resize:"vertical", boxSizing:"border-box" }}/>
               {aiPlan && <div style={{ fontSize:11, color:C.gold, marginTop:3 }}>✦ AI-suggested — edit before saving</div>}
             </div>
+
             <div style={{ marginBottom:12 }}>
               <label style={{ display:"block", fontSize:11, fontWeight:700, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>Injuries</label>
               <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:6 }}>
                 {["none","minor","medical"].map(v=>(
                   <button key={v} onClick={()=>f("injuries")(v)}
-                    style={{ padding:"8px", borderRadius:8, border:`2px solid ${form.injuries===v?(v==="none"?C.green:v==="minor"?C.gold:C.red):C.gray2}`,
+                    style={{ padding:8, borderRadius:8, border:`2px solid ${form.injuries===v?(v==="none"?C.green:v==="minor"?C.gold:C.red):C.gray2}`,
                       background:form.injuries===v?(v==="none"?C.greenlt:v==="minor"?C.goldlt:C.redlt):C.white,
                       color:form.injuries===v?(v==="none"?C.green:v==="minor"?C.gold:C.red):C.text3,
                       cursor:"pointer", fontFamily:"inherit", fontSize:12, fontWeight:600 }}>
@@ -3170,19 +3407,56 @@ function IncidentLog({resident, staff}) {
                 ))}
               </div>
             </div>
-            <Textarea label="Notifications Made" value={form.notifications} onChange={f("notifications")} rows={2} placeholder="e.g. Supervisor notified 7:45 AM. Guardian called 8:02 AM. BA texted 8:05 AM."/>
-            <Btn v="green" full onClick={()=>setSubmitted(true)}>Submit Immutable Incident Report</Btn>
-            <div style={{ fontSize:11, color:C.text3, textAlign:"center", marginTop:8 }}>Staff: {staff.name} · {new Date().toLocaleTimeString()}</div>
+
+            <Textarea label="Notifications Made (required within 24 hrs)" value={form.notifications} onChange={f("notifications")} rows={2}
+              placeholder="e.g. Supervisor notified 7:45 AM. Guardian called 8:02 AM. BA texted 8:05 AM."/>
+
+            {sentinelSeverity === "flag" && !sentinelCleared && (
+              <div style={{ padding:"10px 14px", background:C.redlt, borderRadius:9, marginBottom:10, fontSize:12, color:C.red, fontWeight:700 }}>
+                🚨 Sentinel has flagged language concerns. Revise the report or acknowledge and accept before submitting.
+              </div>
+            )}
+            <Btn v="green" full onClick={()=>canSubmit&&setSubmitted(true)}
+              style={{ opacity:canSubmit?1:.5, cursor:canSubmit?"pointer":"not-allowed" }}>
+              Submit Immutable Incident Report
+            </Btn>
+            <div style={{ fontSize:11, color:C.text3, textAlign:"center", marginTop:8 }}>
+              Staff: {staff?.name} · {new Date().toLocaleTimeString()} · Once submitted, this report cannot be altered by anyone
+            </div>
           </div>
         </Card>
+
         <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
+          <Card style={{ border:`2px solid ${C.purple}` }}>
+            <div style={{ padding:"13px 18px", background:`linear-gradient(135deg,${C.purple} 0%,#6B2AA0 100%)` }}>
+              <div style={{ fontWeight:800, fontSize:14, color:C.white, fontFamily:"Georgia,serif" }}>✦ Sentinel Language Analysis</div>
+              <div style={{ fontSize:12, color:"rgba(255,255,255,.75)" }}>AI scans your report for language that minimizes severity</div>
+            </div>
+            <div style={{ padding:14, display:"grid", gap:8 }}>
+              {[
+                ["What it catches","Language like 'minor touch' for a physical assault, 'small incident' for a documented injury, passive voice that removes agency, missing required report elements"],
+                ["Why it matters","Minimized incident reports are a primary tool for covering up abuse. The Sentinel detects this pattern before submission — protecting residents, protecting you, and creating an accurate legal record"],
+                ["When it flags","A flag means specific language may not match the severity of what happened. You can revise or acknowledge and proceed — but the flag is logged either way"],
+              ].map(([t,d])=>(
+                <div key={t} style={{ padding:"10px 12px", background:C.purplelt, borderRadius:9 }}>
+                  <div style={{ fontWeight:700, fontSize:12, color:C.purple, marginBottom:3 }}>{t}</div>
+                  <div style={{ fontSize:12, color:C.text, lineHeight:1.6 }}>{d}</div>
+                </div>
+              ))}
+            </div>
+          </Card>
+
           <Card>
-            <div style={{ padding:"14px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)` }}>
+            <div style={{ padding:"13px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)` }}>
               <div style={{ fontWeight:800, fontSize:14, color:C.white, fontFamily:"Georgia,serif" }}>🛡 Staff Integrity Shield</div>
               <div style={{ fontSize:12, color:"#8fb3d4" }}>Your report cannot be altered by administrators or owners</div>
             </div>
             <div style={{ padding:14, display:"grid", gap:8 }}>
-              {[["Immutable","Once submitted, locked with timestamp. No admin can alter."],["Protected","Your identity protected in audit trail."],["Direct APD","If asked to falsify — escalate directly to APD."]].map(([t,d])=>(
+              {[
+                ["Immutable","Once submitted, locked with timestamp. No admin can alter or delete."],
+                ["Protected","Your identity protected in the audit trail — not visible to home operators."],
+                ["Direct APD","If you are being asked to falsify data — this button bypasses the operator entirely."],
+              ].map(([t,d])=>(
                 <div key={t} style={{ padding:"10px 12px", background:C.gray0, borderRadius:9, display:"flex", gap:8 }}>
                   <span style={{ color:C.gold }}>✓</span>
                   <div><div style={{ fontWeight:700, fontSize:12, color:C.navy }}>{t}</div><div style={{ fontSize:12, color:C.text2 }}>{d}</div></div>
@@ -3191,24 +3465,26 @@ function IncidentLog({resident, staff}) {
               <Btn v="red" full>🚨 Anonymous APD Report — Bypass Operator</Btn>
             </div>
           </Card>
+
           <Card>
             <CardHdr title="Known Triggers — Quick Reference"/>
             <div style={{ padding:14, display:"grid", gap:6 }}>
-              {resident.behavioralTriggers.map(t=>(
+              {(resident.behavioralTriggers||[]).map(t=>(
                 <div key={t} style={{ padding:"8px 12px", background:C.orangelt, color:C.orange, borderRadius:8, fontSize:12, fontWeight:600 }}>⚡ {t}</div>
               ))}
             </div>
           </Card>
+
           <Card>
             <CardHdr title="Florida Required Notifications"/>
             <div style={{ padding:14, display:"grid", gap:8 }}>
               {[
-                ["Within 24 hours","Supervisor + BA notification","APD 65G-2.009"],
+                ["Within 24 hours","Supervisor + BA notification required","APD 65G-2.009"],
                 ["If injury","Guardian must be notified immediately","APD 65G-2.009"],
                 ["If medical","911 + physician + guardian","Emergency protocol"],
                 ["If pattern","APD incident report filing required","Repeated incidents"],
               ].map(([when,what,rule])=>(
-                <div key={when} style={{ padding:"10px 12px", background:C.gray0, borderRadius:9 }}>
+                <div key={when} style={{ padding:"9px 12px", background:C.gray0, borderRadius:9 }}>
                   <div style={{ display:"flex", justifyContent:"space-between" }}>
                     <span style={{ fontSize:12, fontWeight:700, color:C.navy }}>{when}</span>
                     <span style={{ fontSize:10, color:C.text3 }}>{rule}</span>
@@ -3220,6 +3496,34 @@ function IncidentLog({resident, staff}) {
           </Card>
         </div>
       </div>
+    </div>
+  );
+}
+
+// ─── AI PLAN TRANSLATOR ──────────────────────────────────────────────────────────
+function AIPlanTranslator() {
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const translate = async () => {
+    if (!input.trim()) return;
+    setLoading(true);
+    const txt = await callClaude([{role:"user", content:
+      `Translate this ABA clinical text into plain English for a group home DSP with a high school diploma. No jargon. Warm, clear, step-by-step where needed. Under 150 words.\n\nClinical text:\n"${input}"`}],
+      "You translate ABA clinical jargon into plain English for non-clinical group home staff. Never use clinical terms in your response. Be warm, clear, and practical.");
+    setOutput(txt); setLoading(false);
+  };
+  return (
+    <div>
+      <Textarea label="Paste clinical text" value={input} onChange={setInput} rows={6}
+        placeholder="e.g. 'Implement DRA protocol targeting manding as replacement for escape-motivated aggression...'"/>
+      <Btn v="purple" full onClick={translate} style={{marginBottom:12}}>{loading?"Translating...":"✦ Translate to Plain English"}</Btn>
+      {output && (
+        <div style={{ padding:"12px 14px", background:C.greenlt, borderRadius:10, border:`1px solid ${C.green}33` }}>
+          <div style={{ fontSize:10, fontWeight:700, color:C.green, textTransform:"uppercase", letterSpacing:.4, marginBottom:6 }}>Plain English Version</div>
+          <div style={{ fontSize:13, color:C.text, lineHeight:1.8, whiteSpace:"pre-wrap" }}>{output}</div>
+        </div>
+      )}
     </div>
   );
 }
@@ -3773,18 +4077,21 @@ export default function App() {
   const [session, setSession]           = useState(null);
   const [adminSession, setAdminSession] = useState(null);
   const [familyMember, setFamilyMember] = useState(null);
+  const [baSession, setBaSession]       = useState(null);
   const [demoMode, setDemoMode]         = useState(false);
   const [showClockOutGate, setShowClockOutGate] = useState(false);
 
   if (demoMode)     return <DemoMode onExit={()=>setDemoMode(false)}/>;
   if (adminSession) return <AdminPortal admin={adminSession} onLogout={()=>setAdminSession(null)}/>;
   if (familyMember) return <FamilyPortal member={familyMember} onLogout={()=>setFamilyMember(null)}/>;
+  if (baSession)    return <BAPortal onLogout={()=>setBaSession(null)}/>;
 
   if (!session) return (
     <ClockIn
       onClockIn={setSession}
       onAdmin={setAdminSession}
       onFamily={setFamilyMember}
+      onBA={()=>setBaSession(true)}
       onDemo={()=>setDemoMode(true)}
     />
   );
