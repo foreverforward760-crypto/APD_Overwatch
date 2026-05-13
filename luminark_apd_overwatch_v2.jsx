@@ -1924,6 +1924,35 @@ function BehaviorPlanViewer({resident}) {
   );
 }
 
+// ─── AI PLAN TRANSLATOR ──────────────────────────────────────────────────────────
+function AIPlanTranslator() {
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const translate = async () => {
+    if (!input.trim()) return;
+    setLoading(true);
+    const txt = await callClaude([{role:"user", content:
+      `Translate this ABA clinical text into plain English for a group home DSP with a high school diploma. No jargon. Warm, clear, step-by-step where needed. Under 150 words.\n\nClinical text:\n"${input}"`}],
+      "You translate ABA clinical jargon into plain English for non-clinical group home staff. Never use clinical terms in your response. Be warm, clear, and practical.");
+    setOutput(txt); setLoading(false);
+  };
+  return (
+    <div>
+      <Textarea label="Paste clinical text" value={input} onChange={setInput} rows={6}
+        placeholder="e.g. 'Implement DRA protocol targeting manding as replacement for escape-motivated aggression...'"/>
+      <Btn v="purple" full onClick={translate} style={{marginBottom:12}}>{loading?"Translating...":"✦ Translate to Plain English"}</Btn>
+      {output && (
+        <div style={{ padding:"12px 14px", background:C.greenlt, borderRadius:10, border:`1px solid ${C.green}33` }}>
+          <div style={{ fontSize:10, fontWeight:700, color:C.green, textTransform:"uppercase", letterSpacing:.4, marginBottom:6 }}>Plain English Version</div>
+          <div style={{ fontSize:13, color:C.text, lineHeight:1.8, whiteSpace:"pre-wrap" }}>{output}</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+
 // ─── BA PORTAL ─────────────────────────────────────────────────────────────────
 function BAPortal({onLogout}) {
   const [tab, setTab]         = useState("caseload");
@@ -1939,11 +1968,11 @@ function BAPortal({onLogout}) {
       "You are a Florida APD behavior analyst supervisor. Return only valid JSON with no markdown."
     );
     try { const c=txt.replace(/```json|```/g,"").trim(); setAccessScore(p=>({...p,[r.id]:JSON.parse(c)})); }
-    catch { setAccessScore(p=>({...p,[r.id]:{accessibility:0,compliance:0,missing:["Parse error"],translation:"Score unavailable."}})); }
+    catch (e) { setAccessScore(p=>({...p,[r.id]:{accessibility:0,compliance:0,missing:["Parse error"],translation:"Score unavailable."}})); }
     setScoring(p=>({...p,[r.id]:false}));
   };
 
-  const TABS=[{id:"caseload",icon:"👥",label:"Caseload & Stages"},{id:"plans",icon:"📋",label:"Plan Scorer"},{id:"effectiveness",icon:"📊",label:"Effectiveness"},{id:"jargon",icon:"🗣",label:"Jargon Translator"}];
+  const TABS=[{id:"caseload",icon:"👥",label:"Caseload & Stages"},{id:"plans",icon:"📋",label:"Plan Scorer"},{id:"effectiveness",icon:"📊",label:"Effectiveness"},{id:"jargon",icon:"💬",label:"Jargon Translator"}];
 
   return (
     <div style={{ fontFamily:"'DM Sans',system-ui,sans-serif", background:C.gray0, minHeight:"100vh" }}>
@@ -3317,7 +3346,7 @@ Respond in JSON only, no markdown:
     try {
       const clean = response.replace(/```json|```/g,"").trim();
       setResult(JSON.parse(clean));
-    } catch {
+    } catch (e) {
       setResult({ severity:"warning", score:50, findings:["Could not parse analysis — review manually"], requiredRevisions:[], approvedLanguage:"", flagReason:"" });
     }
     setLoading(false);
@@ -3543,34 +3572,6 @@ function IncidentLog({resident, staff}) {
           </Card>
         </div>
       </div>
-    </div>
-  );
-}
-
-// ─── AI PLAN TRANSLATOR ──────────────────────────────────────────────────────────
-function AIPlanTranslator() {
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const translate = async () => {
-    if (!input.trim()) return;
-    setLoading(true);
-    const txt = await callClaude([{role:"user", content:
-      `Translate this ABA clinical text into plain English for a group home DSP with a high school diploma. No jargon. Warm, clear, step-by-step where needed. Under 150 words.\n\nClinical text:\n"${input}"`}],
-      "You translate ABA clinical jargon into plain English for non-clinical group home staff. Never use clinical terms in your response. Be warm, clear, and practical.");
-    setOutput(txt); setLoading(false);
-  };
-  return (
-    <div>
-      <Textarea label="Paste clinical text" value={input} onChange={setInput} rows={6}
-        placeholder="e.g. 'Implement DRA protocol targeting manding as replacement for escape-motivated aggression...'"/>
-      <Btn v="purple" full onClick={translate} style={{marginBottom:12}}>{loading?"Translating...":"✦ Translate to Plain English"}</Btn>
-      {output && (
-        <div style={{ padding:"12px 14px", background:C.greenlt, borderRadius:10, border:`1px solid ${C.green}33` }}>
-          <div style={{ fontSize:10, fontWeight:700, color:C.green, textTransform:"uppercase", letterSpacing:.4, marginBottom:6 }}>Plain English Version</div>
-          <div style={{ fontSize:13, color:C.text, lineHeight:1.8, whiteSpace:"pre-wrap" }}>{output}</div>
-        </div>
-      )}
     </div>
   );
 }
