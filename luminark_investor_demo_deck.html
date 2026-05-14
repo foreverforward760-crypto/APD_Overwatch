@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LUMINARK APD OVERWATCH — Investor Briefing</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0A1628; color: #E8F0F8; min-height: 100vh; overflow-x: hidden; }
+  .slide { display: none; min-height: 100vh; padding: 0; animation: fadeIn .4s ease; }
+  .slide.active { display: flex; flex-direction: column; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
+
+  /* NAV */
+  .nav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(10,22,40,.96); backdrop-filter: blur(12px); border-top: 1px solid #1E3A5A; padding: 14px 28px; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+  .nav-dots { display: flex; gap: 8px; }
+  .nav-dot { width: 10px; height: 10px; border-radius: 50%; background: #1E3A5A; cursor: pointer; transition: all .2s; border: none; }
+  .nav-dot.active { background: #C8A020; width: 28px; border-radius: 5px; }
+  .nav-btn { background: rgba(200,160,32,.12); border: 1px solid #C8A02055; color: #C8A020; padding: 9px 22px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 700; transition: all .2s; font-family: inherit; }
+  .nav-btn:hover { background: rgba(200,160,32,.22); }
+  .nav-btn:disabled { opacity: .3; cursor: default; }
+  .slide-counter { color: #5A7A9A; font-size: 12px; font-weight: 700; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #0A1628 0%, #0D1F35 60%, #152E4D 100%); padding: 80px 80px 120px; flex: 1; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(200,160,32,.06) 0%, transparent 70%); }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(200,160,32,.1); border: 1px solid rgba(200,160,32,.3); color: #C8A020; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; width: fit-content; }
+  .hero h1 { font-size: 52px; font-weight: 900; font-family: Georgia, serif; line-height: 1.12; margin-bottom: 20px; }
+  .hero h1 span { color: #C8A020; }
+  .hero p { font-size: 18px; color: #8AAABB; line-height: 1.7; max-width: 660px; margin-bottom: 40px; }
+  .stat-row { display: flex; gap: 32px; flex-wrap: wrap; }
+  .stat { }
+  .stat-val { font-size: 42px; font-weight: 900; font-family: Georgia, serif; color: #C8A020; line-height: 1; }
+  .stat-label { font-size: 12px; color: #5A7A9A; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; margin-top: 4px; }
+
+  /* CONTENT SLIDE */
+  .content-slide { flex: 1; display: flex; flex-direction: column; }
+  .slide-header { background: linear-gradient(135deg, #0A1628 0%, #0D2040 100%); padding: 40px 80px 32px; border-bottom: 1px solid #1E3A5A; }
+  .slide-header .icon { font-size: 36px; margin-bottom: 12px; }
+  .slide-header h2 { font-size: 32px; font-weight: 900; font-family: Georgia, serif; margin-bottom: 6px; }
+  .slide-header h2 span { color: #C8A020; }
+  .slide-header .sub { font-size: 14px; color: #5A7A9A; font-weight: 700; }
+  .stat-banner { background: rgba(200,160,32,.08); border-left: 4px solid #C8A020; padding: 12px 80px; font-size: 14px; font-weight: 700; color: #C8A020; }
+  .slide-body { padding: 40px 80px 100px; flex: 1; }
+
+  /* CARDS */
+  .card-grid { display: grid; gap: 16px; }
+  .card-grid-2 { grid-template-columns: 1fr 1fr; }
+  .card-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .card { background: rgba(255,255,255,.04); border: 1px solid #1E3A5A; border-radius: 14px; padding: 22px; }
+  .card.red { border-color: #8B2020; background: rgba(139,32,32,.06); }
+  .card.gold { border-color: #6A5010; background: rgba(200,160,32,.06); }
+  .card.green { border-color: #1A5A2A; background: rgba(26,90,42,.06); }
+  .card.teal { border-color: #1A4A5A; background: rgba(26,74,90,.06); }
+  .card.purple { border-color: #3A1A6A; background: rgba(58,26,106,.06); }
+  .card h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; color: #C8D8E8; }
+  .card p { font-size: 13px; color: #7A9AAA; line-height: 1.7; }
+  .card .card-icon { font-size: 28px; margin-bottom: 10px; }
+  .card .card-stat { font-size: 36px; font-weight: 900; font-family: Georgia, serif; color: #C8A020; margin-bottom: 4px; }
+  .card .card-label { font-size: 11px; font-weight: 700; color: #5A7A9A; text-transform: uppercase; letter-spacing: .6px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 800; color: #5A7A9A; text-transform: uppercase; letter-spacing: .6px; border-bottom: 1px solid #1E3A5A; }
+  td { padding: 12px 14px; border-bottom: 1px solid #0D1F35; color: #C8D8E8; }
+  tr:last-child td { border-bottom: none; }
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+  .tag.green { background: rgba(26,122,74,.2); color: #4ACA8A; }
+  .tag.gold { background: rgba(200,160,32,.15); color: #C8A020; }
+  .tag.red { background: rgba(180,40,40,.2); color: #E87070; }
+
+  /* TIMELINE */
+  .timeline { display: flex; gap: 0; }
+  .timeline-step { flex: 1; position: relative; padding: 20px 18px 20px 30px; }
+  .timeline-step::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #1E3A5A; }
+  .timeline-step.active::before { background: #C8A020; }
+  .timeline-step .t-icon { font-size: 24px; margin-bottom: 8px; }
+  .timeline-step .t-label { font-size: 11px; font-weight: 800; color: #5A7A9A; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 4px; }
+  .timeline-step .t-title { font-size: 15px; font-weight: 800; color: #C8D8E8; margin-bottom: 6px; }
+  .timeline-step .t-body { font-size: 12px; color: #7A9AAA; line-height: 1.6; }
+
+  /* FEATURE LIST */
+  .feature-list { display: grid; gap: 10px; }
+  .feature-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; background: rgba(255,255,255,.03); border-radius: 10px; border: 1px solid #1E3A5A; }
+  .feature-item .fi-icon { font-size: 22px; flex-shrink: 0; }
+  .feature-item .fi-title { font-size: 14px; font-weight: 800; color: #C8D8E8; margin-bottom: 3px; }
+  .feature-item .fi-body { font-size: 12px; color: #7A9AAA; line-height: 1.6; }
+  .feature-item .fi-tag { margin-left: auto; flex-shrink: 0; }
+
+  .gold-text { color: #C8A020; }
+  .muted { color: #5A7A9A; }
+  .footnote { font-size: 11px; color: #3A5A7A; margin-top: 16px; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide active" id="slide-1">
+  <div class="hero">
+    <div style="display:flex; align-items:center; gap:16px; margin-bottom:40px;">
+      <div style="width:52px;height:52px;background:#C8A020;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:26px;color:#0A1628;font-family:Georgia,serif;">L</div>
+      <div>
+        <div style="font-size:13px;font-weight:800;color:#C8A020;letter-spacing:1.5px;text-transform:uppercase;">Meridian Axiom Alignment Technologies</div>
+        <div style="font-size:11px;color:#3A5A7A;margin-top:2px;">Confidential · Investor Briefing · May 2026</div>
+      </div>
+    </div>
+    <div class="hero-tag">✦ LUMINARK APD OVERWATCH</div>
+    <h1>The <span>Compliance Fortress</span><br/>Florida Can't Afford<br/>to Ignore</h1>
+    <p>A Florida-first SaaS platform eliminating Medicaid fraud, medication errors, and documentation failures across the $2.1B APD group home industry — using the Stanfield Axiom of Perpetuity behavioral intelligence engine.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-val">$4.2B</div><div class="stat-label">Annual Medicaid loss in FL alone</div></div>
+      <div class="stat"><div class="stat-val">58K</div><div class="stat-label">Floridians served by APD</div></div>
+      <div class="stat"><div class="stat-val">3,800</div><div class="stat-label">Licensed group homes — our TAM</div></div>
+      <div class="stat"><div class="stat-val">$3.9B</div><div class="stat-label">5-year revenue model</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 2: THE PROBLEM -->
+<div class="slide" id="slide-2">
+  <div class="content-slide">
+    <div class="slide-header">
+      <div class="icon">⚠</div>
+      <h2>The <span>Problem</span> — What's Failing Right Now</h2>
+      <div class="sub">Florida APD Group Home System · Documented Systemic Failures</div>
+    </div>
+    <div class="stat-banner">📊 Stat: 34% of all APD deficiency citations involve medication errors. Most are entirely preventable.</div>
+    <div class="slide-body">
+      <div class="card-grid card-grid-3">
+        <div class="card red">
+          <div class="card-icon">💊</div>
+          <h3>Med Errors Kill</h3>
+          <p>Paper MAR logs, no barcode verification, no shift-change controlled substance dual-witness. Staff administer medications from memory. Residents die from preventable errors.</p>
+        </div>
+        <div class="card red">
+          <div class="card-icon">💰</div>
+          <h3>Billing Fraud is Structural</h3>
+          <p>Without GPS-verified EVV, "ghost billing" — charging for services never delivered — is undetectable. $4.2B in Medicaid fraud annually in Florida alone, largely in community-based care.</p>
+        </div>
+        <div class="card red">
+          <div class="card-icon">📝</div>
+          <h3>Documentation Covers Up Abuse</h3>
+          <p>Incident reports are written by the same operators who benefit from minimizing severity. "Minor touch" for a physical assault. No Sentinel. No immutable record. Residents have no protection.</p>
+        </div>
+        <div class="card red">
+          <div class="card-icon">🔬</div>
+          <h3>BA Gatekeeping</h3>
+          <p>Behavior Analysts use clinical jargon as a moat — charging $80-150/hr for plans that staff cannot read or implement. The jargon barrier perpetuates dependency and blocks accountability.</p>
+        </div>
+        <div class="card red">
+          <div class="card-icon">👨‍👩‍👧</div>
+          <h3>Families Are Blind</h3>
+          <p>Guardians have no real-time access to what is happening in the home. Financial exploitation — theft of resident personal funds — is the #1 complaint to the Florida Abuse Hotline.</p>
+        </div>
+        <div class="card red">
+          <div class="card-icon">📊</div>
+          <h3>iConnect is Double Entry</h3>
+          <p>Staff enter data in the home system and again in APD's iConnect portal. Double entry causes errors, creates deficiency citations, and burns staff time that should go to residents.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: THE SOLUTION -->
+<div class="slide" id="slide-3">
+  <div class="content-slide">
+    <div class="slide-header">
+      <div class="icon">✦</div>
+      <h2>The <span>Solution</span> — LUMINARK APD OVERWATCH</h2>
+      <div class="sub">One Platform · Five Portals · Every Compliance Requirement Addressed</div>
+    </div>
+    <div class="stat-banner">✦ Not a documentation tool. A behavioral intelligence and fraud-prevention operating system for group homes.</div>
+    <div class="slide-body">
+      <div class="card-grid card-grid-3" style="margin-bottom:20px;">
+        <div class="card green">
+          <div class="card-icon">🏥</div>
+          <h3>Staff Portal</h3>
+          <p>Clock-in GPS verification. Three-way med scan. Dual-witness controlled substance count. Incident report with AI Sentinel language analysis. NSDT behavioral observer. 15-min privacy lock.</p>
+        </div>
+        <div class="card teal">
+          <div class="card-icon">🎯</div>
+          <h3>Manager Portal</h3>
+          <p>All-house stage heatmap. Staff fidelity scores with pencil-whipping detection. EVV billing verification vs. GPS actuals. iConnect XML export. Open shift board. Org-wide alerts.</p>
+        </div>
+        <div class="card purple">
+          <div class="card-icon">🧠</div>
+          <h3>BA Portal</h3>
+          <p>Caseload stage overview powered by SAP engine. AI plan accessibility scorer. BEI fraud detection with stagnation flags. Jargon translation. Per-BA effectiveness scorecard.</p>
+        </div>
+        <div class="card green">
+          <div class="card-icon">👨‍👩‍👧</div>
+          <h3>Family Portal</h3>
+          <p>Stage-aligned resident updates. Plain-language care plan. Wallet ledger with photo receipts. Direct abuse hotline. Real-time transparency that makes families the auditors.</p>
+        </div>
+        <div class="card gold">
+          <div class="card-icon">📍</div>
+          <h3>GPS / EVV Engine</h3>
+          <p>Every clock-in GPS-anchored to the licensed facility. Overtime at any house creates an automatic EVV record. Billed hours vs. GPS-verified hours compared daily. Ghost billing eliminated.</p>
+        </div>
+        <div class="card teal">
+          <div class="card-icon">📤</div>
+          <h3>iConnect API Layer</h3>
+          <p>LUMINARK pushes clean, QA-ready data directly to Florida's iConnect system. One entry. Staff never touch iConnect. Deficiency citations from double-entry errors eliminated.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: SAP ENGINE -->
+<div class="slide" id="slide-4">
+  <div class="content-slide">
+    <div class="slide-header">
+      <div class="icon">⚙</div>
+      <h2>The <span>Intelligence Engine</span> — Stanfield's Axiom of Perpetuity</h2>
+      <div class="sub">Substrate-independent behavioral pattern classification · Not a diagnosis · A navigation tool</div>
+    </div>
+    <div class="stat-banner">⚛ Founded on: Bayesian classification · Allostatic Load Theory (McEwen & Stellar, 1993) · Polyvagal Theory (Porges, 1994) · Bifurcation Theory · Shannon Information Entropy</div>
+    <div class="slide-body">
+      <div class="card-grid card-grid-2" style="margin-bottom:20px;">
+        <div>
+          <div class="card" style="margin-bottom:14px;">
+            <h3>The Stanfield Axiom of Perpetuity (SAP)</h3>
+            <p style="margin-bottom:12px;">A 10-stage toroidal cycle describing how systems — from cells to organizations to human beings — move through emergence, development, crisis, integration, and return. Every stage has a geometry, an inversion state, a control point, and a triadic field dynamic.</p>
+            <p>The Triadic Foundation: <span class="gold-text">acknowledging zero instantaneously generates three things</span> — the observer, the observed, and the relationship between them. All subsequent complexity unfolds from this initial triadic structure. Stage 3 is the triangle. Stage 5 is the bifurcation pentagram. Stage 8 is the Mobius trap.</p>
+          </div>
+          <div class="card teal">
+            <h3>NSDT Five-Axis Classifier</h3>
+            <p>Staff log five behavioral dimensions per observation. The Kairos engine runs a weighted Euclidean distance classifier against 10 SAP stage centroids and returns: classified stage, confidence posterior, TrapScore (Stage 8 amplifier: 1.45×), bifurcation flag, and inversion state. Claude generates the plain-language support narrative.</p>
+            <div style="margin-top:12px;display:grid;gap:6px;">
+              <div style="display:flex;gap:8px;align-items:center;font-size:12px;"><span style="color:#C8A020;font-weight:800;width:20px;">N</span><span class="muted">Behavioral Complexity — Shannon entropy of output</span></div>
+              <div style="display:flex;gap:8px;align-items:center;font-size:12px;"><span style="color:#C8A020;font-weight:800;width:20px;">S</span><span class="muted">Baseline Stability — homeostatic capacity (Bernard 1865)</span></div>
+              <div style="display:flex;gap:8px;align-items:center;font-size:12px;"><span style="color:#C8A020;font-weight:800;width:20px;">D</span><span class="muted">Distress Level — allostatic load (McEwen & Stellar 1993)</span></div>
+              <div style="display:flex;gap:8px;align-items:center;font-size:12px;"><span style="color:#C8A020;font-weight:800;width:20px;">T</span><span class="muted">Adaptability — behavioral flexibility (Luria 1966)</span></div>
+              <div style="display:flex;gap:8px;align-items:center;font-size:12px;"><span style="color:#C8A020;font-weight:800;width:20px;">C</span><span class="muted">Coherence — neural coherence (Varela et al. 2001)</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:14px;">
+            <h3>The 10 SAP Stages — Residential Context</h3>
+            <div style="display:grid;gap:5px;margin-top:8px;">
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#2D7DD2;">S0</span><span style="color:#5A7A9A;">Void · Phase 0: Triadic field not yet formed</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#3A7D44;">S1</span><span style="color:#5A7A9A;">Spark · First differentiation, wave function begins to collapse</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#C67F12;">S2</span><span style="color:#5A7A9A;">Polarity · Negative and positive poles both measured</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#B93232;">S3</span><span style="color:#5A7A9A;">Triangle · Triad under maximum stress · Control point</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#2E8B57;">S4</span><span style="color:#5A7A9A;">Square · Triad stabilizes, capable of bearing weight</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#1A7A4A;">S5</span><span style="color:#5A7A9A;">Pentagram · Hidden duality · Bifurcation threshold</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#5C7A1A;">S6</span><span style="color:#5A7A9A;">Hexagon · Peak coherence · Control point</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#9A2A2A;">S7</span><span style="color:#5A7A9A;">Heptagon · Triad breaks apart · Quantum tunneling</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;border-bottom:1px solid #1E3A5A;"><span style="width:26px;font-weight:800;color:#6B0000;">S8</span><span style="color:#5A7A9A;">Möbius · Perceived Permanence · Quantum Zeno trap</span></div>
+              <div style="display:flex;gap:10px;font-size:12px;padding:5px 0;"><span style="width:26px;font-weight:800;color:#0D5C2E;">S9</span><span style="color:#5A7A9A;">Circle · Triad dissolves into legacy · Control point</span></div>
+            </div>
+          </div>
+          <div class="card gold">
+            <h3>Liability Architecture</h3>
+            <p>LUMINARK outputs are <strong>pattern classifications</strong>, not clinical diagnoses. The methodology cites Bayesian classification (same architecture as FDA-cleared clinical decision support), allostatic load, polyvagal theory, and bifurcation mathematics. Every output carries explicit limitations. "Not FDA-cleared" is displayed on every portal. Clinical decisions require licensed professional judgment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: COMPLIANCE FORTRESS -->
+<div class="slide" id="slide-5">
+  <div class="content-slide">
+    <div class="slide-header">
+      <div class="icon">🔐</div>
+      <h2>The <span>Compliance Fortress</span> — Every Florida APD Requirement Addressed</h2>
+      <div class="sub">Chapter 65G · FS 394.463 · FS 393.067 · EVV Mandate · iConnect API</div>
+    </div>
+    <div class="stat-banner">⚖ Every feature maps to a specific Florida statute. LUMINARK is not compliance-adjacent — it is compliance-native.</div>
+    <div class="slide-body">
+      <table>
+        <thead>
+          <tr>
+            <th>Florida Requirement</th>
+            <th>LUMINARK Feature</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>65G-7.007B</strong> — Controlled substance dual-witness at shift change</td><td>Clock-Out Gate Step 1: per-drug dual-witness PIN requirement blocks clock-out until complete</td><td><span class="tag green">✓ Built</span></td></tr>
+          <tr><td><strong>65G-8.005</strong> — Reactive strategy authorization and documentation</td><td>Crisis Reference: per-resident PCM steps, prohibited interventions with civil rights citations</td><td><span class="tag green">✓ Built</span></td></tr>
+          <tr><td><strong>65G-8.010</strong> — Reactive strategy report documentation</td><td>IncidentLog with AI Sentinel: immutable timestamp, strategy use logged, staff identity protected</td><td><span class="tag green">✓ Built</span></td></tr>
+          <tr><td><strong>65G-2.009</strong> — Incident reporting within 24 hours</td><td>AI Sentinel flags trigger words in comm logs, auto-drafts APD-compliant incident report</td><td><span class="tag green">✓ Built</span></td></tr>
+          <tr><td><strong>FS 394.463</strong> — Baker Act assessment criteria</td><td>Per-resident Baker Act thresholds including non-verbal assessment protocol</td><td><span class="tag green">✓ Built</span></td></tr>
+          <tr><td><strong>FS 393.067(g)</strong> — Staff training to detect and report ANE</td><td>Abuse hotline on every portal; anonymous APD bypass button on incident form</td><td><span class="tag green">✓ Built</span></td></tr>
+          <tr><td><strong>EVV mandate</strong> — Electronic Visit Verification for Medicaid billing</td><td>GPS-anchored clock-in linked to billing codes; billed vs. verified comparison chart</td><td><span class="tag green">✓ Built</span></td></tr>
+          <tr><td><strong>iConnect integration</strong> — State data portal QA compliance</td><td>API-first XML export matching Generations interface protocol; double-entry eliminated</td><td><span class="tag gold">Beta</span></td></tr>
+          <tr><td><strong>Train Florida</strong> — APD certification for DSPs</td><td>Behavior plan "Test Hint" boxes translate clinical terms for APD exam; AI Procedure Guide</td><td><span class="tag green">✓ Built</span></td></tr>
+          <tr><td><strong>65G-2.007</strong> — Facility health and safety standards</td><td>Dietary texture alerts, seizure action plans, DNR status surfaced on every Face Sheet</td><td><span class="tag green">✓ Built</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: FRAUD DETECTION -->
+<div class="slide" id="slide-6">
+  <div class="content-slide">
+    <div class="slide-header">
+      <div class="icon">🔬</div>
+      <h2>The <span>Sentinel System</span> — Catching What Auditors Miss</h2>
+      <div class="sub">Three layers of fraud and falsification detection built into normal workflow</div>
+    </div>
+    <div class="stat-banner">💡 Key insight: the most dangerous fraud in group homes is not billing fraud — it is documentation fraud that conceals abuse and neglect.</div>
+    <div class="slide-body">
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="fi-icon">🧠</div>
+          <div><div class="fi-title">AI Sentinel — Incident Language Analysis</div><div class="fi-body">Every incident report draft is scanned for "incongruent sentiment" — language that minimizes severity. "Minor touch" for a battery. "Small incident" for a documented injury. Passive voice that removes agency. The Sentinel scores the draft, names the specific violations, and blocks submission on a Flag verdict until the staff member revises or consciously acknowledges. The flag is logged either way.</div></div>
+          <div class="fi-tag"><span class="tag green">Active</span></div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">⏱</div>
+          <div><div class="fi-title">Time-on-Task Fidelity Tracker</div><div class="fi-body">Staff claim a 20-minute range-of-motion exercise. The task timer ran 4 minutes. The discrepancy is flagged, logged, and surfaced on the manager dashboard as a Fidelity Score event. Consistent flags trigger automatic BA review notification. This is the pencil-whipping detection system.</div></div>
+          <div class="fi-tag"><span class="tag green">Active</span></div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">📊</div>
+          <div><div class="fi-title">BA Effectiveness Index (BEI) — Fraud Detection</div><div class="fi-body">Every Behavior Analyst is scored on four dimensions: client progress, plan revision rate, plan accessibility, and overall BEI. BEI below 50 combined with stagnation flags triggers automatic APD notification review. "Uniform data entries" across plans is a Sentinel indicator. The radar chart makes the multi-BA comparison instant and visual.</div></div>
+          <div class="fi-tag"><span class="tag green">Active</span></div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">📍</div>
+          <div><div class="fi-title">EVV GPS Verification — Ghost Billing Detection</div><div class="fi-body">Every clock-in is GPS-anchored to the licensed facility address. Billed hours vs. GPS-verified hours are compared daily. Any discrepancy is flagged for CFO audit before the claim is submitted to APD. Shift overlap prevention blocks two staff from billing the same 1-on-1 service simultaneously.</div></div>
+          <div class="fi-tag"><span class="tag green">Active</span></div>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">🛡</div>
+          <div><div class="fi-title">Staff Integrity Shield</div><div class="fi-body">Every incident report is immutably timestamped on submission. No administrator or operator can alter or delete it. Staff identity is protected in the audit trail — not visible to home operators. An anonymous APD bypass button allows direct reporting to the state, circumventing any operator pressure to falsify data.</div></div>
+          <div class="fi-tag"><span class="tag green">Active</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: BUSINESS MODEL -->
+<div class="slide" id="slide-7">
+  <div class="content-slide">
+    <div class="slide-header">
+      <div class="icon">📈</div>
+      <h2>The <span>Business Case</span> — $3.9B Five-Year Model</h2>
+      <div class="sub">Vendor-neutral SaaS · No hardware · No state infrastructure investment · Offsets from Medicaid fraud recovery alone</div>
+    </div>
+    <div class="stat-banner">💰 Florida has 3,800+ licensed APD group homes. 10% adoption in Year 1 at $85/bed/month = $18M ARR. Full-state = $180M ARR before expansion.</div>
+    <div class="slide-body">
+      <div class="card-grid card-grid-3" style="margin-bottom:20px;">
+        <div class="card">
+          <div class="card-label">Year 1 Target</div>
+          <div class="card-stat">$18M</div>
+          <p>380 homes · 4 beds avg · $85/bed/month · Pilot in Pinellas, Hillsborough, and Miami-Dade counties</p>
+        </div>
+        <div class="card gold">
+          <div class="card-label">Year 3 Full Florida</div>
+          <div class="card-stat">$180M</div>
+          <p>All 3,800 homes · DOJ and CMS compliance certification · State contract eligible · Expansion to other states begins</p>
+        </div>
+        <div class="card green">
+          <div class="card-label">5-Year Projection</div>
+          <div class="card-stat">$3.9B</div>
+          <p>LUMINARK Overwatch Prime + Kairos therapeutic licensing + LootDrop + Anubis modules · National expansion · Enterprise contracts</p>
+        </div>
+      </div>
+      <div class="card-grid card-grid-2">
+        <div class="card">
+          <h3>Revenue Streams</h3>
+          <div style="display:grid;gap:8px;margin-top:8px;font-size:13px;">
+            <div style="display:flex;justify-content:space-between;"><span class="muted">SaaS licensing ($85-240/bed/month)</span><span class="gold-text">Primary</span></div>
+            <div style="display:flex;justify-content:space-between;"><span class="muted">State Medicaid fraud recovery share</span><span class="gold-text">Government</span></div>
+            <div style="display:flex;justify-content:space-between;"><span class="muted">Kairos engine licensing (therapeutic)</span><span class="gold-text">OEM</span></div>
+            <div style="display:flex;justify-content:space-between;"><span class="muted">BA Portal certification prep</span><span class="gold-text">Workforce</span></div>
+            <div style="display:flex;justify-content:space-between;"><span class="muted">iConnect integration consulting</span><span class="gold-text">Professional Services</span></div>
+          </div>
+        </div>
+        <div class="card teal">
+          <h3>Why the State Pays</h3>
+          <p style="margin-bottom:10px;">LUMINARK's Medicaid fraud recovery from EVV verification alone — estimated at 3-5% of billed hours recovered — offsets the licensing cost to the state entirely in Year 2. The platform costs less than one APD deficiency citation remediation cycle.</p>
+          <p>Political positioning: LUMINARK reduces APD's QA alert remediation workload, reduces insurance liability for homes, and gives families the transparency tool the legislature has demanded since 2022.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: CLOSE -->
+<div class="slide" id="slide-8">
+  <div class="hero" style="justify-content:center; align-items:center; text-align:center;">
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:40px;justify-content:center;">
+      <div style="width:64px;height:64px;background:#C8A020;border-radius:18px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:32px;color:#0A1628;font-family:Georgia,serif;">L</div>
+    </div>
+    <div class="hero-tag" style="margin:0 auto 24px;">MERIDIAN AXIOM ALIGNMENT TECHNOLOGIES</div>
+    <h1 style="max-width:700px;margin:0 auto 20px;">The Platform That Makes<br/><span>Accountability Inevitable</span></h1>
+    <p style="max-width:560px;margin:0 auto 40px;">LUMINARK APD OVERWATCH is not asking the system to change. It is making the current system's failures impossible to hide — one shift, one resident, one immutable record at a time.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:480px;margin:0 auto 40px;">
+      <div style="padding:14px 20px;background:rgba(200,160,32,.08);border:1px solid rgba(200,160,32,.25);border-radius:10px;">
+        <div style="font-size:11px;font-weight:800;color:#C8A020;text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px;">Contact</div>
+        <div style="font-size:13px;color:#8AAABB;">LuminarkMeridian@gmail.com</div>
+      </div>
+      <div style="padding:14px 20px;background:rgba(200,160,32,.08);border:1px solid rgba(200,160,32,.25);border-radius:10px;">
+        <div style="font-size:11px;font-weight:800;color:#C8A020;text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px;">GitHub</div>
+        <div style="font-size:13px;color:#8AAABB;">foreverforward760-crypto</div>
+      </div>
+      <div style="padding:14px 20px;background:rgba(200,160,32,.08);border:1px solid rgba(200,160,32,.25);border-radius:10px;">
+        <div style="font-size:11px;font-weight:800;color:#C8A020;text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px;">Founder / CSO</div>
+        <div style="font-size:13px;color:#8AAABB;">Richard Stanfield</div>
+      </div>
+      <div style="padding:14px 20px;background:rgba(200,160,32,.08);border:1px solid rgba(200,160,32,.25);border-radius:10px;">
+        <div style="font-size:11px;font-weight:800;color:#C8A020;text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px;">HQ</div>
+        <div style="font-size:13px;color:#8AAABB;">St. Petersburg, Florida</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:#3A5A7A;">Confidential — Not for distribution · © 2026 Meridian Axiom Alignment Technologies LLC · Stanfield's Axiom of Perpetuity · All rights reserved</div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
+  <button class="nav-btn" id="prev-btn" onclick="navigate(-1)" disabled>← Previous</button>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <div class="nav-dots" id="nav-dots"></div>
+    <div class="slide-counter" id="slide-counter">1 of 8</div>
+  </div>
+  <button class="nav-btn" id="next-btn" onclick="navigate(1)">Next →</button>
+</div>
+
+<script>
+  const TOTAL = 8;
+  let current = 1;
+  const dotsEl = document.getElementById('nav-dots');
+  
+  // Build dots
+  for (let i = 1; i <= TOTAL; i++) {
+    const d = document.createElement('button');
+    d.className = 'nav-dot' + (i === 1 ? ' active' : '');
+    d.onclick = () => goTo(i);
+    dotsEl.appendChild(d);
+  }
+
+  function goTo(n) {
+    document.getElementById('slide-' + current).classList.remove('active');
+    document.querySelectorAll('.nav-dot')[current-1].classList.remove('active');
+    current = n;
+    document.getElementById('slide-' + current).classList.add('active');
+    document.querySelectorAll('.nav-dot')[current-1].classList.add('active');
+    document.getElementById('slide-counter').textContent = current + ' of ' + TOTAL;
+    document.getElementById('prev-btn').disabled = current === 1;
+    document.getElementById('next-btn').disabled = current === TOTAL;
+    document.getElementById('next-btn').textContent = current === TOTAL ? '✓ Complete' : 'Next →';
+    window.scrollTo(0,0);
+  }
+
+  function navigate(dir) { goTo(Math.max(1, Math.min(TOTAL, current + dir))); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') navigate(1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   navigate(-1);
+  });
+</script>
+</body>
+</html>

@@ -32,7 +32,13 @@ const STAGES = [
     controlPoint:false,
     velocity:"Slow — the resident is still absorbing. This stage often follows a major life transition: new placement, post-hospitalization, post-incident reset. The calm is real. The work underneath it has already begun.",
     familyDesc:"Your loved one is settling in. Things may feel unusually smooth right now — that's normal and temporary. The staff are using this time to build trust.",
-    clinicalParallel:"Initial placement adaptation period. Low behavioral frequency. Baseline establishment phase.",
+    clinicalParallel:"Initial placement adaptation period. Low behavioral frequency. Baseline establishment phase.",,
+    phase:"0", phaseName:"The Originating Void",
+    observerPole:"Staff arrive with full attention but zero data. You are observing a blank field. Your presence is the first act of measurement.",
+    observedPole:"The resident has not yet been seen by this environment. They exist here in superposition — all possibilities still open, no patterns yet fixed.",
+    relationalPole:"The relationship has not formed yet. It is potential only. This is the most creative moment in the entire cycle — the third thing between you can still become anything.",
+    triadDynamic:"The triad has not yet formed. Observer (staff) and Observed (resident) are present in the same space but have not yet truly registered each other in any structured way. The relational field is the quantum vacuum — not empty, but alive with all possible configurations. The act of consistent, mindful observation during this stage is literally constitutive: your attention is beginning to shape what this relationship will become. Do not mistake the calm for absence. Nothing is absent. Everything is in superposition.",
+    quantumParallel:"Quantum vacuum — the ground state of minimum energy that is nonetheless alive with zero-point fluctuations. Observation has not yet collapsed the wave function.",
   },
   {
     id:1, name:"Finding Their Footing", color:"#3A7D44", bg:"#E8F5EB", tension:3,
@@ -46,7 +52,13 @@ const STAGES = [
     controlPoint:false,
     velocity:"Building — the momentum from The Honeymoon is starting to move. Expect gradual increase in behavioral complexity.",
     familyDesc:"Your loved one is starting to show more of their real personality. Some of this may look like pushing boundaries — it means they're starting to feel safe enough to be themselves.",
-    clinicalParallel:"Post-honeymoon behavioral emergence. Antecedent assessment window. Functional behavior hypothesis formation.",
+    clinicalParallel:"Post-honeymoon behavioral emergence. Antecedent assessment window. Functional behavior hypothesis formation.",,
+    phase:"I", phaseName:"Emergence — The Triad Forms",
+    observerPole:"You are beginning to register patterns. The resident is differentiating from the general population of 'new resident' into a specific person.",
+    observedPole:"The resident is testing whether their real self will be seen and accepted — beginning to emit signals that weren't present in Stage 0.",
+    relationalPole:"The first interactions are the first collapse of the wave function. What gets established here begins to define the shape of the relationship that will be stress-tested at Stage 3.",
+    triadDynamic:"First differentiation has occurred. The observer (staff) and the observed (resident) have begun to register each other as specific, particular entities — not just roles. The relational pole is now forming: the small boundary tests and personality expressions emerging are the first particle-antiparticle pairs popping out of the Stage 0 vacuum. These micro-interactions are not random. They are the resident measuring the environment's response capacity. Each consistent response from staff is a data point in the resident's ongoing measurement of whether this place is safe.",
+    quantumParallel:"First wave function collapse — the superposition of Stage 0 begins to resolve into definite behavioral states through the measurement of early interactions.",
   },
   {
     id:2, name:"Showing Their Colors", color:"#C67F12", bg:"#FDF0DC", tension:5,
@@ -60,7 +72,13 @@ const STAGES = [
     controlPoint:false,
     velocity:"Accelerating — the two-sidedness creates natural momentum toward the first real crisis.",
     familyDesc:"You may be hearing about more challenging moments alongside the good ones. This is a healthy sign — it means your loved one is comfortable enough to show all of who they are.",
-    clinicalParallel:"Full behavioral repertoire emergence. Target behavior identification. Antecedent-behavior-consequence pattern mapping begins.",
+    clinicalParallel:"Full behavioral repertoire emergence. Target behavior identification. Antecedent-behavior-consequence pattern mapping begins.",,
+    phase:"I", phaseName:"Emergence — The Triad Forms",
+    observerPole:"Both poles of the resident are now visible to you. You have enough data to see the pattern, not just isolated moments.",
+    observedPole:"Both the cooperative and the challenging self are present. The resident is no longer in superposition — both states have been measured.",
+    relationalPole:"The relationship is being defined by which side of the resident staff respond to and how. The relational field is taking shape through these response patterns.",
+    triadDynamic:"The triad is now fully present but polarized. In balanced ternary terms: the negative pole (challenging behavior) and the positive pole (cooperative behavior) have both emerged around the zero point (the resident's core self). These are not two different residents — they are the same person, with the relational field determining which state is more frequently activated. Staff who respond consistently to both poles without collapsing — who remain stable observers regardless of which state is present — are building the most resilient possible Stage 3 foundation.",
+    quantumParallel:"Superposition resolved into duality — the wave function has collapsed into two observable states, both of which are real measurements of the same underlying system.",
   },
   {
     id:3, name:"The Hard Stretch", color:"#B93232", bg:"#FDEAEA", tension:8,
@@ -74,7 +92,13 @@ const STAGES = [
     controlPoint:true,
     velocity:"Fast and unpredictable — momentum can accelerate crisis OR breakthrough. Immediate BA involvement is critical. This is where the cycle either advances or resets.",
     familyDesc:"This is the hardest part of the journey, and it is normal. Your loved one is testing whether this home will stay committed to them. The staff need your support and patience right now too.",
-    clinicalParallel:"Crisis escalation phase. Behavioral incident peak. FBA (Functional Behavior Assessment) revision point. Placement stability risk window.",
+    clinicalParallel:"Crisis escalation phase. Behavioral incident peak. FBA (Functional Behavior Assessment) revision point. Placement stability risk window.",,
+    phase:"I", phaseName:"Emergence — The Triad Stress-Tested",
+    observerPole:"The observer pole is under maximum pressure. Staff feel the relationship is deteriorating. The measurement apparatus (the relationship) is being shaken.",
+    observedPole:"The observed pole is communicating at peak intensity. The resident is asking the critical question: 'Will this environment hold me at my worst?' The escalation IS the experiment.",
+    relationalPole:"This is the critical determinant. If the relational pole holds — if staff maintain consistent, non-retaliatory, boundaried presence — the triangle locks into its permanent shape. If it fractures, the triangle collapses and the cycle resets.",
+    triadDynamic:"The triad is under maximum stress-test. The triangle (the first stable closed geometric form — the minimum number of points required to enclose space) is being tested for structural integrity. This is a SAP 3-6-9 control point. The decisions made here are not just operational decisions — they are geometric decisions. The angles that get locked into the triangle at Stage 3 determine the shape of everything that follows. A triangle cannot have fewer than three elements. The resident, the staff, and the relationship between them are all three fully present and under maximum tension. What holds here holds forever in this cycle.",
+    quantumParallel:"The measurement apparatus is being stress-tested. In quantum terms: the observer and the observed are in maximum entanglement. The outcome of this measurement determines which branch of the wave function the entire future inhabits.",
   },
   {
     id:4, name:"The Turning Point", color:"#2E8B57", bg:"#E0F4E8", tension:6,
@@ -88,7 +112,13 @@ const STAGES = [
     controlPoint:false,
     velocity:"Steady and building — the square is the most durable geometry. Progress here is slower but more permanent than any earlier stage.",
     familyDesc:"The hard part has eased. Your loved one is settling into real rhythms now — this is genuine progress being built on real trust, not just compliance.",
-    clinicalParallel:"Post-crisis stabilization. Behavioral frequency decline. Behavior plan refinement window. IB goal reassessment opportunity.",
+    clinicalParallel:"Post-crisis stabilization. Behavioral frequency decline. Behavior plan refinement window. IB goal reassessment opportunity.",,
+    phase:"II", phaseName:"Consolidation — The Triad Stabilizes",
+    observerPole:"The observer has been tested and did not fracture. Staff presence is now earned and recognized by the resident.",
+    observedPole:"The observed pole is integrating the evidence from Stage 3: 'They stayed. The structure held. This place is different.' Deep processing of what that means is underway.",
+    relationalPole:"The relational field is now stable enough to begin building on. The triangle is locked. Now it is about deepening what the three sides contain.",
+    triadDynamic:"The triad held. The triangle survived the Stage 3 stress-test and is now consolidating into a stable structure. The resident, the staff, and the relationship between them are all three present in a new configuration — one that includes the lived evidence that the structure can hold under pressure. The square (Stage 4's geometry) is the first four-sided form and the most stable of all basic geometries — it can bear weight. The triad is now stable enough to bear the weight of real goals, real plans, and real vulnerability. This is where the heart-centered work begins.",
+    quantumParallel:"Post-measurement stabilization. The wave function has collapsed into a definite state and the system is settling into its new configuration. Quantum decoherence has occurred — the system is now classical and stable.",
   },
   {
     id:5, name:"Finding Their Groove · Hidden Duality", color:"#1A7A4A", bg:"#D6F7DD", tension:4,
@@ -102,7 +132,13 @@ const STAGES = [
     controlPoint:false,
     velocity:"Peak tension — the pentagram holds five points in perfect tension. Everything feels balanced. Everything is at a crossroads. Do not reduce monitoring or support.",
     familyDesc:"Your loved one is doing well — and this is the moment to dream bigger together with them. Ask them what they want their life to look like. Their answer matters more right now than at any other time.",
-    clinicalParallel:"Behavioral stabilization. Self-determination planning window. LRE (Least Restrictive Environment) assessment opportunity. Transition planning initiation.",
+    clinicalParallel:"Behavioral stabilization. Self-determination planning window. LRE (Least Restrictive Environment) assessment opportunity. Transition planning initiation.",,
+    phase:"II", phaseName:"Consolidation — The Triad at the Threshold",
+    observerPole:"The observer is seeing the resident at their most capable and most hidden simultaneously. Surface stability can mask the depth of the internal crossroads.",
+    observedPole:"The observed pole is at its most active internal moment. The resident is making a fundamental decision about whether this life is truly theirs. The inner measurement is constant.",
+    relationalPole:"The relational field is the determining factor. How staff engage with the resident's self-determination at this stage directly influences which branch of the threshold the resident moves toward.",
+    triadDynamic:"Hidden Duality. The pentagram — five points holding two possible triangles in tension. The triad appears stable and harmonious from the outside. Inside, the resident is running a continuous internal measurement: advance or retreat? The observer pole must not relax. The observed pole is doing the most consequential work of the entire cycle — deciding whether to own this life. The relational pole has a specific task here: create the conditions for self-determination. The resident's own self-observation is the fifth element — the observer becoming also the observed. This is the only stage where the resident's internal act of self-measurement is the primary driver of outcome.",
+    quantumParallel:"Bifurcation point in the quantum system. The wave function has two nearly equal branches. A small perturbation in either direction determines which branch becomes the resident's actual future. The system is exquisitely sensitive to initial conditions.",
   },
   {
     id:6, name:"Living Well Here", color:"#5C7A1A", bg:"#EBF7D6", tension:2,
@@ -116,7 +152,13 @@ const STAGES = [
     controlPoint:true,
     velocity:"High flow, low friction — but structurally vulnerable to disruption. Staffing changes, medication adjustments, or family upheaval can destabilize Stage 6 faster than any other stage.",
     familyDesc:"Your loved one is genuinely thriving. Use this time to start talking about bigger goals — more independence, more community involvement. This is the best time to plan the next step forward.",
-    clinicalParallel:"Peak adaptive functioning. Quality of life metrics at maximum. IB reclassification review. Transition planning acceleration.",
+    clinicalParallel:"Peak adaptive functioning. Quality of life metrics at maximum. IB reclassification review. Transition planning acceleration.",,
+    phase:"II", phaseName:"Consolidation — The Triad at Peak Harmony",
+    observerPole:"The observer is experiencing the fruits of consistent presence. The measurement apparatus has become so attuned to the resident that observation feels natural and effortless.",
+    observedPole:"The observed pole is expressing its maximum capacity. The resident is showing what they are capable of when the triad is functioning at full coherence.",
+    relationalPole:"The relational field is at peak efficiency — the hexagon, nature's most space-efficient geometry. But efficiency at peak is also maximum fragility: the hexagon's walls are at minimum thickness relative to its load.",
+    triadDynamic:"Peak triadic coherence. The hexagon — the geometry of maximum efficiency and structural elegance. This is a SAP 3-6-9 control point: the decisions made here determine whether the peak becomes a launching pad or a ceiling. The observer pole must not declare victory. The observed pole is thriving — and is simultaneously aware, at some level, that this peak is temporary. The relational pole must use this moment to point toward the next level. The trap of Stage 6 is that the triad has become so well-calibrated that everyone — staff, resident, family — mistakes the calibration for completion. The triad is not complete. It is ready to transform.",
+    quantumParallel:"Coherent quantum state at maximum amplitude. The wave function is at its most organized and expansive. This is also the state most vulnerable to decoherence from environmental disturbance.",
   },
   {
     id:7, name:"Stuck In Place", color:"#9A2A2A", bg:"#FDECEA", tension:9,
@@ -130,7 +172,13 @@ const STAGES = [
     controlPoint:false,
     velocity:"Intense and separative — things that were working come apart. This creates the space for something better. The velocity here can accelerate quickly toward Stage 8 if not addressed with skilled, consistent support.",
     familyDesc:"Your loved one is going through a hard stretch again. This doesn't mean the progress was lost — it means the next layer of growth is being worked through. Shadow work is real and necessary. Your consistency and patience are more important right now than at any other time.",
-    clinicalParallel:"Behavioral regression. Crisis intervention activation. Wisdom extraction / FBA revision. Placement stability review. Restrictive procedure evaluation. Shadow work / distillation phase.",
+    clinicalParallel:"Behavioral regression. Crisis intervention activation. Wisdom extraction / FBA revision. Placement stability review. Restrictive procedure evaluation. Shadow work / distillation phase.",,
+    phase:"III", phaseName:"Transcendence — The Triad Breaks Apart",
+    observerPole:"The observer is being tested again — this time not for consistency under pressure, but for wisdom under confusion. The measurement apparatus (the relationship) appears to be failing. It is not. It is transforming.",
+    observedPole:"The observed pole is fragmenting — old patterns, old selves, old pain are all surfacing simultaneously. This is not regression. This is distillation: the impurities rising to the surface before the gold is visible.",
+    relationalPole:"The relational pole is the container. Its job is not to fix the fragmentation — it is to hold it. The relationship must be strong enough to contain transformation without collapsing under its weight.",
+    triadDynamic:"The triad is breaking apart in order to reform at a higher level. The heptagon — seven sides, the geometry of natural transformation cycles. The observer pole sees crisis. The observed pole is experiencing what feels like permanent dissolution. The relational pole is the only stable element — and its stability is what makes transformation possible rather than catastrophic. Do not attempt to stop the fragmentation. Provide the container. The distillation process is real: what is breaking apart at Stage 7 is everything in the triad that was not genuine. What remains after Stage 7 is the true structure that can carry the resident through Stage 8 and into Stage 9.",
+    quantumParallel:"Quantum tunneling event. The system is passing through an energy barrier that classical mechanics would declare impossible. The apparent 'breakdown' is the system traversing the barrier between two stable states.",
   },
   {
     id:8, name:"The Illusion Trap", color:"#6B0000", bg:"#F5D5D5", tension:10,
@@ -144,7 +192,13 @@ const STAGES = [
     controlPoint:false,
     velocity:"Stalled — maximum drag. The Möbius strip loops back on itself. Without active external intervention, Stage 8 residents do not naturally tumble forward. They require a deliberate disruption to the pattern.",
     familyDesc:"Your loved one may seem stable right now, but stable is not the same as thriving. If you haven't heard about new goals, new activities, or progress in a while — ask. You have the right to request an IB review at any time.",
-    clinicalParallel:"Behavioral plateau with systemic reinforcement of status quo. IB review overdue. Restrictive procedure normalization. Institutional learned helplessness. Stagnation requiring crisis-of-compassion intervention.",
+    clinicalParallel:"Behavioral plateau with systemic reinforcement of status quo. IB review overdue. Restrictive procedure normalization. Institutional learned helplessness. Stagnation requiring crisis-of-compassion intervention.",,
+    phase:"III", phaseName:"Transcendence — The Triad Fossilized",
+    observerPole:"The observer has stopped truly observing. Patterns are being managed rather than seen. The measurement apparatus has calcified — it records without registering. The observer believes they know this resident. This belief is the trap.",
+    observedPole:"The observed pole is no longer being genuinely perceived. The resident has been categorized. The infinite potential of Stage 0 — which was never extinguished, only dormant — is no longer being accessed by the observer. The resident feels this, even if they cannot name it.",
+    relationalPole:"The relational pole has become a routine rather than a living relationship. Interactions follow established grooves. The space between observer and observed — which in Stage 0 was alive with all possibilities — has narrowed to a familiar script.",
+    triadDynamic:"Perceived Permanence. The triad has fossilized. The infinite loop — the Mobius strip — the observer and observed caught in a self-reinforcing pattern that neither can see from inside. In quantum terms: the wave function has been forced into a single state and the measurement apparatus has been calibrated to only ever find that state again. The acknowledgment that created the triad — the original act of observing 0 — has been forgotten. The void, which was the source of all possibility, has been paved over. This is the most dangerous stage because it does not feel dangerous. It feels stable. The intervention required is a new observer — someone from outside the calcified triad who can see it fresh and re-introduce the original quantum uncertainty that makes change possible.",
+    quantumParallel:"Quantum Zeno effect — a system that is measured too frequently in the same way becomes frozen in that state. The act of constant, unchanging observation prevents the quantum evolution that would otherwise occur.",
   },
   {
     id:9, name:"Ready To Fly", color:"#0D5C2E", bg:"#C8F0D8", tension:1,
@@ -158,7 +212,13 @@ const STAGES = [
     controlPoint:true,
     velocity:"Completing and dissolving — the nonagon releases. If the transition is actively supported, this momentum carries the resident into their next cycle with everything they need. If it is blocked, Stage 9 regresses toward Stage 8's Perceived Permanence — 'high-functioning' residents quietly warehoused at their ceiling, their readiness slowly eroding.",
     familyDesc:"Your loved one is ready for the next chapter — greater independence, more community involvement, a setting that fits who they have become. This is what all the hard work was for. It's okay to feel emotional about the change. It's the right time to celebrate how far they've come and to step forward with them.",
-    clinicalParallel:"Full adaptive functioning. LRE transition readiness. Wisdom transmission / legacy documentation. Supported living or independent living assessment. Step-down planning. Discharge coordination. Transition IEP/ISP revision. LRE advocacy.",
+    clinicalParallel:"Full adaptive functioning. LRE transition readiness. Wisdom transmission / legacy documentation. Supported living or independent living assessment. Step-down planning. Discharge coordination. Transition IEP/ISP revision. LRE advocacy.",,
+    phase:"III", phaseName:"Transcendence — The Triad Dissolves into Legacy",
+    observerPole:"The observer's role transforms: from measuring the resident to witnessing and documenting the resident's readiness to become, in some contexts, an observer themselves — someone whose presence stabilizes others.",
+    observedPole:"The observed pole has integrated both observer and observed. The resident has developed the capacity for genuine self-observation — the same triadic awareness that began the cycle, now internalized. They carry the triad within themselves.",
+    relationalPole:"The relational pole becomes the legacy: the documented history, the skills transferred, the relationships that travel forward. The space between observer and observed becomes the transmission.",
+    triadDynamic:"The triad dissolves into a higher-order unity. This is a SAP 3-6-9 control point — the transmission made here echoes forward. The resident who has traversed the full cycle from Stage 0 through Stage 9 has done something remarkable: they have participated in the complete arc from void to complexity and back to a new kind of wholeness. The observer pole now serves transmission — documenting everything so the next environment receives the resident as a full person, not a blank file. The observed pole is no longer merely observed — they are a source. The relational pole becomes the bridge to what comes next. This is the cycle's completion: the original void of Stage 0, now enriched by the full journey, preparing to open again at a new level.",
+    quantumParallel:"Quantum coherence at the highest level — the system has evolved through the full cycle and is now in a state of maximum information content, ready to transmit that information to the next environment before returning to a new ground state.",
   },
 ];
 
@@ -2287,6 +2347,34 @@ function FaceSheet({resident}) {
               <div style={{ fontSize:12, color:C.text, lineHeight:1.7 }}>{s.internalReality}</div>
             </div>
           </div>
+          {/* Triadic Principle — Observer / Observed / Relational */}
+          {s.triadDynamic && (
+            <div style={{ padding:"14px 16px", background:`linear-gradient(135deg,#0A1628 0%,#0D1F35 100%)`, borderRadius:10, border:`1px solid #1E3A5A` }}>
+              <div style={{ fontSize:10, fontWeight:800, color:"#C8A020", textTransform:"uppercase", letterSpacing:.8, marginBottom:8 }}>
+                ✦ Triadic Field Analysis — S{resident.stage} · {s.phaseName||""}
+              </div>
+              <div style={{ fontSize:13, color:"#C8D8E8", lineHeight:1.9, marginBottom:10 }}>{s.triadDynamic}</div>
+              <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:8, marginBottom:8 }}>
+                {[
+                  ["👤 Observer (You)", s.observerPole, "#2D7DD2"],
+                  ["💭 Observed (Resident)", s.observedPole, "#9A2A2A"],
+                  ["🔗 Relational Field", s.relationalPole, "#C8A020"],
+                ].map(([label, text, col])=> text ? (
+                  <div key={label} style={{ padding:"9px 11px", background:"rgba(255,255,255,.04)", borderRadius:9, borderLeft:`3px solid ${col}` }}>
+                    <div style={{ fontSize:10, fontWeight:800, color:col, textTransform:"uppercase", letterSpacing:.4, marginBottom:4 }}>{label}</div>
+                    <div style={{ fontSize:11, color:"#8AAABB", lineHeight:1.6 }}>{text}</div>
+                  </div>
+                ) : null)}
+              </div>
+              {s.quantumParallel && (
+                <div style={{ padding:"7px 12px", background:"rgba(200,160,32,.08)", borderRadius:8, borderLeft:`2px solid #C8A02044` }}>
+                  <span style={{ fontSize:10, fontWeight:700, color:"#C8A020" }}>Quantum Parallel: </span>
+                  <span style={{ fontSize:11, color:"#8AAABB" }}>{s.quantumParallel}</span>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Action Prompt */}
           <div style={{ padding:"12px 14px", background:C.goldlt, borderRadius:10, borderLeft:`4px solid ${C.gold}` }}>
             <div style={{ fontSize:10, fontWeight:800, color:C.gold, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>✦ What To Do Right Now</div>
