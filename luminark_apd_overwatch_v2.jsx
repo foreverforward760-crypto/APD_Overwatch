@@ -23,202 +23,92 @@ const STAGES = [
   {
     id:0, name:"The Honeymoon", color:"#2D7DD2", bg:"#E8F2FC", tension:1,
     geometry:"Circle", symbol:"⚫",
-    sapPrinciple:"Pure potential — no history yet written in this environment. The cleared field. Everything is possible because nothing has been established.",
     inversion:"Neutral — no polarity tension yet. The slate is genuinely blank.",
-    staffReality:"The resident is compliant, cooperative, and often unusually easy to work with. They follow house routines, accept staff direction, and may seem like the 'perfect' resident. Do not be fooled by the ease.",
-    internalReality:"The resident is reading the room — quietly assessing who is safe, what the rules really are, and whether this place is different from the last one. The calm is real, but it is the calm of observation, not of comfort.",
-    actionPrompt:"Build the relationship now — this window closes. Be consistent, predictable, and honest. The patterns you set here become the foundation the resident trusts or tests later. Use this period to establish daily rhythms, learn preferences, and observe without pressure.",
-    trapWarning:"Assuming the Honeymoon is the baseline — and treating what comes next as deterioration. Staff who expect this level of cooperation throughout the placement are set up for a hard fall when Stage 3 arrives. Also watch for void addiction: residents who cycle back here repeatedly after crises may be unconsciously using reset as an avoidance pattern.",
     controlPoint:false,
-    velocity:"Slow — the resident is still absorbing. This stage often follows a major life transition: new placement, post-hospitalization, post-incident reset. The calm is real. The work underneath it has already begun.",
     familyDesc:"Your loved one is settling in. Things may feel unusually smooth right now — that's normal and temporary. The staff are using this time to build trust.",
     clinicalParallel:"Initial placement adaptation period. Low behavioral frequency. Baseline establishment phase.",
     phase:"0", phaseName:"The Originating Void",
-    observerPole:"Staff arrive with full attention but zero data. You are observing a blank field. Your presence is the first act of measurement.",
-    observedPole:"The resident has not yet been seen by this environment. They exist here in superposition — all possibilities still open, no patterns yet fixed.",
-    relationalPole:"The relationship has not formed yet. It is potential only. This is the most creative moment in the entire cycle — the third thing between you can still become anything.",
-    triadDynamic:"The triad has not yet formed. Observer (staff) and Observed (resident) are present in the same space but have not yet truly registered each other in any structured way. The relational field is the quantum vacuum — not empty, but alive with all possible configurations. The act of consistent, mindful observation during this stage is literally constitutive: your attention is beginning to shape what this relationship will become. Do not mistake the calm for absence. Nothing is absent. Everything is in superposition.",
-    quantumParallel:"Quantum vacuum — the ground state of minimum energy that is nonetheless alive with zero-point fluctuations. Observation has not yet collapsed the wave function.",
   },
   {
     id:1, name:"Finding Their Footing", color:"#3A7D44", bg:"#E8F5EB", tension:3,
     geometry:"Point becoming Line", symbol:"✨",
-    sapPrinciple:"First real emergence — direction begins to form out of the initial stillness. Unstable on the outside, but a clear internal sense of self is starting to activate.",
     inversion:"Physically unstable / Consciously stable. The resident's behavior may start showing variation — but they know exactly who they are. The testing is intentional, not random.",
-    staffReality:"Small boundary tests appear. The resident finds out what the real rules are — not the posted rules, the actual rules. Who backs down? Who means what they say? They are gathering data, not being defiant.",
-    internalReality:"A growing sense of: 'I think I can actually be myself here.' First real personality emerges — humor, preferences, quirks, small refusals. This is healthy.",
-    actionPrompt:"Hold your boundaries warmly and consistently. When the resident tests, the correct response is calm follow-through — not punishment, not ignoring. They need to know the structure is real.",
-    trapWarning:"Treating early testing as a behavior problem to eliminate rather than a trust-building communication to respond to.",
     controlPoint:false,
-    velocity:"Building — the momentum from The Honeymoon is starting to move. Expect gradual increase in behavioral complexity.",
     familyDesc:"Your loved one is starting to show more of their real personality. Some of this may look like pushing boundaries — it means they're starting to feel safe enough to be themselves.",
     clinicalParallel:"Post-honeymoon behavioral emergence. Antecedent assessment window. Functional behavior hypothesis formation.",
     phase:"I", phaseName:"Emergence — The Triad Forms",
-    observerPole:"You are beginning to register patterns. The resident is differentiating from the general population of 'new resident' into a specific person.",
-    observedPole:"The resident is testing whether their real self will be seen and accepted — beginning to emit signals that weren't present in Stage 0.",
-    relationalPole:"The first interactions are the first collapse of the wave function. What gets established here begins to define the shape of the relationship that will be stress-tested at Stage 3.",
-    triadDynamic:"First differentiation has occurred. The observer (staff) and the observed (resident) have begun to register each other as specific, particular entities — not just roles. The relational pole is now forming: the small boundary tests and personality expressions emerging are the first particle-antiparticle pairs popping out of the Stage 0 vacuum. These micro-interactions are not random. They are the resident measuring the environment's response capacity. Each consistent response from staff is a data point in the resident's ongoing measurement of whether this place is safe.",
-    quantumParallel:"First wave function collapse — the superposition of Stage 0 begins to resolve into definite behavioral states through the measurement of early interactions.",
   },
   {
     id:2, name:"Showing Their Colors", color:"#C67F12", bg:"#FDF0DC", tension:5,
     geometry:"Axis / Two Poles", symbol:"☯",
-    sapPrinciple:"Duality fully surfaces — the resident shows the full range of who they are. Stable on the outside, churning on the inside. The tension between their two sides becomes visible.",
     inversion:"Physically stable / Consciously unstable. The resident has settled into the home's physical routines but is internally sorting out identity, belonging, and safety.",
-    staffReality:"You see both sides now — the cooperative, engaged side AND the resistant, challenging side. Neither is fake. Both are real. Staff who only accept the 'good' side will face escalating conflict as the resident fights to be fully seen.",
-    internalReality:"Am I accepted as a whole person here — not just when I'm easy? The resident is testing whether staff can handle the full truth of who they are.",
-    actionPrompt:"Accept the whole person. When the difficult side emerges, respond to it the same way you respond to the pleasant side — with steadiness. Consistency across both states builds deep trust.",
-    trapWarning:"Trying to 'fix' the difficult side while only rewarding the compliant side. This communicates that the resident is only acceptable when they perform.",
     controlPoint:false,
-    velocity:"Accelerating — the two-sidedness creates natural momentum toward the first real crisis.",
     familyDesc:"You may be hearing about more challenging moments alongside the good ones. This is a healthy sign — it means your loved one is comfortable enough to show all of who they are.",
     clinicalParallel:"Full behavioral repertoire emergence. Target behavior identification. Antecedent-behavior-consequence pattern mapping begins.",
     phase:"I", phaseName:"Emergence — The Triad Forms",
-    observerPole:"Both poles of the resident are now visible to you. You have enough data to see the pattern, not just isolated moments.",
-    observedPole:"Both the cooperative and the challenging self are present. The resident is no longer in superposition — both states have been measured.",
-    relationalPole:"The relationship is being defined by which side of the resident staff respond to and how. The relational field is taking shape through these response patterns.",
-    triadDynamic:"The triad is now fully present but polarized. In balanced ternary terms: the negative pole (challenging behavior) and the positive pole (cooperative behavior) have both emerged around the zero point (the resident's core self). These are not two different residents — they are the same person, with the relational field determining which state is more frequently activated. Staff who respond consistently to both poles without collapsing — who remain stable observers regardless of which state is present — are building the most resilient possible Stage 3 foundation.",
-    quantumParallel:"Superposition resolved into duality — the wave function has collapsed into two observable states, both of which are real measurements of the same underlying system.",
   },
   {
     id:3, name:"The Hard Stretch", color:"#B93232", bg:"#FDEAEA", tension:8,
     geometry:"Triangle — first true structure under pressure", symbol:"🔺",
-    sapPrinciple:"First major threshold. The most important and most misread stage in the entire cycle. High chaos on the outside — high clarity on the inside. This is where the resident expresses what they could not express before. The triangle: the structure is being stress-tested to find out if it will hold.",
     inversion:"Physically unstable / Consciously stable. Behavior is at its most challenging — but the resident often has the clearest sense of what they need. The escalation IS the communication.",
-    staffReality:"Incidents increase. Sleep disruption, refusals, aggression, property destruction, or shutdown behaviors peak. Staff feel the relationship is deteriorating. It is not — it is being tested at depth. This is also a SAP control point (3-6-9): the decisions made here determine the entire trajectory.",
-    internalReality:"'Will this place hold me when I'm at my worst?' The resident is not trying to destroy the placement. They are trying to find out if the placement will survive the real version of them.",
-    actionPrompt:"Do not abandon the relationship at The Hard Stretch. Update the BA plan. Request additional support. Document with precision. What you do at Stage 3 becomes the resident's lived evidence of whether they are worth staying for.",
-    trapWarning:"Recommending placement change, restrictive procedures, or medication increases as the first response to Stage 3. This stage ends placements that should not end. Most residents who cycle through multiple group homes are being discharged at Stage 3 rather than supported through it.",
     controlPoint:true,
-    velocity:"Fast and unpredictable — momentum can accelerate crisis OR breakthrough. Immediate BA involvement is critical. This is where the cycle either advances or resets.",
     familyDesc:"This is the hardest part of the journey, and it is normal. Your loved one is testing whether this home will stay committed to them. The staff need your support and patience right now too.",
     clinicalParallel:"Crisis escalation phase. Behavioral incident peak. FBA (Functional Behavior Assessment) revision point. Placement stability risk window.",
     phase:"I", phaseName:"Emergence — The Triad Stress-Tested",
-    observerPole:"The observer pole is under maximum pressure. Staff feel the relationship is deteriorating. The measurement apparatus (the relationship) is being shaken.",
-    observedPole:"The observed pole is communicating at peak intensity. The resident is asking the critical question: 'Will this environment hold me at my worst?' The escalation IS the experiment.",
-    relationalPole:"This is the critical determinant. If the relational pole holds — if staff maintain consistent, non-retaliatory, boundaried presence — the triangle locks into its permanent shape. If it fractures, the triangle collapses and the cycle resets.",
-    triadDynamic:"The triad is under maximum stress-test. The triangle (the first stable closed geometric form — the minimum number of points required to enclose space) is being tested for structural integrity. This is a SAP 3-6-9 control point. The decisions made here are not just operational decisions — they are geometric decisions. The angles that get locked into the triangle at Stage 3 determine the shape of everything that follows. A triangle cannot have fewer than three elements. The resident, the staff, and the relationship between them are all three fully present and under maximum tension. What holds here holds forever in this cycle.",
-    quantumParallel:"The measurement apparatus is being stress-tested. In quantum terms: the observer and the observed are in maximum entanglement. The outcome of this measurement determines which branch of the wave function the entire future inhabits.",
   },
   {
     id:4, name:"The Turning Point", color:"#2E8B57", bg:"#E0F4E8", tension:6,
     geometry:"Square — four corners, stable foundation", symbol:"⬛",
-    sapPrinciple:"Consolidation after the crisis. The structure held. The resident now begins to build on that proof. Stable on the outside as real routines form — but the inner work of learning to trust is the most active it has ever been.",
     inversion:"Physically stable / Consciously unstable. Incidents decrease. Routines solidify. Staff breathe again. But internally the resident is doing the deepest emotional processing of the entire cycle.",
-    staffReality:"Things get noticeably calmer. The specific strategies that worked during The Hard Stretch are now producing consistent results. Staff-resident rapport deepens. The relationship is becoming real. This is when BA plans should be actively refined — while you have the data and the cooperation.",
-    internalReality:"'They stayed. They actually stayed.' The resident is processing what it means that the staff and the home held firm. This often surfaces as quiet vulnerability — unexpected openness, conversations that haven't happened before.",
-    actionPrompt:"Don't coast. The stability is real but not automatic. Reinforce what worked during The Hard Stretch. Deepen the relationship. Update the IB plan while you have the data and the cooperation. Begin thinking about next-level goals — this is the most durable foundation in the entire cycle. Heart-centered support belongs here: this is the stage where the resident begins to feel, not just perform.",
-    trapWarning:"Treating the calmer behavior as 'case closed' and reducing staff attention and plan updates. Stage 4 stability is actively maintained, not passive. The comfort trap is real: residents and staff alike can become so comfortable here that growth stops — and the system rewards the stagnation by calling it success.",
     controlPoint:false,
-    velocity:"Steady and building — the square is the most durable geometry. Progress here is slower but more permanent than any earlier stage.",
     familyDesc:"The hard part has eased. Your loved one is settling into real rhythms now — this is genuine progress being built on real trust, not just compliance.",
     clinicalParallel:"Post-crisis stabilization. Behavioral frequency decline. Behavior plan refinement window. IB goal reassessment opportunity.",
     phase:"II", phaseName:"Consolidation — The Triad Stabilizes",
-    observerPole:"The observer has been tested and did not fracture. Staff presence is now earned and recognized by the resident.",
-    observedPole:"The observed pole is integrating the evidence from Stage 3: 'They stayed. The structure held. This place is different.' Deep processing of what that means is underway.",
-    relationalPole:"The relational field is now stable enough to begin building on. The triangle is locked. Now it is about deepening what the three sides contain.",
-    triadDynamic:"The triad held. The triangle survived the Stage 3 stress-test and is now consolidating into a stable structure. The resident, the staff, and the relationship between them are all three present in a new configuration — one that includes the lived evidence that the structure can hold under pressure. The square (Stage 4's geometry) is the first four-sided form and the most stable of all basic geometries — it can bear weight. The triad is now stable enough to bear the weight of real goals, real plans, and real vulnerability. This is where the heart-centered work begins.",
-    quantumParallel:"Post-measurement stabilization. The wave function has collapsed into a definite state and the system is settling into its new configuration. Quantum decoherence has occurred — the system is now classical and stable.",
   },
   {
     id:5, name:"Finding Their Groove · Hidden Duality", color:"#1A7A4A", bg:"#D6F7DD", tension:4,
     geometry:"Pentagram — five points, the hidden star within the circle", symbol:"⭐",
-    sapPrinciple:"The bilateral threshold. The only stage in the cycle where the door opens equally in both directions — forward toward flourishing OR backward toward earlier stages. The resident appears settled, even thriving. But underneath is a hidden crossroads: they are making a fundamental internal decision about whether this life is truly theirs. Hidden Duality: what you see on the surface is not the whole picture. Three possible outcomes: advance, retreat, or freeze.",
     inversion:"Physically unstable / Consciously stable — but the instability is internal and invisible. The resident knows exactly where they stand. Staff often do not.",
-    staffReality:"The resident seems to be doing really well. Schedules are working. Goals are being met. Community participation is increasing. Staff and families often relax here — which is the most dangerous response to this stage. The groove is real. The hidden duality underneath it is also real.",
-    internalReality:"'Is this actually my life? Do I want it to be? Can I trust that it will last?' The resident is experiencing both the pull forward toward genuine belonging AND the pull backward toward familiar patterns — even familiar pain. The inner debate is active even when the outer behavior is calm.",
-    actionPrompt:"Do not assume the work is done. Deepen goals. Have honest conversations with the resident about their future. Involve them in planning. This is the most important window for self-determination — what the resident decides here shapes everything that follows. Watch for sudden small regressions — they are signals from the hidden duality, not random setbacks.",
-    trapWarning:"Declaring the resident 'stable' and reducing support at Stage 5. This is the most common cause of Stage 7 regression. The groove can only sustain itself if the underlying decision resolves forward.",
     controlPoint:false,
-    velocity:"Peak tension — the pentagram holds five points in perfect tension. Everything feels balanced. Everything is at a crossroads. Do not reduce monitoring or support.",
     familyDesc:"Your loved one is doing well — and this is the moment to dream bigger together with them. Ask them what they want their life to look like. Their answer matters more right now than at any other time.",
     clinicalParallel:"Behavioral stabilization. Self-determination planning window. LRE (Least Restrictive Environment) assessment opportunity. Transition planning initiation.",
     phase:"II", phaseName:"Consolidation — The Triad at the Threshold",
-    observerPole:"The observer is seeing the resident at their most capable and most hidden simultaneously. Surface stability can mask the depth of the internal crossroads.",
-    observedPole:"The observed pole is at its most active internal moment. The resident is making a fundamental decision about whether this life is truly theirs. The inner measurement is constant.",
-    relationalPole:"The relational field is the determining factor. How staff engage with the resident's self-determination at this stage directly influences which branch of the threshold the resident moves toward.",
-    triadDynamic:"Hidden Duality. The pentagram — five points holding two possible triangles in tension. The triad appears stable and harmonious from the outside. Inside, the resident is running a continuous internal measurement: advance or retreat? The observer pole must not relax. The observed pole is doing the most consequential work of the entire cycle — deciding whether to own this life. The relational pole has a specific task here: create the conditions for self-determination. The resident's own self-observation is the fifth element — the observer becoming also the observed. This is the only stage where the resident's internal act of self-measurement is the primary driver of outcome.",
-    quantumParallel:"Bifurcation point in the quantum system. The wave function has two nearly equal branches. A small perturbation in either direction determines which branch becomes the resident's actual future. The system is exquisitely sensitive to initial conditions.",
   },
   {
     id:6, name:"Living Well Here", color:"#5C7A1A", bg:"#EBF7D6", tension:2,
     geometry:"Hexagon — honeycomb, peak efficiency in nature", symbol:"🔶",
-    sapPrinciple:"The peak of harmony within this cycle. The resident has crossed the threshold and is genuinely thriving. The hexagon: nature's most efficient structure — maximum function, minimum waste. But hexagons are also fragile at the edges. This is a SAP control point (3-6-9): the maintenance decisions made here determine whether the peak sustains or collapses.",
     inversion:"Physically stable / Consciously unstable — the inner work of maintaining this peak is real and constant. The resident may feel the fragility themselves even while appearing to flourish.",
-    staffReality:"The resident is meaningfully engaged — in activities, in the community, in relationships. Goals are being achieved. This is a flow state: skills are clicking, participation is high, relative harmony defines the house. This looks like success because it is success. But the hexagon's strength is also its vulnerability — Stage 6 can destabilize faster than any other stage when something disrupts the structure. Staffing changes, medication adjustments, or family upheaval can crack it quickly.",
-    internalReality:"Real joy, real belonging — and underneath it, a quiet awareness that this peak cannot be taken for granted. The resident may begin to think about what comes next, even if they cannot articulate it. Some residents feel the fragility themselves before staff notice it.",
-    actionPrompt:"Celebrate genuinely. Document the progress in detail — this data belongs in the IB review and the LRE assessment. AND: begin the conversation about next-level goals. Step-down planning, community integration, greater independence. Living Well Here should be preparation for Ready To Fly — not the permanent destination. Monitor for early Stage 7 micro-signals: increased vocalization after routine changes, mild regression in specific settings, uncharacteristic withdrawal.",
-    trapWarning:"Institutionalizing the resident at their peak — making the group home permanent because everyone (staff, family, system) is comfortable with Stage 6. This is the beginning of Stage 8's Perceived Permanence. The peak is meant to be a launching pad, not a landing pad.",
     controlPoint:true,
-    velocity:"High flow, low friction — but structurally vulnerable to disruption. Staffing changes, medication adjustments, or family upheaval can destabilize Stage 6 faster than any other stage.",
     familyDesc:"Your loved one is genuinely thriving. Use this time to start talking about bigger goals — more independence, more community involvement. This is the best time to plan the next step forward.",
     clinicalParallel:"Peak adaptive functioning. Quality of life metrics at maximum. IB reclassification review. Transition planning acceleration.",
     phase:"II", phaseName:"Consolidation — The Triad at Peak Harmony",
-    observerPole:"The observer is experiencing the fruits of consistent presence. The measurement apparatus has become so attuned to the resident that observation feels natural and effortless.",
-    observedPole:"The observed pole is expressing its maximum capacity. The resident is showing what they are capable of when the triad is functioning at full coherence.",
-    relationalPole:"The relational field is at peak efficiency — the hexagon, nature's most space-efficient geometry. But efficiency at peak is also maximum fragility: the hexagon's walls are at minimum thickness relative to its load.",
-    triadDynamic:"Peak triadic coherence. The hexagon — the geometry of maximum efficiency and structural elegance. This is a SAP 3-6-9 control point: the decisions made here determine whether the peak becomes a launching pad or a ceiling. The observer pole must not declare victory. The observed pole is thriving — and is simultaneously aware, at some level, that this peak is temporary. The relational pole must use this moment to point toward the next level. The trap of Stage 6 is that the triad has become so well-calibrated that everyone — staff, resident, family — mistakes the calibration for completion. The triad is not complete. It is ready to transform.",
-    quantumParallel:"Coherent quantum state at maximum amplitude. The wave function is at its most organized and expansive. This is also the state most vulnerable to decoherence from environmental disturbance.",
   },
   {
     id:7, name:"Stuck In Place", color:"#9A2A2A", bg:"#FDECEA", tension:9,
     geometry:"Heptagon — seven sides, natural cycles of transformation", symbol:"🌀",
-    sapPrinciple:"Crisis of transformation, not failure. The peak has cracked — and the cracking is the point. Stage 7 is the lens that examines everything: every assumption, every plan, every relationship is stress-tested. Old patterns break apart. This is painful to witness and to live through. But the heptagon appears in nature at every major transformation point. What looks like 'stuck' to the outside observer is often the pressure required for the next breakthrough. High wisdom potential lives inside Stage 7 — if the team has the skill to extract it.",
     inversion:"Physically unstable / Consciously stable — behavioral incidents return, regression is visible, but the resident often has razor-sharp clarity about what is wrong. The crisis IS the message.",
-    staffReality:"Something has broken down. Incidents returning. Progress plateauing or reversing. Staff are frustrated. Plans feel ineffective. The temptation is to increase restrictions, change medications, or consider placement change. This is usually the wrong response. Stage 7 is a 'dark night' for the placement — it requires deeper engagement and a safe container for transformation, not retreat.",
-    internalReality:"'Nothing is working. Nothing will ever work.' The resident is experiencing what feels like permanent suffering — but this is the distillation phase speaking, not the truth. The intensity of Stage 7 is the friction of transformation. Wisdom is being extracted from the difficulty, even when the resident cannot feel it yet. Shadow work — facing the parts of themselves they have avoided — is active here.",
-    actionPrompt:"Call an emergency team meeting. Review the entire plan with fresh eyes — not an update, a real review. Bring in the BA, the physician, and the family. Ask the resident directly: 'What do you need right now that you're not getting?' Provide a safe container for the transformation. Do not rush through this stage. Extract what it is teaching and document it — that intelligence becomes the foundation of Stage 8 and the roadmap for Stage 9.",
-    trapWarning:"Interpreting Stage 7 as proof that the resident has 'hit their ceiling' and reducing expectations permanently. This is the doorway into Stage 8's Perceived Permanence — the institutionalized belief that suffering is inevitable. Despair and prolonged suffering without extraction of wisdom is what turns a Stage 7 into a Stage 8 sentence.",
     controlPoint:false,
-    velocity:"Intense and separative — things that were working come apart. This creates the space for something better. The velocity here can accelerate quickly toward Stage 8 if not addressed with skilled, consistent support.",
     familyDesc:"Your loved one is going through a hard stretch again. This doesn't mean the progress was lost — it means the next layer of growth is being worked through. Shadow work is real and necessary. Your consistency and patience are more important right now than at any other time.",
     clinicalParallel:"Behavioral regression. Crisis intervention activation. Wisdom extraction / FBA revision. Placement stability review. Restrictive procedure evaluation. Shadow work / distillation phase.",
     phase:"III", phaseName:"Transcendence — The Triad Breaks Apart",
-    observerPole:"The observer is being tested again — this time not for consistency under pressure, but for wisdom under confusion. The measurement apparatus (the relationship) appears to be failing. It is not. It is transforming.",
-    observedPole:"The observed pole is fragmenting — old patterns, old selves, old pain are all surfacing simultaneously. This is not regression. This is distillation: the impurities rising to the surface before the gold is visible.",
-    relationalPole:"The relational pole is the container. Its job is not to fix the fragmentation — it is to hold it. The relationship must be strong enough to contain transformation without collapsing under its weight.",
-    triadDynamic:"The triad is breaking apart in order to reform at a higher level. The heptagon — seven sides, the geometry of natural transformation cycles. The observer pole sees crisis. The observed pole is experiencing what feels like permanent dissolution. The relational pole is the only stable element — and its stability is what makes transformation possible rather than catastrophic. Do not attempt to stop the fragmentation. Provide the container. The distillation process is real: what is breaking apart at Stage 7 is everything in the triad that was not genuine. What remains after Stage 7 is the true structure that can carry the resident through Stage 8 and into Stage 9.",
-    quantumParallel:"Quantum tunneling event. The system is passing through an energy barrier that classical mechanics would declare impossible. The apparent 'breakdown' is the system traversing the barrier between two stable states.",
   },
   {
     id:8, name:"The Illusion Trap", color:"#6B0000", bg:"#F5D5D5", tension:10,
     geometry:"Infinity loop / Möbius strip", symbol:"∞",
-    sapPrinciple:"The primary trap in the entire SAP framework. Maximum density. The resident (or the system around them) has become locked in a false permanent state. Two forms of Perceived Permanence: the resident appears fine but nothing is moving forward, or everyone has accepted that suffering will never end and progress is impossible. Both are illusions. Both require active intervention to break. TrapScore amplifier: 1.45× — everything that keeps the resident here is being amplified by the system itself.",
     inversion:"Physically stable / Consciously seeking release — but the conscious seeking is suppressed. The system has stopped listening. The resident's signals for change are being interpreted as symptoms to manage rather than communications to respond to.",
-    staffReality:"PERCEIVED PERMANENCE — FORM 1: The resident has been in this home for years. Behavior is manageable. No one has reviewed the IB plan in months. The BA checks in quarterly. Staff know the routines. Everyone is comfortable — except the resident, who has stopped growing. PERCEIVED PERMANENCE — FORM 2: The resident has a long history of incidents. Staff say 'that's just how they are.' Families have stopped expecting progress. The plan has not changed in over a year. The resident's potential is being actively suppressed by the system's belief that there is no potential.",
-    internalReality:"Perceived Permanence takes two forms from the inside: a quiet, unspoken despair — the sense that this is all there will ever be; or that same despair expressed loudly through behavior because no other channel is available.",
-    actionPrompt:"MANDATORY: If a resident has been at Stage 8 for more than 90 days without an IB review or BA plan update — escalate immediately. Request a full team meeting. Review every assumption about this resident's ceiling. The Illusion Trap requires someone from outside the daily routine to break the pattern. This is what the BA, the family portal, and the manager dashboard exist to catch.",
-    trapWarning:"This IS the trap. Every feature of this platform — the Fidelity Tracker, the EVV engine, the Stage Heatmap, the iConnect sync — exists partly to prevent residents from disappearing into Stage 8 undetected.",
     controlPoint:false,
-    velocity:"Stalled — maximum drag. The Möbius strip loops back on itself. Without active external intervention, Stage 8 residents do not naturally tumble forward. They require a deliberate disruption to the pattern.",
     familyDesc:"Your loved one may seem stable right now, but stable is not the same as thriving. If you haven't heard about new goals, new activities, or progress in a while — ask. You have the right to request an IB review at any time.",
     clinicalParallel:"Behavioral plateau with systemic reinforcement of status quo. IB review overdue. Restrictive procedure normalization. Institutional learned helplessness. Stagnation requiring crisis-of-compassion intervention.",
     phase:"III", phaseName:"Transcendence — The Triad Fossilized",
-    observerPole:"The observer has stopped truly observing. Patterns are being managed rather than seen. The measurement apparatus has calcified — it records without registering. The observer believes they know this resident. This belief is the trap.",
-    observedPole:"The observed pole is no longer being genuinely perceived. The resident has been categorized. The infinite potential of Stage 0 — which was never extinguished, only dormant — is no longer being accessed by the observer. The resident feels this, even if they cannot name it.",
-    relationalPole:"The relational pole has become a routine rather than a living relationship. Interactions follow established grooves. The space between observer and observed — which in Stage 0 was alive with all possibilities — has narrowed to a familiar script.",
-    triadDynamic:"Perceived Permanence. The triad has fossilized. The infinite loop — the Mobius strip — the observer and observed caught in a self-reinforcing pattern that neither can see from inside. In quantum terms: the wave function has been forced into a single state and the measurement apparatus has been calibrated to only ever find that state again. The acknowledgment that created the triad — the original act of observing 0 — has been forgotten. The void, which was the source of all possibility, has been paved over. This is the most dangerous stage because it does not feel dangerous. It feels stable. The intervention required is a new observer — someone from outside the calcified triad who can see it fresh and re-introduce the original quantum uncertainty that makes change possible.",
-    quantumParallel:"Quantum Zeno effect — a system that is measured too frequently in the same way becomes frozen in that state. The act of constant, unchanging observation prevents the quantum evolution that would otherwise occur.",
   },
   {
     id:9, name:"Ready To Fly", color:"#0D5C2E", bg:"#C8F0D8", tension:1,
     geometry:"Circle returning — the nonagon completing the arc", symbol:"🕊",
-    sapPrinciple:"Integration and readiness for the next level. The resident has done the real work of the entire cycle — and now they are becoming a source of stability for others around them. The circle closes not as an ending but as a launching point. Wisdom is ready to be transmitted, and the legacy of this placement becomes theirs to carry forward. This is a SAP control point (3-6-9): what gets documented, celebrated, and handed off here shapes the next cycle entirely.",
     inversion:"Physically unstable (the current placement no longer fits) / Consciously stable and accepting. Stage 9 is the only stage where this inversion is welcomed rather than resisted. The readiness to move forward and the readiness to let go are the same feeling.",
-    staffReality:"The resident has become a quiet anchor in the home — other residents follow their lead, staff relationships are deep and mutual, and the person is genuinely contributing to the house culture. AND: they are outgrowing the setting. They may not say it directly, but growing restlessness, boredom with former routines, and increasing interest in what comes next are all Stage 9 signals. The hardest and most important work at this stage is recognizing when to actively support the transition rather than hold on.",
-    internalReality:"'I've learned what this place had to teach me. I'm ready for the next chapter.' — Earned, sometimes bittersweet, always real. The resident knows. The question is whether the system around them is listening. Independence and greater community integration are no longer abstract goals — they feel possible from the inside.",
-    actionPrompt:"Begin LRE transition planning immediately — document every gain, every skill, every relationship built. Involve the resident fully in every decision and every timeline. Connect them with the next setting before they leave this one. Their story belongs to them. Make sure it travels with them in a way the next team can actually use.",
-    trapWarning:"Premature exit OR incomplete cycle — the trap runs both directions. Exiting too early (before the resident is truly ready) destabilizes the gains. But the more common trap is the system's attachment: staff who don't want to lose a 'good resident,' families afraid of the unknown, administrators behind on paperwork. Every month a Stage 9 resident spends waiting for the system to catch up is a month of potential they are not living.",
     controlPoint:true,
-    velocity:"Completing and dissolving — the nonagon releases. If the transition is actively supported, this momentum carries the resident into their next cycle with everything they need. If it is blocked, Stage 9 regresses toward Stage 8's Perceived Permanence — 'high-functioning' residents quietly warehoused at their ceiling, their readiness slowly eroding.",
-    familyDesc:"Your loved one is ready for the next chapter — greater independence, more community involvement, a setting that fits who they have become. This is what all the hard work was for. It's okay to feel emotional about the change. It's the right time to celebrate how far they've come and to step forward with them.",
+    familyDesc:"Your loved one is ready for the next chapter — greater independence, more community involvement, a setting that fits who they have become. This is what all the hard work was for. It's okay to feel emotional about the change. It's the right time to...",
     clinicalParallel:"Full adaptive functioning. LRE transition readiness. Wisdom transmission / legacy documentation. Supported living or independent living assessment. Step-down planning. Discharge coordination. Transition IEP/ISP revision. LRE advocacy.",
     phase:"III", phaseName:"Transcendence — The Triad Dissolves into Legacy",
-    observerPole:"The observer's role transforms: from measuring the resident to witnessing and documenting the resident's readiness to become, in some contexts, an observer themselves — someone whose presence stabilizes others.",
-    observedPole:"The observed pole has integrated both observer and observed. The resident has developed the capacity for genuine self-observation — the same triadic awareness that began the cycle, now internalized. They carry the triad within themselves.",
-    relationalPole:"The relational pole becomes the legacy: the documented history, the skills transferred, the relationships that travel forward. The space between observer and observed becomes the transmission.",
-    triadDynamic:"The triad dissolves into a higher-order unity. This is a SAP 3-6-9 control point — the transmission made here echoes forward. The resident who has traversed the full cycle from Stage 0 through Stage 9 has done something remarkable: they have participated in the complete arc from void to complexity and back to a new kind of wholeness. The observer pole now serves transmission — documenting everything so the next environment receives the resident as a full person, not a blank file. The observed pole is no longer merely observed — they are a source. The relational pole becomes the bridge to what comes next. This is the cycle's completion: the original void of Stage 0, now enriched by the full journey, preparing to open again at a new level.",
-    quantumParallel:"Quantum coherence at the highest level — the system has evolved through the full cycle and is now in a state of maximum information content, ready to transmit that information to the next environment before returning to a new ground state.",
   },
 ];
 
@@ -321,8 +211,8 @@ const RESIDENTS_DB = {
       prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Any hold involving neck, head, or hair","⛔ Blocking doorways as behavioral consequence","⛔ Removing AAC picture board as consequence","⛔ Shouting, threatening, or commanding voice"],
       bakerAct:{ statute:"FL Statute 394.463", history:true, historyNote:"Marcus has 2 prior voluntary Baker Act evaluations (Jan 2023, Aug 2024). Both resolved with med adjustment — no involuntary holds on record.", threshold:"Consider Baker Act consult if: refuses all food/water 24+ hrs AND expresses active hopelessness AND shows paradoxical sudden calm after sustained distress period.", nonVerbalNote:null },
       behaviorPlan:{ 
-        clinicalDesc:"Target behaviors: Physical Aggression (hitting, kicking, throwing objects — function: escape/demand avoidance + sensory overload) and Elopement (leaving without authorization — function: escape/sensory overload). Intervention: DRA protocol, preferred item NCR schedule VR-5 during high-risk antecedent periods, planned ignoring for lower-intensity iterations, active redirection for escalating topographies. FCT targeting picture-exchange outdoor access request. Environmental: all exterior doors double-lock protocol. Measurement: event recording per occurrence with topography, duration, intensity 1–5, antecedent coded.", 
-        plainDesc:"What to do when Marcus starts to escalate: (1) BEFORE it happens — watch for early signs: rocking faster, humming loudly, covering ears. These mean he is getting overwhelmed. (2) During low-level escalation: offer headphones immediately. Move toward him slowly. Say calmly: 'Marcus, headphones?' Give him space. (3) If already escalating: create distance. Remove other residents. Stay calm and quiet. No instructions. Wait. (4) After: log exactly what you saw before (trigger), exactly what he did, exactly what you did. Write the specific actions — not 'was aggressive.' (5) Do NOT raise your voice, physically block him, or remove preferred items as consequence. ELOPEMENT: all exterior doors stay double-locked. Take Marcus outside 3x daily for 15 min — this reduces the urge to escape. Teach him to use his 'outside' picture card.",
+        clinicalDesc:"Target behaviors: Physical Aggression (hitting, kicking, throwing objects — function: escape/demand avoidance + sensory overload) and Elopement (leaving without authorization — function: escape/sensory overload). Intervention: DRA protocol, prefer...", 
+        plainDesc:"What to do when Marcus starts to escalate: (1) BEFORE it happens — watch for early signs: rocking faster, humming loudly, covering ears. These mean he is getting overwhelmed. (2) During low-level escalation: offer headphones immediately. Move towa...",
         certificationHints:[
           {term:"DRA (Differential Reinforcement of Alternative Behavior)", plain:"Rewarding a replacement behavior instead — teaching Marcus to tap the table instead of hitting, and rewarding the tap"},
           {term:"Non-contingent reinforcement (NCR)", plain:"Giving preferred items on a schedule regardless of behavior — this reduces the motivation to act out to get them"},
@@ -361,7 +251,7 @@ const RESIDENTS_DB = {
       pcm:["Give advance notice before transitions ('In 5 minutes we are…')","Offer choices to maintain sense of control","Calm explanation when 'no' is necessary — always give a reason","Redirect to preferred activity before escalation peaks"],
       prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Taking away personal items as punishment","⛔ Isolating resident without supervisor authorization","⛔ Raised voice or sarcastic tone"],
       bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history on file. New resident — baseline still being established.", threshold:"Monitor for: property destruction escalating to self-directed behavior, statements of self-harm intent, refusal of all medication for 2+ days. Consult BA before any Baker Act consideration given Honeymoon Stage status.", nonVerbalNote:null },
-      behaviorPlan:{ clinicalDesc:"Antecedent-based intervention with NCR (Non-Contingent Reinforcement). Target behavior: property destruction (throwing items). EO: restricted access to preferred items. Establishing operations: transition resistance. FCT component in development — BA assessment pending.", plainDesc:"Lydia is still getting settled (Day 12). The most important thing right now is to give her advance notice before ANY change — even small ones. When you have to say no, always explain why in simple words ('We can't do that right now because…'). Give her something she likes to do before situations that usually upset her — don't wait for the meltdown." },
+      behaviorPlan:{ clinicalDesc:"Antecedent-based intervention with NCR (Non-Contingent Reinforcement). Target behavior: property destruction (throwing items). EO: restricted access to preferred items. Establishing operations: transition resistance. FCT component in development — BA assessment pending.", plainDesc:"Lydia is still getting settled (Day 12). The most important thing right now is to give her advance notice before ANY change — even small ones. When you have to say no, always explain why in simple words ('We can't do that right now because…'). Giv..." },
     },
     {
       id:"R005", name:"Angela Fontaine", dob:"1994-11-03", age:31,
@@ -394,7 +284,7 @@ const RESIDENTS_DB = {
       pcm:["Low-stimulation environment during mood monitoring window (6 AM–10 AM)","Reflective listening — repeat her words back, do not argue with her perception","Physical activity redirect during early mania indicators (pacing, rapid speech)","Offer weighted blanket for anxiety escalation"],
       prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Arguing with delusional content — do not challenge, redirect","⛔ Withholding mood stabilizer under any circumstances","⛔ Social isolation as behavioral intervention"],
       bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No involuntary Baker Act history. Prior hospitalization 2022 was voluntary, pre-diagnosis.", threshold:"Mania checklist — Baker Act consult if 3+ present: no sleep 48+ hrs, grandiose statements about leaving or special mission, refusal of all mood stabilizers, property destruction, expressed intent to harm self or others, inability to follow 2-step instructions.", nonVerbalNote:null },
-      behaviorPlan:{ clinicalDesc:"Proactive mood monitoring via circadian rhythm tracking. Behavioral indicators of prodromal mania: increased speech rate (>1.5× baseline), decreased sleep self-report, inflated self-esteem statements. Intervention: environmental modification + TEAMS protocol for mood escalation. Lithium compliance is primary behavioral target.", plainDesc:"Angela's mood follows patterns — watch for her 'early warning signs' each morning: if she's talking faster than usual, seems overly energetic before 9 AM, or starts making big plans, flag it in the comm log right away and text the BA. She is doing really well at Stage 5. Give her meaningful tasks — she thrives on purpose." },
+      behaviorPlan:{ clinicalDesc:"Proactive mood monitoring via circadian rhythm tracking. Behavioral indicators of prodromal mania: increased speech rate (>1.5× baseline), decreased sleep self-report, inflated self-esteem statements. Intervention: environmental modification + TEA...", plainDesc:"Angela's mood follows patterns — watch for her 'early warning signs' each morning: if she's talking faster than usual, seems overly energetic before 9 AM, or starts making big plans, flag it in the comm log right away and text the BA. She is doing..." },
     },
   ],
   "Home B":[
@@ -469,10 +359,10 @@ const RESIDENTS_DB = {
       notes:"Ramon is in The Hard Stretch. Recent incident INC-007. AAC device must be accessible at all times.",
       pcm:["ALWAYS approach from the front — never from behind","Allow AAC device response time — minimum 15 seconds before prompting","Low-stimulation redirection: dim lights, reduce noise before approach","No physical prompt without verbal announcement first"],
       prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Removing AAC device for any reason during a behavioral episode","⛔ Rapid approach or sudden touch","⛔ More than 2 staff members in room during de-escalation (increases arousal)"],
-      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history. Non-verbal — standard assessment criteria do not apply directly.", threshold:null, nonVerbalNote:"⚠ CRITICAL: Ramon cannot self-report distress verbally. Baker Act threshold assessment must use BEHAVIORAL indicators ONLY: sustained SIB (head-banging, hand-biting >5 min), complete food/fluid refusal 24+ hrs, loss of seizure medication compliance. DO NOT use verbal consent criteria — consult BA and physician immediately for any crisis assessment." },
+      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history. Non-verbal — standard assessment criteria do not apply directly.", threshold:null, nonVerbalNote:"⚠ CRITICAL: Ramon cannot self-report distress verbally. Baker Act threshold assessment must use BEHAVIORAL indicators ONLY: sustained SIB (head-banging, hand-biting >5 min), complete food/fluid refusal 24+ hrs, loss of seizure medication complianc..." },
       behaviorPlan:{ 
-        clinicalDesc:"Target behaviors: SIB (head-banging, hand-biting, face-hitting — function: automatic reinforcement/sensory + escape/avoidance during demand contexts; seizure-related SIB distinguished by post-ictal observation protocol) and Physical Aggression (hitting, biting staff — function: escape). Intervention: sensory integration protocol with scheduled proprioceptive input (weighted vest 20 min 3x daily). Environmental modification: padded surfaces in high-risk zones. FCT via AAC device targeting 'I need a break' and 'This is too much.' RIRD only if AAC unavailable. DRO schedule active. Measurement: duration recording with intensity 1–3, antecedent coded, seizure cross-referenced.",
-        plainDesc:"How to support Ramon during self-injury: (1) FIRST — reduce the overwhelming thing immediately. Lower TV/music. Move to quieter space. Give more physical space. (2) Offer his AAC device — point to it and say 'Ramon, break?' Give him the chance to communicate. (3) If SIB continues: calmly guide away from hard surfaces using minimal physical contact. The padded area in his room is available. (4) Do NOT raise your voice, add demands, or try to hold him still — restraint escalates the behavior. (5) SEIZURE AWARENESS: if the SIB looks different — rhythmic, unresponsive to voice, eyes different — follow the seizure protocol immediately. (6) After: document how long it lasted, what you think triggered it, and how it resolved. Any visible injury requires immediate medical documentation and supervisor notification before end of shift.",
+        clinicalDesc:"Target behaviors: SIB (head-banging, hand-biting, face-hitting — function: automatic reinforcement/sensory + escape/avoidance during demand contexts; seizure-related SIB distinguished by post-ictal observation protocol) and Physical Aggression (hi...",
+        plainDesc:"How to support Ramon during self-injury: (1) FIRST — reduce the overwhelming thing immediately. Lower TV/music. Move to quieter space. Give more physical space. (2) Offer his AAC device — point to it and say 'Ramon, break?' Give him the chance to ...",
         certificationHints:[
           {term:"SIB (Self-Injurious Behavior)", plain:"When a person hurts themselves — head-banging, biting, hitting"},
           {term:"Automatic reinforcement", plain:"The behavior feels good or soothing to the person doing it — the reward comes from inside, not from staff response"},
@@ -593,47 +483,26 @@ const ORG_ALERTS = [
 
 const DEMO_STEPS = [
   { id:"entry",    icon:"🔐", title:"The Problem — $4.2B Lost Annually",            stat:"$4.2B in Medicaid fraud & billing errors in FL alone",
-    body:"Florida APD serves 58,000 individuals with disabilities. The current system relies on paper logs, inconsistent handovers, and manual med counts — resulting in preventable deaths, financial exploitation, and state deficiency citations that go undetected for months." },
+    body:"Florida APD serves 58,000 individuals with disabilities. The current system relies on paper logs, inconsistent handovers, and manual med counts — r..." },
   { id:"clockin",  icon:"📍", title:"Any House. Any Shift. GPS-Verified.",           stat:"Zero ghost billing — every clock-in GPS-anchored",
-    body:"Staff clock into any house, any time — eliminating shift coverage gaps. Unlike legacy EVV systems, LUMINARK links GPS-verified presence to specific billing codes in real time. Overtime at a different house? The system flags and approves it automatically, preventing double-billing fraud." },
+    body:"Staff clock into any house, any time — eliminating shift coverage gaps. Unlike legacy EVV systems, LUMINARK links GPS-verified presence to specific..." },
   { id:"safety",   icon:"💊", title:"Three-Way Med Verification — Zero Error Margin", stat:"34% of APD deficiency citations involve med errors",
-    body:"The medication scanner performs a live three-way match: Right Resident · Right Medication · Right Time. Controlled substances require dual-witness PIN sign-off. PRN medications trigger a mandatory 30-minute effectiveness follow-up. Dropped pill? The destruction log creates a permanent chain of custody." },
+    body:"The medication scanner performs a live three-way match: Right Resident · Right Medication · Right Time. Controlled substances require dual-witness ..." },
   { id:"facesheet",icon:"📋", title:"The Full Clinical Picture — In the Staff's Hand", stat:"Seizure plans, DNR, dietary alerts — one tap away",
-    body:"Every resident's face sheet includes real-time access to seizure action plans, DNR status, dietary texture alerts (preventing choking), behavioral triggers, and one-tap emergency protocols. Staff no longer search binders during a crisis — the right information surfaces at the right moment." },
+    body:"Every resident's face sheet includes real-time access to seizure action plans, DNR status, dietary texture alerts (preventing choking), behavioral ..." },
   { id:"sentinel", icon:"🧠", title:"AI Sentinel — Catches What Humans Miss",        stat:"24-hour APD reporting window — never missed again",
-    body:"Every communication log entry is scanned for incident-trigger language in real time. Words like 'hit', 'fell', 'refused', 'seized' auto-flag the entry and generate a complete APD-compliant Incident Report draft in seconds — with required notifications, timestamps, and follow-up actions pre-populated." },
+    body:"Every communication log entry is scanned for incident-trigger language in real time. Words like 'hit', 'fell', 'refused', 'seized' auto-flag the en..." },
   { id:"fidelity", icon:"⏱", title:"Pencil-Whipping Detection — BA Effectiveness Engine", stat:"Estimated 18% of logged activity hours are falsified",
-    body:"Staff claim they performed a 20-minute range-of-motion exercise. The task timer ran 4 minutes. LUMINARK flags the discrepancy, attaches it to the staff member's Fidelity Score, and surfaces it on the manager dashboard — creating a self-auditing workforce without adversarial oversight." },
+    body:"Staff claim they performed a 20-minute range-of-motion exercise. The task timer ran 4 minutes. LUMINARK flags the discrepancy, attaches it to the s..." },
   { id:"family",   icon:"👨‍👩‍👧", title:"The Family Guardian Portal — Built-In Accountability", stat:"Financial exploitation: #1 complaint to FL Abuse Hotline",
-    body:"Families receive a secure portal showing their loved one's stage, wallet ledger with receipts, and filtered daily notes. Every dollar spent on a community outing is logged with a receipt. Families become the auditors — at zero cost to the state. Political support guaranteed." },
+    body:"Families receive a secure portal showing their loved one's stage, wallet ledger with receipts, and filtered daily notes. Every dollar spent on a co..." },
   { id:"bizcase",  icon:"📈", title:"The Business Case — $3.9B 5-Year Projection",  stat:"SaaS licensing: $85–$240/bed/month across FL's 3,800 homes",
-    body:"LUMINARK deploys as a vendor-neutral SaaS platform. No hardware. No state infrastructure investment. Licensing fees are offset by Medicaid fraud recovery alone. Early adoption by 10% of Florida APD homes generates $18M ARR in Year 1, scaling to full-state deployment in Year 3 with DOJ and CMS compliance certification." },
+    body:"LUMINARK deploys as a vendor-neutral SaaS platform. No hardware. No state infrastructure investment. Licensing fees are offset by Medicaid fraud re..." },
 ];
 
 // ─── KAIROS ENGINE — CANONICAL NSDT CLASSIFIER ─────────────────────────────────
 // Weighted Euclidean distance classifier — direct port of sap_kairos_geometry.py
-// Centroids, weights, and scales are identical to the Kairos FastAPI engine (port 8002)
-// Source: foreverforward760-crypto/Kairos · foreverforward760-crypto/LUMINARK-Axiom-Systems-Engine-LASE-v1.1
-const KAIROS_CENTROIDS = [
-  [0.0, 0.0, 0.0, 0.0, 0.0],  // S0 The Honeymoon
-  [1.0, 8.0, 1.0, 1.0, 1.0],  // S1 Finding Their Footing
-  [2.0, 7.0, 2.0, 2.0, 2.0],  // S2 Showing Their Colors
-  [4.0, 7.0, 2.5, 3.0, 4.0],  // S3 The Hard Stretch
-  [3.5, 6.5, 3.0, 3.5, 5.0],  // S4 The Turning Point
-  [5.0, 4.0, 5.0, 5.0, 4.5],  // S5 Finding Their Groove · Hidden Duality
-  [6.0, 5.5, 4.0, 6.0, 6.5],  // S6 Living Well Here
-  [6.5, 3.0, 7.0, 7.0, 3.5],  // S7 Stuck In Place
-  [7.5, 7.0, 8.0, 2.0, 2.0],  // S8 The Illusion Trap
-  [8.0, 2.0, 8.5, 1.5, 1.5],  // S9 Ready To Fly
-];
-const KAIROS_WEIGHTS = [1.0, 1.5, 1.5, 1.0, 0.8]; // N, S, D, T, C
-const KAIROS_SCALES  = [10.0, 10.0, 10.0, 10.0, 10.0];
-const KAIROS_TRAP_AMPLIFIER = 1.45; // Stage 8 TrapScore amplifier — canonical SAP constant
-
-// NSDT axis definitions — plain language for staff, scientific parallel for disclosure
-const NSDT_AXES = [
-  {
-    id:"N", label:"Behavioral Complexity",
+// Centroids, weights, and scales are identical to the Kairos FastAPI engi..."N", label:"Behavioral Complexity",
     staffQ:"How many different, shifting behaviors or needs are showing up today?",
     hint:"Few and predictable → Many and unpredictable",
     sciParallel:"Shannon information entropy — a measure of unpredictability in a signal",
@@ -669,38 +538,7 @@ function runKairosClassifier(nsdt) {
   // nsdt: [N, S, D, T, C] each 0–10
   const distances = KAIROS_CENTROIDS.map(centroid => {
     let sum = 0;
-    for (let i = 0; i < 5; i++) {
-      const diff = (nsdt[i] - centroid[i]) / KAIROS_SCALES[i];
-      sum += KAIROS_WEIGHTS[i] * diff * diff;
-    }
-    return Math.sqrt(sum);
-  });
-
-  // Softmax posterior (temperature 0.7)
-  const logits = distances.map(d => -d);
-  const maxL = Math.max(...logits);
-  const temp = 0.7;
-  const exps = logits.map(l => Math.exp((l - maxL) / temp));
-  const total = exps.reduce((a, b) => a + b, 0);
-  const posterior = exps.map(e => e / total);
-
-  const dominant = posterior.indexOf(Math.max(...posterior));
-  const expectedStage = posterior.reduce((sum, p, i) => sum + p * i, 0);
-  const entropy = -posterior.reduce((sum, p) => sum + (p > 1e-12 ? p * Math.log(p + 1e-12) : 0), 0);
-
-  // TrapScore — Stage 8 distance with 1.45× amplifier
-  const stage8dist = distances[8];
-  const trapScore = dominant === 8
-    ? Math.min(1.0, (1.0 / (stage8dist + 0.01)) * KAIROS_TRAP_AMPLIFIER)
-    : Math.min(1.0, (1.0 / (stage8dist + 0.01)));
-
-  // Bifurcation flag — Stage 5 bilateral threshold
-  const bifurcation = posterior[5] > 0.25 || (dominant === 5 && entropy > 0.8);
-
-  // Stability flag — Tumbling Inversion (odd stages physically unstable)
-  const isOdd = dominant % 2 !== 0;
-  const inversionState = dominant === 9
-    ? "Accepted — conscious dissolution, no tension"
+    for..."Accepted — conscious dissolution, no tension"
     : isOdd
     ? "Physically unstable / Consciously stable — behavior is the communication"
     : "Physically stable / Consciously seeking — internal processing is primary";
@@ -710,9 +548,7 @@ function runKairosClassifier(nsdt) {
 
 // ─── LIABILITY & METHODOLOGY DISCLOSURE ────────────────────────────────────────
 function LiabilityBanner() {
-  const [expanded, setExpanded] = useState(false);
-  return (
-    <div style={{ background:"#0A1218", borderBottom:`1px solid #1E3A4A`, fontSize:11 }}>
+  const [expanded, s..."#0A1218", borderBottom:`1px solid #1E3A4A`, fontSize:11 }}>
       <div style={{ maxWidth:1200, margin:"0 auto", padding:"6px 20px", display:"flex", justifyContent:"space-between", alignItems:"center", gap:12 }}>
         <div style={{ color:"#5A8A9A", lineHeight:1.5 }}>
           <strong style={{color:"#7AACBC"}}>LUMINARK Stage Intelligence</strong> is a computational behavioral pattern tracking system.
@@ -732,13 +568,9 @@ function LiabilityBanner() {
             <div>
               <div style={{ fontSize:13, fontWeight:800, color:"#C8A020", marginBottom:10, fontFamily:"Georgia,serif" }}>What LUMINARK Stage Intelligence Is</div>
               <div style={{ fontSize:12, color:"#8AAABB", lineHeight:1.9 }}>
-                LUMINARK uses a five-dimensional behavioral observation vector (NSDT) and a weighted Euclidean distance classifier — the same mathematical method used in validated clinical decision support systems — to classify a resident's current behavioral pattern against ten reference stage profiles. The output is a <strong style={{color:"#C8E0E8"}}>pattern classification</strong>, not a clinical diagnosis.
+                LUMINARK uses a five-dimensional behavioral observation vector (NSDT) and a weighted Euclidean distance classifier — the same mathematical method used in validated clinical decision support systems — to classif..."#C8E0E8"}}>pattern classification</strong>, not a clinical diagnosis.
                 <br/><br/>
-                Stage classifications describe <em>where a person appears to be in a recognizable behavioral process</em> — the same way a meteorologist classifies weather patterns without diagnosing the atmosphere. The purpose is to give staff, clinicians, and administrators a shared language and a structured framework for observation, documentation, and proactive support.
-              </div>
-            </div>
-            <div>
-              <div style={{ fontSize:13, fontWeight:800, color:"#C8A020", marginBottom:10, fontFamily:"Georgia,serif" }}>Scientific Foundations</div>
+                Stage classifications describe <em>where a person appears to be in a recognizable behavioral process</em> — the same way a meteorologist class..."#C8A020", marginBottom:10, fontFamily:"Georgia,serif" }}>Scientific Foundations</div>
               <div style={{ display:"grid", gap:8 }}>
                 {[
                   ["Bayesian Classification","The stage classifier uses weighted Euclidean distance with softmax posterior normalization — identical to the statistical architecture of FDA-cleared clinical decision support systems."],
@@ -759,24 +591,7 @@ function LiabilityBanner() {
           <div style={{ marginTop:16, padding:"10px 16px", background:"#0A1018", borderRadius:8, borderLeft:`3px solid #C83020` }}>
             <div style={{ fontSize:11, fontWeight:800, color:"#C83020", marginBottom:4 }}>Important Limitations</div>
             <div style={{ fontSize:11, color:"#8AAABB", lineHeight:1.8 }}>
-              LUMINARK stage classifications are based on staff observations logged at a single point in time. They are not validated against clinical diagnostic criteria (DSM-5, ICD-11) and should not be used as a substitute for formal psychological or psychiatric assessment.
-              Stage movement predictions are probabilistic, not deterministic. A resident's actual trajectory may differ from the system's estimate.
-              All clinical decisions — medication changes, restraint authorization, Baker Act initiation, discharge planning — must be made by qualified licensed professionals using their full clinical judgment.
-              LUMINARK outputs are observational documentation tools. They inform clinical conversation. They do not replace it.
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-// ─── NSDT OBSERVATION LOGGER ────────────────────────────────────────────────────
-function NSDTLogger({resident, onClassified}) {
-  const [values, setValues] = useState([5, 5, 5, 5, 5]);
-  const [running, setRunning] = useState(false);
-  const [result, setResult] = useState(null);
-  const [narrative, setNarrative] = useState("");
+              LUMINARK stage classifications are based on staff observations logged at a single point in time. They are not validated against clinical diagnostic criteria (DSM-5, ICD-11) and should not be used as a substitute ..."");
 
   const runClassification = async () => {
     setRunning(true);
@@ -788,29 +603,10 @@ function NSDTLogger({resident, onClassified}) {
       [{role:"user", content:`A behavioral pattern classifier (Kairos NSDT Engine — Stanfield's Axiom of Perpetuity) has analyzed observational data for a group home resident and returned the following classification:
 
 Resident: ${resident.name}
-Current documented stage: S${resident.stage} (${STAGES[resident.stage].name})
-NSDT observation vector logged by staff:
-- Behavioral Complexity (N): ${values[0]}/10
-- Baseline Stability (S): ${values[1]}/10
-- Distress / Tension (D): ${values[2]}/10
-- Adaptability (T): ${values[3]}/10
-- Behavioral Coherence (C): ${values[4]}/10
-
-Engine classification result:
-- Classified Stage: S${engineResult.dominant} (${STAGES[engineResult.dominant].name})
-- Classifier confidence: ${(Math.max(...engineResult.posterior) * 100).toFixed(1)}%
-- Expected stage value: ${engineResult.expectedStage.toFixed(2)}
-- TrapScore: ${engineResult.trapScore.toFixed(3)}
-- Inversion state: ${engineResult.inversionState}
-- Bifurcation flag: ${engineResult.bifurcation ? "ACTIVE — bilateral threshold detected" : "Not active"}
+Current documented s..."ACTIVE — bilateral threshold detected" : "Not active"}
 
 Using this classification as your foundation, generate a plain-language clinical support note (3-4 sentences, no mystical language, grounded in behavioral observation) for the care team. 
-- If the classified stage differs from the documented stage, note this and explain what it may indicate about movement direction.
-- If TrapScore > 0.6, flag the Perceived Permanence risk and name what staff should look for.
-- If the bifurcation flag is active, explain what that means practically for this resident's care plan right now.
-- End with one specific, actionable recommendation.
-Format as plain prose. No headers. No bullet points.`}],
-      "You are a behavioral support specialist providing observational pattern notes for an APD group home team. You do not diagnose. You do not prescribe. You describe behavioral patterns and their implications for care planning using plain, professional language. Never use the term 'SAP' or 'Kairos' in your output — refer to 'the pattern classifier' if needed. Always note that your output informs but does not replace qualified clinical judgment."
+- If the classified stage differs from the documented st..."You are a behavioral support specialist providing observational pattern notes for an APD group home team. You do not diagnose. You do not prescribe. You describe behavioral patterns and their implications for care planning using plain, professional language. Never use the term 'SAP' or 'Kairos' in your output — refer to 'the pattern classifier' if needed. Always note that your output informs but does not replace qualified clinical judgment."
     );
     setNarrative(txt);
     setRunning(false);
@@ -818,11 +614,7 @@ Format as plain prose. No headers. No bullet points.`}],
   };
 
   const enginePreview = runKairosClassifier(values);
-  const previewStage = STAGES[enginePreview.dominant];
-
-  return (
-    <Card style={{ border:`2px solid ${C.teal}33` }}>
-      <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, borderRadius:"12px 12px 0 0" }}>
+  const previewStage = STAGES[enginePreview.dom..."12px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, borderRadius:"12px 12px 0 0" }}>
         <div style={{ fontSize:13, fontWeight:800, color:C.white }}>✦ NSDT Behavioral Observation — Kairos Classification</div>
         <div style={{ fontSize:11, color:"#8fb3d4", marginTop:2 }}>Rate what you observe right now. The engine classifies the pattern. This is not a diagnosis.</div>
       </div>
@@ -835,21 +627,13 @@ Format as plain prose. No headers. No bullet points.`}],
           </div>
           <div style={{ textAlign:"right" }}>
             <div style={{ fontSize:11, color:C.text3 }}>Confidence: <strong style={{color:previewStage.color}}>{(Math.max(...enginePreview.posterior)*100).toFixed(0)}%</strong></div>
-            {enginePreview.bifurcation && <div style={{ fontSize:11, fontWeight:700, color:C.gold }}>⭐ Bifurcation Active</div>}
-            {enginePreview.trapScore > 0.6 && <div style={{ fontSize:11, fontWeight:700, color:C.red }}>⚠ TrapScore {enginePreview.trapScore.toFixed(2)}</div>}
-          </div>
-        </div>
-
-        {/* NSDT sliders */}
-        <div style={{ display:"grid", gap:12, marginBottom:16 }}>
+            {enginePreview.bifurcation && <div style={{ fon..."grid", gap:12, marginBottom:16 }}>
           {NSDT_AXES.map((axis, i) => (
             <div key={axis.id}>
               <div style={{ display:"flex", justifyContent:"space-between", marginBottom:5 }}>
                 <div>
                   <span style={{ fontSize:12, fontWeight:800, color:C.navy }}>{axis.id}: {axis.label}</span>
-                  <span style={{ fontSize:11, color:C.text3, marginLeft:8 }}>{axis.staffQ}</span>
-                </div>
-                <span style={{ fontSize:15, fontWeight:800, color:C.teal, minWidth:24, textAlign:"right" }}>{values[i]}</span>
+                  <span style={{ fontSize:11, color:C.text3, marginLeft:8 }}>{axis.staffQ}</spa..."right" }}>{values[i]}</span>
               </div>
               <div style={{ display:"flex", gap:10, alignItems:"center" }}>
                 <span style={{ fontSize:10, color:C.text3, whiteSpace:"nowrap" }}>0 {axis.hint.split(" → ")[0]}</span>
@@ -886,9 +670,7 @@ Format as plain prose. No headers. No bullet points.`}],
               </div>
               <div style={{ marginTop:10, display:"flex", gap:12, flexWrap:"wrap" }}>
                 <span style={{ fontSize:11, color:C.text3 }}>Entropy: <strong>{result.entropy.toFixed(3)}</strong></span>
-                <span style={{ fontSize:11, color:C.text3 }}>Expected stage: <strong>{result.expectedStage.toFixed(2)}</strong></span>
-                <span style={{ fontSize:11, color:result.trapScore>0.6?C.red:C.text3 }}>TrapScore: <strong>{result.trapScore.toFixed(3)}</strong></span>
-                <span style={{ fontSize:11, color:C.text3 }}>Inversion: <strong>{result.inversionState.split(" —")[0]}</strong></span>
+                <span style={{ fontSize:11, color:C.text3 }}>Expected stage: <strong>{result.expectedStage.toFixed(2)}</..." —")[0]}</strong></span>
               </div>
             </div>
 
@@ -898,20 +680,9 @@ Format as plain prose. No headers. No bullet points.`}],
                 ✦ Pattern Support Note — S{result.dominant}: {STAGES[result.dominant].name}
               </div>
               <div style={{ fontSize:13, color:C.text, lineHeight:1.9 }}>{narrative}</div>
-              <div style={{ marginTop:10, fontSize:10, color:C.text3, fontStyle:"italic" }}>
+    ..."italic" }}>
                 This note is generated from staff observations and classifier output. It is observational documentation, not clinical assessment.
-                It must be reviewed by a qualified clinician before influencing any care decision.
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </Card>
-  );
-}
-
-const BEI_DATA = [
-  { ba:"Sarah P., BCBA",  clients:3, bei:81, progress:78, revision:92, accessibility:73, stagnation:0,  flag:"good" },
+                It must be reviewed by a qualified clinician before influencing any care decisio..."Sarah P., BCBA",  clients:3, bei:81, progress:78, revision:92, accessibility:73, stagnation:0,  flag:"good" },
   { ba:"Dr. James R.",    clients:3, bei:42, progress:28, revision:31, accessibility:41, stagnation:2,  flag:"fraud" },
   { ba:"Tanya W., BCaBA", clients:2, bei:38, progress:24, revision:18, accessibility:58, stagnation:1,  flag:"fraud" },
 ];
@@ -963,10 +734,7 @@ function Btn({children, onClick, v="default", small, full, style:sx={}}) {
     default:{ bg:C.gray1, col:C.text, bdr:C.gray2 },
     primary:{ bg:C.navy, col:C.white, bdr:C.navy },
     gold:   { bg:C.gold, col:C.white, bdr:C.gold },
-    green:  { bg:C.green, col:C.white, bdr:C.green },
-    red:    { bg:C.red, col:C.white, bdr:C.red },
-    orange: { bg:C.orange, col:C.white, bdr:C.orange },
-    ghost:  { bg:"transparent", col:C.navy, bdr:C.navy3 },
+    green:  { bg:C.green, col:C.white, bdr:C..."transparent", col:C.navy, bdr:C.navy3 },
     teal:   { bg:C.teal, col:C.white, bdr:C.teal },
     purple: { bg:C.purple, col:C.white, bdr:C.purple },
   };
@@ -1014,8 +782,7 @@ function ResidentBar({resident}) {
         <div style={{ display:"flex", gap:8, marginTop:4, flexWrap:"wrap" }}>
           <Tag label={`S${s.id}: ${s.name}`} color={s.color} bg={s.bg} small/>
           <Tag label={`Age ${resident.age}`} color={C.white} bg={`${C.white}22`} small/>
-          {resident.allergies.map(a=><Tag key={a} label={`⚠ ${a}`} color={C.white} bg={C.redmed} small/>)}
-          {resident.dnr && <Tag label="⛔ DNR" color={C.white} bg={C.red} small/>}
+          {resident.allergies.map(a=><Tag key={a} label={`⚠ ${a}`} color={..."⛔ DNR" color={C.white} bg={C.red} small/>}
           <Tag label={resident.dietaryTexture} color={C.teal} bg={C.teallt} small/>
         </div>
       </div>
@@ -1045,10 +812,7 @@ function AdminPortal({admin, onLogout}) {
     const staffOnShift = SCHEDULE_DB.filter(s=>s.date==="2026-05-09"&&s.home===name).length;
     const highTension = res.filter(r=>STAGES[r.stage].tension>=7).length;
     const pillLow = res.flatMap(r=>Object.entries(r.pillCounts||{})).filter(([,pc])=>Math.floor(pc.current/pc.perDay)<=7).length;
-    return { name, residents:res.length, staffOnShift, highTension, pillLow, license:h.license };
-  });
-
-  const criticalAlerts = ORG_ALERTS.filter(a=>a.severity==="critical");
+    return { name,..."critical");
   const TABS = [
     {id:"overview",    icon:"🏠", label:"Org Overview"},
     {id:"fidelity",    icon:"⏱", label:"Staff Fidelity"},
@@ -1133,8 +897,7 @@ function AdminPortal({admin, onLogout}) {
                   const st = STAGES[r.stage];
                   const intensity = st.tension / 10;
                   const col = st.tension>7?C.red:st.tension>4?C.orange:C.green;
-                  return (
-                    <div key={r.id} style={{ padding:"12px 14px", borderRadius:12, background:`${col}12`, border:`2px solid ${col}33` }}>
+                ..."12px 14px", borderRadius:12, background:`${col}12`, border:`2px solid ${col}33` }}>
                       <div style={{ display:"flex", gap:6, alignItems:"center", marginBottom:6 }}>
                         <span style={{fontSize:22}}>{r.photo}</span>
                         <div>
@@ -1142,19 +905,7 @@ function AdminPortal({admin, onLogout}) {
                           <div style={{ fontSize:10, color:C.text3 }}>{r.home}</div>
                         </div>
                       </div>
-                      <div style={{ height:5, background:C.gray1, borderRadius:3, marginBottom:4 }}>
-                        <div style={{ height:5, borderRadius:3, background:col, width:`${st.tension*10}%` }}/>
-                      </div>
-                      <div style={{ fontSize:11, fontWeight:700, color:col }}>S{r.stage} · Tension {st.tension}/10</div>
-                    </div>
-                  );
-                })}
-              </div>
-            </Card>
-
-            {/* Staff hours chart */}
-            <Card>
-              <CardHdr title="Pay Period Hours — All Staff" sub="Apr 28 – May 11 · Regular + Overtime"/>
+                      <div style={{ height:5, background:C.gray1, borderRadius:3, marginBo..."Pay Period Hours — All Staff" sub="Apr 28 – May 11 · Regular + Overtime"/>
               <div style={{ padding:"14px 20px" }}>
                 <ResponsiveContainer width="100%" height={180}>
                   <BarChart data={hoursData}>
@@ -1177,9 +928,7 @@ function AdminPortal({admin, onLogout}) {
           <div style={{ display:"grid", gap:14 }}>
             <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>Staff Fidelity Scores — BA Effectiveness Engine</div>
             <div style={{ padding:"12px 18px", background:C.goldlt, borderRadius:10, fontSize:13, color:C.text, borderLeft:`4px solid ${C.gold}` }}>
-              ✦ Fidelity Score compares claimed task duration against actual task-timer data. Scores below 80 are flagged for supervisor follow-up. Consistent under-100 scores trigger automatic BA review notification.
-            </div>
-            <div style={{ display:"grid", gap:12 }}>
+              ✦ Fidelity Score compares claimed task duration against actual task-timer data. Scores below 80 are flagged for supervisor follow..."grid", gap:12 }}>
               {FIDELITY_DATA.map(f=>{
                 const scoreColor = f.score>=95?C.green:f.score>=80?C.gold:C.red;
                 return (
@@ -1191,19 +940,13 @@ function AdminPortal({admin, onLogout}) {
                         {f.score}
                       </div>
                       <div style={{flex:1}}>
-                        <div style={{ fontSize:15, fontWeight:800, color:C.text, marginBottom:4 }}>{f.name}</div>
-                        <div style={{ display:"flex", gap:12, flexWrap:"wrap" }}>
+                        <div style={{ fontSize:15..."flex", gap:12, flexWrap:"wrap" }}>
                           {[
                             [`${f.totalLogs} logs this period`,C.navy],
                             [`${f.flaggedLogs} fidelity flag${f.flaggedLogs!==1?"s":""}`,f.flaggedLogs>0?C.red:C.green],
                             [`Avg claimed: ${f.avgClaimedMin}min`,C.text3],
                             [`Avg actual: ${f.avgActualMin}min`,f.avgActualMin<f.avgClaimedMin*.7?C.red:C.text3],
-                          ].map(([txt,col])=>(
-                            <span key={txt} style={{ fontSize:12, color:col, fontWeight:600 }}>{txt}</span>
-                          ))}
-                        </div>
-                        <div style={{ marginTop:8, height:6, background:C.gray1, borderRadius:3, maxWidth:400 }}>
-                          <div style={{ height:6, borderRadius:3, background:scoreColor, width:`${f.score}%`, transition:"width .4s" }}/>
+                      ..."width .4s" }}/>
                         </div>
                       </div>
                       <div style={{ textAlign:"center", flexShrink:0 }}>
@@ -1217,14 +960,7 @@ function AdminPortal({admin, onLogout}) {
                         )}
                       </div>
                     </div>
-                  </Card>
-                );
-              })}
-            </div>
-
-            {/* Fidelity trend chart */}
-            <Card>
-              <CardHdr title="Org-Wide Fidelity Trend — 7 Days"/>
+..."Org-Wide Fidelity Trend — 7 Days"/>
               <div style={{ padding:"14px 20px" }}>
                 <ResponsiveContainer width="100%" height={160}>
                   <LineChart data={[
@@ -1279,12 +1015,7 @@ function AdminPortal({admin, onLogout}) {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-            </Card>
-          </div>
-        )}
-
-        {/* ALERTS */}
-        {tab==="alerts" && (
+     ..."alerts" && (
           <div style={{ display:"grid", gap:12 }}>
             <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>Active Alerts — All Houses</div>
             {ORG_ALERTS.map((a,i)=>{
@@ -1299,11 +1030,7 @@ function AdminPortal({admin, onLogout}) {
                       <div style={{ display:"flex", gap:8, alignItems:"center", marginBottom:4 }}>
                         <Tag label={a.severity.toUpperCase()} color={C.white} bg={col} small/>
                         <Tag label={a.home} color={C.navy} bg={C.gray1} small/>
-                        <span style={{ fontSize:11, color:C.text3 }}>{a.time}</span>
-                      </div>
-                      <div style={{ fontSize:14, color:C.text, fontWeight:600 }}>{a.msg}</div>
-                    </div>
-                    <Btn v={a.severity==="critical"?"red":"orange"} small>Resolve</Btn>
+                        <span style={{ fontSize:11,..."critical"?"red":"orange"} small>Resolve</Btn>
                   </div>
                 </Card>
               );
@@ -1317,9 +1044,7 @@ function AdminPortal({admin, onLogout}) {
           <div style={{ display:"grid", gap:14 }}>
             <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>Open Shifts & Overtime Board</div>
             <div style={{ padding:"10px 16px", background:C.teallt, borderRadius:10, fontSize:13, color:C.text, borderLeft:`4px solid ${C.teal}` }}>
-              Staff can claim any open shift at any house. Each claim automatically creates an EVV record and applies the appropriate overtime flag. Double-billing is blocked at the system level.
-            </div>
-            <div style={{ display:"grid", gap:10 }}>
+              Staff can claim any open shift at any house. Each claim automatically creates an EVV record and applies the appropriate overtime ..."grid", gap:10 }}>
               {OPEN_SHIFTS.map(os=>{
                 const urgencyCol = os.urgency==="critical"?C.red:os.urgency==="warning"?C.orange:C.teal;
                 const urgencyBg  = os.urgency==="critical"?C.redlt:os.urgency==="warning"?C.orangelt:C.teallt;
@@ -1333,11 +1058,7 @@ function AdminPortal({admin, onLogout}) {
                         <div style={{ display:"flex", gap:8, alignItems:"center", marginBottom:4 }}>
                           <Tag label={os.urgency.toUpperCase()} color={C.white} bg={urgencyCol} small/>
                           <Tag label={os.home} color={C.navy} bg={C.gray1} small/>
-                          <span style={{ fontSize:12, color:C.text3 }}>{os.date} · {os.shift} · {os.hours}h</span>
-                        </div>
-                        <div style={{ fontSize:13, color:C.text, fontWeight:600 }}>{os.reason}</div>
-                      </div>
-                      <Btn v={os.urgency==="critical"?"red":"orange"}>Claim Shift</Btn>
+                          <span style={..."critical"?"red":"orange"}>Claim Shift</Btn>
                     </div>
                   </Card>
                 );
@@ -1351,10 +1072,7 @@ function AdminPortal({admin, onLogout}) {
           <div style={{ display:"grid", gap:14, maxWidth:700 }}>
             <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>iConnect Export — Florida APD State System Sync</div>
             <div style={{ padding:"14px 18px", background:C.teallt, borderRadius:10, borderLeft:`4px solid ${C.teal}`, fontSize:13, color:C.text, lineHeight:1.7 }}>
-              LUMINARK is positioned as an API-first layer over iConnect. All verified data — shift records, med administrations, incident reports, EVV logs, and behavioral data — exports in <strong>iConnect-compliant XML format</strong> per APD specifications (Generations interface protocol). This eliminates double-entry and the clerical errors that trigger QA alert remediations.
-            </div>
-            <Card>
-              <CardHdr title="Medication Supply — Days Remaining by Resident" sub="Under 7 days = critical refill · Red bars require immediate action"/>
+              LUMINARK is positioned as an API-first layer over iConnect. All verified data — shift records, med administration..."Medication Supply — Days Remaining by Resident" sub="Under 7 days = critical refill · Red bars require immediate action"/>
               <div style={{ padding:16, overflowX:"auto" }}>
                 <ResponsiveContainer width="100%" height={240}>
                   <BarChart data={MED_SUPPLY_RADAR} layout="vertical" margin={{left:110}}>
@@ -1367,12 +1085,7 @@ function AdminPortal({admin, onLogout}) {
                       const cols=[C.navy,C.orange,C.green,C.teal,C.purple];
                       return <Bar key={name} dataKey={name} name={name} fill={cols[i]} radius={[0,4,4,0]}/>;
                     })}
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </Card>
-            {[
-              { label:"Shift Records & EVV",      count:"47 records", status:"Ready", icon:"📍" },
+                  </..."Shift Records & EVV",      count:"47 records", status:"Ready", icon:"📍" },
               { label:"Medication Administration Logs", count:"312 entries", status:"Ready", icon:"💊" },
               { label:"Incident Reports",          count:"9 reports",  status:"2 Pending Signature", icon:"🚨" },
               { label:"Controlled Substance Log",  count:"28 entries", status:"Ready", icon:"🔐" },
@@ -1384,9 +1097,7 @@ function AdminPortal({admin, onLogout}) {
                   <div style={{ width:44, height:44, borderRadius:12, background:C.teallt, display:"flex", alignItems:"center", justifyContent:"center", fontSize:22 }}>{item.icon}</div>
                   <div style={{flex:1}}>
                     <div style={{ fontWeight:700, fontSize:14, color:C.text }}>{item.label}</div>
-                    <div style={{ fontSize:12, color:C.text3 }}>{item.count}</div>
-                  </div>
-                  <Tag label={item.status} color={item.status==="Ready"?C.green:C.orange} bg={item.status==="Ready"?C.greenlt:C.orangelt} small/>
+                    <div style={{ fontSize:12, color:C.text3 }}>{item.cou..."Ready"?C.green:C.orange} bg={item.status==="Ready"?C.greenlt:C.orangelt} small/>
                   <Btn v="teal" small>Export</Btn>
                 </div>
               </Card>
@@ -1400,18 +1111,12 @@ function AdminPortal({admin, onLogout}) {
 }
 
 // ─── FAMILY PORTAL ─────────────────────────────────────────────────────────────
-function FamilyPortal({member, onLogout}) {
-  const resident = Object.values(RESIDENTS_DB).flat().find(r=>r.id===member.residentId);
-  const [tab, setTab] = useState("today");
+function FamilyPorta..."today");
   if (!resident) return <div>Resident not found.</div>;
   const stage = STAGES[resident.stage];
 
   // Pull family descriptions directly from the canonical SAP STAGES array — one source of truth
-  const familyDesc = STAGES[resident.stage].familyDesc;
-  const stageName  = STAGES[resident.stage].name;
-
-  const recentLogs = [
-    { date:"May 9", cat:"General",   text:"Had a great morning. Helped prepare breakfast and was in good spirits. Participated in the group walk after lunch." },
+  const familyDesc = STAGES[resident.stage].family..."May 9", cat:"General",   text:"Had a great morning. Helped prepare breakfast and was in good spirits. Participated in the group walk after lunch." },
     { date:"May 8", cat:"Outing",    text:"Community outing to Walmart. Purchased personal items. Receipt logged below. Returned home safely at 3:20 PM." },
     { date:"May 7", cat:"General",   text:"Quiet day. Watched favorite shows. Medications given on schedule. No concerns to report." },
     { date:"May 6", cat:"Activity",  text:"Participated in music group. Staff noted positive engagement and good mood throughout the session." },
@@ -1477,13 +1182,7 @@ function FamilyPortal({member, onLogout}) {
                       <span style={{ fontSize:11, fontWeight:700, color:C.text3 }}>{log.date}</span>
                       <Tag label={log.cat} color={C.navy} bg={C.gray1} small/>
                     </div>
-                    <div style={{ fontSize:13, color:C.text, lineHeight:1.7 }}>{log.text}</div>
-                  </div>
-                ))}
-              </div>
-            </Card>
-            <Card>
-              <CardHdr title="Current Support Team"/>
+            ..."Current Support Team"/>
               <div style={{ padding:16, display:"grid", gap:8 }}>
                 {[
                   ["Physician", resident.physician],
@@ -1519,13 +1218,7 @@ function FamilyPortal({member, onLogout}) {
                 </div>
               )}
               <div style={{ padding:"10px 14px", background:C.goldlt, borderRadius:9, fontSize:11, color:C.text, borderLeft:`3px solid ${C.gold}` }}>
-                <strong>As a family member, you can always request an IB review</strong> if you feel your loved one's plan needs updating. You don't need a specific reason — your concern is enough.
-              </div>
-            </div>
-          </Card>
-        )}
-
-        {tab==="plan" && (
+                <strong>As a family member, you can always request an IB review</strong> if you feel your loved one's plan needs updating. You d..."plan" && (
           <Card>
             <CardHdr title="Care Plan — Family Summary" sub={`Plain-language version · BA: ${resident.ba}`}/>
             <div style={{ padding:18 }}>
@@ -1537,19 +1230,12 @@ function FamilyPortal({member, onLogout}) {
                   <div style={{ fontSize:11, color:C.text3, fontStyle:"italic" }}>
                     This is a plain-language summary of the clinical behavior support plan. For the full clinical plan, contact {resident.ba} directly.
                     You have the right to receive a copy of the full plan at any time.
-                  </div>
-                </>
-              ) : (
-                <div style={{ padding:24, textAlign:"center", color:C.text3 }}>
+   ..."center", color:C.text3 }}>
                   <div style={{fontSize:28,marginBottom:8}}>📋</div>
                   <div style={{fontSize:13}}>No behavior plan on file yet. Contact {resident.ba} to request one.</div>
                 </div>
               )}
-            </div>
-          </Card>
-        )}
-
-        {tab==="wallet" && (
+..."wallet" && (
           <div style={{ display:"grid", gap:14 }}>
             <Card>
               <div style={{ padding:24 }}>
@@ -1625,22 +1311,7 @@ function FamilyPortal({member, onLogout}) {
                 ))}
               </div>
             </Card>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// ─── DEMO / INVESTOR MODE ──────────────────────────────────────────────────────
-function DemoMode({onExit}) {
-  const [step, setStep] = useState(0);
-  const [minimized, setMinimized] = useState(false);
-  const current = DEMO_STEPS[step];
-  const isLast = step === DEMO_STEPS.length - 1;
-
-  return (
-    <div style={{ fontFamily:"'DM Sans',system-ui,sans-serif", background:C.gray0, minHeight:"100vh", position:"relative" }}>
+ ..."'DM Sans',system-ui,sans-serif", background:C.gray0, minHeight:"100vh", position:"relative" }}>
       {/* Simulated app background */}
       <div style={{ filter:"brightness(.45) blur(1px)", pointerEvents:"none", minHeight:"100vh", background:C.gray0 }}>
         <div style={{ background:`linear-gradient(135deg,${C.navy} 0%,${C.navy2} 100%)`, height:56, display:"flex", alignItems:"center", padding:"0 24px", gap:14 }}>
@@ -1657,18 +1328,7 @@ function DemoMode({onExit}) {
             <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:14, marginBottom:14 }}>
               {Object.entries(HOMES).map(([name])=>(
                 <div key={name} style={{ background:C.white, borderRadius:14, padding:20 }}>
-                  <div style={{ fontSize:15, fontWeight:800, color:C.navy }}>{name}</div>
-                  <div style={{ fontSize:12, color:C.text3, marginTop:4 }}>{(RESIDENTS_DB[name]||[]).length} residents</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* STORY CARD OVERLAY */}
-      {!minimized && (
-        <div style={{ position:"fixed", bottom:0, left:0, right:0, zIndex:200, padding:24 }}>
+                  <div style={{ fontSize:15, fontWeight:800, color:C.na..."fixed", bottom:0, left:0, right:0, zIndex:200, padding:24 }}>
           <div style={{ maxWidth:760, margin:"0 auto", background:C.white, borderRadius:20, boxShadow:"0 -8px 48px rgba(0,0,0,.35), 0 24px 60px rgba(0,0,0,.25)", overflow:"hidden" }}>
             {/* Story card header */}
             <div style={{ background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, padding:"18px 24px", display:"flex", justifyContent:"space-between", alignItems:"center" }}>
@@ -1730,9 +1390,7 @@ function DemoMode({onExit}) {
   );
 }
 
-// ─── CLOCK IN ──────────────────────────────────────────────────────────────────
-function ClockIn({onClockIn, onAdmin, onFamily, onBA, onDemo}) {
-  const [portal, setPortal] = useState(null); // null | "staff" | "admin" | "family"
+// ─── CLOCK IN ───..."staff" | "admin" | "family"
   const [staffId, setStaffId] = useState("S001");
   const [pin, setPin]         = useState("");
   const [home, setHome]       = useState("");
@@ -1841,15 +1499,7 @@ function ClockIn({onClockIn, onAdmin, onFamily, onBA, onDemo}) {
                             background:home===h?C.goldlt:C.gray0, cursor:"pointer", transition:"all .15s" }}>
                           <div style={{ fontWeight:700, fontSize:14, color:home===h?C.gold:C.text }}>{h}</div>
                           {sched
-                            ? <div style={{ fontSize:12, color:C.green, marginTop:2 }}>📅 Scheduled: {sched.shift}</div>
-                            : <div style={{ fontSize:12, color:C.orange, marginTop:2 }}>⚡ Overtime / Unscheduled — EVV will flag</div>}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-              {error && <div style={{ padding:"10px 14px", background:C.redlt, color:C.red, borderRadius:9, fontSize:13, fontWeight:600, marginBottom:14 }}>⚠ {error}</div>}
+                            ? <div style={{ fontSize:12, color:C.green, marginTop:2 }}>📅 Scheduled..."10px 14px", background:C.redlt, color:C.red, borderRadius:9, fontSize:13, fontWeight:600, marginBottom:14 }}>⚠ {error}</div>}
               <Btn v="gold" full onClick={tryStaffLogin}>🔐 Clock In & Begin Shift</Btn>
               <div style={{ fontSize:11, color:C.text3, textAlign:"center", marginTop:10 }}>
                 Client info accessible only during active shift · Auto-locks after 15 min
@@ -1899,9 +1549,7 @@ function ClockIn({onClockIn, onAdmin, onFamily, onBA, onDemo}) {
                   style={{ width:"100%", padding:"10px 12px", borderRadius:9, border:`1px solid ${C.gray2}`, fontSize:13, fontFamily:"inherit" }}>
                   {Object.values(FAMILY_DB).map(f=><option key={f.id} value={f.id}>{f.name} — {f.relation} of {Object.values(RESIDENTS_DB).flat().find(r=>r.id===f.residentId)?.name||f.residentId}</option>)}
                 </select>
-              </div>
-              <div style={{ marginBottom:14 }}>
-                <label style={{ display:"block", fontSize:11, fontWeight:700, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>Family PIN</label>
+         ..."block", fontSize:11, fontWeight:700, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>Family PIN</label>
                 <input type="password" value={familyPin} onChange={e=>setFamilyPin(e.target.value)} onKeyDown={e=>e.key==="Enter"&&tryFamilyLogin()}
                   placeholder="Your family PIN" maxLength={4}
                   style={{ width:"100%", padding:"10px 12px", borderRadius:9, border:`1px solid ${C.gray2}`, fontSize:20, fontFamily:"monospace", letterSpacing:6, textAlign:"center", boxSizing:"border-box" }}/>
@@ -1919,9 +1567,7 @@ function ClockIn({onClockIn, onAdmin, onFamily, onBA, onDemo}) {
   );
 }
 
-// ─── BEHAVIOR PLAN VIEWER (Staff ↔ Clinical toggle) ────────────────────────────
-function BehaviorPlanViewer({resident}) {
-  const [view, setView] = useState("staff");
+// ─── BEHAVIOR PLAN VIEWE..."staff");
   const plan = resident.behaviorPlan;
   if (!plan) return null;
   const stage = STAGES[resident.stage];
@@ -1957,11 +1603,7 @@ function BehaviorPlanViewer({resident}) {
                       <div>
                         <div style={{ fontSize:11, fontWeight:800, color:C.teal, marginBottom:2 }}>{h.term}</div>
                         <div style={{ fontSize:12, color:C.text }}>{h.plain}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ marginTop:8, fontSize:11, color:C.text3, fontStyle:"italic" }}>
+  ..."italic" }}>
                   Switch to Clinical View to see these terms in the full plan — useful for certification exam study.
                 </div>
               </div>
@@ -2021,10 +1663,7 @@ function BAPortal({onLogout}) {
   const [accessScore, setAccessScore] = useState({});
   const [scoring, setScoring] = useState({});
 
-  const scorePlan = async (r) => {
-    setScoring(p=>({...p,[r.id]:true}));
-    const txt = await callClaude(
-      [{role:"user",content:`Review this behavior plan for a Florida APD group home resident:\n\n"${r.behaviorPlan?.clinicalDesc}"\n\nScore it on:\n1. Plain-language accessibility (0-100): Can a DSP with a high school diploma understand it?\n2. APD compliance (0-100): Does it reference Chapter 65G interventions appropriately?\n3. Missing elements (list up to 3 short items).\n4. Staff translation: Write 2 plain-language sentences for daily care staff.\n\nReturn ONLY valid JSON: { "accessibility": number, "compliance": number, "missing": ["item"], "translation": "text" }`}],
+  const scorePlan = async..."user",content:`Review this behavior plan for a Florida APD group home resident:\n\n"${r.behaviorPlan?.clinicalDesc}"\n\nScore it on:\n1. Plain-language accessibility (0-100): Can a DSP with a high school diploma understand it?\n2. APD compliance (0-100): Does it reference Chapter 65G interventions appropriately?\n3. Missing elements (list up to 3 short items).\..."accessibility": number, "compliance": number, "missing": ["item"], "translation": "text" }`}],
       "You are a Florida APD behavior analyst supervisor. Return only valid JSON with no markdown."
     );
     try { const c=txt.replace(/```json|```/g,"").trim(); setAccessScore(p=>({...p,[r.id]:JSON.parse(c)})); }
@@ -2063,14 +1702,7 @@ function BAPortal({onLogout}) {
                   <div style={{ padding:"14px 16px", background:st.bg }}>
                     <div style={{ display:"flex", gap:12, alignItems:"center" }}>
                       <span style={{fontSize:36}}>{r.photo}</span>
-                      <div><div style={{ fontSize:15, fontWeight:800, color:C.text }}>{r.name}</div><Tag label={`S${r.stage}: ${st.name}`} color={st.color} bg={`${st.color}22`} small/></div>
-                    </div>
-                  </div>
-                  <div style={{ padding:14 }}>
-                    <div style={{ fontSize:12, color:C.text3, marginBottom:4 }}><strong>Home:</strong> {r.home} &nbsp;·&nbsp; <strong>IB:</strong> {r.ibStatus}</div>
-                    <div style={{ height:5, background:C.gray1, borderRadius:3, marginTop:8 }}><div style={{ height:5, borderRadius:3, background:st.color, width:`${st.tension*10}%` }}/></div>
-                    <div style={{ fontSize:11, fontWeight:700, color:st.color, marginTop:4 }}>Tension Index: {st.tension}/10</div>
-                    {r.stage>=7&&<div style={{ marginTop:8, padding:"6px 10px", background:C.redlt, color:C.red, borderRadius:8, fontSize:11, fontWeight:700 }}>⚠ High-tension — enhanced monitoring</div>}
+                      <div><div style={{ fontSize:15, fontWeight:800, color:C.text }}>{r.name}</div><Tag label={`S${r.stage}: ${st.name}`} color={st.color} bg={`${st.color}22`..."6px 10px", background:C.redlt, color:C.red, borderRadius:8, fontSize:11, fontWeight:700 }}>⚠ High-tension — enhanced monitoring</div>}
                   </div>
                 </Card>
               );})}
@@ -2083,11 +1715,7 @@ function BAPortal({onLogout}) {
               <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif", marginBottom:6 }}>Plan Accessibility Scorer</div>
               <div style={{ padding:"10px 16px", background:C.purplelt, borderRadius:10, fontSize:13, color:C.purple, fontWeight:600 }}>✦ AI scores each plan for staff readability and APD Chapter 65G compliance, then generates a plain-language staff translation.</div>
             </div>
-            {allResidents.filter(r=>r.behaviorPlan).map(r=>{
-              const score=accessScore[r.id]; const st=STAGES[r.stage];
-              return (
-                <Card key={r.id}>
-                  <div style={{ padding:"14px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, display:"flex", justifyContent:"space-between", alignItems:"center", borderRadius:"12px 12px 0 0" }}>
+      ..."14px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, display:"flex", justifyContent:"space-between", alignItems:"center", borderRadius:"12px 12px 0 0" }}>
                     <div style={{ display:"flex", gap:10, alignItems:"center" }}>
                       <span style={{fontSize:28}}>{r.photo}</span>
                       <div><div style={{ fontSize:14, fontWeight:800, color:C.white }}>{r.name}</div><div style={{ fontSize:11, color:"#8fb3d4" }}>S{r.stage}: {st.name} · {r.home}</div></div>
@@ -2111,21 +1739,12 @@ function BAPortal({onLogout}) {
                               <div style={{fontSize:20}}>{icon}</div>
                               <div style={{ fontSize:28, fontWeight:800, color:col, fontFamily:"Georgia,serif" }}>{val}</div>
                               <div style={{ fontSize:11, color:C.text3, fontWeight:700 }}>{lbl}</div>
-                              <div style={{ height:5, background:C.gray2, borderRadius:3, marginTop:6 }}><div style={{ height:5, borderRadius:3, background:col, width:`${val}%` }}/></div>
-                            </div>
-                          );})}
-                        </div>
-                        {score.missing?.length>0&&<div style={{ padding:"12px 14px", background:C.orangelt, borderRadius:9 }}><div style={{ fontSize:12, fontWeight:800, color:C.orange, marginBottom:6 }}>Missing Elements</div>{score.missing.map((m,i)=><div key={i} style={{fontSize:12,color:C.orange}}>• {m}</div>)}</div>}
-                        {score.translation&&<div style={{ padding:"12px 14px", background:C.greenlt, borderRadius:9, borderLeft:`4px solid ${C.green}` }}><div style={{ fontSize:11, fontWeight:800, color:C.green, textTransform:"uppercase", letterSpacing:.4, marginBottom:6 }}>✦ AI Staff Translation</div><div style={{ fontSize:13, color:C.text, lineHeight:1.8 }}>{score.translation}</div></div>}
+                              <div style={{ height:5, background:C.gray2, borderRadius:3, marginTop:6 }}><div style={{ height:5, ..."12px 14px", background:C.orangelt, borderRadius:9 }}><div style={{ fontSize:12, fontWeight:800, color:C.orange, marginBottom:6 }}>Missing Elements</div>{score.missing.map((m,i)=><div key={i} style={{fontSize:12,color:C.orange}}>• {m}</div>)}</div>}
+        ..."12px 14px", background:C.greenlt, borderRadius:9, borderLeft:`4px solid ${C.green}` }}><div style={{ fontSize:11, fontWeight:800, color:C.green, textTransform:"uppercase", letterSpacing:.4, marginBottom:6 }}>✦ AI Staff Translation</div><div style={{ fontSize:13, color:C.text, lineHeight:1.8 }}>{score.translation}</div></div>}
                       </div>
                     )}
                   </div>
-                </Card>
-              );
-            })}
-          </div>
-        )}
-        {tab==="effectiveness" && (
+            ..."effectiveness" && (
           <div style={{ display:"grid", gap:14 }}>
             <div style={{ fontSize:17, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>BA Effectiveness Scorecard</div>
             <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:14 }}>
@@ -2164,7 +1783,7 @@ function BAPortal({onLogout}) {
                           <div style={{ fontSize:12, fontWeight:800, color:col }}>{ba.ba}</div>
                           <div style={{ fontSize:16, fontWeight:800, color:col }}>{ba.bei}</div>
                         </div>
-                        <div style={{ height:5, background:"rgba(0,0,0,.08)", borderRadius:3 }}>
+  ..."rgba(0,0,0,.08)", borderRadius:3 }}>
                           <div style={{ height:5, borderRadius:3, background:col, width:`${ba.bei}%` }}/>
                         </div>
                         {ba.flag==="fraud" && (
@@ -2195,18 +1814,14 @@ function BAPortal({onLogout}) {
                   </BarChart>
                 </ResponsiveContainer>
               </div>
-            </Card>
-
-            {/* BEI Scorecard — BA fraud detection */}
-            <div style={{ fontSize:15, fontWeight:800, color:C.navy, fontFamily:"Georgia,serif" }}>BA Behavioral Effectiveness Index (BEI) — Fraud Detection</div>
+    ..."Georgia,serif" }}>BA Behavioral Effectiveness Index (BEI) — Fraud Detection</div>
             <div style={{ padding:"10px 16px", background:C.redlt, borderRadius:10, fontSize:13, color:C.red, fontWeight:600, borderLeft:`4px solid ${C.red}` }}>
               ⚠ BEI scores below 50 combined with stagnation flags trigger automatic APD notification review. "Uniform data entries" is a Sentinel indicator for pencil-whipping.
             </div>
             {BEI_DATA.map(ba=>{
               const accColor = s=>s>=70?C.green:s>=50?C.gold:C.red;
               const accBg    = s=>s>=70?C.greenlt:s>=50?C.goldlt:C.redlt;
-              return (
-                <Card key={ba.ba} style={{ border:ba.flag==="fraud"?`2px solid ${C.redmed}`:undefined }}>
+        ..."fraud"?`2px solid ${C.redmed}`:undefined }}>
                   <div style={{ padding:"13px 18px", borderBottom:`1px solid ${C.gray1}`, display:"flex", justifyContent:"space-between", alignItems:"center", background:ba.flag==="fraud"?C.redlt:C.white, borderRadius:"12px 12px 0 0" }}>
                     <div>
                       <div style={{ fontWeight:700, fontSize:14, color:ba.flag==="fraud"?C.red:C.navy }}>{ba.ba}</div>
@@ -2224,7 +1839,7 @@ function BAPortal({onLogout}) {
                           <span style={{ fontSize:11, color:C.text3 }}>{l}</span>
                           <span style={{ fontSize:11, fontWeight:700, color:accColor(v) }}>{v}%</span>
                         </div>
-                        <div style={{ height:6, background:C.gray1, borderRadius:3, overflow:"hidden" }}>
+          ..."hidden" }}>
                           <div style={{ height:"100%", width:`${v}%`, background:accColor(v), borderRadius:3 }}/>
                         </div>
                       </div>
@@ -2234,8 +1849,7 @@ function BAPortal({onLogout}) {
                     <div style={{ padding:"10px 16px", background:C.redlt, borderTop:`1px solid ${C.gray1}` }}>
                       <div style={{ fontSize:12, color:C.red, fontWeight:700 }}>
                         {ba.stagnation>0
-                          ? `⚠ ${ba.stagnation} resident(s) in Stage 7+ for 90+ days with no plan revision — Persistent Non-Resolution Pattern detected. APD notification may be required.`
-                          : "⚠ Data integrity anomaly detected — uniform data entries flagged by Sentinel. Review required before next APD submission."}
+                          ? `⚠ ${ba.stagnation} resident(s) in Sta..."⚠ Data integrity anomaly detected — uniform data entries flagged by Sentinel. Review required before next APD submission."}
                       </div>
                     </div>
                   )}
@@ -2256,8 +1870,7 @@ function BAPortal({onLogout}) {
                     <div style={{ display:"flex", gap:8, alignItems:"flex-start" }}>
                       <div style={{ fontSize:11, fontWeight:800, color:C.red, minWidth:140, flexShrink:0 }}>{aba}</div>
                       <div>
-                        <div style={{ fontSize:12, fontWeight:600, color:C.navy }}>{plain}</div>
-                        <div style={{ fontSize:11, color:C.text3, fontStyle:"italic", marginTop:2 }}>{example}</div>
+                        <div style={{ fontSize:12, fontWeight:600, color:C.navy }}>{plain}</di..."italic", marginTop:2 }}>{example}</div>
                       </div>
                     </div>
                   </div>
@@ -2277,12 +1890,7 @@ function BAPortal({onLogout}) {
   );
 }
 
-// ─── FACE SHEET (enhanced) ─────────────────────────────────────────────────────
-function FaceSheet({resident}) {
-  const s = STAGES[resident.stage];
-  const [showSeizure, setShowSeizure] = useState(false);
-  return (
-    <div style={{ display:"grid", gap:14 }}>
+// ─── FACE SHEET (enhanced) ───────────────────────────────────..."grid", gap:14 }}>
       <ResidentBar resident={resident}/>
 
       {/* CRITICAL ALERTS ROW */}
@@ -2299,10 +1907,7 @@ function FaceSheet({resident}) {
         )}
         <div style={{ padding:"12px 16px", background:resident.dietaryAlert?C.redlt:C.greenlt, color:resident.dietaryAlert?C.red:C.green, borderRadius:12, fontWeight:700, fontSize:13 }}>
           🍽 Diet: {resident.dietaryTexture}
-          {resident.dietaryAlert && <div style={{fontSize:11,fontWeight:600,marginTop:2}}>{resident.dietaryAlert}</div>}
-        </div>
-        {resident.seizureHistory && (
-          <div onClick={()=>setShowSeizure(true)} style={{ padding:"12px 16px", background:C.redlt, color:C.red, borderRadius:12, fontWeight:700, fontSize:13, cursor:"pointer", border:`2px solid ${C.redmed}` }}>
+          {resident.dietaryAlert && <div style={{fontSize..."12px 16px", background:C.redlt, color:C.red, borderRadius:12, fontWeight:700, fontSize:13, cursor:"pointer", border:`2px solid ${C.redmed}` }}>
             ⚡ SEIZURE HISTORY<div style={{fontSize:11,fontWeight:600,marginTop:2}}>Tap for Action Plan →</div>
           </div>
         )}
@@ -2347,9 +1952,7 @@ function FaceSheet({resident}) {
               <div style={{ fontSize:12, color:C.text, lineHeight:1.7 }}>{s.internalReality}</div>
             </div>
           </div>
-          {/* Triadic Principle — Observer / Observed / Relational */}
-          {s.triadDynamic && (
-            <div style={{ padding:"14px 16px", background:`linear-gradient(135deg,#0A1628 0%,#0D1F35 100%)`, borderRadius:10, border:`1px solid #1E3A5A` }}>
+          {/* Triadic Principle — Ob..."14px 16px", background:`linear-gradient(135deg,#0A1628 0%,#0D1F35 100%)`, borderRadius:10, border:`1px solid #1E3A5A` }}>
               <div style={{ fontSize:10, fontWeight:800, color:"#C8A020", textTransform:"uppercase", letterSpacing:.8, marginBottom:8 }}>
                 ✦ Triadic Field Analysis — S{resident.stage} · {s.phaseName||""}
               </div>
@@ -2402,9 +2005,7 @@ function FaceSheet({resident}) {
       {/* NSDT LIVE CLASSIFICATION — Kairos Engine */}
       <NSDTLogger resident={resident} onClassified={()=>{}}/>
 
-      {showSeizure && resident.seizurePlan && (
-        <Card style={{ border:`3px solid ${C.red}` }}>
-          <div style={{ padding:"14px 18px", background:C.red, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+      {showSeizure && resident.s..."14px 18px", background:C.red, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
             <div style={{ color:C.white, fontWeight:800, fontSize:15 }}>⚡ SEIZURE ACTION PLAN — {resident.name}</div>
             <Btn v="ghost" small onClick={()=>setShowSeizure(false)} style={{color:C.white,borderColor:C.white}}>Close</Btn>
           </div>
@@ -2461,8 +2062,7 @@ function FaceSheet({resident}) {
               ))}
             </div>
           </Card>
-          <div style={{ padding:14, background:s.bg, borderRadius:12, border:`2px solid ${s.color}44` }}>
-            <div style={{ fontSize:11, fontWeight:700, color:s.color, textTransform:"uppercase", letterSpacing:.4, marginBottom:4 }}>Current Lifecycle Stage</div>
+          <div style={{ padding:14, background:s.bg, borderRadius:12, border:`2px solid ${s.co..."uppercase", letterSpacing:.4, marginBottom:4 }}>Current Lifecycle Stage</div>
             <div style={{ fontSize:16, fontWeight:800, color:s.color, fontFamily:"Georgia,serif" }}>S{s.id}: {s.name}</div>
           </div>
         </div>
@@ -2485,10 +2085,7 @@ function FaceSheet({resident}) {
       {/* ── BEHAVIOR PLAN — Staff/Clinical toggle ── */}
       {resident.behaviorPlan && <BehaviorPlanViewer resident={resident}/>}
 
-      {/* ── PCM APPROVED TECHNIQUES ── */}
-      {resident.pcm && (
-        <Card style={{ border:`2px solid ${C.greenmed}33` }}>
-          <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.green} 0%,#1A7A2E 100%)`, borderRadius:"12px 12px 0 0" }}>
+      {..."12px 18px", background:`linear-gradient(135deg,${C.green} 0%,#1A7A2E 100%)`, borderRadius:"12px 12px 0 0" }}>
             <div style={{ fontSize:13, fontWeight:800, color:C.white }}>✅ Approved PCM Techniques</div>
             <div style={{ fontSize:11, color:"rgba(255,255,255,.7)", marginTop:2 }}>Only these interventions are authorized for {resident.name.split(" ")[0]} — Florida APD Chapter 65G-8</div>
           </div>
@@ -2504,8 +2101,7 @@ function FaceSheet({resident}) {
 
       {/* ── PROHIBITED PROCEDURES ── */}
       {resident.prohibited && (
-        <Card style={{ border:`2px solid ${C.red}` }}>
-          <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.red} 0%,${C.redmed} 100%)`, borderRadius:"12px 12px 0 0" }}>
+        <Card st..."12px 18px", background:`linear-gradient(135deg,${C.red} 0%,${C.redmed} 100%)`, borderRadius:"12px 12px 0 0" }}>
             <div style={{ fontSize:13, fontWeight:800, color:C.white }}>🚫 PROHIBITED PROCEDURES</div>
             <div style={{ fontSize:11, color:"rgba(255,255,255,.75)", marginTop:2 }}>Using any prohibited procedure is a civil rights violation and a mandatory APD reportable incident — FL Ch. 65G-8.005</div>
           </div>
@@ -2520,12 +2116,7 @@ function FaceSheet({resident}) {
             </div>
           </div>
         </Card>
-      )}
-
-      {/* ── BAKER ACT GUIDANCE ── */}
-      {resident.bakerAct && (
-        <Card style={{ border:`2px solid ${C.purple}44` }}>
-          <div style={{ padding:"12px 18px", background:`linear-gradient(135deg,${C.purple} 0%,#2D0F5A 100%)`, borderRadius:"12px 12px 0 0" }}>
+..."12px 18px", background:`linear-gradient(135deg,${C.purple} 0%,#2D0F5A 100%)`, borderRadius:"12px 12px 0 0" }}>
             <div style={{ fontSize:13, fontWeight:800, color:C.white }}>⚖ Baker Act Decision Guidance — {resident.bakerAct.statute}</div>
             <div style={{ fontSize:11, color:"rgba(255,255,255,.7)", marginTop:2 }}>Use the AI Procedure Guide for the full interactive checklist — this card is a quick reference only</div>
           </div>
@@ -2544,10 +2135,7 @@ function FaceSheet({resident}) {
               <div style={{ padding:"12px 14px", background:C.purplelt, borderRadius:9, fontSize:12, color:C.purple, fontWeight:600 }}>
                 <div style={{ fontWeight:800, marginBottom:6 }}>Threshold for consult:</div>
                 {resident.bakerAct.threshold}
-              </div>
-            )}
-            {resident.bakerAct.nonVerbalNote && (
-              <div style={{ padding:"12px 14px", background:"#1A0030", borderRadius:9, fontSize:12, color:"#FFB3FF", fontWeight:700 }}>
+              </div..."12px 14px", background:"#1A0030", borderRadius:9, fontSize:12, color:"#FFB3FF", fontWeight:700 }}>
                 {resident.bakerAct.nonVerbalNote}
               </div>
             )}
@@ -2560,18 +2148,7 @@ function FaceSheet({resident}) {
 }
 
 // ─── MED ADMIN (enhanced) ──────────────────────────────────────────────────────
-function MedAdmin({resident}) {
-  const now = new Date();
-  const currentHour = now.getHours();
-  const [administered, setAdministered] = useState({});
-  const [refused, setRefused] = useState({});
-  const [destroyed, setDestroyed] = useState({});
-  const [scanResult, setScanResult] = useState(null);
-  const [showAll, setShowAll] = useState(false);
-  const [prnFollowUp, setPrnFollowUp] = useState({});
-  const [prnEffectiveness, setPrnEffectiveness] = useState({});
-  const [controlledWitness, setControlledWitness] = useState({});
-  const [witnessName, setWitnessName] = useState("");
+function MedAdmin({resident})..."");
   const [showDestroyModal, setShowDestroyModal] = useState(null);
   const [destroyWitness, setDestroyWitness] = useState("");
 
@@ -2593,30 +2170,7 @@ function MedAdmin({resident}) {
     setAdministered(p=>({...p,[med.id]:now.toLocaleTimeString()}));
     setScanResult(null);
     if (med.isPRN) {
-      // Schedule 30-min follow-up alert
-      setPrnFollowUp(p=>({...p,[med.id]:{startTime:new Date(),done:false}}));
-    }
-  };
-
-  const markRefused = (medId) => {
-    setRefused(p=>({...p,[medId]:now.toLocaleTimeString()}));
-    setScanResult(null);
-  };
-
-  const logPRNEffectiveness = (medId, effective) => {
-    setPrnEffectiveness(p=>({...p,[medId]:{effective, time:new Date().toLocaleTimeString()}}));
-    setPrnFollowUp(p=>({...p,[medId]:{...p[medId], done:true}}));
-  };
-
-  const getDaysRemaining = (medId) => {
-    const pc = resident.pillCounts?.[medId];
-    if (!pc) return null;
-    return Math.floor(pc.current / pc.perDay);
-  };
-
-  const mealTimeDisplay = () => {
-    const h = currentHour;
-    if (h >= 6 && h < 10) return "Breakfast Time";
+      // Schedule 30-min follow..."Breakfast Time";
     if (h >= 11 && h < 14) return "Lunch Time";
     if (h >= 17 && h < 20) return "Dinner Time";
     return null;
@@ -2634,15 +2188,7 @@ function MedAdmin({resident}) {
           <div>
             <div style={{ fontWeight:800, fontSize:14, color:C.red }}>{mealTime} — DIETARY ALERT</div>
             <div style={{ fontSize:13, color:C.text, marginTop:2 }}>
-              Required texture: <strong>{resident.dietaryTexture}</strong>
-              {resident.dietaryAlert && <span> — {resident.dietaryAlert}</span>}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* 3-WAY MATCH */}
-      <div style={{ background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)`, padding:"14px 20px", borderRadius:14, display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:10 }}>
+       ..."14px 20px", borderRadius:14, display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:10 }}>
         {[
           ["✓ Right Resident", resident.name, C.greenlt, C.green],
           ["✓ Right Time", now.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}), C.goldlt, C.gold],
@@ -2656,14 +2202,9 @@ function MedAdmin({resident}) {
       </div>
 
       {/* PRN FOLLOW-UP ALERTS */}
-      {Object.entries(prnFollowUp).filter(([,v])=>!v.done).map(([medId, data])=>{
-        const med = resident.meds.find(m=>m.id===medId);
-        const minsPassed = Math.floor((new Date() - data.startTime) / 60000);
-        return (
-          <div key={medId} style={{ padding:"14px 18px", background:C.goldlt, borderRadius:12, border:`2px solid ${C.gold}` }}>
+      {Object.entries(prnFollowUp).filter((..."14px 18px", background:C.goldlt, borderRadius:12, border:`2px solid ${C.gold}` }}>
             <div style={{ fontWeight:800, color:C.gold, marginBottom:8 }}>⏰ PRN Follow-Up Required — {med?.name} ({minsPassed} min ago)</div>
-            <div style={{ fontSize:13, color:C.text, marginBottom:10 }}>Florida APD requires effectiveness documentation 30–60 minutes after PRN administration.</div>
-            <div style={{ display:"flex", gap:10 }}>
+            <div style={{ fontSi..."flex", gap:10 }}>
               <Btn v="green" onClick={()=>logPRNEffectiveness(medId, true)}>✓ Medication Was Effective</Btn>
               <Btn v="red" onClick={()=>logPRNEffectiveness(medId, false)}>✗ Not Effective — Notify BA</Btn>
             </div>
@@ -2674,9 +2215,7 @@ function MedAdmin({resident}) {
       {/* SCAN RESULT */}
       {scanResult && (
         <Card style={{ border:`3px solid ${C.green}` }}>
-          <div style={{ padding:20 }}>
-            <div style={{ fontSize:13, fontWeight:800, color:C.green, marginBottom:8 }}>✓ SCAN VERIFIED — THREE-WAY MATCH CONFIRMED</div>
-            <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:14 }}>
+..."grid", gridTemplateColumns:"1fr 1fr", gap:10, marginBottom:14 }}>
               {[["Resident",scanResult.resident.name],["Medication",scanResult.matched.name],["NDC",scanResult.matched.ndc],["Route",scanResult.matched.route]].map(([l,v])=>(
                 <div key={l} style={{ padding:"8px 12px", background:C.greenlt, borderRadius:9 }}>
                   <div style={{ fontSize:10, fontWeight:700, color:C.green, textTransform:"uppercase" }}>{l}</div>
@@ -2706,8 +2245,7 @@ function MedAdmin({resident}) {
 
       {/* DESTROY MODAL */}
       {showDestroyModal && (
-        <Card style={{ border:`3px solid ${C.orange}` }}>
-          <CardHdr title="Medication Destruction / Disposal — Form 65G-7.007A" dark/>
+        <Card style={{ borde..."Medication Destruction / Disposal — Form 65G-7.007A" dark/>
           <div style={{ padding:16 }}>
             <div style={{ fontSize:13, color:C.text, marginBottom:12, padding:"10px 14px", background:C.orangelt, borderRadius:9 }}>
               Dropped pill, refused dose, or damaged medication must be documented and destroyed with a witness. This record is permanent and immutable.
@@ -2735,12 +2273,7 @@ function MedAdmin({resident}) {
           const done = administered[med.id];
           const ref = refused[med.id];
           const dest = destroyed[med.id];
-          const daysLeft = getDaysRemaining(med.id);
-          const lowStock = daysLeft !== null && daysLeft <= 7;
-          return (
-            <Card key={med.id} style={{ border: done?`2px solid ${C.green}`:ref?`2px solid ${C.orange}`:dest?`2px solid ${C.purple}`:med.controlled?`2px solid ${C.red}22`:`1px solid ${C.gray1}` }}>
-              <div style={{ padding:16 }}>
-                <div style={{ display:"flex", alignItems:"flex-start", gap:12 }}>
+          const daysLeft = getDay..."flex", alignItems:"flex-start", gap:12 }}>
                   <div style={{ width:48, height:48, borderRadius:12, background:done?C.greenlt:ref?C.orangelt:dest?C.purplelt:med.controlled?C.redlt:C.gray0,
                     display:"flex", alignItems:"center", justifyContent:"center", fontSize:22, flexShrink:0 }}>
                     {done?"✓":ref?"⚠":dest?"⛔":"💊"}
@@ -2752,8 +2285,7 @@ function MedAdmin({resident}) {
                       {med.isPRN && <Tag label="PRN" color={C.teal} bg={C.teallt} small/>}
                       {lowStock && <Tag label={`⚠ ${daysLeft}d supply left`} color={C.white} bg={C.orange} small/>}
                     </div>
-                    <div style={{ fontSize:12, color:C.text3 }}>Route: {med.route} · NDC: {med.ndc}</div>
-                    <div style={{ fontSize:12, color:C.text2, margin:"4px 0" }}>⏰ {med.times.join(" · ")}</div>
+                    <div style={{ fontSize:12, color:C.text3 }}>R..."4px 0" }}>⏰ {med.times.join(" · ")}</div>
                     <div style={{ fontSize:12, color:C.text2, background:C.gray0, padding:"6px 10px", borderRadius:7 }}>{med.instructions}</div>
                     {prnEffectiveness[med.id] && (
                       <div style={{ marginTop:6, padding:"6px 10px", borderRadius:7, background:prnEffectiveness[med.id].effective?C.greenlt:C.redlt, fontSize:12, fontWeight:700, color:prnEffectiveness[med.id].effective?C.green:C.red }}>
@@ -2761,12 +2293,7 @@ function MedAdmin({resident}) {
                       </div>
                     )}
                     {dest && <div style={{ marginTop:6, fontSize:12, fontWeight:700, color:C.purple }}>⛔ Destroyed @ {dest.time} · Witness: {dest.witness} · Reason: {dest.reason}</div>}
-                  </div>
-                  <div style={{ flexShrink:0 }}>
-                    {done && <div style={{ fontSize:12, fontWeight:700, color:C.green }}>Given {done}</div>}
-                    {ref && <div style={{ fontSize:12, fontWeight:700, color:C.orange }}>Refused {ref}</div>}
-                    {!done && !ref && !dest && (
-                      <div style={{ display:"flex", flexDirection:"column", gap:6 }}>
+       ..."flex", flexDirection:"column", gap:6 }}>
                         <Btn v="primary" small onClick={()=>setScanResult({matched:med,resident})}>📱 Scan & Verify</Btn>
                         <Btn v="orange" small onClick={()=>markRefused(med.id)}>Refused</Btn>
                       </div>
@@ -2777,8 +2304,7 @@ function MedAdmin({resident}) {
             </Card>
           );
         })}
-        {dueMeds.length===0 && !showAll && (
-          <div style={{ textAlign:"center", padding:32, color:C.text3, background:C.white, borderRadius:14, border:`1px solid ${C.gray1}` }}>
+        {dueMeds.length===..."center", padding:32, color:C.text3, background:C.white, borderRadius:14, border:`1px solid ${C.gray1}` }}>
             <div style={{ fontSize:32, marginBottom:8 }}>✓</div>
             <div style={{ fontSize:15, fontWeight:700, color:C.green }}>No meds due right now</div>
             <Btn v="ghost" style={{marginTop:12}} onClick={()=>setShowAll(true)}>View All Medications</Btn>
@@ -2790,16 +2316,12 @@ function MedAdmin({resident}) {
 }
 
 // ─── COMMUNICATION LOG ─────────────────────────────────────────────────────────
-function CommunicationLog({session}) {
-  const [logs, setLogs] = useState(COMM_LOG_INIT.filter(l=>l.home===session.home));
-  const [form, setForm] = useState({category:"General", text:"", claimedMinutes:""});
+function Communication..."General", text:"", claimedMinutes:""});
   const [analyzing, setAnalyzing] = useState(false);
   const [taskStart, setTaskStart] = useState(null);
   const [taskElapsed, setTaskElapsed] = useState(0);
   const [taskRunning, setTaskRunning] = useState(false);
-  const [irDrafts, setIrDrafts] = useState({});
-  const [irLoading, setIrLoading] = useState({});
-  const CATS = ["General","Behavioral","Medical","Safety","Handover","Outing","Activity Log"];
+  const [irDrafts, setIrDraf..."General","Behavioral","Medical","Safety","Handover","Outing","Activity Log"];
 
   // Task timer tick
   useEffect(() => {
@@ -2808,23 +2330,7 @@ function CommunicationLog({session}) {
     return () => clearInterval(t);
   }, [taskRunning, taskStart]);
 
-  const startTask = () => { setTaskStart(Date.now()); setTaskElapsed(0); setTaskRunning(true); };
-  const stopTask  = () => { setTaskRunning(false); };
-  const fmtSecs   = s => `${Math.floor(s/60)}m ${s%60}s`;
-
-  const detectFidelityFlag = (claimedMins, actualSecs) => {
-    if (!claimedMins || !actualSecs) return null;
-    const claimedSecs = parseFloat(claimedMins) * 60;
-    const ratio = actualSecs / claimedSecs;
-    if (ratio < 0.25) return { flag:true, msg:`⚠ FIDELITY ALERT: You claimed ${claimedMins} min but the task timer ran only ${fmtSecs(actualSecs)}. This discrepancy is flagged for supervisor review (BA Effectiveness Score).` };
-    if (ratio < 0.5)  return { flag:true, msg:`⚠ Note: Task timer (${fmtSecs(actualSecs)}) is significantly shorter than claimed duration (${claimedMins} min). Supervisor may follow up.` };
-    return null;
-  };
-
-  const addLog = async () => {
-    if (!form.text.trim()) return;
-    setAnalyzing(true);
-    const flagWords = ["hit","fell","refused","screamed","kicked","injured","hurt","aggressive","bleeding","seizure","fight","bite","struck","choked","threw","push","shove","elopement","missing","wandered","restraint"];
+  co..."hit","fell","refused","screamed","kicked","injured","hurt","aggressive","bleeding","seizure","fight","bite","struck","choked","threw","push","shove","elopement","missing","wandered","restraint"];
     const found = flagWords.filter(w=>form.text.toLowerCase().includes(w));
     const flagged = found.length > 0;
     const flagReason = flagged ? `🚨 Key word(s) "${found.join('", "')}" detected — Incident Report may be required within 24 hours (APD Rule 65G-2.009)` : "";
@@ -2835,9 +2341,7 @@ function CommunicationLog({session}) {
       aiFlag:flagged, flagReason,
       claimedMinutes:form.claimedMinutes||null, actualSeconds:taskElapsed||null,
       fidelityFlag: fidelityCheck,
-    };
-    setLogs(p=>[newLog,...p]);
-    setForm({category:"General",text:"",claimedMinutes:""});
+  ..."General",text:"",claimedMinutes:""});
     setTaskElapsed(0); setTaskRunning(false); setTaskStart(null);
     setAnalyzing(false);
   };
@@ -2845,8 +2349,7 @@ function CommunicationLog({session}) {
   const draftIR = async (log) => {
     setIrLoading(p=>({...p,[log.id]:true}));
     const txt = await callClaude(
-      [{role:"user", content:`A Florida APD group home staff member wrote this communication log entry:\n\n"${log.text}"\n\nThis was flagged by the AI Sentinel because it contains incident-trigger language. Draft a professional Incident Report for APD Rule 65G-2.009. Include:\n1. DATE/TIME: ${log.date} at ${log.time}\n2. STAFF: ${STAFF_DB[log.staffId]?.name}\n3. HOME: ${log.home}\n4. DESCRIPTION OF INCIDENT: (expand on the log note professionally)\n5. IMMEDIATE ACTIONS TAKEN:\n6. NOTIFICATIONS REQUIRED: (Supervisor, Guardian, BA, APD within 24 hrs)\n7. FOLLOW-UP REQUIRED:\n\nUse plain, professional language. Do not soften or minimize the incident.`}],
-      "You are a Florida APD incident report drafting assistant. You write clear, accurate, legally defensible incident reports based on staff notes. Never minimize injuries or behavioral incidents. Flag if language seems to understate severity."
+      [{role:"user", content:`A Florida APD group home staff member wrote this communication log entry:\n\n"${log.text}"\n\nThis was flagged by the AI Sentinel because it contains incident-trigger language. Draft a professional Incident Report for APD Rule 65G-2.009. Include:\n1. DATE/TIME: ${log.date} at ${log.time}\n2. STAFF: ${STAFF_DB[log.staffId]?.name}\n3. HO..."You are a Florida APD incident report drafting assistant. You write clear, accurate, legally defensible incident reports based on staff notes. Never minimize injuries or behavioral incidents. Flag if language seems to understate severity."
     );
     setIrDrafts(p=>({...p,[log.id]:txt}));
     setIrLoading(p=>({...p,[log.id]:false}));
@@ -2865,11 +2368,7 @@ function CommunicationLog({session}) {
                 style={{ padding:"6px 4px", borderRadius:8, textAlign:"center", cursor:"pointer", fontSize:11, fontWeight:700,
                   background:form.category===c?(catColors[c]||C.navy):C.gray0,
                   color:form.category===c?C.white:C.text3, border:`2px solid ${form.category===c?(catColors[c]||C.navy):C.gray2}` }}>
-                {c}
-              </div>
-            ))}
-          </div>
-          <Textarea label="Note" value={form.text} onChange={v=>setForm(p=>({...p,text:v}))} rows={4}
+   ..."Note" value={form.text} onChange={v=>setForm(p=>({...p,text:v}))} rows={4}
             placeholder="Document exactly what happened, using plain and specific language. Avoid vague terms."/>
 
           {/* TIME-ON-TASK FIDELITY TRACKER */}
@@ -2919,8 +2418,7 @@ function CommunicationLog({session}) {
               <div style={{ display:"flex", gap:8, alignItems:"center", marginBottom:8, flexWrap:"wrap" }}>
                 <Tag label={log.category} color={C.white} bg={catColors[log.category]||C.navy} small/>
                 <span style={{ fontSize:12, color:C.text3 }}>{log.date} · {log.time}</span>
-                <span style={{ fontSize:12, color:C.text3 }}>— {STAFF_DB[log.staffId]?.name || log.staffId}</span>
-                {log.aiFlag && <Tag label="🚨 IR Required" color={C.white} bg={C.red} small/>}
+                <span style={{ fontSize:12, col..."🚨 IR Required" color={C.white} bg={C.red} small/>}
                 {log.fidelityFlag?.flag && <Tag label="⏱ Fidelity Flag" color={C.white} bg={C.orange} small/>}
               </div>
               <p style={{ fontSize:14, color:C.text, margin:0, lineHeight:1.7 }}>{log.text}</p>
@@ -2933,8 +2431,7 @@ function CommunicationLog({session}) {
               )}
 
               {/* Sentiment IR flag + AI drafter */}
-              {log.aiFlag && (
-                <div style={{ marginTop:10, padding:"10px 12px", background:C.redlt, borderRadius:10, border:`1px solid ${C.redmed}33` }}>
+              {log.aiFl..."10px 12px", background:C.redlt, borderRadius:10, border:`1px solid ${C.redmed}33` }}>
                   <div style={{ fontSize:12, fontWeight:700, color:C.red, marginBottom:8 }}>{log.flagReason}</div>
                   {!irDrafts[log.id] && (
                     <Btn v="red" small onClick={()=>draftIR(log)} style={{ marginBottom:4 }}>
@@ -2948,37 +2445,12 @@ function CommunicationLog({session}) {
                         {irDrafts[log.id]}
                       </div>
                       <div style={{ fontSize:11, color:C.text3, marginTop:8 }}>
-                        ⚠ This is an AI-drafted template. Review, verify accuracy, sign, and submit within 24 hours per APD Rule 65G-2.009.
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          </Card>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// ─── ANALYTICS DASHBOARD ───────────────────────────────────────────────────────
-function AnalyticsDashboard({session}) {
-  const allResidents = Object.values(RESIDENTS_DB).flat();
-  const homeResidents = RESIDENTS_DB[session.home] || [];
-
-  const COLORS = STAGES.map(s=>s.color);
-
-  const heatmapData = allResidents.map(r=>({
-    name:r.name.split(" ")[0], stage:r.stage, tension:STAGES[r.stage].tension, home:r.home, color:STAGES[r.stage].color
+                        ⚠ This is an AI-drafted template...." ")[0], stage:r.stage, tension:STAGES[r.stage].tension, home:r.home, color:STAGES[r.stage].color
   }));
 
   const hoursData = Object.entries(STAFF_DB).map(([id,staff])=>{
     const shifts = PAY_PERIOD.shifts[id]||[];
-    const total = shifts.reduce((a,s)=>a+s.hours,0);
-    const regular = Math.min(total,40);
-    const ot = Math.max(0,total-40);
-    return { name:staff.name.split(" ")[0], regular, ot, total };
+    const total = shifts.reduce((..." ")[0], regular, ot, total };
   });
 
   const pillAlerts = allResidents.flatMap(r=>
@@ -3001,15 +2473,7 @@ function AnalyticsDashboard({session}) {
             {pillAlerts.map((a,i)=>(
               <div key={i} style={{ padding:"10px 14px", background:a.days<=3?C.redlt:C.orangelt, borderRadius:10, borderLeft:`4px solid ${a.days<=3?C.red:C.orange}` }}>
                 <div style={{ fontWeight:700, fontSize:13, color:a.days<=3?C.red:C.orange }}>{a.resident}</div>
-                <div style={{ fontSize:12, color:C.text, marginTop:2 }}>{a.med}</div>
-                <div style={{ fontSize:11, fontWeight:800, color:a.days<=3?C.red:C.orange, marginTop:4 }}>{a.days} days remaining</div>
-              </div>
-            ))}
-          </div>
-        </Card>
-      )}
-
-      <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:14 }}>
+                <div..."grid", gridTemplateColumns:"1fr 1fr", gap:14 }}>
         {/* INCIDENT TREND */}
         <Card>
           <CardHdr title="Incident Trend — Last 7 Days" sub="All houses"/>
@@ -3041,13 +2505,7 @@ function AnalyticsDashboard({session}) {
                   {MED_COMPLIANCE_DATA.map((_,i)=><Cell key={i} fill={_.compliance>=99?C.green:_.compliance>=95?C.gold:C.orange}/>)}
                 </Bar>
               </BarChart>
-            </ResponsiveContainer>
-          </div>
-        </Card>
-
-        {/* STAGE DISTRIBUTION */}
-        <Card>
-          <CardHdr title="Resident Stage Distribution" sub="All houses"/>
+            </ResponsiveConta..."Resident Stage Distribution" sub="All houses"/>
           <div style={{ padding:"14px 16px", display:"flex", gap:16, alignItems:"center" }}>
             <ResponsiveContainer width={160} height={160}>
               <PieChart>
@@ -3118,43 +2576,23 @@ function AnalyticsDashboard({session}) {
                 <div key={r.name} style={{ padding:"12px 14px", borderRadius:12, background:bg, border:`2px solid ${col}33` }}>
                   <div style={{ fontSize:13, fontWeight:800, color:col }}>{r.name}</div>
                   <div style={{ fontSize:11, color:C.text3 }}>{r.home}</div>
-                  <div style={{ marginTop:8, height:6, background:C.gray1, borderRadius:3 }}>
-                    <div style={{ height:6, borderRadius:3, background:r.tension>7?C.orange:r.tension>4?C.navy:C.green, width:`${r.tension*10}%`, transition:"width .3s" }}/>
+               ..."width .3s" }}/>
                   </div>
                   <div style={{ fontSize:11, fontWeight:700, color:col, marginTop:4 }}>Tension {r.tension}/10 · S{r.stage}</div>
                 </div>
               );
             })}
           </div>
-        </Card>
-      </div>
-    </div>
-  );
-}
-
-// ─── SHIFT HANDOVER ────────────────────────────────────────────────────────────
-function ShiftHandover({session, residents}) {
-  const [handover, setHandover] = useState({...HANDOVER_TEMPLATE});
-  const [resStatus, setResStatus] = useState(Object.fromEntries(residents.map(r=>[r.id,{present:false,medsGiven:false,notes:""}])));
+        </Card...""}])));
   const [submitted, setSubmitted] = useState(false);
   const [incomingStaff, setIncomingStaff] = useState("");
 
   const setRes = (id, field, val) => setResStatus(p=>({...p,[id]:{...p[id],[field]:val}}));
-  const allGreen = Object.values(resStatus).every(s=>s.present&&s.medsGiven) && handover.allResidentsPresent && handover.allMedsGiven && handover.suppliesAdequate;
-
-  if (submitted) return (
-    <Card>
-      <div style={{ padding:48, textAlign:"center" }}>
+  const allGreen = Object.values(resStatus).every(s=>s.present&&s.medsGiven) && handover.allResidentsPresent && handover.allMedsGiven && handover.suppl..."center" }}>
         <div style={{ fontSize:52, marginBottom:14 }}>🔄</div>
         <div style={{ fontSize:22, fontWeight:800, color:C.green, fontFamily:"Georgia,serif" }}>Shift Handover Complete</div>
         <p style={{ color:C.text2, marginTop:8 }}>Outgoing staff: {session.staff.name} · Incoming: {incomingStaff}</p>
-        <p style={{ color:C.text3, fontSize:13 }}>Responsibility has been formally transferred. This record is immutable.</p>
-      </div>
-    </Card>
-  );
-
-  return (
-    <div style={{ display:"grid", gap:14 }}>
+        <p style={{ color:C.text3, fontSize:13 }}>Responsibility has been formally transferred..."grid", gap:14 }}>
       <Card style={{ border:`2px solid ${allGreen?C.green:C.orange}` }}>
         <div style={{ padding:"14px 18px", background:allGreen?`linear-gradient(135deg,${C.green} 0%,#1A7A2E 100%)`:`linear-gradient(135deg,${C.orange} 0%,#A05000 100%)`, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
           <div>
@@ -3189,9 +2627,7 @@ function ShiftHandover({session, residents}) {
                 <span style={{fontSize:24}}>{r.photo}</span>
                 <div style={{flex:1}}>
                   <div style={{ fontWeight:700, fontSize:14 }}>{r.name}</div>
-                  <Tag label={`S${r.stage}: ${STAGES[r.stage].name}`} color={STAGES[r.stage].color} bg={STAGES[r.stage].bg} small/>
-                </div>
-                <div style={{ display:"flex", gap:10 }}>
+                  <Tag label={`S${r.stage}: ${ST..."flex", gap:10 }}>
                   {[["present","Present"],["medsGiven","Meds ✓"]].map(([f,l])=>(
                     <div key={f} onClick={()=>setRes(r.id,f,!resStatus[r.id][f])}
                       style={{ padding:"6px 12px", borderRadius:8, cursor:"pointer", fontWeight:700, fontSize:11,
@@ -3225,9 +2661,7 @@ function ShiftHandover({session, residents}) {
 
 // ─── RESIDENT WALLET ────────────────────────────────────────────────────────────
 function ResidentWallet({resident}) {
-  const [transactions, setTransactions] = useState(resident.wallet.transactions);
-  const [balance, setBalance] = useState(resident.wallet.balance);
-  const [form, setForm] = useState({desc:"",amount:"",receipt:"",type:"debit"});
+  const [transactions, setTransactions] = useState(residen..."",amount:"",receipt:"",type:"debit"});
   const [adding, setAdding] = useState(false);
 
   const addTxn = () => {
@@ -3268,13 +2702,7 @@ function ResidentWallet({resident}) {
                 <span style={{ fontSize:12, fontWeight:700, color:C.text }}>{v}</span>
               </div>
             ))}
-          </div>
-        </Card>
-      </div>
-
-      {adding && (
-        <Card style={{ border:`2px solid ${C.gold}` }}>
-          <CardHdr title="Log Transaction" sub="All entries are visible to the guardian"/>
+          ..."Log Transaction" sub="All entries are visible to the guardian"/>
           <div style={{ padding:16 }}>
             <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:8, marginBottom:12 }}>
               {[["debit","💸 Expense (Outing)"],["credit","💰 Deposit / Stipend"]].map(([t,l])=>(
@@ -3304,8 +2732,7 @@ function ResidentWallet({resident}) {
               <div>
                 <div style={{ fontWeight:700, fontSize:14, color:C.text }}>{t.desc}</div>
                 <div style={{ fontSize:12, color:C.text3 }}>{t.date} · Staff: {t.staff} · Receipt: {t.receipt}</div>
-              </div>
-              <div style={{ fontSize:18, fontWeight:800, color:t.amount<0?C.red:C.green, fontFamily:"Georgia,serif" }}>
+              <..."Georgia,serif" }}>
                 {t.amount<0?"-":"+"} ${Math.abs(t.amount).toFixed(2)}
               </div>
             </div>
@@ -3317,16 +2744,7 @@ function ResidentWallet({resident}) {
 }
 
 // ─── PAY PERIOD & SCHEDULE ──────────────────────────────────────────────────────
-function ScheduleView({staff, session}) {
-  const myShifts = PAY_PERIOD.shifts[staff.id] || [];
-  const totalHours = myShifts.reduce((a,s)=>a+s.hours,0);
-  const regularHours = Math.min(totalHours, 40);
-  const overtimeHours = Math.max(0, totalHours - 40);
-  const homeBreakdown = Object.keys(HOMES).map(h=>({home:h, hours:myShifts.filter(s=>s.home===h).reduce((a,s)=>a+s.hours,0), shifts:myShifts.filter(s=>s.home===h).length})).filter(h=>h.hours>0);
-  const upcomingShifts = SCHEDULE_DB.filter(s=>s.staffId===staff.id);
-
-  return (
-    <div style={{ display:"grid", gap:14 }}>
+function ScheduleView({sta..."grid", gap:14 }}>
       {/* PAY PERIOD SUMMARY */}
       <Card>
         <div style={{ padding:20, background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)` }}>
@@ -3350,13 +2768,7 @@ function ScheduleView({staff, session}) {
         {overtimeHours > 0 && (
           <div style={{ padding:"10px 18px", background:C.goldlt, borderTop:`2px solid ${C.gold}` }}>
             <span style={{ fontSize:13, fontWeight:700, color:C.gold }}>⚡ OT Active: {overtimeHours} hours at 1.5× rate — supervisor approval required per company policy</span>
-          </div>
-        )}
-      </Card>
-
-      {/* PER-HOME BREAKDOWN */}
-      <Card>
-        <CardHdr title="Hours by Home This Pay Period"/>
+          <..."Hours by Home This Pay Period"/>
         <div style={{ padding:14, display:"grid", gridTemplateColumns:"repeat(auto-fill,minmax(160px,1fr))", gap:10 }}>
           {homeBreakdown.map(h=>(
             <div key={h.home} style={{ padding:"14px", background:C.gray0, borderRadius:10, borderLeft:`4px solid ${C.navy}` }}>
@@ -3409,10 +2821,7 @@ function ScheduleView({staff, session}) {
 }
 
 // ─── SENTINEL LANGUAGE ANALYSIS ─────────────────────────────────────────────────
-function SentinelAnalysis({text, onAccept, onRevise}) {
-  const [result, setResult] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [ran, setRan] = useState("");
+function SentinelAnalysis({text, onAcce..."");
 
   const analyze = async (t) => {
     if (!t || t.length < 30 || t === ran) return;
@@ -3461,18 +2870,14 @@ Respond in JSON only, no markdown:
       <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:result.findings?.length?10:0 }}>
         <div style={{ fontWeight:800, fontSize:13, color:cfg.col }}>✦ Sentinel: {cfg.label}</div>
         <div style={{ fontSize:11, color:cfg.col, fontWeight:700 }}>Score: {result.score}/100</div>
-      </div>
-      {result.findings?.length > 0 && (
-        <div style={{ display:"grid", gap:4, marginBottom:8 }}>
+ ..."grid", gap:4, marginBottom:8 }}>
           {result.findings.map((f,i) => (
             <div key={i} style={{ fontSize:12, color:C.text, padding:"5px 10px", background:"rgba(255,255,255,.6)", borderRadius:6 }}>• {f}</div>
           ))}
         </div>
       )}
       {result.flagReason && <div style={{ fontSize:12, color:cfg.col, fontWeight:600, marginBottom:8 }}>{result.flagReason}</div>}
-      {result.requiredRevisions?.length > 0 && (
-        <div style={{ marginBottom:8 }}>
-          <div style={{ fontSize:11, fontWeight:700, color:cfg.col, textTransform:"uppercase", letterSpacing:.4, marginBottom:4 }}>Required Revisions:</div>
+      {result.requiredRevisions?.length > 0 &&..."uppercase", letterSpacing:.4, marginBottom:4 }}>Required Revisions:</div>
           {result.requiredRevisions.map((r,i) => <div key={i} style={{ fontSize:12, color:C.text }}>{i+1}. {r}</div>)}
         </div>
       )}
@@ -3496,7 +2901,7 @@ function IncidentLog({resident, staff}) {
   const [sentinelSeverity, setSentinelSeverity] = useState(null);
   const f = k => v => { setForm(p=>({...p,[k]:v})); setSentinelCleared(false); };
 
-  const fullText = [form.trigger, form.behavior, form.response, aiPlan||form.plan].filter(Boolean).join(" ");
+  const fullText = [form.trigg..." ");
 
   const suggestPlan = async () => {
     if (!form.trigger||!form.behavior||!form.response) return;
@@ -3605,13 +3010,7 @@ function IncidentLog({resident, staff}) {
                 <div key={t} style={{ padding:"10px 12px", background:C.purplelt, borderRadius:9 }}>
                   <div style={{ fontWeight:700, fontSize:12, color:C.purple, marginBottom:3 }}>{t}</div>
                   <div style={{ fontSize:12, color:C.text, lineHeight:1.6 }}>{d}</div>
-                </div>
-              ))}
-            </div>
-          </Card>
-
-          <Card>
-            <div style={{ padding:"13px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)` }}>
+           ..."13px 18px", background:`linear-gradient(135deg,${C.navy} 0%,${C.navy3} 100%)` }}>
               <div style={{ fontWeight:800, fontSize:14, color:C.white, fontFamily:"Georgia,serif" }}>🛡 Staff Integrity Shield</div>
               <div style={{ fontSize:12, color:"#8fb3d4" }}>Your report cannot be altered by administrators or owners</div>
             </div>
@@ -3653,20 +3052,7 @@ function IncidentLog({resident, staff}) {
                     <span style={{ fontSize:12, fontWeight:700, color:C.navy }}>{when}</span>
                     <span style={{ fontSize:10, color:C.text3 }}>{rule}</span>
                   </div>
-                  <div style={{ fontSize:12, color:C.text2, marginTop:2 }}>{what}</div>
-                </div>
-              ))}
-            </div>
-          </Card>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── AI PROCEDURE GUIDE ─────────────────────────────────────────────────────────
-const PROCEDURES = [
-  {id:"incident",icon:"🚨",label:"Incident Report",color:C.red,prompt:"Walk me through completing an incident report for a Florida APD group home. Include what to document, who to notify and when, and relevant APD rules."},
+                  <div style={{ fontSize:12,..."incident",icon:"🚨",label:"Incident Report",color:C.red,prompt:"Walk me through completing an incident report for a Florida APD group home. Include what to document, who to notify and when, and relevant APD rules."},
   {id:"bodycheck",icon:"🔍",label:"Body Check",color:C.teal,prompt:"Guide me through a proper body check procedure for a group home resident. Include documentation requirements and how to handle any findings per Florida APD standards."},
   {id:"outing",icon:"🚌",label:"Community Outing",color:C.navy3,prompt:"Walk me through the pre-outing safety checklist for taking a group home resident into the community. Include documentation, medication, emergency items, and supervision requirements."},
   {id:"emergency",icon:"🆘",label:"Emergency Response",color:C.red,prompt:"Guide me through emergency response procedures for a group home, covering medical emergencies, elopement, fire, and behavioral crises. Include 911 and notification timelines."},
@@ -3687,7 +3073,7 @@ function ProcedureGuide({resident, staff}) {
     setSelected(proc);
     setMessages([]);
     setLoading(true);
-    const system = `You are LUMINARK's AI Procedure Guide for Florida APD group home staff. You provide clear, concise, step-by-step guidance compliant with Florida Chapter 65G regulations. ${resident ? `Current resident context: ${resident.name}, Stage S${resident.stage} (${STAGES[resident.stage].name}), diagnoses: ${resident.diagnosis.join(", ")}.` : "No specific resident selected."} Always use plain language. Never use ABA jargon without explanation. Be directive and specific.`;
+    const system = `You are LUMINARK's AI Procedure Guide ...", ")}.` : "No specific resident selected."} Always use plain language. Never use ABA jargon without explanation. Be directive and specific.`;
     const txt = await callClaude([{role:"user",content:proc.prompt}], system);
     setMessages([{role:"assistant",content:txt}]);
     setLoading(false);
@@ -3766,8 +3152,7 @@ function ProcedureGuide({resident, staff}) {
 }
 
 // ─── CRISIS REFERENCE — PCM / Baker Act / Prohibited ───────────────────────────
-function CrisisReference({resident}) {
-  const [activeTab, setActiveTab] = useState("pcm");
+function CrisisReference..."pcm");
   const stage = STAGES[resident.stage];
   const ba = resident.bakerAct;
 
@@ -3787,11 +3172,7 @@ function CrisisReference({resident}) {
             <div style={{fontSize:12,fontWeight:800,color:C.red,marginTop:6}}>{label}</div>
             <div style={{fontSize:10,color:C.text3,marginTop:2}}>{sub}</div>
           </div>
-        ))}
-      </div>
-
-      {/* Tab switcher */}
-      <div style={{ display:"flex", gap:4, background:C.white, borderRadius:12, padding:4, boxShadow:"0 2px 8px rgba(0,0,0,.06)" }}>
+    ..."flex", gap:4, background:C.white, borderRadius:12, padding:4, boxShadow:"0 2px 8px rgba(0,0,0,.06)" }}>
         {[["pcm","🤝 PCM De-escalation"],["baker","⚖ Baker Act"],["prohibited","⛔ Prohibited"]].map(([id,label])=>(
           <div key={id} onClick={()=>setActiveTab(id)}
             style={{ flex:1, padding:"10px 14px", borderRadius:9, textAlign:"center", cursor:"pointer", fontSize:12, fontWeight:700,
@@ -3828,9 +3209,7 @@ function CrisisReference({resident}) {
             {ba?.history
               ? <div style={{ padding:"12px 14px", background:C.orangelt, borderRadius:10, border:`2px solid ${C.orange}44` }}>
                   <div style={{ fontSize:11, fontWeight:800, color:C.orange, marginBottom:4 }}>📋 History</div>
-                  <div style={{ fontSize:13, color:C.text }}>{ba.historyNote}</div>
-                </div>
-              : <div style={{ padding:"12px 14px", background:C.greenlt, borderRadius:10 }}>
+                  <div style={{ fontSize:13, color:C.text..."12px 14px", background:C.greenlt, borderRadius:10 }}>
                   <div style={{ fontSize:12, color:C.green, fontWeight:600 }}>✓ No Baker Act history on file</div>
                 </div>
             }
@@ -3872,18 +3251,7 @@ function CrisisReference({resident}) {
             ))}
             <div style={{ padding:"10px 14px", background:"#1A1814", borderRadius:9, fontSize:12, color:"#FFB3B3", fontWeight:600, lineHeight:1.7 }}>
               If an owner, supervisor, or any person instructs you to use a prohibited procedure — you have the legal right and professional duty to refuse.
-              Report immediately: APD Abuse Hotline 1-800-962-2873 (anonymous, 24/7) or APD 1-866-APD-CARES.
-            </div>
-          </div>
-        </Card>
-      )}
-    </div>
-  );
-}
-
-// ─── CLOCK-OUT GATE MODAL ───────────────────────────────────────────────────────
-function ClockOutGate({session, residents, onConfirm, onCancel}) {
-  const [step, setStep] = useState("controlled"); // controlled → handover → pin → done
+              Report immediately: APD Abuse Hotline 1..."controlled"); // controlled → handover → pin → done
   const [countChecks, setCountChecks] = useState({});
   const [witnessPin, setWitnessPin] = useState("");
   const [witnessError, setWitnessError] = useState("");
@@ -3894,11 +3262,7 @@ function ClockOutGate({session, residents, onConfirm, onCancel}) {
     r.meds.filter(m => m.controlled).map(m => ({...m, residentName: r.name, residentId: r.id}))
   );
 
-  const allCountsDone = controlledMeds.length === 0 || controlledMeds.every(m => countChecks[`${m.residentId}-${m.id}`]);
-
-  const verifyWitness = () => {
-    const incoming = Object.values(STAFF_DB).find(s => s.id === incomingStaffId);
-    if (!incoming) { setWitnessError("Staff ID not found."); return; }
+  const allCountsDone = controlledMeds.length === 0 || controlledMeds.every(m => countChecks[..."Staff ID not found."); return; }
     if (witnessPin !== incoming.pin) { setWitnessError("Incorrect PIN for incoming staff."); setWitnessPin(""); return; }
     if (incomingStaffId === session.staff.id) { setWitnessError("Incoming staff cannot be the same person clocking out."); return; }
     onConfirm(incoming);
@@ -3936,18 +3300,10 @@ function ClockOutGate({session, residents, onConfirm, onCancel}) {
                 return (
                   <div key={key} style={{ padding:"12px 14px", background:done?C.greenlt:C.redlt, borderRadius:10, marginBottom:8, border:`2px solid ${done?C.green:C.red}` }}>
                     <div style={{ fontWeight:700, color:done?C.green:C.red, fontSize:13 }}>{m.name}</div>
-                    <div style={{ fontSize:12, color:C.text3 }}>Resident: {m.residentName} · Controlled substance</div>
-                    {!done && (
-                      <div style={{ marginTop:8 }}>
-                        <div style={{ fontSize:11, color:C.text, marginBottom:6 }}>Confirm physical pill count witnessed by incoming staff before proceeding.</div>
-                        <Btn v="green" small onClick={()=>setCountChecks(p=>({...p,[key]:true}))}>✓ Count Verified — Both Staff Witnessed</Btn>
+                    <div s..."green" small onClick={()=>setCountChecks(p=>({...p,[key]:true}))}>✓ Count Verified — Both Staff Witnessed</Btn>
                       </div>
                     )}
-                    {done && <div style={{ fontSize:12, fontWeight:700, color:C.green, marginTop:4 }}>✓ Count verified and logged</div>}
-                  </div>
-                );
-              })}
-              <Btn v="primary" full onClick={()=>setStep("handover")} style={{ marginTop:8, opacity:allCountsDone?1:.4, pointerEvents:allCountsDone?"auto":"none" }}>
+                    {done && <div style={{ fontSize:12, fontWeight:700, color:C.green, ma..."primary" full onClick={()=>setStep("handover")} style={{ marginTop:8, opacity:allCountsDone?1:.4, pointerEvents:allCountsDone?"auto":"none" }}>
                 Continue → Shift Handover Status
               </Btn>
             </div>
@@ -3958,16 +3314,14 @@ function ClockOutGate({session, residents, onConfirm, onCancel}) {
             <div>
               <div style={{ fontWeight:700, color:C.navy, marginBottom:12 }}>Select incoming staff and confirm house status is accepted.</div>
               <div style={{ marginBottom:12 }}>
-                <label style={{ fontSize:11, fontWeight:700, color:C.text3, textTransform:"uppercase", letterSpacing:.5, display:"block", marginBottom:6 }}>Incoming Staff ID</label>
+                <label style={{ ..."uppercase", letterSpacing:.5, display:"block", marginBottom:6 }}>Incoming Staff ID</label>
                 <select value={incomingStaffId} onChange={e=>setIncomingStaffId(e.target.value)}
                   style={{ width:"100%", padding:"10px 12px", borderRadius:9, border:`1px solid ${C.gray2}`, fontSize:13, fontFamily:"inherit" }}>
                   <option value="">— Select incoming staff —</option>
                   {Object.values(STAFF_DB).filter(s=>s.id!==session.staff.id).map(s=>(
                     <option key={s.id} value={s.id}>{s.id} — {s.name}</option>
                   ))}
-                </select>
-              </div>
-              <div style={{ display:"grid", gap:8, marginBottom:14 }}>
+                </selec..."grid", gap:8, marginBottom:14 }}>
                 {[
                   "All scheduled medications have been administered or documented",
                   "All residents are present and accounted for",
@@ -3994,9 +3348,7 @@ function ClockOutGate({session, residents, onConfirm, onCancel}) {
             <div>
               <div style={{ padding:"14px 16px", background:C.goldlt, borderRadius:10, marginBottom:14 }}>
                 <div style={{ fontWeight:700, color:C.gold, marginBottom:4 }}>Dual Authentication Required</div>
-                <div style={{ fontSize:13, color:C.text }}>Incoming staff <strong>{STAFF_DB[incomingStaffId]?.name}</strong> must enter their PIN to accept the shift. This creates a tamper-proof transfer of responsibility.</div>
-              </div>
-              <Inp label={`${STAFF_DB[incomingStaffId]?.name}'s PIN`} type="password" value={witnessPin} onChange={setWitnessPin} placeholder="Incoming staff PIN"/>
+                <div style={{ fontSize:13, color:C.text }}>Incoming staff ..."password" value={witnessPin} onChange={setWitnessPin} placeholder="Incoming staff PIN"/>
               {witnessError && <div style={{ padding:"8px 12px", background:C.redlt, color:C.red, borderRadius:8, fontSize:12, fontWeight:700, marginBottom:8 }}>{witnessError}</div>}
               <div style={{ display:"flex", gap:10 }}>
                 <Btn v="green" full onClick={verifyWitness}>🔐 Confirm Handover & Clock Out</Btn>
@@ -4011,21 +3363,11 @@ function ClockOutGate({session, residents, onConfirm, onCancel}) {
 }
 
 // ─── STAFF PORTAL ───────────────────────────────────────────────────────────────
-function StaffPortal({session, onLogout, onShowClockOut}) {
-  const [page, setPage]                         = useState("roster");
+function StaffPortal({session,..."roster");
   const [selectedResident, setSelectedResident] = useState(null);
   const [locked, setLocked]                     = useState(false);
   const [lastActivity, setLastActivity]         = useState(Date.now());
-  const residents = RESIDENTS_DB[session.home] || [];
-
-  useEffect(() => {
-    const interval = setInterval(() => { if (Date.now() - lastActivity > 15 * 60 * 1000) setLocked(true); }, 30000);
-    return () => clearInterval(interval);
-  }, [lastActivity]);
-
-  const touch = useCallback(() => setLastActivity(Date.now()), []);
-  useEffect(() => {
-    window.addEventListener("mousemove", touch);
+  const residents = RESIDENTS_DB[sessio..."mousemove", touch);
     window.addEventListener("keydown", touch);
     window.addEventListener("touchstart", touch);
     return () => { window.removeEventListener("mousemove",touch); window.removeEventListener("keydown",touch); window.removeEventListener("touchstart",touch); };
@@ -4101,8 +3443,7 @@ function StaffPortal({session, onLogout, onShowClockOut}) {
               </div>
             ))}
           </div>
-          {/* Resident quick list */}
-          <div style={{ borderTop:`1px solid ${C.navy3}`, padding:"10px 0" }}>
+..."10px 0" }}>
             <div style={{ padding:"0 14px 6px", fontSize:10, fontWeight:700, color:"#3a6080", textTransform:"uppercase", letterSpacing:.8 }}>On Shift — {session.home}</div>
             {residents.map(r=>{
               const s = STAGES[r.stage];
@@ -4134,7 +3475,7 @@ function StaffPortal({session, onLogout, onShowClockOut}) {
                   <span style={{fontSize:18}}>{r.photo}</span>
                   <div>
                     <div style={{ fontSize:12,fontWeight:700,color:selectedResident?.id===r.id?C.white:C.text }}>{r.name}</div>
-                    <div style={{ fontSize:10,color:selectedResident?.id===r.id?"#8fb3d4":C.text3 }}>{STAGES[r.stage].symbol} {r.home}</div>
+                    <div st..."#8fb3d4":C.text3 }}>{STAGES[r.stage].symbol} {r.home}</div>
                   </div>
                 </div>
               ))}
@@ -4152,9 +3493,7 @@ function StaffPortal({session, onLogout, onShowClockOut}) {
                 {residents.map(r=>{
                   const s = STAGES[r.stage];
                   const lowMedAlerts = Object.entries(r.pillCounts||{}).filter(([,pc])=>Math.floor(pc.current/pc.perDay)<=7).length;
-                  return (
-                    <Card key={r.id}>
-                      <div style={{ padding:16, display:"flex", gap:14, alignItems:"center" }}>
+                  re..."flex", gap:14, alignItems:"center" }}>
                         <div style={{ fontSize:48,lineHeight:1,background:s.bg,borderRadius:12,padding:"6px 10px",border:`2px solid ${s.color}33`,cursor:"pointer" }}
                           onClick={()=>goToResident(r,"facesheet")}>{r.photo}</div>
                         <div style={{flex:1}}>
@@ -4162,14 +3501,9 @@ function StaffPortal({session, onLogout, onShowClockOut}) {
                           <div style={{ display:"flex",gap:8,flexWrap:"wrap" }}>
                             <Tag label={`${s.symbol} ${s.name}`} color={s.color} bg={s.bg} small/>
                             <Tag label={`Age ${r.age}`} color={C.text2} bg={C.gray0} small/>
-                            <Tag label={r.dietaryTexture} color={C.teal} bg={C.teallt} small/>
-                            {r.seizureHistory && <Tag label="⚡ Seizure Hx" color={C.white} bg={C.red} small/>}
+                            <Tag label={r.dietaryT..."⚡ Seizure Hx" color={C.white} bg={C.red} small/>}
                             {lowMedAlerts>0 && <Tag label={`⚠ ${lowMedAlerts} Med Low`} color={C.white} bg={C.orange} small/>}
-                            {r.allergies.slice(0,2).map(a=><Tag key={a} label={`⚠ ${a}`} color={C.white} bg={C.redmed} small/>)}
-                            {s.tension>=8 && <Tag label={`Tension ${s.tension}/10`} color={C.white} bg={C.red} small/>}
-                          </div>
-                        </div>
-                        <div style={{ display:"flex",gap:8,flexWrap:"wrap",justifyContent:"flex-end" }}>
+                            {r.allergies.slice(0,2).map(a=><Tag key={a} label={`⚠ $..."flex",gap:8,flexWrap:"wrap",justifyContent:"flex-end" }}>
                           <Btn v="primary" small onClick={()=>goToResident(r,"facesheet")}>Face Sheet</Btn>
                           <Btn v="gold"    small onClick={()=>goToResident(r,"meds")}>💊 Meds</Btn>
                           <Btn v="teal"    small onClick={()=>goToResident(r,"behavior")}>🧠 Plan</Btn>
