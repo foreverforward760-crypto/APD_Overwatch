@@ -4,7 +4,7 @@
 
 This repository currently contains a single large React JSX interface prototype for a group-home operations dashboard. It includes demonstration screens for resident profiles, medication records, behavior-plan views, incident reporting, staff handover, schedules, wallet tracking, and export-oriented workflows.
 
-The project owner states that the underlying concepts and product direction originated with him; AI systems generated the implementation code and suggested technical mechanisms.
+The project owner states that the underlying concepts and product direction originated with him. AI systems generated the implementation code and suggested technical mechanisms. NSDT and the Container Rule were introduced by AI as supporting implementation mechanisms within the owner's framework, not as independent conceptual origins.
 
 ## Critical limitations
 
