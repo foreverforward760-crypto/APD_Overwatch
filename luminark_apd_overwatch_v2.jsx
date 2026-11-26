@@ -23,91 +23,91 @@ const STAGES = [
   {
     id:0, canonicalName:"PLENARA", name:"The Honeymoon", color:"#2D7DD2", bg:"#E8F2FC", tension:1,
     geometry:"Circle", symbol:"⚫",
-    inversion:"Neutral — no polarity tension yet. The slate is genuinely blank.",
+    inversion:"Framework interpretation only — Neutral — no polarity tension yet. The slate is genuinely blank. This does not measure the resident or predict behavior.",
     controlPoint:false,
-    familyDesc:"Your loved one is settling in. Things may feel unusually smooth right now — that's normal and temporary. The staff are using this time to build trust.",
-    clinicalParallel:"Framework analogy only — Initial placement adaptation period. Low behavioral frequency. Baseline establishment phase.",
+    familyDesc:"Possible family-facing wording only — Your loved one is settling in. Things may feel unusually smooth right now — that's normal and temporary. The staff are using this time to build trust. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Framework analogy only — Initial placement adaptation period. Low behavioral frequency. Baseline establishment phase. Not a clinical assessment or validated predictor.",
     phase:"0", phaseName:"The Originating Void",
   },
   {
     id:1, canonicalName:"SPARK OF NAVIGATION", name:"Finding Their Footing", color:"#3A7D44", bg:"#E8F5EB", tension:3,
     geometry:"Point becoming Line", symbol:"✨",
-    inversion:"Physically unstable / Consciously stable. The resident's behavior may start showing variation — but they know exactly who they are. The testing is intentional, not random.",
+    inversion:"Framework interpretation only — Physically unstable / Consciously stable. The resident's behavior may start showing variation — but they know exactly who they are. The testing is intentional, not random. This does not measure the resident or predict behavior.",
     controlPoint:false,
-    familyDesc:"Your loved one is starting to show more of their real personality. Some of this may look like pushing boundaries — it means they're starting to feel safe enough to be themselves.",
-    clinicalParallel:"Post-honeymoon behavioral emergence. Antecedent assessment window. Functional behavior hypothesis formation.",
+    familyDesc:"Possible family-facing wording only — Your loved one is starting to show more of their real personality. Some of this may look like pushing boundaries — it means they're starting to feel safe enough to be themselves. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Post-honeymoon behavioral emergence. Antecedent assessment window. Functional behavior hypothesis formation. Not a clinical assessment or validated predictor.",
     phase:"I", phaseName:"Emergence — The Triad Forms",
   },
   {
     id:2, canonicalName:"FORGE OF POLARITY", name:"Showing Their Colors", color:"#C67F12", bg:"#FDF0DC", tension:5,
     geometry:"Axis / Two Poles", symbol:"☯",
-    inversion:"Physically stable / Consciously unstable. The resident has settled into the home's physical routines but is internally sorting out identity, belonging, and safety.",
+    inversion:"Framework interpretation only — Physically stable / Consciously unstable. The resident has settled into the home's physical routines but is internally sorting out identity, belonging, and safety. This does not measure the resident or predict behavior.",
     controlPoint:false,
-    familyDesc:"You may be hearing about more challenging moments alongside the good ones. This is a healthy sign — it means your loved one is comfortable enough to show all of who they are.",
-    clinicalParallel:"Full behavioral repertoire emergence. Target behavior identification. Antecedent-behavior-consequence pattern mapping begins.",
+    familyDesc:"Possible family-facing wording only — You may be hearing about more challenging moments alongside the good ones. This is a healthy sign — it means your loved one is comfortable enough to show all of who they are. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Full behavioral repertoire emergence. Target behavior identification. Antecedent-behavior-consequence pattern mapping begins. Not a clinical assessment or validated predictor.",
     phase:"I", phaseName:"Emergence — The Triad Forms",
   },
   {
     id:3, canonicalName:"ENGINE OF EXPRESSION", name:"The Hard Stretch", color:"#B93232", bg:"#FDEAEA", tension:8,
     geometry:"Triangle — first true structure under pressure", symbol:"🔺",
-    inversion:"Physically unstable / Consciously stable. Behavior is at its most challenging — but the resident often has the clearest sense of what they need. The escalation IS the communication.",
+    inversion:"Framework interpretation only — Physically unstable / Consciously stable. Behavior is at its most challenging — but the resident often has the clearest sense of what they need. The escalation IS the communication. This does not measure the resident or predict behavior.",
     controlPoint:true,
-    familyDesc:"This is the hardest part of the journey, and it is normal. Your loved one is testing whether this home will stay committed to them. The staff need your support and patience right now too.",
-    clinicalParallel:"Crisis escalation phase. Behavioral incident peak. FBA (Functional Behavior Assessment) revision point. Placement stability risk window.",
+    familyDesc:"Possible family-facing wording only — This is the hardest part of the journey, and it is normal. Your loved one is testing whether this home will stay committed to them. The staff need your support and patience right now too. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Crisis escalation phase. Behavioral incident peak. FBA (Functional Behavior Assessment) revision point. Placement stability risk window. Not a clinical assessment or validated predictor.",
     phase:"I", phaseName:"Emergence — The Triad Stress-Tested",
   },
   {
     id:4, canonicalName:"CRUCIBLE OF EQUILIBRIUM", name:"The Turning Point", color:"#2E8B57", bg:"#E0F4E8", tension:6,
     geometry:"Square — four corners, stable foundation", symbol:"⬛",
-    inversion:"Physically stable / Consciously unstable. Incidents decrease. Routines solidify. Staff breathe again. But internally the resident is doing the deepest emotional processing of the entire cycle.",
+    inversion:"Framework interpretation only — Physically stable / Consciously unstable. Incidents decrease. Routines solidify. Staff breathe again. But internally the resident is doing the deepest emotional processing of the entire cycle. This does not measure the resident or predict behavior.",
     controlPoint:false,
-    familyDesc:"The hard part has eased. Your loved one is settling into real rhythms now — this is genuine progress being built on real trust, not just compliance.",
-    clinicalParallel:"Post-crisis stabilization. Behavioral frequency decline. Behavior plan refinement window. IB goal reassessment opportunity.",
+    familyDesc:"Possible family-facing wording only — The hard part has eased. Your loved one is settling into real rhythms now — this is genuine progress being built on real trust, not just compliance. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Post-crisis stabilization. Behavioral frequency decline. Behavior plan refinement window. IB goal reassessment opportunity. Not a clinical assessment or validated predictor.",
     phase:"II", phaseName:"Consolidation — The Triad Stabilizes",
   },
   {
     id:5, canonicalName:"DYNAMO OF WILL", name:"Finding Their Groove · Hidden Duality", color:"#1A7A4A", bg:"#D6F7DD", tension:4,
     geometry:"Pentagram — five points, the hidden star within the circle", symbol:"⭐",
-    inversion:"Physically unstable / Consciously stable — but the instability is internal and invisible. The resident knows exactly where they stand. Staff often do not.",
+    inversion:"Framework interpretation only — Physically unstable / Consciously stable — but the instability is internal and invisible. The resident knows exactly where they stand. Staff often do not. This does not measure the resident or predict behavior.",
     controlPoint:false,
-    familyDesc:"Your loved one is doing well — and this is the moment to dream bigger together with them. Ask them what they want their life to look like. Their answer matters more right now than at any other time.",
-    clinicalParallel:"Behavioral stabilization. Self-determination planning window. LRE (Least Restrictive Environment) assessment opportunity. Transition planning initiation.",
+    familyDesc:"Possible family-facing wording only — Your loved one is doing well — and this is the moment to dream bigger together with them. Ask them what they want their life to look like. Their answer matters more right now than at any other time. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Behavioral stabilization. Self-determination planning window. LRE (Least Restrictive Environment) assessment opportunity. Transition planning initiation. Not a clinical assessment or validated predictor.",
     phase:"II", phaseName:"Consolidation — The Triad at the Threshold",
   },
   {
     id:6, canonicalName:"NEXUS OF HARMONY", name:"Living Well Here", color:"#5C7A1A", bg:"#EBF7D6", tension:2,
     geometry:"Hexagon — honeycomb, peak efficiency in nature", symbol:"🔶",
-    inversion:"Physically stable / Consciously unstable — the inner work of maintaining this peak is real and constant. The resident may feel the fragility themselves even while appearing to flourish.",
+    inversion:"Framework interpretation only — Physically stable / Consciously unstable — the inner work of maintaining this peak is real and constant. The resident may feel the fragility themselves even while appearing to flourish. This does not measure the resident or predict behavior.",
     controlPoint:true,
-    familyDesc:"Your loved one is genuinely thriving. Use this time to start talking about bigger goals — more independence, more community involvement. This is the best time to plan the next step forward.",
-    clinicalParallel:"Peak adaptive functioning. Quality of life metrics at maximum. IB reclassification review. Transition planning acceleration.",
+    familyDesc:"Possible family-facing wording only — Your loved one is genuinely thriving. Use this time to start talking about bigger goals — more independence, more community involvement. This is the best time to plan the next step forward. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Peak adaptive functioning. Quality of life metrics at maximum. IB reclassification review. Transition planning acceleration. Not a clinical assessment or validated predictor.",
     phase:"II", phaseName:"Consolidation — The Triad at Peak Harmony",
   },
   {
     id:7, canonicalName:"LENS OF DISTILLATION", name:"Stuck In Place", color:"#9A2A2A", bg:"#FDECEA", tension:9,
     geometry:"Heptagon — seven sides, natural cycles of transformation", symbol:"🌀",
-    inversion:"Physically unstable / Consciously stable — behavioral incidents return, regression is visible, but the resident often has razor-sharp clarity about what is wrong. The crisis IS the message.",
+    inversion:"Framework interpretation only — Physically unstable / Consciously stable — behavioral incidents return, regression is visible, but the resident often has razor-sharp clarity about what is wrong. The crisis IS the message. This does not measure the resident or predict behavior.",
     controlPoint:false,
-    familyDesc:"Your loved one is going through a hard stretch again. This doesn't mean the progress was lost — it means the next layer of growth is being worked through. Shadow work is real and necessary. Your consistency and patience are more important right now than at any other time.",
-    clinicalParallel:"Behavioral regression. Crisis intervention activation. Wisdom extraction / FBA revision. Placement stability review. Restrictive procedure evaluation. Shadow work / distillation phase.",
+    familyDesc:"Possible family-facing wording only — Your loved one is going through a hard stretch again. This doesn't mean the progress was lost — it means the next layer of growth is being worked through. Shadow work is real and necessary. Your consistency and patience are more important right now than at any other time. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Behavioral regression. Crisis intervention activation. Wisdom extraction / FBA revision. Placement stability review. Restrictive procedure evaluation. Shadow work / distillation phase. Not a clinical assessment or validated predictor.",
     phase:"III", phaseName:"Transcendence — The Triad Breaks Apart",
   },
   {
     id:8, canonicalName:"VESSEL OF GROUNDING", name:"The Illusion Trap", color:"#6B0000", bg:"#F5D5D5", tension:10,
     geometry:"Infinity loop / Möbius strip", symbol:"∞",
-    inversion:"Physically stable / Consciously seeking release — but the conscious seeking is suppressed. The system has stopped listening. The resident's signals for change are being interpreted as symptoms to manage rather than communications to respond to.",
+    inversion:"Framework interpretation only — Physically stable / Consciously seeking release — but the conscious seeking is suppressed. The system has stopped listening. The resident's signals for change are being interpreted as symptoms to manage rather than communications to respond to. This does not measure the resident or predict behavior.",
     controlPoint:false,
-    familyDesc:"Your loved one may seem stable right now, but stable is not the same as thriving. If you haven't heard about new goals, new activities, or progress in a while — ask. You have the right to request an IB review at any time.",
-    clinicalParallel:"Behavioral plateau with systemic reinforcement of status quo. IB review overdue. Restrictive procedure normalization. Institutional learned helplessness. Stagnation requiring crisis-of-compassion intervention.",
+    familyDesc:"Possible family-facing wording only — Your loved one may seem stable right now, but stable is not the same as thriving. If you haven't heard about new goals, new activities, or progress in a while — ask. You have the right to request an IB review at any time. This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Behavioral plateau with systemic reinforcement of status quo. IB review overdue. Restrictive procedure normalization. Institutional learned helplessness. Stagnation requiring crisis-of-compassion intervention. Not a clinical assessment or validated predictor.",
     phase:"III", phaseName:"Transcendence — The Triad Fossilized",
   },
   {
     id:9, canonicalName:"TRANSPARENCY OF THE GUIDE", name:"Ready To Fly", color:"#0D5C2E", bg:"#C8F0D8", tension:1,
     geometry:"Circle returning — the nonagon completing the arc", symbol:"🕊",
-    inversion:"Physically unstable (the current placement no longer fits) / Consciously stable and accepting. Stage 9 is the only stage where this inversion is welcomed rather than resisted. The readiness to move forward and the readiness to let go are the same feeling.",
+    inversion:"Framework interpretation only — Physically unstable (the current placement no longer fits) / Consciously stable and accepting. Stage 9 is the only stage where this inversion is welcomed rather than resisted. The readiness to move forward and the readiness to let go are the same feeling. This does not measure the resident or predict behavior.",
     controlPoint:true,
-    familyDesc:"Your loved one is ready for the next chapter — greater independence, more community involvement, a setting that fits who they have become. This is what all the hard work was for. It's okay to feel emotional about the change. It's the right time to...",
-    clinicalParallel:"Full adaptive functioning. LRE transition readiness. Wisdom transmission / legacy documentation. Supported living or independent living assessment. Step-down planning. Discharge coordination. Transition IEP/ISP revision. LRE advocacy.",
+    familyDesc:"Possible family-facing wording only — Your loved one is ready for the next chapter — greater independence, more community involvement, a setting that fits who they have become. This is what all the hard work was for. It's okay to feel emotional about the change. It's the right time to... This is not an assessment of the resident or a care recommendation.",
+    clinicalParallel:"Framework analogy only — Full adaptive functioning. LRE transition readiness. Wisdom transmission / legacy documentation. Supported living or independent living assessment. Step-down planning. Discharge coordination. Transition IEP/ISP revision. LRE advocacy. Not a clinical assessment or validated predictor.",
     phase:"III", phaseName:"Transcendence — The Triad Dissolves into Legacy",
   },
 ];
@@ -182,7 +182,7 @@ const RESIDENTS_DB = {
       dietaryAlert:"⚠ NO CHUNKY FOOD — choking risk documented 2024",
       seizureHistory:true,
       seizurePlan:{
-        atStart:"Follow the resident's current approved seizure action plan. This demonstration provides no treatment instructions.",
+        atStart:"Follow the resident current approved seizure action plan. This demonstration provides no treatment instructions.",
         at3min:"Use the timing and escalation steps in the current approved plan and emergency protocol.",
         at5min:"No medication dose or administration instruction is provided in this demonstration.",
         post:"Document objective observations and notify designated contacts according to the approved plan."
@@ -208,7 +208,7 @@ const RESIDENTS_DB = {
       ],
       notes:"HONEYMOON ENDED. Known for elopement history. Always announce yourself before entering room.",
       pcm:["Verbal redirection — calm, flat tone, no questions","Personal space / step back at least 6 feet","Offer preferred fidget item (top drawer, desk)","Supportive coaching: name the feeling out loud ('I can see this is hard')"],
-      prohibited:["Do not rely on this demo to determine whether a restrictive intervention is lawful or reportable.","Follow current law, approved individualized plans, and required staff training for all restrictive interventions.","This prototype does not establish permitted or prohibited interventions.","This prototype does not replace the resident's approved communication and support plan.","Use only approaches authorized by the current approved plan and professional guidance."],
+      prohibited:["This prototype does not determine which restrictive interventions are permitted or reportable. Follow current law, approved individualized plans, facility policy, and required staff training."],
       bakerAct:{ statute:"Reference only — verify current Florida Statute 394.463 and applicable policy", history:true, historyNote:"Synthetic demonstration placeholder only; not a real resident history.", threshold:"This prototype does not determine Baker Act eligibility or thresholds. Consult current Florida law, qualified professionals, and facility policy; do not use this tool to decide on involuntary examination.", nonVerbalNote:null },
       behaviorPlan:{ 
         clinicalDesc:"Target behaviors: Physical Aggression (hitting, kicking, throwing objects — function: escape/demand avoidance + sensory overload) and Elopement (leaving without authorization — function: escape/sensory overload). Intervention: DRA protocol, prefer...", 
@@ -249,8 +249,8 @@ const RESIDENTS_DB = {
       ],
       notes:"NEW RESIDENT – Day 12. Currently in Honeymoon Stage. Prior history: property destruction during manic episodes. DO NOT lower guard.",
       pcm:["Give advance notice before transitions ('In 5 minutes we are…')","Offer choices to maintain sense of control","Calm explanation when 'no' is necessary — always give a reason","Redirect to preferred activity before escalation peaks"],
-      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Taking away personal items as punishment","⛔ Isolating resident without supervisor authorization","⛔ Raised voice or sarcastic tone"],
-      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history on file. New resident — baseline still being established.", threshold:"Monitor for: property destruction escalating to self-directed behavior, statements of self-harm intent, refusal of all medication for 2+ days. Consult BA before any Baker Act consideration given Honeymoon Stage status.", nonVerbalNote:null },
+      prohibited:["This prototype does not determine which restrictive interventions are permitted or reportable. Follow current law, approved individualized plans, facility policy, and required staff training."],
+      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history on file. New resident — baseline still being established.", threshold:"This prototype does not determine Baker Act eligibility or thresholds. Consult current Florida law, qualified professionals, and facility policy; do not use this tool to decide on involuntary examination.", nonVerbalNote:null },
       behaviorPlan:{ clinicalDesc:"Antecedent-based intervention with NCR (Non-Contingent Reinforcement). Target behavior: property destruction (throwing items). EO: restricted access to preferred items. Establishing operations: transition resistance. FCT component in development — BA assessment pending.", plainDesc:"Lydia is still getting settled (Day 12). The most important thing right now is to give her advance notice before ANY change — even small ones. When you have to say no, always explain why in simple words ('We can't do that right now because…'). Giv..." },
     },
     {
@@ -282,8 +282,8 @@ const RESIDENTS_DB = {
       ],
       notes:"Angela has made excellent progress over 67 days. Mood stable. BA should initiate IB review.",
       pcm:["Low-stimulation environment during mood monitoring window (6 AM–10 AM)","Reflective listening — repeat her words back, do not argue with her perception","Physical activity redirect during early mania indicators (pacing, rapid speech)","Offer weighted blanket for anxiety escalation"],
-      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Arguing with delusional content — do not challenge, redirect","⛔ Withholding mood stabilizer under any circumstances","⛔ Social isolation as behavioral intervention"],
-      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No involuntary Baker Act history. Prior hospitalization 2022 was voluntary, pre-diagnosis.", threshold:"Mania checklist — Baker Act consult if 3+ present: no sleep 48+ hrs, grandiose statements about leaving or special mission, refusal of all mood stabilizers, property destruction, expressed intent to harm self or others, inability to follow 2-step instructions.", nonVerbalNote:null },
+      prohibited:["This prototype does not determine which restrictive interventions are permitted or reportable. Follow current law, approved individualized plans, facility policy, and required staff training."],
+      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No involuntary Baker Act history. Prior hospitalization 2022 was voluntary, pre-diagnosis.", threshold:"This prototype does not determine Baker Act eligibility or thresholds. Consult current Florida law, qualified professionals, and facility policy; do not use this tool to decide on involuntary examination.", nonVerbalNote:null },
       behaviorPlan:{ clinicalDesc:"Proactive mood monitoring via circadian rhythm tracking. Behavioral indicators of prodromal mania: increased speech rate (>1.5× baseline), decreased sleep self-report, inflated self-esteem statements. Intervention: environmental modification + TEA...", plainDesc:"Angela's mood follows patterns — watch for her 'early warning signs' each morning: if she's talking faster than usual, seems overly energetic before 9 AM, or starts making big plans, flag it in the comm log right away and text the BA. She is doing..." },
     },
   ],
@@ -318,8 +318,8 @@ const RESIDENTS_DB = {
       ],
       notes:"SUCCESS STORY. Stage 9 for 42 days. Step-down to assisted living being pursued. Give him responsibilities.",
       pcm:["Collaborative problem-solving — involve him in decisions","Acknowledge autonomy: ask, don't tell, when possible","Natural consequences approach — BA-approved"],
-      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Any intervention that undermines his demonstrated independence","⛔ Treating him as a lower-stage resident — he has earned Stage 9 status"],
-      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history. Stage 9 — no current clinical concerns.", threshold:"Not currently applicable. If regression to Stage 7+ persists 7+ days, consult BA for reassessment.", nonVerbalNote:null },
+      prohibited:["This prototype does not determine which restrictive interventions are permitted or reportable. Follow current law, approved individualized plans, facility policy, and required staff training."],
+      bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history. Stage 9 — no current clinical concerns.", threshold:"This prototype does not determine Baker Act eligibility or thresholds. Consult current Florida law, qualified professionals, and facility policy; do not use this tool to decide on involuntary examination.", nonVerbalNote:null },
       behaviorPlan:{ clinicalDesc:"Maintenance protocol — no active behavioral intervention required. Goals: LRE transition planning, ADL independence skill generalization, supported decision-making practice.", plainDesc:"Jonah is ready to fly. Your job with him is more like a life coach than a caregiver. Involve him in house decisions where possible, let him mentor newer residents, and document any steps he takes toward independence — they all count toward his assisted living transition plan." },
     },
     {
@@ -332,10 +332,10 @@ const RESIDENTS_DB = {
       dietaryAlert:"⚠ GROUND TEXTURE ONLY — seizure medication affects swallowing reflex",
       seizureHistory:true,
       seizurePlan:{
-        atStart:"Position on side, clear airway, begin timing, do NOT restrain",
-        at3min:"Call 911 — Ramon's seizures exceed 3 min baseline",
-        at5min:"Administer Diastat 7.5mg rectal — locked cabinet, key on duty ring",
-        post:"Lateral recovery position until fully alert. Document and call Dr. Patel."
+        atStart:"Follow the resident current approved seizure action plan. This demonstration provides no treatment instructions.",
+        at3min:"Use the timing and escalation steps in the current approved plan and emergency protocol.",
+        at5min:"No medication dose or administration instruction is provided in this demonstration.",
+        post:"Document objective observations and notify designated contacts according to the approved plan."
       },
       communication:"Minimal verbal. Uses AAC device. Approach slowly and calmly.",
       behavioralTriggers:["Loud TV or music","Unexpected touch","Transition between activities","Missing preferred items"],
@@ -358,7 +358,7 @@ const RESIDENTS_DB = {
       ],
       notes:"Ramon is in The Hard Stretch. Recent incident INC-007. AAC device must be accessible at all times.",
       pcm:["ALWAYS approach from the front — never from behind","Allow AAC device response time — minimum 15 seconds before prompting","Low-stimulation redirection: dim lights, reduce noise before approach","No physical prompt without verbal announcement first"],
-      prohibited:["⛔ Prone (face-down) restraint — civil rights violation / APD reportable","⛔ Removing AAC device for any reason during a behavioral episode","⛔ Rapid approach or sudden touch","⛔ More than 2 staff members in room during de-escalation (increases arousal)"],
+      prohibited:["This prototype does not determine which restrictive interventions are permitted or reportable. Follow current law, approved individualized plans, facility policy, and required staff training."],
       bakerAct:{ statute:"FL Statute 394.463", history:false, historyNote:"No Baker Act history. Non-verbal — standard assessment criteria do not apply directly.", threshold:null, nonVerbalNote:"⚠ CRITICAL: Ramon cannot self-report distress verbally. Baker Act threshold assessment must use BEHAVIORAL indicators ONLY: sustained SIB (head-banging, hand-biting >5 min), complete food/fluid refusal 24+ hrs, loss of seizure medication complianc..." },
       behaviorPlan:{ 
         clinicalDesc:"Target behaviors: SIB (head-banging, hand-biting, face-hitting — function: automatic reinforcement/sensory + escape/avoidance during demand contexts; seizure-related SIB distinguished by post-ictal observation protocol) and Physical Aggression (hi...",
@@ -1065,14 +1065,14 @@ function FamilyPorta..."today");
 
         {tab==="stage" && (
           <Card>
-            <CardHdr title={`Understanding ${resident.name.split(" ")[0]}'s Current Stage`} sub={`${stage.symbol} ${stage.name}`}/>
+            <CardHdr title={`Understanding ${resident.name.split(" ")[0]}'s Current Stage`} sub={`${stage.symbol} ${stage.canonicalName} · ${stage.name}`}/>
             <div style={{ padding:18, display:"grid", gap:12 }}>
               <div style={{ padding:"14px 16px", background:stage.bg, borderRadius:10, border:`2px solid ${stage.color}44` }}>
-                <div style={{ fontSize:16, fontWeight:800, color:stage.color, marginBottom:6, fontFamily:"Georgia,serif" }}>{stage.symbol} {stage.name}</div>
+                <div style={{ fontSize:16, fontWeight:800, color:stage.color, marginBottom:6, fontFamily:"Georgia,serif" }}>{stage.symbol} {stage.canonicalName}</div><div style={{fontSize:12,color:C.text3,marginBottom:5}}>{stage.name}</div>
                 <div style={{ fontSize:13, color:C.text, lineHeight:1.8 }}>{stage.familyDesc}</div>
               </div>
               <div style={{ padding:"12px 14px", background:C.gray0, borderRadius:10 }}>
-                <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>What the Staff Are Focusing On Right Now</div>
+                <div style={{ fontSize:11, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:6 }}>Suggested discussion topic only — not a care directive</div>
                 <div style={{ fontSize:13, color:C.text, lineHeight:1.7 }}>{stage.actionPrompt}</div>
               </div>
               {stage.trapWarning && (
@@ -1451,7 +1451,7 @@ function FamilyPorta..."today");
       </div>
       <div style={{ padding:16 }}>
         <div style={{ padding:"10px 14px", background:stage.bg, borderRadius:9, marginBottom:14, borderLeft:`4px solid ${stage.color}` }}>
-          <span style={{ fontSize:12, fontWeight:700, color:stage.color }}>Because {resident.name.split(" ")[0]} is in <em>{stage.name}</em>: {stageCtx}</span>
+          <span style={{ fontSize:12, fontWeight:700, color:stage.color }}>Because {resident.name.split(" ")[0]} is in <em>{stage.canonicalName} ({stage.name})</em>: {stageCtx}</span>
         </div>
         {view==="staff" ? (
           <div>
@@ -3049,7 +3049,7 @@ function CrisisReference..."pcm");
       {/* PCM TAB */}
       {activeTab==="pcm" && (
         <Card>
-          <CardHdr title="🤝 PCM De-escalation — Follow In Order" sub={`Do not skip steps. Current stage: ${stage.symbol} ${stage.name}`}/>
+          <CardHdr title="🤝 PCM De-escalation — Follow In Order" sub={`Do not skip steps. Current stage: ${stage.symbol} ${stage.canonicalName} · ${stage.name}`}/>
           <div style={{ padding:16, display:"grid", gap:8 }}>
             {(resident.pcm||[]).map((step,i)=>(
               <div key={i} style={{ padding:"12px 16px", background:C.gray0, borderRadius:10, display:"flex", gap:12, alignItems:"flex-start",
