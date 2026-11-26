@@ -1859,18 +1859,18 @@ function BAPortal({onLogout}) {
               <div style={{ fontSize:12, color:C.text, lineHeight:1.6 }}>{s.velocity}</div>
             </div>
             <div style={{ padding:"10px 12px", background:C.gray0, borderRadius:9 }}>
-              <div style={{ fontSize:10, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>📋 Clinical Term (for documentation)</div>
+              <div style={{ fontSize:10, fontWeight:800, color:C.text3, textTransform:"uppercase", letterSpacing:.5, marginBottom:4 }}>📋 Framework analogy (not clinical documentation)</div>
               <div style={{ fontSize:11, color:C.text2, lineHeight:1.6, fontStyle:"italic" }}>{s.clinicalParallel}</div>
             </div>
           </div>
         </div>
       </Card>
 
-      {/* NSDT LIVE CLASSIFICATION — Kairos Engine */}
+      {/* NSDT DEMONSTRATION CLASSIFICATION — NOT CLINICALLY VALIDATED */}
       <NSDTLogger resident={resident} onClassified={()=>{}}/>
 
       {showSeizure && resident.s..."14px 18px", background:C.red, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
-            <div style={{ color:C.white, fontWeight:800, fontSize:15 }}>⚡ SEIZURE ACTION PLAN — {resident.name}</div>
+            <div style={{ color:C.white, fontWeight:800, fontSize:15 }}>⚠ DEMO SEIZURE-RESPONSE PLACEHOLDER — NOT MEDICAL INSTRUCTIONS</div>
             <Btn v="ghost" small onClick={()=>setShowSeizure(false)} style={{color:C.white,borderColor:C.white}}>Close</Btn>
           </div>
           <div style={{ padding:16, display:"grid", gap:10 }}>
