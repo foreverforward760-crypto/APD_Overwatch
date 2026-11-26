@@ -26,7 +26,7 @@ const STAGES = [
     inversion:"Framework interpretation only — Neutral — no polarity tension yet. The slate is genuinely blank. This does not measure the resident or predict behavior.",
     controlPoint:false,
     familyDesc:"Possible family-facing wording only — Your loved one is settling in. Things may feel unusually smooth right now — that's normal and temporary. The staff are using this time to build trust. This is not an assessment of the resident or a care recommendation.",
-    clinicalParallel:"Framework analogy only — Framework analogy only — Initial placement adaptation period. Low behavioral frequency. Baseline establishment phase. Not a clinical assessment or validated predictor.",
+    clinicalParallel:"Framework analogy only — Initial placement adaptation period. Low behavioral frequency. Baseline establishment phase. Not a clinical assessment or validated predictor.",
     phase:"0", phaseName:"The Originating Void",
   },
   {
