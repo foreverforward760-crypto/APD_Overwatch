@@ -555,7 +555,8 @@ function LiabilityBanner() {
         <div style={{ lineHeight:1.6 }}>
           <strong style={{color:"#F2C66D"}}>DEMONSTRATION PROTOTYPE ONLY.</strong>
           All resident, staff, home, clinical, medication, contact, and financial records in this file are synthetic examples.
-          Do not enter real resident information or protected health information.
+          This interface has no secure backend, real authentication, or verified APD/EVV integration.
+          Do not enter real resident information or protected health information. Do not use stage outputs for care or emergency decisions.
           <span onClick={()=>setExpanded(p=>!p)} style={{ color:"#F2C66D", cursor:"pointer", marginLeft:8, textDecoration:"underline" }}>
             {expanded ? "Hide limitations ▲" : "View limitations ▼"}
           </span>
@@ -1296,7 +1297,7 @@ function FamilyPorta..."today");
     { id:"admin",  icon:"🎯", label:"Manager Portal",         sub:"Program Manager / Director",         color:C.teal   },
     { id:"ba",     icon:"🧠", label:"Behavior Analyst Portal", sub:"BCBA / BCaBA plan management",       color:C.purple },
     { id:"family", icon:"👨‍👩‍👧", label:"Family Portal",         sub:"Guardian / family member",            color:C.green  },
-    { id:"demo",   icon:"📊", label:"Investor Demo",          sub:"Platform walkthrough & pitch",       color:C.gold   },
+    { id:"demo",   icon:"📊", label:"Concept Walkthrough",    sub:"Synthetic-data UI demonstration",    color:C.gold   },
   ];
 
   return (
@@ -1307,7 +1308,7 @@ function FamilyPorta..."today");
         <div style={{ textAlign:"center", marginBottom:28 }}>
           <div style={{ width:64, height:64, background:C.gold, borderRadius:18, display:"flex", alignItems:"center", justifyContent:"center", margin:"0 auto 14px", fontSize:32, fontWeight:900, color:C.navy, fontFamily:"Georgia,serif" }}>L</div>
           <div style={{ fontSize:22, fontWeight:800, color:C.white, fontFamily:"Georgia,serif", marginBottom:4 }}>LUMINARK APD OVERWATCH</div>
-          <div style={{ fontSize:12, color:"#7aA4C4" }}>Meridian Axiom Alignment Technologies · Florida APD Compliance Platform</div>
+          <div style={{ fontSize:12, color:"#7aA4C4" }}>Meridian Axiom Alignment Technologies · Group-Home Workflow UI Prototype</div>
         </div>
 
         {/* Portal selector */}
